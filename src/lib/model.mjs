@@ -4,6 +4,8 @@ import { md, mdi } from './corpus.mjs';
 
 export const DATE = '09/11/2026';
 export const HOME = 'index.html';
+// Version station : construite avec CIVZERO_STATION=1, elle donne accès à l'assistant.
+export const STATION = process.env.CIVZERO_STATION === '1';
 export const MODES = {
   prepare: { label: 'JE PRÉPARE', home: HOME,
              expl: "Vous avez le temps, Internet et la possibilité d'acheter ou de monter." },
@@ -81,7 +83,7 @@ export function buildModel(c) {
         slug: `${pre}-e${s.n}`, kind: 'etape', title: `Étape ${i + 1} · ${f.meta.titre} · CivZero`, modeTxt: 'BÊTA',
         crumb: crumbFiche(f), titre: f.meta.titre, badges: badges(f, true), danger: danger(f),
         rang: i + 1, total: n, barre: '■'.repeat(i + 1) + '□'.repeat(n - i - 1),
-        etapeTitre: s.titre, action: mdi(cap(s.action)), verif: s.verif ? mdi(cap(s.verif)) : '',
+        ficheId: f.id, etapeN: s.n, etapeTitre: s.titre, action: mdi(cap(s.action)), verif: s.verif ? mdi(cap(s.verif)) : '',
         source: s.source ? mdi(s.source) : '',
         coince: f.coince.filter((x) => x.etapes.includes(s.n))
           .map((x) => ({ probleme: mdi(x.probleme), texte: mdi(x.texte) })),

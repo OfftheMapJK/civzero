@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import OptFiche from '../OptFiche.astro';
 import Forme from '../Forme.astro';
+import { STATION } from '../../lib/model.mjs';
 const { p } = Astro.props;
 ---
 <Base title={p.title} modeTxt={p.modeTxt}>
@@ -19,6 +20,7 @@ const { p } = Astro.props;
       <button class="btn plein" type="submit">[ CHERCHER ]</button>
     </div>
   </form>
+  {STATION && <a class="btn" href="assistant">[ POSER UNE QUESTION À L'ASSISTANT D'ATELIER ]</a>}
 
   <h2>Commencer ici</h2>
   <div class="choix">{p.socle.map((o) => <OptFiche o={o} />)}</div>

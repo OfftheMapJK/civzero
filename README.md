@@ -26,6 +26,12 @@ Il faut Node.js 20 ou plus récent.
 
 Le dossier `dist/` est le site complet : HTML sans JavaScript (sauf la page de recherche), à copier tel quel sur la station.
 
+## Lancer la station avec l'assistant
+
+    npm run station    # site en version station + assistant, sur http://localhost:8000
+
+L'assistant choisit des passages dans les fiches et ne rédige rien. Sans modèle, la recherche seule répond. Pour ajouter le modèle et le mesurer, voir [assistant/LISEZMOI.md](assistant/LISEZMOI.md).
+
 ## Publier en ligne
 
 Le site est publié sur GitHub Pages à chaque envoi sur `main` (`.github/workflows/pages.yml`). À activer une seule fois : *Settings › Pages › Source : GitHub Actions*.

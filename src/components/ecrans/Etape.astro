@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Crumb from '../Crumb.astro';
 import Badges from '../Badges.astro';
 import Danger from '../Danger.astro';
+import { STATION } from '../../lib/model.mjs';
 const { p } = Astro.props;
 ---
 <Base title={p.title} modeTxt={p.modeTxt}>
@@ -25,6 +26,17 @@ const { p } = Astro.props;
     </details>
   ) : (
     <p class="src">Aucun blocage documenté pour cette étape. <a href={p.rapport}>Signaler un blocage</a></p>
+  )}
+  {STATION && (
+    <form class="cherche" action="assistant" method="get">
+      <label class="lab" for="q">Une question sur cette étape ?</label>
+      <div>
+        <input id="q" name="q" type="search" placeholder="Ce qui coince…" />
+        <button class="btn" type="submit">[ DEMANDER ]</button>
+      </div>
+      <input type="hidden" name="fiche" value={p.ficheId} />
+      <input type="hidden" name="etape" value={p.etapeN} />
+    </form>
   )}
   <div class="row">
     <a class="btn" href={p.precedent.href}>{p.precedent.t}</a>

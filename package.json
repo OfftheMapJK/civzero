@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "station": "CIVZERO_STATION=1 astro build && pagefind --site dist && node assistant/station.mjs",
+    "mesurer": "node assistant/mesurer.mjs"
   },
   "dependencies": {
     "astro": "^5.0.0",

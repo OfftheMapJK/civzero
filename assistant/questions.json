@@ -1,0 +1,23 @@
+[
+  { "question": "Mon téléphone se vide quand même alors que j'ai tout coupé", "fiche": "energie-telephone-coupure", "etape": 1, "attendu": ["energie-telephone-coupure:c3"] },
+  { "question": "La batterie externe ne recharge pas mon portable", "attendu": ["energie-telephone-coupure:c1", "energie-telephone-coupure:e3"] },
+  { "question": "Comment recharger mon téléphone avec la voiture ?", "attendu": ["energie-telephone-coupure:e4"] },
+  { "question": "La prise allume-cigare de la voiture ne donne rien", "attendu": ["energie-telephone-coupure:c2"] },
+  { "question": "Je ne capte aucune station dans la maison", "attendu": ["telecom-ecoute-radio:c2", "socle-coupure-72h:c2", "telecom-ecoute-radio:e3"] },
+  { "question": "Il n'y a plus de piles pour le poste radio", "attendu": ["telecom-ecoute-radio:c1"] },
+  { "question": "À quelle heure écouter les informations ?", "attendu": ["telecom-ecoute-radio:e4"] },
+  { "question": "Quand ont lieu les tests des sirènes ?", "attendu": ["telecom-ecoute-radio:e6"] },
+  { "question": "L'étiquette de mon chargeur est effacée", "attendu": ["energie-lire-etiquette:c1"] },
+  { "question": "Ma batterie externe n'indique que des mAh", "attendu": ["energie-lire-etiquette:c2"] },
+  { "question": "Comment savoir si un chargeur convient à mon appareil ?", "attendu": ["energie-lire-etiquette:e7"] },
+  { "question": "Comment calculer la puissance en watts ?", "attendu": ["energie-lire-etiquette:e4"] },
+  { "question": "Mes voisins ne veulent pas participer", "attendu": ["telecom-plan-communication:c1"] },
+  { "question": "Où se retrouver si les téléphones ne marchent plus ?", "attendu": ["telecom-plan-communication:e3"] },
+  { "question": "Personne n'est venu au point de rendez-vous", "fiche": "telecom-plan-communication", "etape": 7, "attendu": ["telecom-plan-communication:c3"] },
+  { "question": "Quelqu'un vient d'être électrisé", "attendu": ["nodule-zero:c3"] },
+  { "question": "Une batterie gonfle et chauffe", "attendu": ["nodule-zero:c4"] },
+  { "question": "Je n'ai pas le budget pour acheter des lampes", "attendu": ["socle-coupure-72h:c1"] },
+  { "question": "Que préparer pour tenir trois jours sans courant ?", "attendu": ["socle-coupure-72h"] },
+  { "question": "Comment purifier l'eau de pluie ?", "attendu": [] },
+  { "question": "Comment faire du pain sans four ?", "attendu": [] }
+]
