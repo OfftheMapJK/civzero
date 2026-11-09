@@ -1,0 +1,62 @@
+# Besoins tels que la personne les exprime. Plusieurs fiches peuvent répondre au même besoin
+# à des niveaux d'équipement différents : c'est ce qui fait apparaître la question du matériel.
+blocs:
+  energie:
+    titre: "ÉNERGIE"
+    sous_titre: "Batteries, 12 V, récupération"
+  telecom:
+    titre: "TÉLÉCOMS"
+    sous_titre: "S'informer, se joindre, partager"
+  calcul:
+    titre: "CALCUL"
+    sous_titre: "La station et ses mises à jour"
+a_venir: ["EAU ET HYGIÈNE", "ALIMENTATION", "SOINS", "HABITAT", "MOBILITÉ", "COMMUNS"]
+besoins:
+  commencer:
+    bloc: socle
+    titre: "Commencer ici"
+    description: "Les principes, la sécurité, et la préparation de base"
+  comprendre-ses-appareils:
+    bloc: energie
+    titre: "Comprendre ce que consomment mes appareils"
+    description: "Lire une étiquette, mesurer, calculer une autonomie"
+  garder-du-courant:
+    bloc: energie
+    titre: "Garder du courant pendant une coupure"
+    description: "Téléphone, station, batterie 12 V"
+  produire-son-energie:
+    bloc: energie
+    titre: "Produire son énergie"
+    description: "Recharger une batterie au soleil"
+  se-debarrasser-sans-polluer:
+    bloc: energie
+    titre: "Se débarrasser d'une batterie ou d'un appareil"
+    description: "Sans poison et sans risque d'incendie"
+  s-informer:
+    bloc: telecom
+    titre: "S'informer quand le réseau a coupé"
+    description: "Radio, alertes, sirènes"
+  se-joindre:
+    bloc: telecom
+    titre: "Joindre ses proches et ses voisins"
+    description: "Plan de communication, radio LoRa"
+  partager-le-savoir:
+    bloc: telecom
+    titre: "Partager les fiches autour de soi"
+    description: "De téléphone à téléphone, Wi-Fi local"
+  s-orienter:
+    bloc: telecom
+    titre: "S'orienter et connaître son quartier"
+    description: "Carte hors-ligne, ressources de proximité"
+  avoir-la-bibliotheque:
+    bloc: calcul
+    titre: "Avoir la bibliothèque hors-ligne"
+    description: "Monter la station, ou lire les fiches sans elle"
+  mettre-a-jour:
+    bloc: calcul
+    titre: "Mettre à jour la bibliothèque"
+    description: "Par clé USB, et faire remonter les rapports"
+niveaux:
+  0: ["Rien d'autre que ce qui est sur place", "Aucun outil : un téléphone, du papier"]
+  1: ["Des outils de base", "Tournevis, multimètre simple, câbles, une vieille machine"]
+  2: ["Du matériel spécialisé", "Modules radio, mesure de précision, atelier équipé"]

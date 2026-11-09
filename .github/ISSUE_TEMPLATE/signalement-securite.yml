@@ -1,0 +1,37 @@
+name: Signaler un problème de sécurité
+description: Une étape d'une fiche vous paraît dangereuse ou fausse. Ces signalements sont traités en premier.
+title: "Sécurité : "
+labels: ["securite"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Si quelqu'un est en danger maintenant, appelez le 112. Ce formulaire sert à corriger une fiche.
+  - type: input
+    id: fiche
+    attributes:
+      label: Fiche
+      description: "L'identifiant de la fiche, par exemple energie-protection-12v."
+    validations:
+      required: true
+  - type: input
+    id: etape
+    attributes:
+      label: Étape concernée
+    validations:
+      required: true
+  - type: textarea
+    id: probleme
+    attributes:
+      label: Ce qui est dangereux ou faux
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Ce qu'il faudrait écrire à la place
+  - type: textarea
+    id: source
+    attributes:
+      label: Source ou expérience
+      description: Norme, notice, formation, ou votre métier.

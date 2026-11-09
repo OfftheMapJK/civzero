@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Étape 5 · Plan de communication entre proches et voisins · CivZero</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+
+<style>
+/* Une colonne de terminal : barre d'état inversée, crochets pour les actions, la couleur réservée au danger. */
+:root{
+  --bg:#FFFFFF; --fg:#0A0A0A; --dim:#3D3D3D; --panel:#EDEDED; --line:#0A0A0A;
+  --vert:#1A6B33; --orange:#A85400; --rouge:#A8201A;
+  --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C0C0C; --fg:#ECE9E0; --dim:#B5B2A8; --panel:#1E1E1B; --line:#ECE9E0;
+  --vert:#4CC76F; --orange:#FF9A2E; --rouge:#FF5A4F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C0C0C; --fg:#ECE9E0; --dim:#B5B2A8; --panel:#1E1E1B; --line:#ECE9E0;
+  --vert:#4CC76F; --orange:#FF9A2E; --rouge:#FF5A4F; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--mono);font-size:1.0625rem;line-height:1.55}
+a{color:inherit;text-underline-offset:.2em}
+:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.bar{background:var(--fg);color:var(--bg);font-weight:600;font-size:.875rem;letter-spacing:.05em;
+  padding-block:.65rem;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.bar .in{max-width:64rem;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.25rem 1.5rem}
+.bar a{text-decoration:none}
+main,.foot{max-width:64rem;margin:0 auto;padding-block:1.5rem;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+main{display:flex;flex-direction:column;gap:1.25rem}
+main>*{min-width:0}
+.crumb{font-size:.9375rem;color:var(--dim);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.25rem 1rem}
+.crumb strong{color:var(--fg)}
+h1{font-size:1.625rem;line-height:1.25;margin:0;text-wrap:balance}
+h2{font-size:.9375rem;letter-spacing:.08em;text-transform:uppercase;margin:0}
+p{margin:0}
+.lead{color:var(--dim);max-width:65ch}
+.btn{display:flex;align-items:center;justify-content:center;min-height:4rem;padding:.5rem 1.25rem;
+  border:2px solid var(--line);font-weight:700;text-decoration:none;text-align:center;letter-spacing:.03em}
+.btn.plein{background:var(--fg);color:var(--bg)}
+.row{display:flex;flex-wrap:wrap;gap:1rem}
+.row>.btn{flex:1 1 15rem}
+.choix{display:flex;flex-direction:column;gap:1rem}
+.opt{display:flex;align-items:center;gap:1.25rem;min-height:5.5rem;padding:1rem 1.25rem;border:2px solid var(--line);text-decoration:none}
+.opt>span{min-width:0}
+.opt .t{display:block;font-size:1.1875rem;font-weight:600;line-height:1.35}
+.opt .s{display:block;color:var(--dim);font-size:.9375rem}
+.opt .k{flex:none;font-weight:700;width:5.5rem}
+.opt .go{flex:none;margin-left:auto;font-weight:700;font-size:1.5rem}
+.opt .note{display:block;font-size:.8125rem;font-weight:700;letter-spacing:.06em;margin-top:.35rem}
+.opt.vide{border-style:dashed;color:var(--dim)}
+.opt.vide .go{font-size:.8125rem;letter-spacing:.06em}
+.tuiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.tuile{display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem;min-height:9rem;padding:1rem 1.125rem;border:2px solid var(--line);text-decoration:none}
+.tuile .n{font-size:.875rem;font-weight:600;color:var(--dim)}
+.tuile .t{display:block;font-size:1.625rem;font-weight:700;letter-spacing:.04em}
+.tuile .s{display:block;color:var(--dim);font-size:.9375rem}
+.avenir{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.75rem;color:var(--dim);font-size:.875rem}
+.avenir div{border:2px dashed currentColor;padding:.85rem 1rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.25rem .75rem;font-weight:600}
+.mode{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.mode a,.mode strong{min-height:3rem;padding:.4rem 1rem;border:2px solid var(--line);font-weight:700;text-decoration:none;display:flex;align-items:center}
+.mode strong{background:var(--fg);color:var(--bg)}
+.mode .lab{margin-right:.5rem}
+.danger{border:2px solid var(--line);padding:1rem 1.25rem;display:flex;gap:1rem;align-items:flex-start}
+.danger svg{flex:none}
+.danger>div{min-width:0}
+.danger .niv{font-weight:700;letter-spacing:.08em;font-size:1.125rem}
+.danger ul{margin:.5rem 0 0;padding-left:1.25rem}
+.danger li+li{margin-top:.25rem}
+.danger details{border:0;margin-top:.35rem}
+.danger summary{min-height:2.75rem;padding:.5rem 0;font-size:.875rem;letter-spacing:.06em}
+.badges{display:flex;flex-wrap:wrap;gap:.5rem}
+.badge{border:2px solid currentColor;padding:.15rem .55rem;font-size:.8125rem;font-weight:700;letter-spacing:.07em}
+.badge.trame{background:repeating-linear-gradient(45deg,transparent 0 6px,var(--panel) 6px 12px)}
+.panel{background:var(--panel);padding:1rem 1.25rem}
+.lab{display:block;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.action{font-size:1.5rem;line-height:1.4;font-weight:600;max-width:46ch}
+.src{font-size:.875rem;color:var(--dim)}
+.prog{font-weight:700;display:flex;flex-wrap:wrap;gap:.25rem 1rem;align-items:baseline}
+details{border:2px solid var(--line)}
+summary{min-height:3.5rem;padding:1rem 1.25rem;font-weight:700;cursor:pointer}
+details>div{padding:0 1.25rem 1rem;display:flex;flex-direction:column;gap:.75rem}
+.etapes{margin:0;padding-left:2.25rem;display:flex;flex-direction:column;gap:.35rem}
+.prose{max-width:72ch;overflow-wrap:anywhere;display:flex;flex-direction:column;gap:.85rem}
+.prose h2{margin-top:1rem}
+.prose h3{font-size:1.0625rem;margin:.5rem 0 0}
+.prose ul,.prose ol{margin:0;padding-left:1.5rem}
+.prose blockquote{margin:0;border:2px solid var(--line);padding:.75rem 1rem}
+.prose code{background:var(--panel);padding:0 .25rem}
+.tablebox{overflow-x:auto}
+table{border-collapse:collapse;font-size:.9375rem}
+th,td{border:1px solid var(--line);padding:.45rem .65rem;text-align:left;vertical-align:top}
+th{font-weight:700}
+.legende{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center;font-size:.9375rem}
+.legende span{display:flex;gap:.5rem;align-items:center}
+textarea{width:100%;min-height:26rem;font:inherit;font-size:1rem;line-height:1.5;color:var(--fg);background:var(--bg);border:2px solid var(--line);padding:1rem}
+.vide-grand{font-size:2.5rem;font-weight:700;line-height:1}
+.foot{font-size:.875rem;color:var(--dim);border-top:2px solid var(--line);display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between}
+@media (max-width:30rem){h1{font-size:1.375rem}.action{font-size:1.3125rem}.opt{gap:.85rem;padding:.9rem 1rem}.opt .k{width:auto}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="in"><a href="index.html">CIVZERO // STATION HORS-LIGNE</a><span>SYNCHRO 09/11/2026 · BÊTA</span></div></header>
+<main>
+<div class="crumb"><span>/ TÉLÉCOMS / <strong>Joindre ses proches et ses voisins</strong></span><a href="index.html">ACCUEIL</a></div>
+<h1>Plan de communication entre proches et voisins</h1>
+<div class="badges"><span class="badge trame">▒ BROUILLON ▒</span></div>
+<section class="danger" aria-label="Niveau de danger"><svg viewBox="0 0 28 28" width="2rem" height="2rem" role="img" aria-label="Cercle : niveau vert"><circle cx="14" cy="14" r="11" style="fill:var(--vert)"/></svg><div><div class="niv">VERT</div><p>Libellé officiel en attente de relecture (Nodule Zéro)</p><details class="risques"><summary>RISQUES DE CETTE FICHE (1)</summary><ul><li>données personnelles. Sur le papier partagé, ne noter que des prénoms, des numéros et les points de rendez-vous, avec l'accord de chacun, et aucune adresse de domicile. Ne pas diffuser le plan au-delà du groupe.</li></ul></details></div></section>
+<div class="prog"><span>ÉTAPE 5/7 <span aria-hidden="true">[■■■■■□□]</span></span><span style="font-weight:400;color:var(--dim)">Ordonner les moyens</span></div>
+<p class="action">dans l'ordre : SMS plutôt qu'appel (ils passent mieux et libèrent les lignes), messages écrits laissés au point de rendez-vous, puis radio si le groupe en est équipé (vague 3).</p>
+<div class="panel"><span class="lab">Vérification</span>l'ordre est écrit sur le plan.</div>
+<p class="src">Source : guide « Tous responsables » (SMS plutôt qu'appels)</p>
+<p class="src">Aucun blocage documenté pour cette étape. <a href="f-telecom-plan-communication-rapport.html">Signaler un blocage</a></p>
+<div class="row"><a class="btn" href="f-telecom-plan-communication-e4.html">[ &lt; ÉTAPE PRÉCÉDENTE ]</a><a class="btn plein" href="f-telecom-plan-communication-e6.html">[ ÉTAPE SUIVANTE &gt; ]</a></div>
+<p class="src"><a href="f-telecom-plan-communication-complete.html">Voir la fiche complète sur une seule page</a></p>
+</main>
+<footer class="foot"><span>Version bêta du 09/11/2026. Toutes les fiches sont des brouillons rédigés avec l'assistance d'une IA, non relus : ne les appliquez pas comme sûres.</span><a href="toutes.html">Toutes les fiches</a></footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Réglages du projet, lus par le générateur du site.
+# Remplissez les deux lignes, puis regénérez le site : python3 outils/site.py corpus site
+
+# Le dépôt GitHub, sous la forme "compte/nom-du-depot", par exemple "civzero/civzero".
+depot: ""
+
+# Une adresse e-mail dédiée aux rapports (évitez une adresse personnelle).
+email: ""

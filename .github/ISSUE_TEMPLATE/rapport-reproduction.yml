@@ -1,0 +1,81 @@
+name: Rapport de reproduction
+description: Vous avez suivi une fiche, en entier ou en partie. Racontez ce qui s'est passé.
+title: "Rapport : "
+labels: ["rapport"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci. Un échec est aussi utile qu'une réussite.
+        N'indiquez ni nom de famille, ni adresse, ni information sur une autre personne.
+  - type: input
+    id: fiche
+    attributes:
+      label: Fiche
+      description: "L'identifiant de la fiche, par exemple energie-multimetre."
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version du corpus
+      description: La date de synchro affichée en haut du site.
+  - type: dropdown
+    id: resultat
+    attributes:
+      label: Résultat
+      options:
+        - Réussi
+        - Partiel
+        - Échec
+    validations:
+      required: true
+  - type: dropdown
+    id: milieu
+    attributes:
+      label: Milieu
+      options:
+        - Urbain
+        - Rural
+        - Aride
+  - type: input
+    id: variante
+    attributes:
+      label: Variante suivie
+      description: Si la fiche en propose plusieurs.
+  - type: textarea
+    id: materiel
+    attributes:
+      label: Matériel utilisé
+      description: Et son origine, récupération ou achat.
+  - type: input
+    id: etape
+    attributes:
+      label: Étape où ça a coincé
+  - type: textarea
+    id: blocage
+    attributes:
+      label: Ce qui a coincé, et ce que vous avez fait
+  - type: textarea
+    id: etape_douteuse
+    attributes:
+      label: Une étape vous a semblé fausse ou dangereuse ?
+      description: Laquelle, et pourquoi.
+  - type: dropdown
+    id: incident
+    attributes:
+      label: Incident ou quasi-accident
+      options:
+        - Non
+        - Oui (décrivez ci-dessous)
+    validations:
+      required: true
+  - type: textarea
+    id: incident_detail
+    attributes:
+      label: Description de l'incident
+  - type: textarea
+    id: photos
+    attributes:
+      label: Photos
+      description: Glissez vos photos ici. Évitez qu'on y voie des personnes ou une adresse.
