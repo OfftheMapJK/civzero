@@ -11,6 +11,7 @@ export const MODES = {
              expl: 'Vous faites avec ce qui est là. Les fiches qui demandaient une préparation sont signalées.' },
 };
 const NIVEAUX_DANGER = ['vert', 'orange', 'rouge'];
+const cap = (t) => (t ? t.charAt(0).toUpperCase() + t.slice(1) : t);
 
 export function buildModel(c) {
   const { fiches, labels, conf, blocs, besoins, niveaux } = c;
@@ -80,7 +81,7 @@ export function buildModel(c) {
         slug: `${pre}-e${s.n}`, kind: 'etape', title: `Étape ${i + 1} · ${f.meta.titre} · CivZero`, modeTxt: 'BÊTA',
         crumb: crumbFiche(f), titre: f.meta.titre, badges: badges(f, true), danger: danger(f),
         rang: i + 1, total: n, barre: '■'.repeat(i + 1) + '□'.repeat(n - i - 1),
-        etapeTitre: s.titre, action: mdi(s.action), verif: s.verif ? mdi(s.verif) : '',
+        etapeTitre: s.titre, action: mdi(cap(s.action)), verif: s.verif ? mdi(cap(s.verif)) : '',
         source: s.source ? mdi(s.source) : '',
         coince: f.coince.filter((x) => x.etapes.includes(s.n))
           .map((x) => ({ probleme: mdi(x.probleme), texte: mdi(x.texte) })),
