@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import Crumb from '../Crumb.astro';
+import OptFiche from '../OptFiche.astro';
+const { p } = Astro.props;
+---
+<Base title={p.title} modeTxt={p.modeTxt}>
+  <Crumb bloc={p.crumb.bloc} besoin={p.crumb.besoin} modeLabel={p.modeLabel} />
+  <h1>&gt; {p.titre}</h1>
+  <div class="choix">{p.fiches.map((o) => <OptFiche o={o} />)}</div>
+  {p.prevues.length > 0 && (
+    <>
+      <h2>Prévues pour ce besoin</h2>
+      <div class="choix">{p.prevues.map((o) => <OptFiche o={o} />)}</div>
+    </>
+  )}
+  <div class="row">
+    <a class="btn" href={p.retour}>[ &lt; REVENIR ]</a>
+    <a class="btn" href={p.home}>[ ACCUEIL ]</a>
+  </div>
+</Base>

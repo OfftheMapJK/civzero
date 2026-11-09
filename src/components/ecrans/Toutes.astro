@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import Forme from '../Forme.astro';
+import { HOME } from '../../lib/model.mjs';
+const { p } = Astro.props;
+---
+<Base title={p.title} modeTxt={p.modeTxt}>
+  <div class="crumb"><span>/ <strong>TOUTES LES FICHES</strong></span><a href={HOME}>ACCUEIL</a></div>
+  <h1>&gt; {p.total} fiches, dont {p.actives} ouvertes dans cette démo</h1>
+  <p class="lead">Toutes sont en brouillon. Le danger est estimé, à fixer par le Nodule Zéro après relecture. Le tier indique l'outillage minimal.</p>
+  {p.vagues.map((v) => (
+    <>
+      <h2>{v.titre}</h2>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>#</th><th>Fiche</th><th>Danger</th><th>Tier</th><th>Exige d'avance</th></tr></thead>
+          <tbody>
+            {v.lignes.map((l) => (
+              <tr>
+                <td>{l.num}</td>
+                {l.href
+                  ? <td><a href={l.href}>{l.titre}</a>{l.suspendu && ' (en suspens)'}</td>
+                  : <td class="avenir-txt">{l.titre} · à venir</td>}
+                <td><Forme niveau={l.niveau} taille="1rem" /> {l.niveau}</td>
+                <td>{l.tier}</td>
+                <td>{l.exige}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  ))}
+</Base>

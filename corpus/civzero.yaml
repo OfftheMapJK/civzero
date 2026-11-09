@@ -6,3 +6,13 @@ depot: ""
 
 # Une adresse e-mail dédiée aux rapports (évitez une adresse personnelle).
 email: ""
+
+# Fiches actives de la démo. Les autres restent visibles, grisées, comme « à venir ».
+# Supprimez cette liste pour activer toutes les fiches.
+demo:
+  - nodule-zero
+  - socle-coupure-72h
+  - energie-lire-etiquette
+  - energie-telephone-coupure
+  - telecom-plan-communication
+  - telecom-ecoute-radio

@@ -1,0 +1,27 @@
+---
+// Toutes les pages du site, sauf l'accueil, sont générées ici depuis le modèle.
+import { loadCorpus } from '../lib/corpus.mjs';
+import { buildModel } from '../lib/model.mjs';
+import Accueil from '../components/ecrans/Accueil.astro';
+import Bloc from '../components/ecrans/Bloc.astro';
+import Tier from '../components/ecrans/Tier.astro';
+import Liste from '../components/ecrans/Liste.astro';
+import Impasse from '../components/ecrans/Impasse.astro';
+import Fiche from '../components/ecrans/Fiche.astro';
+import Etape from '../components/ecrans/Etape.astro';
+import Complete from '../components/ecrans/Complete.astro';
+import Rapport from '../components/ecrans/Rapport.astro';
+import Toutes from '../components/ecrans/Toutes.astro';
+import Recherche from '../components/ecrans/Recherche.astro';
+
+export function getStaticPaths() {
+  const { pages } = buildModel(loadCorpus());
+  return pages.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+
+const { p } = Astro.props;
+const ecrans = { accueil: Accueil, bloc: Bloc, tier: Tier, liste: Liste, impasse: Impasse, fiche: Fiche,
+                 etape: Etape, complete: Complete, rapport: Rapport, toutes: Toutes, recherche: Recherche };
+const Ecran = ecrans[p.kind];
+---
+<Ecran p={p} />

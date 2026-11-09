@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import OptFiche from '../OptFiche.astro';
+import Forme from '../Forme.astro';
+const { p } = Astro.props;
+---
+<Base title={p.title} modeTxt={p.modeTxt}>
+  <div class="mode">
+    <span class="lab">Mode</span>
+    {p.modes.map((m) => (m.actif ? <strong>{m.label}</strong> : <a href={m.href}>{m.label}</a>))}
+  </div>
+  <p class="lead">{p.expl}</p>
+  <h1>&gt; De quoi avez-vous besoin ?</h1>
+
+  <form class="cherche" action="recherche.html" method="get">
+    <label class="lab" for="q">Chercher dans les fiches</label>
+    <div>
+      <input id="q" name="q" type="search" placeholder="batterie, radio, coupure" />
+      <button class="btn plein" type="submit">[ CHERCHER ]</button>
+    </div>
+  </form>
+
+  <h2>Commencer ici</h2>
+  <div class="choix">{p.socle.map((o) => <OptFiche o={o} />)}</div>
+
+  <h2>Le socle technologique</h2>
+  <div class="tuiles">
+    {p.blocs.map((b) => (b.href ? (
+      <a class="tuile" href={b.href}>
+        <span class="n">{b.compte}</span>
+        <span><span class="t">{b.titre}</span><span class="s">{b.sous}</span></span>
+      </a>
+    ) : (
+      <div class="tuile vide">
+        <span class="n">{b.compte}</span>
+        <span><span class="t">{b.titre}</span><span class="s">{b.sous}</span></span>
+      </div>
+    )))}
+  </div>
+
+  <h2>Les autres besoins vitaux</h2>
+  <div class="avenir">{p.aVenir.map((a) => <div><span>{a}</span><span>À VENIR</span></div>)}</div>
+
+  <div class="legende">
+    <strong>NIVEAUX DE DANGER :</strong>
+    {['vert', 'orange', 'rouge'].map((n) => <span><Forme niveau={n} taille="1.25rem" /><strong>{n.toUpperCase()}</strong></span>)}
+  </div>
+  <div class="row"><a class="btn" href="toutes.html">[ TOUTES LES FICHES ]</a></div>
+</Base>

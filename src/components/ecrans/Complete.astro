@@ -1,0 +1,17 @@
+---
+// Fiche complète sur une page : c'est elle que la recherche indexe.
+import Base from '../../layouts/Base.astro';
+import Crumb from '../Crumb.astro';
+import Badges from '../Badges.astro';
+const { p } = Astro.props;
+---
+<Base title={p.title} modeTxt={p.modeTxt} indexer>
+  <Crumb bloc={p.crumb.bloc} besoin={p.crumb.besoin} />
+  <h1>{p.titre}</h1>
+  <Badges badges={p.badges} />
+  <div class="prose" set:html={p.bodyHtml} />
+  <div class="row" data-pagefind-ignore>
+    <a class="btn" href={p.fiche}>[ &lt; PRÉSENTATION ]</a>
+    <a class="btn" href={p.rapport}>[ FAIRE UN RAPPORT ]</a>
+  </div>
+</Base>

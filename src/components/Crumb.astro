@@ -1,0 +1,9 @@
+---
+import { HOME } from '../lib/model.mjs';
+interface Props { bloc: string; besoin?: string; modeLabel?: string }
+const { bloc, besoin, modeLabel } = Astro.props;
+---
+<div class="crumb">
+  <span>/ {besoin ? <>{bloc} / <strong>{besoin}</strong></> : <strong>{bloc}</strong>}</span>
+  {modeLabel ? <span>MODE : {modeLabel}</span> : <a href={HOME}>ACCUEIL</a>}
+</div>

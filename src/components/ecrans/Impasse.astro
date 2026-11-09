@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import Crumb from '../Crumb.astro';
+import OptFiche from '../OptFiche.astro';
+const { p } = Astro.props;
+---
+<Base title={p.title} modeTxt={p.modeTxt}>
+  <Crumb bloc={p.crumb.bloc} besoin={p.crumb.besoin} modeLabel={p.modeLabel} />
+  <p class="vide-grand" aria-hidden="true">[ ∅ ]</p>
+  <h1>Aucune fiche pour cette situation</h1>
+  <p class="lead">Le corpus ne contient pas encore de fiche qui réponde à ces critères. Sur la station, cette demande sans réponse sera enregistrée pour orienter l'écriture des prochaines fiches.</p>
+  <div class="panel">
+    <span class="lab">Besoin</span>{p.besoin}
+    <span class="lab">Matériel</span>{p.materiel}
+  </div>
+  <h2>Fiches les plus proches dans le corpus</h2>
+  <div class="choix">{p.proches.map((o) => <OptFiche o={o} />)}</div>
+  <div class="row">
+    <a class="btn plein" href={p.retour}>[ MODIFIER LES CRITÈRES ]</a>
+    <a class="btn" href="toutes.html">[ TOUTES LES FICHES ]</a>
+  </div>
+</Base>

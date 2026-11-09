@@ -1,0 +1,32 @@
+---
+// Gabarit commun : barre d'état, contenu, pied de page rappelant le statut bêta.
+import '../styles/global.css';
+import { DATE, HOME } from '../lib/model.mjs';
+
+interface Props { title: string; modeTxt?: string; indexer?: boolean }
+const { title, modeTxt = 'BÊTA', indexer = false } = Astro.props;
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <header class="bar">
+      <div class="in">
+        <a href={HOME}>CIVZERO // STATION HORS-LIGNE</a>
+        <span>SYNCHRO {DATE} · {modeTxt}</span>
+      </div>
+    </header>
+    <main data-pagefind-body={indexer ? '' : undefined}>
+      <slot />
+    </main>
+    <footer class="foot">
+      <span>Version bêta du {DATE}. Toutes les fiches sont des brouillons rédigés avec l'assistance d'une IA, non relus : ne les appliquez pas comme sûres.</span>
+      <span><a href="toutes.html">Toutes les fiches</a> · <a href="recherche.html">Recherche</a></span>
+    </footer>
+  </body>
+</html>

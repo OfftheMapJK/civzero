@@ -1,0 +1,34 @@
+---
+// Une étape du pas-à-pas : le danger reste visible, l'action en gros, la vérification dessous.
+import Base from '../../layouts/Base.astro';
+import Crumb from '../Crumb.astro';
+import Badges from '../Badges.astro';
+import Danger from '../Danger.astro';
+const { p } = Astro.props;
+---
+<Base title={p.title} modeTxt={p.modeTxt}>
+  <Crumb bloc={p.crumb.bloc} besoin={p.crumb.besoin} />
+  <h1>{p.titre}</h1>
+  <Badges badges={p.badges} />
+  <Danger danger={p.danger} compact />
+  <div class="prog">
+    <span>ÉTAPE {p.rang}/{p.total} <span aria-hidden="true">[{p.barre}]</span></span>
+    <span class="sous">{p.etapeTitre}</span>
+  </div>
+  <p class="action" set:html={p.action} />
+  {p.verif && <div class="panel"><span class="lab">Vérification</span><span set:html={p.verif} /></div>}
+  {p.source && <p class="src">Source : <span set:html={p.source} /></p>}
+  {p.coince.length > 0 ? (
+    <details>
+      <summary>SI ÇA COINCE SUR CETTE ÉTAPE</summary>
+      <div>{p.coince.map((c) => <p><strong set:html={c.probleme} /> <span set:html={c.texte} /></p>)}</div>
+    </details>
+  ) : (
+    <p class="src">Aucun blocage documenté pour cette étape. <a href={p.rapport}>Signaler un blocage</a></p>
+  )}
+  <div class="row">
+    <a class="btn" href={p.precedent.href}>{p.precedent.t}</a>
+    <a class="btn plein" href={p.suivant.href}>{p.suivant.t}</a>
+  </div>
+  <p class="src"><a href={p.complete}>Voir la fiche complète sur une seule page</a></p>
+</Base>

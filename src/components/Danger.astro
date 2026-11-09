@@ -1,0 +1,23 @@
+---
+// Encadré de danger : forme, niveau, libellé du Nodule Zéro, risques propres à la fiche.
+import Forme from './Forme.astro';
+interface Props { danger: { niveau: string; label: string; risques: string[] } | null; compact?: boolean }
+const { danger, compact = false } = Astro.props;
+---
+{danger && (
+  <section class="danger" aria-label="Niveau de danger">
+    <Forme niveau={danger.niveau} taille={compact ? '2rem' : '2.75rem'} />
+    <div>
+      <div class="niv">{danger.niveau.toUpperCase()}</div>
+      <p>{danger.label}</p>
+      {danger.risques.length > 0 && (compact ? (
+        <details>
+          <summary>RISQUES DE CETTE FICHE ({danger.risques.length})</summary>
+          <ul>{danger.risques.map((r) => <li set:html={r} />)}</ul>
+        </details>
+      ) : (
+        <ul>{danger.risques.map((r) => <li set:html={r} />)}</ul>
+      ))}
+    </div>
+  </section>
+)}

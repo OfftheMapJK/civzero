@@ -35,7 +35,7 @@ Un échec est aussi utile qu'une réussite. Dans un rapport, ne mettez ni nom de
 - Chaque étape porte une action, une vérification et une source.
 - Laissez un trou marqué `[À VALIDER : …]` plutôt qu'un chiffre que vous n'avez pas vérifié.
 - Rattachez la fiche à un besoin de `corpus/besoins.yaml`, ou proposez-en un nouveau.
-- Lancez `python3 outils/build.py corpus` avant d'envoyer : il signale les champs ou sections manquants.
+- Lancez `python3 outils/build.py corpus` avant d'envoyer : il signale les champs ou sections manquants. Puis `npm run build` pour voir la fiche dans le site.
 
 ## 5. Ce que le projet n'accepte pas
 

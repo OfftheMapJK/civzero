@@ -1,0 +1,31 @@
+---
+// Rapport de reproduction : texte à copier, envoi par GitHub ou par e-mail.
+import Base from '../../layouts/Base.astro';
+import Crumb from '../Crumb.astro';
+import { HOME } from '../../lib/model.mjs';
+const { p } = Astro.props;
+---
+<Base title={p.title} modeTxt={p.modeTxt}>
+  <Crumb bloc={p.crumb.bloc} besoin={p.crumb.besoin} />
+  <h1>&gt; Rapport de reproduction</h1>
+  <p class="lead">Vous avez suivi « {p.titre} », en entier ou en partie. Ce rapport sert à corriger la fiche et à la faire passer de brouillon à testée. Un échec est aussi utile qu'une réussite.</p>
+  <label class="lab" for="rapport">Copiez ce texte et complétez-le</label>
+  <textarea id="rapport" spellcheck="false">{p.modele}</textarea>
+  <div class="panel">
+    <span class="lab">Où l'envoyer</span>
+    {p.github ? (
+      <>
+        <a class="btn plein" href={p.github}>[ ENVOYER LE RAPPORT SUR GITHUB ]</a>
+        <p class="src">Le formulaire s'ouvre avec la fiche et la version déjà remplies. Il faut un compte GitHub et une connexion.</p>
+      </>
+    ) : <p>[À DÉFINIR : dépôt GitHub du projet, dans <code>corpus/civzero.yaml</code>]</p>}
+    {p.email
+      ? <p>Sans compte GitHub : copiez le texte ci-dessus et envoyez-le à <strong style="user-select:all">{p.email}</strong></p>
+      : <p>[À DÉFINIR : adresse e-mail des rapports, dans <code>corpus/civzero.yaml</code>]</p>}
+    <p class="src">Hors-ligne, gardez le texte et envoyez-le dès que vous retrouvez du réseau. Sur la station, les rapports seront enregistrés et repartiront par clé USB.</p>
+  </div>
+  <div class="row">
+    <a class="btn" href={p.fiche}>[ &lt; RETOUR À LA FICHE ]</a>
+    <a class="btn" href={HOME}>[ ACCUEIL ]</a>
+  </div>
+</Base>

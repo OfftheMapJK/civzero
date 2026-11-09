@@ -1,0 +1,53 @@
+---
+// Présentation d'une fiche : danger, exigences, principe, étapes.
+import Base from '../../layouts/Base.astro';
+import Crumb from '../Crumb.astro';
+import Badges from '../Badges.astro';
+import Danger from '../Danger.astro';
+import Forme from '../Forme.astro';
+const { p } = Astro.props;
+---
+<Base title={p.title} modeTxt={p.modeTxt}>
+  <Crumb bloc={p.crumb.bloc} besoin={p.crumb.besoin} />
+  <h1>{p.titre}</h1>
+  <Badges badges={p.badges} />
+  {p.suspension && <div class="panel"><span class="lab">Fiche en suspens</span>{p.suspension}</div>}
+  <Danger danger={p.danger} />
+  {p.securiteHtml && <div class="prose" set:html={p.securiteHtml} />}
+
+  <div class="panel">
+    <span class="lab">Ce qu'elle exige d'avance</span>{p.exige}
+    {p.variantes.length > 0 && (
+      <>
+        <span class="lab">Variantes</span>
+        <span>{p.variantes.map((v, i) => <>{i > 0 && ' · '}<Forme niveau={v.niveau} taille="1rem" /> {v.nom}</>)}</span>
+      </>
+    )}
+  </div>
+
+  <div class="prose"><h2>Principe</h2><Fragment set:html={p.principeHtml} /></div>
+  {p.prefaceHtml && <div class="prose" set:html={p.prefaceHtml} />}
+
+  {p.premiere && (
+    <>
+      <a class="btn plein" href={p.premiere}>[ COMMENCER LE PAS-À-PAS : {p.etapes.length} ÉTAPES &gt; ]</a>
+      <div>
+        <h2>Les étapes</h2>
+        <ol class="etapes">{p.etapes.map((e) => <li><a href={e.href}>{e.titre}</a></li>)}</ol>
+      </div>
+    </>
+  )}
+
+  {p.coince.length > 0 && (
+    <div class="prose">
+      <h2>Si ça coince</h2>
+      <ul>{p.coince.map((c) => <li><strong set:html={c.probleme} /> <span set:html={c.texte} /></li>)}</ul>
+    </div>
+  )}
+  {p.modesHtml && <div class="prose"><h2>Entre les deux modes</h2><Fragment set:html={p.modesHtml} /></div>}
+
+  <div class="row">
+    <a class="btn" href={p.complete}>[ FICHE COMPLÈTE SUR UNE PAGE ]</a>
+    <a class="btn" href={p.rapport}>[ FAIRE UN RAPPORT ]</a>
+  </div>
+</Base>

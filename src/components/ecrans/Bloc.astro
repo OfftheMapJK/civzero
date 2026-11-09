@@ -1,0 +1,25 @@
+---
+// Question 1 de l'entonnoir : le besoin.
+import Base from '../../layouts/Base.astro';
+import Crumb from '../Crumb.astro';
+const { p } = Astro.props;
+---
+<Base title={p.title} modeTxt={p.modeTxt}>
+  <Crumb bloc={p.bloc} modeLabel={p.modeLabel} />
+  <p class="prog">QUESTION 1 · LE BESOIN</p>
+  <h1>&gt; Que cherchez-vous ?</h1>
+  <div class="choix">
+    {p.options.map((o) => (o.href ? (
+      <a class="opt" href={o.href}>
+        <span><span class="t">{o.titre}</span><span class="s">{o.desc} · {o.compte}</span></span>
+        <span class="go" aria-hidden="true">&gt;</span>
+      </a>
+    ) : (
+      <div class="opt vide">
+        <span><span class="t">{o.titre}</span><span class="s">{o.desc} · {o.compte}</span></span>
+        <span class="go">À VENIR</span>
+      </div>
+    )))}
+  </div>
+  <div class="row"><a class="btn" href={p.retour}>[ &lt; REVENIR ]</a></div>
+</Base>

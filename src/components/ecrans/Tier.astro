@@ -1,0 +1,25 @@
+---
+// Question 2 de l'entonnoir : le matériel. N'apparaît que si elle change la réponse.
+import Base from '../../layouts/Base.astro';
+import Crumb from '../Crumb.astro';
+const { p } = Astro.props;
+---
+<Base title={p.title} modeTxt={p.modeTxt}>
+  <Crumb bloc={p.crumb.bloc} besoin={p.crumb.besoin} modeLabel={p.modeLabel} />
+  <p class="prog">QUESTION 2 · LE MATÉRIEL</p>
+  <h1>&gt; Quel matériel avez-vous sous la main ?</h1>
+  <div class="choix">
+    {p.options.map((o) => (
+      <a class:list={['opt', { vide: o.vide }]} href={o.href}>
+        <span class="k">{o.k}</span>
+        <span>
+          <span class="t">{o.t}</span>
+          <span class="s">{o.s}</span>
+          {o.mene && <span class="note">{o.mene}</span>}
+        </span>
+        {o.vide ? <span class="go">AUCUNE FICHE</span> : <span class="go" aria-hidden="true">&gt;</span>}
+      </a>
+    ))}
+  </div>
+  <div class="row"><a class="btn" href={p.retour}>[ &lt; REVENIR ]</a></div>
+</Base>

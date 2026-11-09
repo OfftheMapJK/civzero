@@ -1,0 +1,7 @@
+---
+interface Props { badges: { t: string; trame?: boolean }[] }
+const { badges } = Astro.props;
+---
+<div class="badges">
+  {badges.map((b) => <span class:list={['badge', { trame: b.trame }]}>{b.t}</span>)}
+</div>
