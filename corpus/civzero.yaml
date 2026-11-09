@@ -2,7 +2,7 @@
 # Remplissez les deux lignes, puis regénérez le site : python3 outils/site.py corpus site
 
 # Le dépôt GitHub, sous la forme "compte/nom-du-depot", par exemple "civzero/civzero".
-depot: ""
+depot: "OfftheMapJK/civzero"
 
 # Une adresse e-mail dédiée aux rapports (évitez une adresse personnelle).
 email: ""
