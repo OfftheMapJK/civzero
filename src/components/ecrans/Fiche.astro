@@ -44,7 +44,6 @@ const { p } = Astro.props;
       <ul>{p.coince.map((c) => <li><strong set:html={c.probleme} /> <span set:html={c.texte} /></li>)}</ul>
     </div>
   )}
-  {p.modesHtml && <div class="prose"><h2>Entre les deux modes</h2><Fragment set:html={p.modesHtml} /></div>}
 
   <div class="row">
     <a class="btn" href={p.complete}>[ FICHE COMPLÈTE SUR UNE PAGE ]</a>

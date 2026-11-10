@@ -4,7 +4,8 @@ titre: Repérer les ressources de son quartier
 bloc: telecom
 aussi: [communs]
 besoin: s-orienter
-mode: [prepare]
+horizon: hours
+temps: "une demi-journée de marche"
 vague: 2
 milieu: [urbain, rural]
 tier: [0]
@@ -85,11 +86,6 @@ En cas de coupure, la proximité redevient l'horizon. Les communes publient déj
 - **Étape 3 — le quartier est grand.** Répartissez le repérage entre les membres du groupe.
 
 ## 5. Ressource
-
-### Entre les deux modes
-
-- **Je prépare :** faire le repérage et le mettre à jour une fois par an.
-- **Ça a coupé :** la carte dit où trouver de l'eau, de l'aide et des compétences.
 
 ### Pistes de sources (non vérifiées)
 

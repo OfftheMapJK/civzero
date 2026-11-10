@@ -1,9 +1,11 @@
 ---
 id: nodule-zero
 titre: Nodule Zéro — principes et sécurité
+accroche: "C'est le préalable à toutes les fiches : les réflexes de sécurité et la façon de lire un niveau de danger."
 bloc: socle
 besoin: commencer
-mode: [prepare, coupure]
+horizon: instant
+temps: "une heure de lecture"
 vague: 1
 milieu: [urbain, rural]
 tier: [0, 1, 2]
@@ -33,7 +35,7 @@ CivZero rassemble des savoirs pratiques pour tenir une coupure et gagner en auto
 
 - **Le niveau de danger** (vert, orange, rouge), toujours affiché avec un mot et une forme : cercle, triangle, octogone.
 - **Le statut** : brouillon → documentée (sources vérifiées par un humain) → testée → reproduite par trois personnes.
-- **Le mode** : « Je prépare » (on a le temps, Internet, on peut acheter) ou « Ça a coupé » (on fait avec ce qui est là).
+- **Le temps** : instant (quelques minutes, avec ce qui est là), heures (de l'heure au week-end de travail : rassembler, acheter, essayer, monter), saisons (des semaines, des mois, ou le temps du vivant).
 - **Ce que la fiche exige d'avance** : un achat, un téléchargement, un montage.
 
 Deux natures de source coexistent et ne se confondent jamais : les **fiches CivZero**, avec leur statut, et les **références externes** (Wikipédia et autres corpus embarqués), que CivZero met à disposition sans les avoir validées.
@@ -112,11 +114,6 @@ Une fiche dont une étape relèverait du rouge n'est pas publiée.
 - **Batterie lithium :** risque d'incendie si elle est percée, écrasée, gonflée ou court-circuitée.
 - **Condensateurs :** peuvent rester chargés après débranchement. Ne pas ouvrir d'appareil (moratoire rouge).
 - Tout appareil en fin de vie suit la fiche *Que faire d'une batterie ou d'un appareil hors d'usage*.
-
-### Entre les deux modes
-
-- **Je prépare :** lire ce document en entier une fois, et faire une formation aux premiers secours.
-- **Ça a coupé :** relire l'étape 6 avant chaque fiche.
 
 ### Pistes de sources (non vérifiées)
 

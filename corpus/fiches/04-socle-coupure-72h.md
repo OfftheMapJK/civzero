@@ -1,10 +1,12 @@
 ---
 id: socle-coupure-72h
 titre: Préparer une coupure de 72 heures — énergie et communication
+accroche: "Elle suit la recommandation de la Commission européenne de mars 2025, pouvoir tenir 72 heures seul, et le guide français « Tous responsables »."
 bloc: socle
 aussi: [telecom]
 besoin: commencer
-mode: [prepare]
+horizon: hours
+temps: "un week-end pour rassembler et vérifier"
 vague: 1
 milieu: [urbain, rural]
 tier: [0]
@@ -28,7 +30,7 @@ maj: 2026-11-09
 
 # Préparer une coupure de 72 heures — énergie et communication
 
-Porte d'entrée du mode « Je prépare ». Cette fiche couvre la lumière, l'information, l'énergie et la communication. L'eau, la nourriture et la santé relèvent du guide officiel cité plus bas.
+Porte d'entrée de la préparation. Cette fiche couvre la lumière, l'information, l'énergie et la communication. L'eau, la nourriture et la santé relèvent du guide officiel cité plus bas.
 
 ## 1. Principe
 
@@ -105,11 +107,6 @@ En mars 2025, la Commission européenne a recommandé que chaque foyer puisse te
 ### Fiches liées
 
 Cette fiche sert de sommaire : *Lire une étiquette*, *Se servir d'un multimètre*, *Garder un téléphone chargé*, *Plan de communication entre proches et voisins*, *Écoute radio pour s'informer*.
-
-### Entre les deux modes
-
-- **Je prépare :** tout ce qui précède.
-- **Ça a coupé :** ouvrir le kit, appliquer la fiche *Garder un téléphone chargé* dès la première heure, écouter la radio aux heures des journaux.
 
 ### Pistes de sources (non vérifiées)
 

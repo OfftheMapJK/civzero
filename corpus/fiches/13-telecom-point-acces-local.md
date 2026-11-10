@@ -3,7 +3,8 @@ id: telecom-point-acces-local
 titre: Point d'accès Wi-Fi local
 bloc: telecom
 besoin: partager-le-savoir
-mode: [prepare]
+horizon: hours
+temps: "une demi-journée"
 vague: 2
 milieu: [urbain, rural]
 tier: [1]
@@ -80,11 +81,6 @@ Points déjà établis pour la variante routeur :
 - **La box de l'opérateur est verrouillée.** Elle n'est pas couverte : utilisez un routeur du commerce ou la variante intégrée.
 
 ## 5. Ressource
-
-### Entre les deux modes
-
-- **Je prépare :** choisir l'architecture et la tester.
-- **Ça a coupé :** le point d'accès transforme la station en bibliothèque de quartier.
 
 ### Pistes de sources (non vérifiées)
 

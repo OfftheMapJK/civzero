@@ -3,7 +3,8 @@ id: calcul-station-minipc
 titre: Monter sa station CivZero sur un mini-PC de récupération
 bloc: calcul
 besoin: avoir-la-bibliotheque
-mode: [prepare]
+horizon: hours
+temps: "une journée"
 vague: 2
 milieu: [urbain, rural]
 tier: [1, 2]
@@ -100,11 +101,6 @@ Les commandes données sont indicatives. [À VALIDER : commandes exactes sur une
 - **Étape 7 — l'autre appareil ne trouve pas la station.** Vérifiez qu'ils sont sur le même réseau ; la question du point d'accès est traitée dans sa fiche.
 
 ## 5. Ressource
-
-### Entre les deux modes
-
-- **Je prépare :** cette fiche se fait uniquement avec Internet.
-- **Ça a coupé :** la station continue de servir tant qu'elle est alimentée ; sur batterie, voir la vague 3.
 
 ### Pistes de sources (non vérifiées)
 

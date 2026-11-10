@@ -1,10 +1,12 @@
 ---
 id: telecom-plan-communication
 titre: Plan de communication entre proches et voisins
+accroche: "Elle aide à décider à l'avance comment se joindre et où se retrouver quand les téléphones ne passent plus."
 bloc: telecom
 aussi: [communs]
 besoin: se-joindre
-mode: [prepare]
+horizon: hours
+temps: "une réunion"
 vague: 1
 milieu: [urbain, rural]
 tier: [0]
@@ -95,11 +97,6 @@ Quand les réseaux tombent, ce qui manque n'est pas l'outil mais l'accord préal
 ### Vers un réseau de proximité
 
 Ce plan est la base sur laquelle viendront les outils de la vague 3 : quand des stations radio LoRa existent dans le quartier, le plan intègre un canal et des horaires d'écoute.
-
-### Entre les deux modes
-
-- **Je prépare :** faire et tester le plan.
-- **Ça a coupé :** sortir le papier, respecter les heures de contact, aller au point de rendez-vous.
 
 ### Pistes de sources (non vérifiées)
 

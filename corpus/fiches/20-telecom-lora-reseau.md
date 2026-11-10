@@ -4,7 +4,8 @@ titre: Mettre plusieurs stations LoRa en réseau
 bloc: telecom
 aussi: [communs]
 besoin: se-joindre
-mode: [prepare]
+horizon: seasons
+temps: "plusieurs semaines : sites, réglages, essais"
 vague: 3
 milieu: [urbain, rural]
 tier: [2]
@@ -106,11 +107,6 @@ Dans un réseau maillé, chaque module retransmet les messages qu'il reçoit, da
 ### Le sens de cette fiche
 
 Ce réseau n'utilise aucune infrastructure d'autrui : il appartient à ceux qui le montent. C'est la première brique d'une proximité qui se relie elle-même.
-
-### Entre les deux modes
-
-- **Je prépare :** monter et tester le réseau en temps normal.
-- **Ça a coupé :** le quartier garde un moyen de se parler.
 
 ### Pistes de sources (non vérifiées)
 

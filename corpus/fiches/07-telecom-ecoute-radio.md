@@ -1,9 +1,11 @@
 ---
 id: telecom-ecoute-radio
 titre: Écoute radio pour s'informer
+accroche: "Elle montre comment recevoir l'information sans réseau mobile ni Internet."
 bloc: telecom
 besoin: s-informer
-mode: [prepare, coupure]
+horizon: hours
+temps: "un achat, puis quelques minutes"
 vague: 1
 milieu: [urbain, rural]
 tier: [0]
@@ -88,11 +90,6 @@ Les émetteurs de radio publique ont leurs propres alimentations de secours : un
 ### Vers la réception de données
 
 Plus tard, la vague 3 pourra ajouter la réception d'autres contenus diffusés. Cette fiche reste la base : écouter sans émettre.
-
-### Entre les deux modes
-
-- **Je prépare :** poste testé, fréquences notées, piles de rechange.
-- **Ça a coupé :** écouter aux heures des journaux et noter les consignes.
 
 ### Pistes de sources (non vérifiées)
 

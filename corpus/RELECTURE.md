@@ -35,7 +35,7 @@ Danger estimé : orange · Sources à trouver : 5
 Danger estimé : orange · Sources à trouver : 3
 
 - [ ] **Étape 4 : Recharger depuis une voiture (variante orange)** — durée raisonnable de recharge moteur arrêté avant de risquer la batterie de démarrage
-- [ ] **Entre les deux modes** — fréquence de recharge conseillée
+- [ ] **Étape 3** — fréquence de recharge conseillée d'une batterie externe stockée (ancienne section « Entre les deux modes », à intégrer à l'étape)
 
 ## 04 · Préparer une coupure de 72 heures — énergie et communication
 

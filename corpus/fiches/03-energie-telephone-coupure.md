@@ -1,9 +1,11 @@
 ---
 id: energie-telephone-coupure
 titre: Garder un téléphone chargé pendant une coupure
+accroche: "Elle montre comment faire durer et recharger un téléphone quand le courant s'arrête."
 bloc: energie
 besoin: garder-du-courant
-mode: [prepare, coupure]
+horizon: instant
+temps: "quelques minutes"
 vague: 1
 milieu: [urbain, rural]
 tier: [0, 1]
@@ -16,7 +18,7 @@ variantes:
     danger: vert
   - id: prise-12v-voiture
     danger: orange
-danger: orange
+danger: vert
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0
@@ -39,7 +41,9 @@ Deux leviers : consommer moins, et recharger depuis une réserve. Un téléphone
 
 ## 2. Sécurité
 
-> **NIVEAU : ORANGE (triangle)** — [Libellé officiel affiché depuis le Nodule Zéro]
+> **NIVEAU : VERT (cercle)** — [Libellé officiel affiché depuis le Nodule Zéro]
+>
+> Variante voiture : orange.
 >
 > Risques propres à cette fiche :
 > - Variante voiture : ne jamais faire tourner un moteur dans un garage ou un lieu fermé. Les gaz d'échappement contiennent du monoxyde de carbone, inodore et mortel.
@@ -91,11 +95,6 @@ Deux leviers : consommer moins, et recharger depuis une réserve. Un téléphone
 - **Étape 1 — le téléphone se vide quand même.** Fermez les applications ouvertes et éteignez-le complètement entre deux heures de contact.
 
 ## 5. Ressource
-
-### Entre les deux modes
-
-- **Je prépare :** une batterie externe chargée et testée, rechargée régulièrement car elle se décharge seule avec le temps. [À VALIDER : fréquence de recharge conseillée]
-- **Ça a coupé :** appliquer les étapes 1 et 2 dès la première heure, pas quand il reste 10 %.
 
 ### Pistes de sources (non vérifiées)
 

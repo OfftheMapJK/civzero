@@ -27,7 +27,7 @@ besoins:
   produire-son-energie:
     bloc: energie
     titre: "Produire son énergie"
-    description: "Recharger une batterie au soleil"
+    description: "Soleil, manivelle, vélo : recharger sans le réseau"
   se-debarrasser-sans-polluer:
     bloc: energie
     titre: "Se débarrasser d'une batterie ou d'un appareil"

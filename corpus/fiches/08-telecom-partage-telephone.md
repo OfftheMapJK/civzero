@@ -3,7 +3,8 @@ id: telecom-partage-telephone
 titre: Passer des fiches de téléphone à téléphone
 bloc: telecom
 besoin: partager-le-savoir
-mode: [prepare, coupure]
+horizon: instant
+temps: "quelques minutes"
 vague: 1
 milieu: [urbain, rural]
 tier: [0]
@@ -80,11 +81,6 @@ Les téléphones savent échanger des fichiers directement, sans réseau mobile 
 - **Étape 4 — l'archive ne s'ouvre pas dans le navigateur.** Certains navigateurs mobiles bloquent les fichiers locaux. [À VALIDER : navigateurs compatibles] Essayez l'application Kiwix.
 
 ## 5. Ressource
-
-### Entre les deux modes
-
-- **Je prépare :** installer l'application Kiwix et copier le corpus sur au moins deux téléphones du groupe.
-- **Ça a coupé :** faire circuler le corpus vers ceux qui ne l'ont pas.
 
 ### Pistes de sources (non vérifiées)
 

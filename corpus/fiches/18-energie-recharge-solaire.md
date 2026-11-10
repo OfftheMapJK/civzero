@@ -3,7 +3,8 @@ id: energie-recharge-solaire
 titre: Recharger une batterie 12 V avec un panneau et un régulateur
 bloc: energie
 besoin: produire-son-energie
-mode: [prepare]
+horizon: hours
+temps: "une à deux journées d'atelier"
 vague: 3
 milieu: [urbain, rural]
 tier: [1, 2]
@@ -94,11 +95,6 @@ Le panneau ne se branche jamais directement sur la batterie : un **régulateur d
 ### Panneaux de récupération
 
 Les panneaux déclassés sont nombreux et souvent encore utilisables : c'est un gisement typique des interstices. Leur puissance réelle est souvent inférieure à celle de l'étiquette.
-
-### Entre les deux modes
-
-- **Je prépare :** installer et tester au moins une semaine.
-- **Ça a coupé :** la batterie se recharge chaque jour où il y a du soleil.
 
 ### Pistes de sources (non vérifiées)
 

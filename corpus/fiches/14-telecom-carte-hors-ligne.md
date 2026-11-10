@@ -3,7 +3,8 @@ id: telecom-carte-hors-ligne
 titre: Carte hors-ligne de sa région
 bloc: telecom
 besoin: s-orienter
-mode: [prepare]
+horizon: hours
+temps: "une heure, avec Internet"
 vague: 2
 milieu: [urbain, rural]
 tier: [0]
@@ -90,11 +91,6 @@ Des applications libres basées sur OpenStreetMap téléchargent la carte d'une 
 ### Vers la station
 
 Plus tard, la station pourra servir la carte du quartier à tous les appareils connectés. Cette fiche pourrait aussi passer en vague 1, puisqu'elle ne demande pas la station.
-
-### Entre les deux modes
-
-- **Je prépare :** télécharger, tester, imprimer.
-- **Ça a coupé :** la carte fonctionne tant que le téléphone a de la batterie, la carte papier ensuite.
 
 ### Pistes de sources (non vérifiées)
 

@@ -3,7 +3,8 @@ id: energie-bilan-papier
 titre: Estimer sa consommation et son autonomie, sur papier
 bloc: energie
 besoin: comprendre-ses-appareils
-mode: [prepare, coupure]
+horizon: hours
+temps: "une heure"
 vague: 1
 milieu: [urbain, rural]
 tier: [0]
@@ -100,11 +101,6 @@ Savoir combien de temps une batterie fera tourner vos appareils, avec quatre op�
 | --- | --- | --- | --- |
 | … | … | … | … |
 | **Total** | | | … |
-
-### Entre les deux modes
-
-- **Je prépare :** faire le bilan de votre future station et de vos appareils essentiels.
-- **Ça a coupé :** refaire le calcul avec la batterie dont vous disposez et décider ce qui reste allumé.
 
 ### Pistes de sources (non vérifiées)
 

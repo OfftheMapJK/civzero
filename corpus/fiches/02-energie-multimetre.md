@@ -3,7 +3,8 @@ id: energie-multimetre
 titre: Se servir d'un multimètre — tension et continuité
 bloc: energie
 besoin: comprendre-ses-appareils
-mode: [prepare, coupure]
+horizon: hours
+temps: "une heure d'essai"
 vague: 1
 milieu: [urbain, rural]
 tier: [1]
@@ -91,11 +92,6 @@ Deux mesures suffisent pour la plupart des fiches : vérifier qu'un fil ou un fu
 ### Ce que la tension dit d'une batterie
 
 Voir la fiche *Estimer sa consommation et son autonomie* et, plus tard, *Mesure et protection d'un circuit 12 V*. Les correspondances entre tension et état de charge dépendent de la technologie et de l'état de repos. [À VALIDER : tableau tension / état de charge pour plomb et lithium fer phosphate]
-
-### Entre les deux modes
-
-- **Je prépare :** s'entraîner sur une pile neuve et une pile usée, et sur un câble connu.
-- **Ça a coupé :** le multimètre dit si une batterie vaut la peine d'être utilisée et si un fusible a lâché.
 
 ### Pistes de sources (non vérifiées)
 

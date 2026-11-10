@@ -3,7 +3,8 @@ id: energie-fin-de-vie
 titre: Que faire d'une batterie ou d'un appareil hors d'usage
 bloc: energie
 besoin: se-debarrasser-sans-polluer
-mode: [prepare, coupure]
+horizon: instant
+temps: "quelques minutes"
 vague: 1
 milieu: [urbain, rural]
 tier: [0]
@@ -89,11 +90,6 @@ Les batteries et appareils électroniques contiennent des matières toxiques et,
 - **Étape 5 — aucune collecte accessible pendant une coupure.** Stockez selon les étapes 3 et 4 et déposez plus tard.
 
 ## 5. Ressource
-
-### Entre les deux modes
-
-- **Je prépare :** avoir une boîte dédiée aux piles et batteries usagées, avec du ruban adhésif.
-- **Ça a coupé :** ne pas réutiliser une batterie douteuse pour gagner un peu d'énergie.
 
 ### Pistes de sources (non vérifiées)
 

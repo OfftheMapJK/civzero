@@ -6,12 +6,8 @@ import { STATION } from '../../lib/model.mjs';
 const { p } = Astro.props;
 ---
 <Base title={p.title} modeTxt={p.modeTxt}>
-  <div class="mode">
-    <span class="lab">Mode</span>
-    {p.modes.map((m) => (m.actif ? <strong>{m.label}</strong> : <a href={m.href}>{m.label}</a>))}
-  </div>
-  <p class="lead">{p.expl}</p>
   <h1>&gt; De quoi avez-vous besoin ?</h1>
+  <p class="lead">{p.expl}</p>
 
   <form class="cherche" action="recherche.html" method="get">
     <label class="lab" for="q">Chercher dans les fiches</label>

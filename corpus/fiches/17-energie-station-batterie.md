@@ -4,7 +4,8 @@ titre: Alimenter la station depuis une batterie 12 V
 bloc: energie
 aussi: [calcul]
 besoin: garder-du-courant
-mode: [prepare]
+horizon: hours
+temps: "une journée d'atelier"
 vague: 3
 milieu: [urbain, rural]
 tier: [1, 2]
@@ -97,11 +98,6 @@ Un convertisseur élévateur ne sait pas abaisser une tension : si la batterie d
 - **Étape 6 — la station s'éteint trop tôt.** Refaites le bilan d'autonomie et réduisez ce qui tourne.
 
 ## 5. Ressource
-
-### Entre les deux modes
-
-- **Je prépare :** monter et tester ce branchement quand tout va bien.
-- **Ça a coupé :** la station continue de servir le quartier sur batterie.
 
 ### Pistes de sources (non vérifiées)
 

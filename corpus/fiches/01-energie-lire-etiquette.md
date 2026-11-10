@@ -1,9 +1,11 @@
 ---
 id: energie-lire-etiquette
 titre: Lire une étiquette — batterie, chargeur, appareil
+accroche: "Elle apprend à savoir ce qu'un appareil consomme et ce qu'un chargeur fournit, sans rien brancher."
 bloc: energie
 besoin: comprendre-ses-appareils
-mode: [prepare, coupure]
+horizon: instant
+temps: "quelques minutes"
 vague: 1
 milieu: [urbain, rural]
 tier: [0]
@@ -102,11 +104,6 @@ Toute alimentation porte une étiquette. On y lit :
 - Carré dans un carré : appareil à double isolation.
 - Poubelle barrée : ne pas jeter avec les ordures ménagères.
 - « CE » : marquage de conformité européen.
-
-### Entre les deux modes
-
-- **Je prépare :** photographier ou recopier sur papier les étiquettes de vos chargeurs et appareils importants, et noter quel chargeur va avec quoi.
-- **Ça a coupé :** cette liste vous évite de chercher et de brancher au hasard.
 
 ### Pistes de sources (non vérifiées)
 

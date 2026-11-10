@@ -3,7 +3,8 @@ id: calcul-maj-usb
 titre: Mettre à jour la station par clé USB
 bloc: calcul
 besoin: mettre-a-jour
-mode: [prepare, coupure]
+horizon: hours
+temps: "une heure"
 vague: 2
 milieu: [urbain, rural]
 tier: [1]
@@ -84,11 +85,6 @@ On télécharge la nouvelle version là où il y a du réseau, on vérifie qu'el
 - **Étape 4 — la station ne voit pas la clé.** Essayez un autre port, ou formatez la clé en exFAT, lu par Linux, Windows, macOS et la plupart des téléphones Android. Évitez le FAT32 : il refuse les fichiers de plus de 4 Go, comme celui de Wikipédia.
 
 ## 5. Ressource
-
-### Entre les deux modes
-
-- **Je prépare :** faire une mise à jour à chaque nouvelle version publiée.
-- **Ça a coupé :** une personne qui revient d'un lieu connecté peut apporter la mise à jour à tout le quartier.
 
 ### Pistes de sources (non vérifiées)
 

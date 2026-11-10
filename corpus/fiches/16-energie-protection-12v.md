@@ -3,7 +3,8 @@ id: energie-protection-12v
 titre: Mesure et protection d'un circuit 12 V — fusible et section de câble
 bloc: energie
 besoin: garder-du-courant
-mode: [prepare]
+horizon: hours
+temps: "une demi-journée d'atelier"
 vague: 3
 milieu: [urbain, rural]
 tier: [1]
@@ -100,11 +101,6 @@ Une batterie 12 V délivre peu de tension mais peut fournir un courant très él
 - **Étape 8 — un câble chauffe.** Coupez, la section est trop faible ou une connexion est mal serrée.
 
 ## 5. Ressource
-
-### Entre les deux modes
-
-- **Je prépare :** cette fiche se fait au calme, avec le matériel prévu.
-- **Ça a coupé :** ne pas improviser un branchement sur batterie sans fusible, même pour un appareil qui consomme peu.
 
 ### Pistes de sources (non vérifiées)
 

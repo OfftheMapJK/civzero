@@ -2,6 +2,18 @@
 
 Toutes les fiches sont au statut **brouillon** et rédigées avec l'assistance d'une IA. Aucune n'est à appliquer comme sûre avant relecture. Voir `RELECTURE.md`.
 
+## Les trois niveaux d'une fiche
+
+Chaque fiche se situe sur trois axes, indépendants :
+
+- **Temps de travail** (champ `horizon`, avec une estimation dans `temps`) : `instant` (Instant : quelques minutes, avec ce qui est là), `hours` (Hours / Heures : de l'heure au week-end de travail), `seasons` (Seasons / Saisons : des semaines, des mois, ou le temps du vivant). C'est une durée, pas un degré d'urgence.
+- **Tier** (champ `tier`) : 0 rien d'autre que ce qui est sur place, 1 outils de base, 2 matériel spécialisé.
+- **Risque** (champ `danger`) : vert, orange, rouge, selon les libellés du Nodule Zéro. C'est le niveau du **geste principal** de la fiche. Une variante plus risquée garde son propre niveau dans `variantes` et elle est signalée à côté (« vert, variante orange ») : on ne cache rien, on n'alarme pas pour rien.
+
+Le champ `horizon` remplace l'ancien champ `mode` (« Je prépare » / « Ça a coupé »), supprimé le 10/11/2026 avec la section « Entre les deux modes ». Toutes les fiches l'ont.
+
+`catalogue.csv` liste les 118 fiches prévues, en dix socles (Lichen, Ambre, Source, Graine, Écorce, Baume, Mycélium, Humus, Pollen, Strate), avec les niveaux, la couche écologique, le rapport au vivant (prélève, préserve, régénère) et l'erreur du passé évitée. C'est la liste de travail de l'agent d'adaptation.
+
 ## Vague 1 — sans station ni achat
 
 | # | Fiche | Bloc | Tier | Danger estimé | Exige d'avance |
@@ -9,12 +21,16 @@ Toutes les fiches sont au statut **brouillon** et rédigées avec l'assistance d
 | 00 | [Nodule Zéro — principes et sécurité](fiches/00-nodule-zero.md) | socle | 0, 1, 2 | sans-objet | rien |
 | 01 | [Lire une étiquette — batterie, chargeur, appareil](fiches/01-energie-lire-etiquette.md) | energie | 0 | vert | rien |
 | 02 | [Se servir d'un multimètre — tension et continuité](fiches/02-energie-multimetre.md) | energie | 1 | orange | un multimètre (récupération ou bas de gamme) et sa pile |
-| 03 | [Garder un téléphone chargé pendant une coupure](fiches/03-energie-telephone-coupure.md) | energie | 0, 1 | orange | une batterie externe chargée et un câble ; en option un adaptateur USB pour prise 12 V de voiture |
+| 03 | [Garder un téléphone chargé pendant une coupure](fiches/03-energie-telephone-coupure.md) | energie | 0, 1 | vert (variante voiture orange) | une batterie externe chargée et un câble ; en option un adaptateur USB pour prise 12 V de voiture |
 | 04 | [Préparer une coupure de 72 heures — énergie et communication](fiches/04-socle-coupure-72h.md) | socle | 0 | vert | rassembler le matériel ; quelques achats possibles (lampes, piles, radio) |
 | 05 | [Plan de communication entre proches et voisins](fiches/05-telecom-plan-communication.md) | telecom | 0 | vert | une réunion avec les personnes concernées, du papier |
 | 06 | [Que faire d'une batterie ou d'un appareil hors d'usage](fiches/06-energie-fin-de-vie.md) | energie | 0 | orange | rien |
 | 07 | [Écoute radio pour s'informer](fiches/07-telecom-ecoute-radio.md) | telecom | 0 | vert | un poste radio à piles, à manivelle ou solaire, et des piles |
 | 08 | [Passer des fiches de téléphone à téléphone](fiches/08-telecom-partage-telephone.md) | telecom | 0 | vert | avoir déjà les fiches (archive HTML ou fichier Kiwix) sur au moins un téléphone |
+| 21 | [Trouver où recharger son téléphone pendant une coupure](fiches/21-energie-trouver-recharge.md) | energie | 0 | vert (variante groupe électrogène orange) | un câble et un chargeur ; savoir où sont la mairie et les lieux d'accueil |
+| 22 | [Recharger son téléphone avec les batteries de la maison](fiches/22-energie-recharge-sous-la-main.md) | energie | 0, 1 | vert (variante batterie d'outil orange) | un câble ; un appareil à batterie chargé ou un adaptateur USB pour batterie d'outil |
+| 23 | [Recharger son téléphone avec un petit panneau solaire USB](fiches/23-energie-panneau-usb.md) | energie | 0 | vert | un panneau solaire pliable à sortie USB ; idéalement une batterie externe |
+| 24 | [Recharger son téléphone à la manivelle](fiches/24-energie-manivelle.md) | energie | 0 | vert | une radio, une lampe ou un chargeur à manivelle avec sortie USB |
 | 09 | [Estimer sa consommation et son autonomie, sur papier](fiches/09-energie-bilan-papier.md) | energie | 0 | vert | papier, crayon, les étiquettes des appareils |
 
 ## Vague 2 — avec la station
@@ -36,4 +52,24 @@ Toutes les fiches sont au statut **brouillon** et rédigées avec l'assistance d
 | 17 | [Alimenter la station depuis une batterie 12 V](fiches/17-energie-station-batterie.md) | energie | 1, 2 | orange | batterie 12 V, convertisseur continu-continu adapté, connecteur compatible avec la station, fusible |
 | 18 | [Recharger une batterie 12 V avec un panneau et un régulateur](fiches/18-energie-recharge-solaire.md) | energie | 1, 2 | orange | panneau solaire, régulateur de charge adapté à la batterie, câbles, fusibles, multimètre |
 | 19 | [Envoyer des messages texte par radio LoRa](fiches/19-telecom-lora-messages.md) | telecom | 2 | vert | deux modules LoRa compatibles Meshtastic, antennes 868 MHz, deux téléphones, Internet pour l'installation |
+| 25 | [Recharger son téléphone avec la dynamo d'un vélo](fiches/25-energie-dynamo-velo.md) | energie | 1 | orange | un moyeu-dynamo, un chargeur USB pour dynamo avec batterie tampon, de quoi démonter une roue |
+| 26 | [Fabriquer une génératrice à pédales pour recharger](fiches/26-energie-generatrice-pedales.md) | energie | 2 | orange | vélo sur support à rouleau, moteur récupéré, diode, régulateur, batterie 12 V, fusibles, multimètre |
 | 20 | [Mettre plusieurs stations LoRa en réseau](fiches/20-telecom-lora-reseau.md) | telecom | 2 | orange | au moins trois modules réglés (fiche précédente), un emplacement en hauteur, une alimentation pour le nœud fixe |
+
+## Question : « Comment recharger mon téléphone sans électricité ? »
+
+Ce que le corpus propose, de l'instant aux saisons. Les fiches 21 à 26 sont des brouillons, pas encore ouverts dans la démo.
+
+| Temps | Solution | Fiche | Tier | Risque |
+| --- | --- | --- | --- | --- |
+| instant | Faire durer la charge (mode avion, écran) | 03, étapes 1-2 | 0 | vert |
+| instant | Trouver une prise qui marche encore | 21 | 0 | vert, orange chez un voisin à groupe électrogène |
+| instant | Ordinateur portable, onduleur, vélo électrique, batterie d'outil | 22 | 0, 1 | vert, orange pour les batteries d'outils |
+| heures | Batterie externe, voiture | 03, étapes 3-4 | 0, 1 | vert, orange pour la voiture |
+| heures | Petit panneau solaire USB | 23 | 0 | vert |
+| heures | Manivelle (radio, lampe, chargeur) | 24, et 07 pour la radio | 0 | vert |
+| heures | Dynamo de vélo et chargeur USB | 25 | 1 | orange |
+| heures | Panneau solaire, régulateur et batterie 12 V | 18, puis 17 | 1, 2 | orange |
+| saisons | Génératrice à pédales | 26 | 2 | orange |
+
+Pistes écartées pour la bêta : générateur thermoélectrique sur un réchaud (matériel spécifique, peu répandu), piles assemblées à la main (risque d'incendie), « batteries » de fruits ou de légumes (énergie dérisoire).

@@ -3,7 +3,8 @@ id: telecom-lora-messages
 titre: Envoyer des messages texte par radio LoRa
 bloc: telecom
 besoin: se-joindre
-mode: [prepare]
+horizon: hours
+temps: "une journée"
 vague: 3
 milieu: [urbain, rural]
 tier: [2]
@@ -103,11 +104,6 @@ LoRa est une technique radio à longue portée et faible débit. Le logiciel lib
 ### Ce que dit la documentation
 
 En EU_868, la plage est 869,4 à 869,65 MHz, avec une limite de 10 % de temps d'émission calculée sur une heure glissante. Le module qui atteint la limite cesse d'émettre jusqu'à ce qu'il y soit de nouveau autorisé (source s1).
-
-### Entre les deux modes
-
-- **Je prépare :** acheter, installer, tester la portée.
-- **Ça a coupé :** les modules fonctionnent sur leur batterie et sans aucun réseau.
 
 ### Pistes de sources (non vérifiées)
 

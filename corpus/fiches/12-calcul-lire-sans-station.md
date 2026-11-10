@@ -3,7 +3,8 @@ id: calcul-lire-sans-station
 titre: Lire les fiches sans station
 bloc: calcul
 besoin: avoir-la-bibliotheque
-mode: [prepare, coupure]
+horizon: instant
+temps: "quelques minutes"
 vague: 2
 milieu: [urbain, rural]
 tier: [0]
@@ -80,11 +81,6 @@ Le site des fiches fonctionne sans JavaScript ni serveur. On ouvre le fichier d'
 - **Étape 4 — la clé n'est pas reconnue.** Le téléphone ne gère peut-être pas l'OTG : passez par un ordinateur.
 
 ## 5. Ressource
-
-### Entre les deux modes
-
-- **Je prépare :** copier les fiches sur chaque téléphone du foyer.
-- **Ça a coupé :** les fiches restent lisibles tant qu'un appareil a de la batterie.
 
 ### Pistes de sources (non vérifiées)
 
