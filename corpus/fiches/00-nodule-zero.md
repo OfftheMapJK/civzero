@@ -13,6 +13,7 @@ exige_avance: "rien"
 origine_materiel: aucun
 variantes: []
 danger: sans-objet
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0
@@ -36,7 +37,7 @@ Prérequis de toutes les fiches. Il définit les niveaux de danger que l'interfa
 CivicNode rassemble des savoirs pratiques pour tenir une coupure et gagner en autonomie avec ce qui existe déjà. Chaque fiche suit le même format et porte quatre informations à lire avant de commencer :
 
 - **Le niveau de danger** (vert, orange, rouge), toujours affiché avec un mot et une forme : cercle, triangle, octogone.
-- **Le statut** : brouillon → documentée (sources vérifiées par un humain) → testée → reproduite par trois personnes.
+- **Le statut** dépend de l'origine de la fiche. Une fiche *adaptée* d'une source : brouillon → vérifiée par IA (une autre IA l'a comparée à ses sources) → fidèle aux sources (une personne l'a confirmé) → testée → reproduite par trois personnes. Une fiche *créée* par CivicNode, sans source qui fasse autorité : brouillon → testée → reproduite. Une fiche orange demande en plus une relecture par une personne compétente du domaine ; une fiche rouge reste sous moratoire tant que deux professionnels ne l'ont pas relue.
 - **Le temps** : instant (quelques minutes, avec ce qui est là), heures (de l'heure au week-end de travail : rassembler, acheter, essayer, monter), saisons (des semaines, des mois, ou le temps du vivant).
 - **Ce que la fiche exige d'avance** : un achat, un téléchargement, un montage.
 

@@ -17,6 +17,7 @@ variantes:
   - id: moteur-tournant-dehors
     danger: orange
 danger: orange
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0

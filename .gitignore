@@ -11,3 +11,6 @@ donnees/
 
 # Ancien accueil français, remplacé par fr/[slug].astro (suppression non permise depuis l assistant)
 src/pages/fr/_index-ancien.astro
+
+# Sorties de l agent d adaptation, à relire avant de les déplacer dans corpus/fiches/
+agent/sortie/

@@ -5,7 +5,7 @@
 depot: "civicnode-eu/civicnode"
 
 # Une adresse e-mail dédiée aux rapports (évitez une adresse personnelle).
-email: ""
+email: "hello@civicnode.eu"
 
 # Fiches actives de la démo. Les autres restent visibles, grisées, comme « à venir ».
 # Supprimez cette liste pour activer toutes les fiches.
@@ -21,3 +21,5 @@ demo:
   - desinfecter-eau-soleil-sodis
   - desinfecter-eau-chlore
   - filtrer-eau-filtre-ceramique
+  - stocker-eau-potable-trois-jours
+  - economiser-eau-quand-elle-ne

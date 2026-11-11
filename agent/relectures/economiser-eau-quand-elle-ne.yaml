@@ -1,0 +1,92 @@
+fiche: economiser-eau-quand-elle-ne
+date: '2026-11-11'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s2
+    passage: >-
+      use bottled, boiled, or treated water for drinking, cooking, and personal hygiene ... Melted ice cubes made with water that was not contaminated ... Liquid from canned fruit and vegetables ...
+      Water from your home's tap water heater tank
+    remarque: >-
+      L'écart avec les sources (eau du ballon d'eau chaude) est maintenant écrit dans l'Action, au titre du moratoire rouge : écart volontaire et déclaré, à relire. « liste écrite » (Vérification) est
+      absent.
+  - 'n': 2
+    verdict: conforme
+    source: s2
+    passage: Water from your home's toilet tank (not from the bowl), if it is clear and has not been chemically treated with toilet cleaners such as those that change the color of the water
+    remarque: >-
+      s2 range le réservoir parmi les sources d'eau « clean and safe » sans en faire un dernier recours ; ce classement est une prudence de la fiche. Le À VALIDER porte sur la divergence avec FEMA 477
+      (s5, en référence, sans copie, non vérifiable ici), pas sur l'absence de passage.
+  - 'n': 3
+    verdict: conforme
+    source: s2
+    passage: >-
+      Listen to reports from local officials for advice on water precautions in your home. You may need to shut off the main water valve to your home to prevent contaminants from entering pipes in
+      your home.
+    remarque: s2 dit « may need to » ; la fiche en fait une règle conditionnelle. « radio, mairie » est absent de s2. « chacun sait où est la vanne » (Vérification) est absent.
+  - 'n': 4
+    verdict: conforme
+    source: s1
+    passage: >-
+      Drink water that you know is not contaminated first. ... If water treatment is not possible put off drinking suspicious water as long as possible but do not become dehydrated. (s1) ; Do NOT use
+      suspected or contaminated water to wash dishes, brush your teeth, wash and prepare food, make ice, or make baby formula. (s4) ; Use bottled water for drinking, washing and preparing food, making
+      ice, and brushing your teeth. (s3)
+    remarque: Le « que » restrictif et la chasse d'eau ont été retirés. « se laver les mains » vient de s3. « les récipients sont rangés à part » (Vérification) est absent.
+  - 'n': 5
+    verdict: conforme
+    source: s1
+    passage: >-
+      Never ration drinking water unless ordered to do so by authorities. ... Minimize the amount of water your body needs by reducing activity and staying cool. ... A normally active person needs
+      about three quarters of a gallon of fluid daily ... In very hot temperatures, water needs can double.
+    remarque: '2,8 litres : conversion marquée À VALIDER dans la même phrase. « plusieurs fois dans la journée » (Vérification) est absent.'
+  - 'n': 6
+    verdict: conforme
+    source: s1
+    passage: Do not drink carbonated or caffeinated beverages instead of drinking water. Caffeinated drinks and alcohol dehydrate the body
+    remarque: « café, thé, sodas à la caféine » sont des exemples de la fiche. s1 cite aussi les boissons gazeuses, non reprises.
+  - 'n': 7
+    verdict: conforme
+    source: s3
+    passage: >-
+      Wash your hands with soap and safe water: Before you eat or prepare food. Before feeding your children. Before and after treating wounds or taking care of someone who is sick. After going to the
+      bathroom, changing diapers ... alcohol-based hand sanitizer that contains at least 60% alcohol.
+    remarque: ''
+  - 'n': 8
+    verdict: conforme
+    source: s2
+    passage: >-
+      Water from swimming pools and spas can be used for personal hygiene, cleaning, and related uses, but not for drinking. ... Possible sources of water that could be made safe by treatment include:
+      Rainwater ... (s2) ; Do NOT drink water from swimming pools, spas and collected rainwater. (s4)
+    remarque: 'La divergence sur l''eau de pluie est maintenant citée et le choix le plus prudent est déclaré : décision de la fiche, non contredite par une source.'
+chiffres:
+  - valeur: environ 2,8 litres de liquide par jour (conversion de trois quarts de gallon, marquée À VALIDER dans la même phrase)
+    trouve: false
+    a_valider: true
+    source: ''
+  - valeur: trois quarts de gallon par jour
+    trouve: true
+    source: s1
+  - valeur: par forte chaleur, le besoin peut doubler
+    trouve: true
+    source: s1
+  - valeur: solution hydroalcoolique d'au moins 60 % d'alcool
+    trouve: true
+    source: s3
+  - valeur: 100 pieds (distance des points d'eau potable, citée dans la conversion)
+    trouve: true
+    source: s3
+  - valeur: 30 mètres au moins (conversion de 100 pieds, marquée À VALIDER dans la même phrase)
+    trouve: false
+    a_valider: true
+    source: ''
+precautions_absentes: []
+niveaux: ''
+remarques: >-
+  Conventions : un ajout relevé seulement dans une ligne « Vérification » est noté ici sans changer le verdict de l'étape ; un ajout dans l'« Action » donne le verdict ajout ; une étape qui se déclare
+  « sans objet » compte sans source ; un chiffre absent des copies mais marqué À VALIDER dans la même phrase est noté trouve: false, a_valider: true. Copies s1 à s4 lisibles et complètes ; s5 est en
+  référence, sans copie, et ne fonde aucune étape. Toutes les précautions relevées à la première relecture figurent maintenant dans l'encadré de sécurité ou l'étape 4. Non retenus comme manques, car
+  hors du périmètre de la fiche (économiser l'eau) : dans s3, ne pas déféquer dans un plan d'eau, et les consignes sur les aliments après une inondation ou une coupure ; dans s1, « A medical emergency
+  might require additional water ». À toi de trancher. Si ça coince : « Les enfants, les personnes âgées ou malades boivent en premier » et la consigne sur l'eau du robinet qui revient trouble ne sont
+  dans aucune source.
+verdict: conforme

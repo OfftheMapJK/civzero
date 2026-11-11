@@ -31,7 +31,9 @@ Heat kills bacteria, viruses and parasites. A full rolling boil for one minute i
 > Risks specific to this skill:
 > - Burns: boiling water and a hot pot. Let it cool before pouring, keep children away.
 > - Stove variant: a camping gas stove, a barbecue or a brazier is never lit indoors, nor in a garage. Their fumes contain carbon monoxide, odourless and deadly.
-> - Water containing fuel, chemicals or radioactive material does not become safe by boiling.
+> - Water containing fuel, chemicals or radioactive material does not become safe by boiling: use bottled water or another source, and alert the health services.
+> - Never drink, cook or wash with water from radiators or the heating circuit.
+> - Follow the health services' instructions when they say how to boil or treat water.
 
 ## 3. Step by step
 
@@ -43,15 +45,15 @@ Heat kills bacteria, viruses and parasites. A full rolling boil for one minute i
 
 ### Step 2: Bring to a rolling boil
 
-- **Action:** bring the water to a full rolling boil, then keep it boiling for 1 minute. Above 2,000 metres of altitude, keep it boiling for 3 minutes.
+- **Action:** bring the water to a full rolling boil, then keep it boiling for 1 minute. Above 2,000 metres of altitude [TO CHECK: conversion of 6,500 feet], keep it boiling for 3 minutes.
 - **Check:** large bubbles keep rising from the bottom for the whole time.
-- **Source:** s1 (1 minute; 3 minutes above 6,500 feet, about 2,000 metres) [TO CHECK: conversion]
+- **Source:** s1 (1 minute; 3 minutes above 6,500 feet)
 
-### Step 3: Let it cool, covered
+### Step 3: Let it cool
 
-- **Action:** turn off the heat, cover the pot and let it cool without dipping anything into the water.
+- **Action:** turn off the heat and let the boiled water cool.
 - **Check:** the pot feels lukewarm or cold to the touch.
-- **Source:** not applicable
+- **Source:** s1
 
 ### Step 4: Store it cleanly
 
@@ -61,7 +63,7 @@ Heat kills bacteria, viruses and parasites. A full rolling boil for one minute i
 
 ### Step 5: Improve the taste if needed
 
-- **Action:** boiled water tastes flat. Pour it back and forth between containers and let it stand for a few hours, or add a pinch of salt per litre.
+- **Action:** boiled water tastes flat. Pour it from one container to another and let it stand for a few hours, or add a pinch of salt per litre.
 - **Check:** the taste is acceptable for drinking.
 - **Source:** s1
 

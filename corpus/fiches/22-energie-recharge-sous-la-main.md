@@ -21,6 +21,7 @@ variantes:
   - id: batterie-outil
     danger: orange
 danger: vert
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0

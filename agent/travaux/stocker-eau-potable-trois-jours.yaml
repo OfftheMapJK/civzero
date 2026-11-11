@@ -1,0 +1,16 @@
+# Commande de l'agent d'adaptation : une fiche prévue (corpus/prevues.yaml) et ses sources adaptables.
+# Lancer : MODELE=claude ANTHROPIC_API_KEY=… node agent/adapter.mjs agent/travaux/stocker-eau-potable-trois-jours.yaml
+# Chaque source : id (s1, s2…), titre, auteur, source (lien), licence vérifiée sur la page, verifie_le (date),
+# et, si la page ne s'ouvre pas depuis la machine, fichier: un texte copié à côté de cette commande.
+id: stocker-eau-potable-trois-jours
+consignes: >-
+  Une fiche sur la réserve d'eau pour trois jours : combien par personne et par jour, quels récipients,
+  comment les nettoyer, où les ranger, quand renouveler. Les quantités viennent de la source ; la recommandation
+  européenne des 72 heures est déjà citée dans la fiche socle-coupure-72h, à laquelle on renvoie.
+sources:
+  - id: s1
+    titre: "Creating and Storing an Emergency Water Supply"
+    auteur: "Centers for Disease Control and Prevention (CDC)"
+    source: "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html"
+    licence: "domaine public"
+    verifie_le: 2026-11-11   # [À VALIDER : rouvrir la page avant de lancer, l'adresse a pu changer]

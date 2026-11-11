@@ -15,6 +15,7 @@ variantes:
   - id: moteur-recupere
     danger: orange
 danger: orange
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0

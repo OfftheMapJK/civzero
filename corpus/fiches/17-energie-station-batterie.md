@@ -14,6 +14,7 @@ variantes:
   - id: convertisseur-elevateur
     danger: orange
 danger: orange
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0

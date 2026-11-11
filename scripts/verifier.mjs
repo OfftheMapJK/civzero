@@ -5,6 +5,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
 import { loadCorpus } from '../src/lib/corpus.mjs';
+import { LICENCES_ADAPTABLES, USAGES } from '../src/lib/licences.mjs';
+import { chiffresSansSource } from '../agent/adapter.mjs';
+import { verdict as verdictRelecture } from '../agent/relire.mjs';
 
 const RACINE = path.resolve(process.cwd(), 'corpus');
 const erreurs = [];
@@ -14,14 +17,26 @@ const avert = (ou, msg) => avertissements.push(`${ou} : ${msg}`);
 
 const HORIZONS = ['instant', 'hours', 'seasons'];
 const DANGERS = ['vert', 'orange', 'rouge'];
-const STATUTS = ['brouillon', 'documentee', 'testee', 'reproduite'];
+// Statuts (voir agent/METHODE.md, section 8) : une fiche adaptée passe par la vérification de fidélité,
+// une fiche créée par CivicNode par le test ; une fiche orange demande en plus une relecture professionnelle.
+const STATUTS = ['brouillon', 'verifiee-ia', 'fidele', 'relue', 'testee', 'reproduite'];
+const RANG_STATUT = Object.fromEntries(STATUTS.map((s, i) => [s, i]));
+const ORIGINES = ['adaptee', 'creee'];
 // Seules ces licences permettent d'adapter une source dans le texte d'une fiche (voir le document sur les licences).
-const LICENCES_ADAPTABLES = /^(domaine public|public domain|cc0( 1\.0)?|cc by( \d\.\d)?|cc by-sa( \d\.\d)?|licence ouverte( 2\.0)?|etalab( 2\.0)?|odbl( 1\.0)?)$/i;
-const TYPES_ATTESTATION = ['testée', 'réalisée', 'confirmée', 'tested', 'made', 'confirmed'];
+const TYPES_ATTESTATION = ['fidélité', 'relue', 'testée', 'réalisée', 'confirmée', 'fidelity', 'reviewed', 'tested', 'made', 'confirmed'];
 const TYPES_MEDIA = ['image', 'schema', 'video'];
-const USAGES = ['adapte', 'reference'];
 
 const c = loadCorpus(RACINE, 'fr');
+// Copies des sources (agent/sources/<fiche>/<sN>.txt) et relectures IA (agent/relectures/<fiche>.yaml).
+const DOSSIER_AGENT = path.join(RACINE, '..', 'agent');
+const copieSource = (id, s) => {
+  const f = path.join(DOSSIER_AGENT, 'sources', id, `${s}.txt`);
+  return fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null;
+};
+const relectureIA = (id) => {
+  const f = path.join(DOSSIER_AGENT, 'relectures', `${id}.yaml`);
+  return fs.existsSync(f) ? yaml.load(fs.readFileSync(f, 'utf8')) : null;
+};
 const { structure, prevues, conf } = c;
 const { familles = [], socles = {}, domaines = {}, savoirs = {} } = structure;
 
@@ -73,6 +88,7 @@ for (const f of c.fiches) {
   if (m.horizon && !HORIZONS.includes(m.horizon)) err(ou, `horizon « ${m.horizon} » inconnu (permis : ${HORIZONS.join(', ')})`);
   if (m.danger && m.id !== 'nodule-zero' && !DANGERS.includes(m.danger)) err(ou, `danger « ${m.danger} » inconnu (permis : ${DANGERS.join(', ')})`);
   if (m.statut && !STATUTS.includes(m.statut)) err(ou, `statut « ${m.statut} » inconnu (permis : ${STATUTS.join(', ')})`);
+  if (!ORIGINES.includes(m.origine)) err(ou, `origine « ${m.origine} » inconnue (permis : adaptee, creee)`);
   if (m.vague !== undefined && ![1, 2, 3].includes(m.vague)) err(ou, `vague « ${m.vague} » inconnue (permis : 1, 2, 3)`);
   if (m.tier !== undefined && (!Array.isArray(m.tier) || !m.tier.length || m.tier.some((t) => ![0, 1, 2].includes(t)))) {
     err(ou, 'le tier doit être une liste de 0, 1 ou 2, par exemple [0, 1]');
@@ -140,11 +156,52 @@ for (const f of c.fiches) {
     if (!TYPES_ATTESTATION.includes(a.type)) err(ou, `attestation de type inconnu « ${a.type} » (permis : ${TYPES_ATTESTATION.join(', ')})`);
     if (!a.par) err(ou, "une attestation n'a pas d'auteur (« par »)");
   }
+  // Médias (voir agent/METHODE.md, section 7) : fichiers dans public/medias/<id>/, licence vérifiée fichier par fichier.
+  // Ce que chaque statut exige
+  const att = (types) => (m.attestations || []).filter((a) => types.includes(a.type));
+  const rang = RANG_STATUT[m.statut] ?? 0;
+  if (m.origine === 'adaptee' && !(m.provenance || []).some((s) => s.usage === 'adapte')) err(ou, 'fiche adaptée sans source adaptée dans la provenance');
+  if (m.origine === 'creee' && ['verifiee-ia', 'fidele'].includes(m.statut)) err(ou, `une fiche créée par CivicNode n'a pas de source à laquelle être fidèle : son chemin est le test (testée, reproduite)`);
+  if (rang >= RANG_STATUT['verifiee-ia'] && m.origine === 'adaptee') {
+    const rel = relectureIA(m.id);
+    if (!rel) err(ou, `statut « ${m.statut} » sans relecture IA (agent/relectures/${m.id}.yaml)`);
+    else if (verdictRelecture(rel) !== 'conforme') err(ou, `la relecture IA conclut « ${verdictRelecture(rel)} » (recalculé à partir du détail) : corriger la fiche, puis relancer la relecture`);
+    for (const s of (m.provenance || []).filter((x) => x.usage === 'adapte')) {
+      if (!copieSource(m.id, s.id)) err(ou, `statut « ${m.statut} » sans copie de la source ${s.id} (npm run sources)`);
+    }
+  }
+  if (rang >= RANG_STATUT.fidele && m.origine === 'adaptee' && !att(['fidélité', 'fidelity']).length) err(ou, `statut « ${m.statut} » sans attestation de fidélité par une personne`);
+  if (m.danger === 'orange' && rang >= RANG_STATUT.relue && !att(['relue', 'reviewed']).some((a) => a.competence)) err(ou, `fiche orange au statut « ${m.statut} » sans relecture d'une personne compétente (attestation « relue » avec sa compétence)`);
+  if (m.danger === 'rouge' && m.statut !== 'brouillon' && att(['relue', 'reviewed']).filter((a) => a.competence).length < 2) err(ou, 'fiche rouge : moratoire, deux relectures professionnelles avant tout autre statut');
+  if (rang >= RANG_STATUT.testee && !att(['testée', 'réalisée', 'tested', 'made']).length) err(ou, `statut « ${m.statut} » sans attestation de test`);
+  if (m.statut === 'reproduite' && att(['testée', 'réalisée', 'tested', 'made']).length < 3) err(ou, 'statut « reproduite » : il faut au moins trois personnes qui ont refait la fiche');
+
+  // Le garde-fou des chiffres, quand les copies des sources sont là : un chiffre absent des sources est signalé.
+  if (m.origine === 'adaptee') {
+    const textes = (m.provenance || []).filter((x) => x.usage === 'adapte').map((s) => copieSource(m.id, s.id)).filter(Boolean);
+    if (textes.length) {
+      const seuls = chiffresSansSource(`${m.temps || ''}\n${m.exige_avance || ''}\n${f.body}`, textes);
+      // Ce contrôle compare des nombres, pas leur sens : une relecture IA conforme, qui a jugé chaque chiffre, le remplace.
+      const relue = rang >= RANG_STATUT['verifiee-ia'] && relectureIA(m.id) && verdictRelecture(relectureIA(m.id)) === 'conforme';
+      if (seuls.length) avert(ou, `chiffres absents des copies des sources : ${seuls.join(', ')}${relue ? ' (jugés par la relecture IA conforme)' : ''}`);
+    }
+  }
+
   for (const md of m.medias || []) {
-    if (!md.fichier) err(ou, "un média n'a pas de fichier");
+    if (!md.fichier) { err(ou, "un média n'a pas de fichier"); continue; }
     if (md.type && !TYPES_MEDIA.includes(md.type)) err(ou, `média de type inconnu « ${md.type} »`);
     if (!md.licence) err(ou, `le média « ${md.fichier} » n'a pas de licence`);
+    else if (!LICENCES_ADAPTABLES.test(md.licence)) err(ou, `le média « ${md.fichier} » est sous « ${md.licence} » : seuls le domaine public, CC0, CC BY et CC BY-SA sont acceptés`);
+    if (!md.auteur) err(ou, `le média « ${md.fichier} » n'a pas d'auteur`);
+    if (!md.legende?.fr || !md.legende?.en) err(ou, `le média « ${md.fichier} » doit avoir une légende en français et en anglais`);
     if (md.etape && !nums.includes(md.etape)) err(ou, `le média « ${md.fichier} » vise l'étape ${md.etape}, qui n'existe pas`);
+    const chemin = path.join(RACINE, '..', 'public', 'medias', m.id, md.fichier);
+    if (!fs.existsSync(chemin)) {
+      if (md.telecharger) avert(ou, `le média « ${md.fichier} » n'est pas encore téléchargé : lancer npm run medias`);
+      else err(ou, `le fichier public/medias/${m.id}/${md.fichier} n'existe pas`);
+    } else if (fs.statSync(chemin).size > 600 * 1024) {
+      avert(ou, `le média « ${md.fichier} » pèse plus de 600 Ko : à alléger pour la station`);
+    }
   }
 }
 for (const f of c.fiches) for (const p of f.meta.prerequis || []) {

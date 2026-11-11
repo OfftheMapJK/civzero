@@ -29,14 +29,16 @@ Chlorine kills most bacteria and viruses, provided there is enough of it and it 
 > Risks specific to this skill:
 > - A wrong dose: too little does not disinfect, far too much makes the water unfit. The dose in this skill must be reviewed before any use.
 > - Only use unscented bleach without additives, and never mix it with another household product: some mixtures give off a toxic gas.
-> - Iodine tablets are not suitable for pregnant women or people with thyroid problems, and should not be used for more than a few weeks.
+> - Water disinfected with iodine is not suitable for pregnant women or people with thyroid problems or a hypersensitivity to iodine, and no one should drink it for more than a few weeks at a time.
 > - Keep bleach and tablets out of children's reach.
+> - Water containing fuel, chemicals or radioactive material does not become safe through disinfection: use bottled water or another source, and alert the health services.
+> - Never drink, cook or wash with water from radiators or the heating circuit.
 
 ## 3. Step by step
 
 ### Step 1: Read the product label
 
-- **Action:** check that the bleach is unscented and note its concentration on the label. For disinfection tablets or drops, follow their instructions: each product is designed for a given volume of water.
+- **Action:** check that the bleach is unscented, note its concentration and first follow the label's instructions for disinfecting drinking water, if it gives any. For disinfection tablets or drops, follow their instructions: each product is designed for a given volume of water.
 - **Check:** you know the product's concentration, or the volume of water one tablet treats.
 - **Source:** s1
 
@@ -48,9 +50,9 @@ Chlorine kills most bacteria and viruses, provided there is enough of it and it 
 
 ### Step 3: Measure the dose
 
-- **Action:** for bleach with 5 to 9% sodium hypochlorite: 2 drops (0.1 ml) per litre, 8 drops (0.5 ml) per gallon (about 4 litres). For 1% bleach: 10 drops (0.5 ml) per litre. Double the dose if the water is cloudy, coloured or very cold. [TO CHECK: dose for bleach sold in France, often 2.6% active chlorine; do not extrapolate without review]
+- **Action:** for bleach with 5 to 9% sodium hypochlorite: 2 drops (0.1 ml) per litre, 8 drops (0.5 ml) per US gallon (3.8 litres) [TO CHECK: conversion]. For 1% bleach: 10 drops (0.5 ml) per litre. Double the dose if the water is cloudy, murky, coloured or very cold. [TO CHECK: dose for bleach sold in France, often less concentrated; do not extrapolate without review]
 - **Check:** the dose matches the concentration read in step 1 and the volume of water.
-- **Source:** s1 (table for 1 litre, 1 gallon of 3.8 litres and 5 gallons)
+- **Source:** s1 (table for 1 litre, 1 gallon and 5 gallons)
 
 ### Step 4: Stir and wait
 
@@ -68,7 +70,7 @@ Chlorine kills most bacteria and viruses, provided there is enough of it and it 
 
 - **Step 1 — the label does not give the concentration.** Do not use this product for drinking water: boil the water, or use tablets designed for it.
 - **Step 3 — no dropper.** A graduated syringe without a needle, or a straw dipped and closed with a finger, gives drops. [TO CHECK: accuracy of the straw method]
-- **The water smells strongly of chlorine.** Let it stand in the air, container ajar, for a few hours before drinking. [TO CHECK: instruction and threshold]
+- **Step 3 — the water is cloudy, murky, coloured or very cold.** Double the dose, as the source says.
 
 ## 5. Resources
 

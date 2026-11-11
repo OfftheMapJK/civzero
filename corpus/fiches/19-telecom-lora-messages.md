@@ -14,6 +14,7 @@ variantes:
   - id: deux-modules-portables
     danger: vert
 danger: vert
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0

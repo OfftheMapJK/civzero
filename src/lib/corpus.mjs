@@ -17,7 +17,7 @@ const CHAMPS = { action: 'Action', verif: '(?:Vérification|Check)', source: 'So
 const RISQUES = /^(?:Risques propres à cette fiche|Risks specific to this skill) ?: ?(.*)$/;
 const ENTRE_MODES = /^(?:Entre les deux modes|Between the two modes)\n/;
 
-function parseFiche(file, txt) {
+export function parseFiche(file, txt) {
   const m = txt.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
   if (!m) throw new Error(`${file} : en-tête introuvable`);
   const meta = yaml.load(m[1]) || {};
@@ -151,5 +151,20 @@ export function loadCorpus(root = path.resolve(process.cwd(), 'corpus'), lang = 
   // Le catalogue donne, pour chaque fiche écrite ou prévue, son coût, son matériel et son rapport au vivant.
   const catalogue = fs.existsSync(path.join(root, 'catalogue.csv')) ? lireCsv(read('catalogue.csv')) : [];
 
-  return { lang, fiches, labels, conf, structure, prevues, pistes, catalogue, besoins: {} };
+  // Pages de texte (corpus/pages/, traduction dans pages/en/) : la méthode, les sources.
+  const dossierPages = path.join(root, 'pages');
+  const pages = (fs.existsSync(dossierPages) ? fs.readdirSync(dossierPages) : []).filter((f) => f.endsWith('.md')).sort()
+    .map((f) => {
+      const lirePage = (rel) => {
+        const m = read(rel).match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+        return { meta: yaml.load(m[1]) || {}, corps: m[2].trim() };
+      };
+      const fr = lirePage(path.join('pages', f));
+      const fe = path.join('pages', 'en', f);
+      if (lang !== 'en' || !fs.existsSync(path.join(root, fe))) return { file: f, id: fr.meta.id, ...fr, traduite: lang !== 'en' };
+      const en = lirePage(fe);
+      return { file: f, id: fr.meta.id, meta: { ...fr.meta, ...en.meta, id: fr.meta.id }, corps: en.corps, traduite: true };
+    });
+
+  return { lang, fiches, labels, conf, structure, prevues, pistes, catalogue, pagesTexte: pages, besoins: {} };
 }

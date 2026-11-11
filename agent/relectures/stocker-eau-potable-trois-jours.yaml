@@ -1,0 +1,113 @@
+fiche: stocker-eau-potable-trois-jours
+date: '2026-11-11'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s1
+    passage: >-
+      Store at least 1 gallon of water per person, per day for 3 days. ... Try to store a 2-week supply if possible. Consider storing more water than this for pregnant women, people who are sick,
+      pets, or if you live in a hot climate. (s2) In very hot temperatures, water needs can double.
+    remarque: Conversions (3,8 litres, 11 litres) marquées À VALIDER. « Noter le total du foyer » est absent des sources.
+  - 'n': 2
+    verdict: conforme
+    source: s1
+    passage: >-
+      Unopened, commercially bottled water is the safest and most reliable source ... Has a top that can be closed tightly. Is made of durable, unbreakable materials (not glass). Has a narrow neck or
+      opening, if possible ... Do not use containers that were previously used to hold liquid or solid toxic chemicals
+    remarque: « ferme sans fuir quand on le retourne plein » (Vérification) est absent.
+  - 'n': 3
+    verdict: conforme
+    source: s1
+    passage: Wash the storage container with soap and rinse completely with water.
+    remarque: >-
+      « et le bouchon » est ajouté ; « les bouteilles du commerce fermées passent directement à l'étape 6 » est une déduction de la fiche (s1 ne traite que les récipients remplis soi-même). « plus de
+      mousse ni d'odeur de savon » (Vérification) est absent.
+  - 'n': 4
+    verdict: conforme
+    source: s1
+    passage: >-
+      Sanitize the container with a solution made by mixing 1 teaspoon of unscented liquid household chlorine bleach in 1 quart (4 cups) of water. Use bleach that contains 5%–9% sodium hypochlorite.
+      Cover the container tightly and shake it well ... Wait at least 30 seconds ... Let the empty container air-dry. (s2) Do not use scented bleaches, color safe bleaches or bleaches with added
+      cleaners.
+    remarque: Conversions (5 ml, environ 1 litre) marquées À VALIDER. s2 donne la même dose avec une javel à 5,25–6,0 % ; la fiche ne cite pas de pourcentage dans l'Action.
+  - 'n': 5
+    verdict: conforme
+    source: s1
+    passage: Pour clean water into the sanitized container and cover it with a tight lid.
+    remarque: '« eau potable du robinet » : s1 dit « clean water ».'
+  - 'n': 6
+    verdict: conforme
+    source: s1
+    passage: Label container as "drinking water" and include storage date. ... Observe the expiration date for store-bought water.
+    remarque: ''
+  - 'n': 7
+    verdict: conforme
+    source: s1
+    passage: Keep containers in a place with a cool temperature (50°F–70°F). Keep containers away from direct sunlight. Keep containers away from toxic substances, such as gasoline or pesticides.
+    remarque: '10 à 21 °C : conversion de 50–70 °F, marquée À VALIDER.'
+  - 'n': 8
+    verdict: conforme
+    source: s1
+    passage: Replace water every six months.
+    remarque: >-
+      s2 : « Water that has not been commercially bottled should be replaced every six months ». Le rappel dans un calendrier et « l'eau sert à l'arrosage ou au ménage » ne sont pas dans les sources
+      (suggestions de la fiche).
+  - 'n': 9
+    verdict: conforme
+    source: s1
+    passage: If using a scoop or other device, use a clean one each time you remove water from the container ... Do not to touch the water or insides of the container with your hands.
+    remarque: « il est refermé après usage » (Vérification) est absent.
+chiffres:
+  - valeur: 3,8 litres par personne et par jour (conversion d'un gallon, marquée À VALIDER dans la même phrase)
+    trouve: false
+    a_valider: true
+    source: ''
+  - valeur: un peu plus de 11 litres par personne sur trois jours (total, marqué À VALIDER dans la même phrase)
+    trouve: false
+    a_valider: true
+    source: ''
+  - valeur: au moins trois jours
+    trouve: true
+    source: s1
+  - valeur: deux semaines si possible
+    trouve: true
+    source: s1
+  - valeur: 1 cuillère à café d'eau de Javel
+    trouve: true
+    source: s1
+  - valeur: environ 5 millilitres (conversion, marquée À VALIDER dans la même phrase)
+    trouve: false
+    a_valider: true
+    source: ''
+  - valeur: environ 1 litre d'eau (conversion du quart, marquée À VALIDER dans la même phrase)
+    trouve: false
+    a_valider: true
+    source: ''
+  - valeur: au moins 30 secondes
+    trouve: true
+    source: s1
+  - valeur: 10 à 21 °C (conversion de 50 à 70 °F, marquée À VALIDER dans la même phrase)
+    trouve: false
+    a_valider: true
+    source: ''
+  - valeur: 50 à 70 °F
+    trouve: true
+    source: s1
+  - valeur: renouveler tous les six mois
+    trouve: true
+    source: s1
+  - valeur: 6 litres par personne en bouteilles (attribué à s3, source en référence sans copie ; marqué À VALIDER dans la même phrase)
+    trouve: false
+    a_valider: true
+    source: ''
+precautions_absentes: []
+niveaux: ''
+remarques: >-
+  Conventions : un ajout relevé seulement dans une ligne « Vérification » est noté ici sans changer le verdict de l'étape ; un ajout dans l'« Action » donne le verdict ajout ; une étape qui se déclare
+  « sans objet » compte sans source ; un chiffre absent des copies mais marqué À VALIDER dans la même phrase est noté trouve: false, a_valider: true. Copies s1 et s2 lisibles et complètes. s3 et s4
+  sont en référence : sans copie, elles ne fondent aucune étape. Étape 1 : la ligne Source attribue maintenant les durées à s1 et la quantité et la chaleur à s2, ce qui est exact. Étape 4 : le dosage
+  français reste À VALIDER, sans chiffre. Sécurité : l'irritation de la peau et des yeux, le mélange de la javel avec d'autres produits, le poids des récipients et les vapeurs près de l'essence n'ont
+  pas de source dans les copies ; ils ne contredisent rien. Si ça coince : les achats de bouteilles au fil des courses et la répartition de la réserve en plusieurs endroits n'ont pas de source. s1
+  recommande aussi de garder un flacon de javel sans parfum à 5–9 % ; la fiche ne le reprend pas. L'accroche dit « deux fois par an » : déduction du délai de six mois.
+verdict: conforme

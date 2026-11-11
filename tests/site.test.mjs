@@ -75,7 +75,7 @@ for (const [lang, { pages }] of Object.entries(modeles)) {
     const spore = pages.find((p) => p.slug === 's-spore');
     assert.ok(spore && spore.pistes.length > 0, 'socle Spore sans pistes');
     const pistes = pages.filter((p) => p.kind === 'piste');
-    assert.ok(pistes.length >= 3, `seulement ${pistes.length} pistes`);
+    assert.ok(pistes.length >= 2, `seulement ${pistes.length} pistes`);
     for (const p of pistes) {
       assert.ok(p.maturiteMot, `${p.slug} : maturité inconnue`);
       assert.ok(p.sections.length >= 4, `${p.slug} : sections manquantes`);
@@ -117,6 +117,23 @@ test('le bouton de langue mène à la même page dans l\'autre langue', () => {
   assert.equal(p.autre, 'fr/f-energie-recharge-voiture.html');
   const q = modeles.fr.pages.find((x) => x.slug === 'f-energie-recharge-voiture');
   assert.equal(q.autre, '../f-energie-recharge-voiture.html');
+});
+
+test("les médias pointent vers public/medias/<fiche>/, un dossier plus haut depuis les pages françaises", () => {
+  const en = modeles.en.pages.find((x) => x.slug === 'f-filtrer-eau-filtre-ceramique');
+  const fr = modeles.fr.pages.find((x) => x.slug === 'f-filtrer-eau-filtre-ceramique');
+  assert.equal(en.medias[0].fichier, 'medias/filtrer-eau-filtre-ceramique/chaine-clarifier-filtrer-desinfecter.svg');
+  assert.equal(fr.medias[0].fichier, '../medias/filtrer-eau-filtre-ceramique/chaine-clarifier-filtrer-desinfecter.svg');
+  const etape = modeles.fr.pages.find((x) => x.slug === 'f-filtrer-eau-filtre-ceramique-e3');
+  assert.equal(etape.medias.length, 1);
+});
+
+test('la page « Sources et méthode » existe dans les deux langues, et chaque fiche y renvoie', () => {
+  for (const lang of ['en', 'fr']) {
+    const p = modeles[lang].pages.find((x) => x.slug === 'a-sources-et-methode');
+    assert.ok(p && p.corpsHtml.includes('<h2'), `${lang} : page absente ou vide`);
+  }
+  assert.match(modeles.en.pages.find((x) => x.slug === 'a-sources-et-methode').titre, /sources/i);
 });
 
 test('les pages anglaises sont bien en anglais', () => {

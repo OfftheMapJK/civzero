@@ -73,9 +73,70 @@ L'assistant ne rédige qu'à partir de ce qui est sur la station, et dit toujour
 
 Aujourd'hui, l'assistant ne lit que les fiches. Les références externes (Wikipédia par Kiwix, documents à part) viendront avec la station complète.
 
-## 6. Ce qui reste ouvert
+## 6. Le programme
+
+`agent/adapter.mjs` applique cette méthode. On lui donne une **commande** : un fichier `agent/travaux/<id>.yaml` qui nomme une fiche prévue et ses sources (identifiant, titre, auteur, lien, licence vérifiée, date de vérification, et au besoin un fichier texte copié).
+
+    MODELE=claude ANTHROPIC_API_KEY=… npm run adapter -- agent/travaux/stocker-eau-potable-trois-jours.yaml
+    MODELE=local npm run adapter -- agent/travaux/…      # llama-server sur le Mac (un modèle de 3B est trop petit pour bien rédiger)
+
+Il refuse la commande si une source n'est pas adaptable ou n'a pas de date de vérification ; lit les sources ; envoie la méthode, une fiche modèle et les sources au modèle ; remplace l'en-tête par des valeurs sûres (la provenance vient de la commande, jamais du modèle ; statut brouillon ; `redaction: adaptee-ia`) ; contrôle le gabarit, les sources citées par chaque étape et **les chiffres absents des sources** ; écrit la fiche et son rapport dans `agent/sortie/`, qui n'est pas publié. Un humain lit le rapport et relit la fiche contre ses sources. Ensuite `npm run integrer -- agent/sortie/NN-id.md` la range dans le corpus avec le premier numéro libre, la retire des fiches prévues, met à jour sa ligne du catalogue, l'ouvre dans la démo si sa traduction anglaise existe, range l'original dans `agent/sortie/integrees/` et lance le vérificateur (`--essai` pour voir sans rien changer).
+
+Premier résultat du garde-fou : sur la fiche 30, il a relevé une conversion (gallon en litres) écrite sans marque À VALIDER.
+
+## 7. Schémas, photos et vidéos
+
+**Règle d'or : réutiliser d'abord, dessiner seulement s'il n'existe rien.** Pour chaque fiche, l'agent se demande, étape par étape, si une image aide à faire le geste. Si oui :
+
+1. **Chercher un média existant sous licence acceptée** : domaine public, CC0, CC BY ou CC BY-SA. Wikimedia Commons d'abord, puis les sites publics qui affichent une licence. La licence se lit sur la page du fichier lui-même, pas sur l'article qui l'affiche ; chaque fichier a la sienne. NC, ND, tous droits réservés ou licence inconnue : refusé, même pour une simple illustration.
+2. **Seulement si rien ne convient, dessiner un schéma** en SVG : traits noirs sur fond blanc (lisible en mode sombre), numéros plutôt que mots dans l'image, la légende bilingue expliquant chaque numéro. Auteur « CivicNode », licence CC BY-SA 4.0, `relu: false` jusqu'à ce qu'un humain l'ait vérifié : un schéma faux est aussi dangereux qu'une phrase fausse.
+3. **Photos** seulement pour reconnaître quelque chose (une plante, un symbole, une batterie gonflée). Pour une plante, toujours aussi la plante avec laquelle on la confond ; une photo ne suffit jamais à identifier ce qui se mange.
+4. **Vidéos** en dernier recours, pour un geste qu'aucun schéma ne montre, courtes : la station a peu de place.
+5. **Poids** : 600 Ko au plus par fichier (le vérificateur avertit au-delà) ; une photo de 1 200 pixels de large suffit.
+
+**Où et comment.** Les fichiers vont dans `public/medias/<id de la fiche>/`. Chaque média est décrit dans l'en-tête de la fiche :
+
+```yaml
+medias:
+  - fichier: pictogrammes-sodis.jpg        # nom du fichier dans public/medias/<id>/
+    type: image                            # image, schema ou video
+    etape: 4                               # facultatif : le média s'affiche sur cette étape, sinon sur la présentation
+    legende: { fr: "…", en: "…" }
+    titre: "Pictograms SODIS"
+    auteur: "Samuel Luzi ; Fundación SODIS"
+    source: "https://commons.wikimedia.org/wiki/File:Pictograms_SODIS.jpg"   # la page du fichier, pour un média existant
+    licence: "domaine public"
+    verifie_le: 2026-11-11
+    telecharger: "https://commons.wikimedia.org/wiki/Special:FilePath/Pictograms_SODIS.jpg"  # si le fichier n'est pas encore là
+    relu: false                            # pour un schéma dessiné par l'agent, jusqu'à relecture humaine
+```
+
+**Pour l'atelier de rédaction**, qui n'écrit que dans `agent/sortie/` :
+- une **nouvelle fiche** porte ses médias dans son en-tête ; ses fichiers vont dans `agent/sortie/medias/<id>/` ;
+- pour une **fiche déjà dans le corpus**, il prépare `agent/sortie/medias/<id>/medias.yaml` (la liste des médias à ajouter, au format ci-dessus) et les fichiers à côté ;
+- un média existant qu'il ne peut pas télécharger lui-même garde son lien `telecharger` : `npm run medias`, lancé sur un ordinateur relié à Internet, le récupère ;
+- le rapport liste chaque média : trouvé (page, licence lue) ou dessiné (pourquoi rien n'existait).
+
+`npm run integrer` copie les fichiers dans `public/medias/`, ajoute les médias à l'en-tête des fiches existantes et refuse toute licence non acceptée. Le vérificateur refuse un média sans auteur, sans légende bilingue, sous une licence non acceptée ou dont le fichier manque.
+
+## 8. Statuts et relectures
+
+**Principe : nous ne créons pas le savoir, nous le mettons en forme.** Le chemin d'une fiche dépend de son origine (champ `origine`) :
+
+| Origine | Statuts successifs | Ce que chaque statut exige (contrôlé par le vérificateur) |
+| --- | --- | --- |
+| `adaptee` (d'une source qui fait autorité) | brouillon → `verifiee-ia` → `fidele` → `testee` → `reproduite` | `verifiee-ia` : copies des sources (`npm run sources`) et relecture IA « conforme » (`agent/relectures/<id>.yaml`) ; `fidele` : en plus, une attestation `fidélité` signée par une personne |
+| `creee` (par CivicNode, sans source qui fasse autorité) | brouillon → `testee` → `reproduite` | `testee` : une attestation de test par quelqu'un d'autre que l'auteur ; `reproduite` : trois |
+| Fiche orange, quelle que soit l'origine | en plus, `relue` avant `testee` | une attestation `relue` d'une personne compétente, avec sa compétence |
+| Fiche rouge | brouillon tant que deux professionnels ne l'ont pas relue | deux attestations `relue` avec compétence |
+
+**Les quatre relectures** d'une fiche adaptée, avant toute diffusion : la rédaction (qui liste chaque chiffre et sa source), le vérificateur (forme, licences, sources des étapes, chiffres cherchés dans les copies des sources), la relecture IA par un autre modèle ou une autre conversation que la rédaction (`npm run relire -- <id>`, ou la conversation « Relecture » qui applique `agent/RELECTURE.md`), puis la confirmation humaine, guidée par la liste que produit la relecture IA. Le détail est dans `agent/RELECTURE.md`.
+
+La relecture IA est fiable sans être infaillible : elle peut manquer un glissement de sens subtil, surtout si elle partage les angles morts du modèle qui a rédigé. D'où trois garde-fous : un autre modèle, des copies des sources plutôt que sa mémoire, et un verdict recalculé à partir du détail (une seule réserve suffit pour « à corriger »). La personne qui confirme n'a plus qu'à vérifier les points signalés et quelques autres au hasard.
+
+## 9. Ce qui reste ouvert
 
 - Le statut des œuvres fédérales américaines hors des États-Unis (voir 2.2).
 - Embarquer des documents ND dans la station : en attendant, on y renvoie.
 - Les licences des sources candidates du catalogue (Low-tech Lab, ADEME, CAWST, Eawag…), à vérifier une par une.
-- Passer de cette méthode à un programme : un script qui lit une source, appelle un modèle puissant avec cette consigne, écrit la fiche et lance le vérificateur.
+- Le garde-fou des chiffres compare des nombres, pas leur sens : un chiffre présent dans la source mais pour autre chose passe. La relecture humaine reste indispensable.

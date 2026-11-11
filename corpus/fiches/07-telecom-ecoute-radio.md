@@ -15,6 +15,7 @@ variantes:
   - id: reception-fm
     danger: vert
 danger: vert
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0

@@ -2,7 +2,7 @@
 
 *A knowledge station for the interstices · Une station de savoirs pour les interstices.* Anciennement CivZero.
 
-Site : https://civicnode-eu.github.io/civicnode/ (bientôt https://civicnode.eu)
+Site : https://civicnode-eu.github.io/civicnode/ (bientôt https://civicnode.eu) · Contact : hello@civicnode.eu
 
 Une station de savoirs pratiques hors-ligne pour tenir une coupure et gagner en autonomie avec ce qui existe déjà : réparer, détourner, mailler. L'écologie y est une contrainte de départ, pas un module.
 

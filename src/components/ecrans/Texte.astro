@@ -1,0 +1,15 @@
+---
+// Une page de texte : les sources et la méthode. Le contenu vient de corpus/pages/ (et pages/en/).
+import Base from '../../layouts/Base.astro';
+const { p } = Astro.props;
+const t = p.t;
+---
+<Base title={p.title} p={p} indexer>
+  <div class="crumb"><span>/ <strong>{p.titre}</strong></span><a href="index.html">{t.accueil}</a></div>
+  <h1>&gt; {p.titre}</h1>
+  {p.accroche && <p class="lead">{p.accroche}</p>}
+  {p.nonTraduite && <div class="panel">{p.nonTraduite}</div>}
+  <div class="prose" set:html={p.corpsHtml} />
+  {p.maj && <p class="src">{t.majLe(p.maj)}</p>}
+  <div class="row"><a class="btn" href={p.retour}>{t.retour}</a></div>
+</Base>

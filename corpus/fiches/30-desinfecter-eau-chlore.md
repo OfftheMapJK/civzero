@@ -17,7 +17,8 @@ variantes:
   - id: comprimes
     danger: orange
 danger: orange
-statut: brouillon
+origine: adaptee
+statut: verifiee-ia
 redaction: adaptee-ia
 reproductions: 0
 impact:
@@ -54,14 +55,16 @@ Le chlore tue la plupart des bactéries et des virus, à condition d'être en qu
 > Risques propres à cette fiche :
 > - Un mauvais dosage : trop peu ne désinfecte pas, beaucoup trop rend l'eau impropre. Le dosage de cette fiche est à faire relire avant tout usage.
 > - N'utiliser que de l'eau de Javel sans parfum ni additif, et ne jamais la mélanger avec un autre produit ménager : certains mélanges dégagent un gaz toxique.
-> - Les comprimés à l'iode ne conviennent pas aux femmes enceintes ni aux personnes qui ont des problèmes de thyroïde, et ne s'utilisent pas plus de quelques semaines.
+> - L'eau désinfectée à l'iode ne convient pas aux femmes enceintes, aux personnes qui ont des problèmes de thyroïde ou une hypersensibilité à l'iode, et personne ne devrait en boire plus de quelques semaines d'affilée.
 > - Garder l'eau de Javel et les comprimés hors de portée des enfants.
+> - Une eau qui contient du carburant, des produits chimiques ou des matières radioactives ne devient pas sûre par désinfection : utiliser de l'eau en bouteille ou une autre source, et prévenir les services de santé.
+> - Ne jamais boire, cuisiner ni se laver avec l'eau des radiateurs ou du circuit de chauffage.
 
 ## 3. Pas-à-pas
 
 ### Étape 1 : Lire l'étiquette du produit
 
-- **Action :** vérifier que l'eau de Javel est sans parfum et relever sa concentration sur l'étiquette. Pour des comprimés ou des gouttes de désinfection, suivre leur notice : chaque produit est prévu pour un volume d'eau donné.
+- **Action :** vérifier que l'eau de Javel est sans parfum, relever sa concentration et suivre d'abord les instructions de l'étiquette pour désinfecter l'eau de boisson, si elle en donne. Pour des comprimés ou des gouttes de désinfection, suivre leur notice : chaque produit est prévu pour un volume d'eau donné.
 - **Vérification :** vous connaissez la concentration du produit, ou le volume d'eau traité par un comprimé.
 - **Source :** s1
 
@@ -73,9 +76,9 @@ Le chlore tue la plupart des bactéries et des virus, à condition d'être en qu
 
 ### Étape 3 : Doser
 
-- **Action :** pour une eau de Javel à 5 à 9 % d'hypochlorite de sodium : 2 gouttes (0,1 ml) par litre, 8 gouttes (0,5 ml) pour 4 litres environ. Pour une eau de Javel à 1 % : 10 gouttes (0,5 ml) par litre. Doubler la dose si l'eau est trouble, colorée ou très froide. [À VALIDER : dosage pour l'eau de Javel vendue en France, souvent à 2,6 % de chlore actif ; ne pas extrapoler sans relecture]
+- **Action :** pour une eau de Javel à 5 à 9 % d'hypochlorite de sodium : 2 gouttes (0,1 ml) par litre, 8 gouttes (0,5 ml) par gallon américain, soit 3,8 litres [À VALIDER : conversion]. Pour une eau de Javel à 1 % : 10 gouttes (0,5 ml) par litre. Doubler la dose si l'eau est trouble, boueuse, colorée ou très froide. [À VALIDER : dosage pour l'eau de Javel vendue en France, souvent moins concentrée ; ne pas extrapoler sans relecture]
 - **Vérification :** la dose correspond à la concentration lue à l'étape 1 et au volume d'eau.
-- **Source :** s1 (tableau pour 1 litre, 1 gallon de 3,8 litres et 5 gallons)
+- **Source :** s1 (tableau pour 1 litre, 1 gallon et 5 gallons)
 
 ### Étape 4 : Mélanger et attendre
 
@@ -93,7 +96,7 @@ Le chlore tue la plupart des bactéries et des virus, à condition d'être en qu
 
 - **Étape 1 — l'étiquette n'indique pas la concentration.** N'utilisez pas ce produit pour l'eau de boisson : faites bouillir l'eau, ou utilisez des comprimés prévus pour cela.
 - **Étape 3 — pas de compte-gouttes.** Une seringue graduée sans aiguille, ou une paille trempée puis bouchée du doigt, donne des gouttes. [À VALIDER : précision de la méthode à la paille]
-- **L'eau a une forte odeur de chlore.** Laissez-la reposer à l'air, récipient entrouvert, quelques heures avant de la boire. [À VALIDER : consigne et seuil]
+- **Étape 3 — l'eau est boueuse, colorée ou très froide.** Doublez la dose indiquée, comme le prévoit la source.
 
 ## 5. Ressource
 

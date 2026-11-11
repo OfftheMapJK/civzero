@@ -20,6 +20,7 @@ variantes:
   - id: routeur-sur-batterie-12v
     danger: orange
 danger: orange
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0

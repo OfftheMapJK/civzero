@@ -17,7 +17,8 @@ variantes:
   - id: filtre-portable
     danger: orange
 danger: orange
-statut: brouillon
+origine: adaptee
+statut: verifiee-ia
 redaction: adaptee-ia
 reproductions: 0
 impact:
@@ -43,7 +44,30 @@ provenance:
     modifie: true
     verifie_le: 2026-11-11
 attestations: []
-medias: []
+medias:
+  - fichier: chaine-clarifier-filtrer-desinfecter.svg
+    type: schema
+    legende:
+      fr: "1. Clarifier l'eau trouble à travers un linge. 2. La filtrer. 3. La désinfecter : faire bouillir, chlorer ou exposer au soleil."
+      en: "1. Clear cloudy water through a cloth. 2. Filter it. 3. Disinfect it: boil, chlorinate or expose to the sun."
+    titre: Clarifier, filtrer, désinfecter
+    auteur: CivicNode
+    source: ""
+    licence: CC BY-SA 4.0
+    verifie_le: "2026-11-11"
+    relu: false
+  - fichier: filtre-ceramique-coupe.svg
+    type: schema
+    etape: 3
+    legende:
+      fr: 1. L'eau clarifiée, dans le récipient du haut. 2. La bougie en céramique. 3. L'eau filtrée goutte dans le récipient du bas. 4. Le robinet.
+      en: 1. Cleared water in the top container. 2. The ceramic candle. 3. Filtered water drips into the lower container. 4. The tap.
+    titre: Filtre céramique en coupe
+    auteur: CivicNode
+    source: ""
+    licence: CC BY-SA 4.0
+    verifie_le: "2026-11-11"
+    relu: false
 maj: 2026-11-11
 ---
 
@@ -74,7 +98,7 @@ Les pores très fins de la céramique arrêtent la saleté, les bactéries et le
 
 ### Étape 2 : Choisir le filtre
 
-- **Action :** lire la notice : pour retenir les bactéries, les pores doivent mesurer 0,3 micron au plus ; pour les parasites, 1 micron au plus. Un filtre céramique à pot ou à bougies, ou un filtre portable, convient s'il atteint ces tailles.
+- **Action :** lire la notice : pour retenir les bactéries, la taille absolue des pores doit être de 0,3 micron au plus ; pour les parasites comme *Giardia* ou *Cryptosporidium*, de 1 micron au plus. Ces tailles sont données pour les filtres portables : vérifier sur la notice du filtre céramique qu'il les atteint.
 - **Vérification :** la notice indique une taille de pores de 0,3 micron ou moins.
 - **Source :** s1
 
@@ -86,20 +110,20 @@ Les pores très fins de la céramique arrêtent la saleté, les bactéries et le
 
 ### Étape 4 : Désinfecter l'eau filtrée
 
-- **Action :** désinfecter l'eau filtrée pour tuer les virus et les bactéries restants : la faire bouillir ou la chlorer.
+- **Action :** désinfecter l'eau filtrée pour tuer les virus et les bactéries restants : la faire bouillir, ou y ajouter un désinfectant chimique comme le chlore.
 - **Vérification :** l'eau filtrée a été bouillie ou chlorée avant d'être bue.
 - **Source :** s1
 
 ### Étape 5 : Entretenir le filtre
 
-- **Action :** quand l'eau passe moins vite, brosser doucement la céramique avec une brosse souple et rincer à l'eau propre, sans toucher le côté propre avec des mains ou un chiffon sales. Remplacer les cartouches au charbon selon la notice.
-- **Vérification :** le débit revient, et le côté propre n'a touché que de l'eau propre.
+- **Action :** brosser doucement la céramique avec une brosse souple et rincer à l'eau propre, sans toucher le côté propre avec des mains ou un chiffon sales. Les cartouches au charbon se remplacent régulièrement, car le charbon se bouche.
+- **Vérification :** la céramique est propre, et le côté propre n'a touché que de l'eau propre.
 - **Source :** s2
 
 ### Étape 6 : Vérifier les fêlures
 
-- **Action :** après une chute ou un choc, examiner la céramique à la lumière. Une bougie fêlée se remplace sans changer tout le filtre.
-- **Vérification :** aucune fêlure n'est visible ; sinon, la bougie est remplacée.
+- **Action :** manipuler le filtre avec soin : une chute ou un choc peut provoquer des fêlures à peine visibles, qui laissent passer l'eau sale. Une bougie fêlée se remplace sans changer tout le filtre ; dans un filtre à plusieurs bougies, on peut boucher le trou d'une bougie cassée et continuer avec les autres.
+- **Vérification :** après un choc, le filtre a été examiné, et toute bougie fêlée ou cassée a été remplacée ou son trou bouché.
 - **Source :** s2
 
 ## 4. Si ça coince

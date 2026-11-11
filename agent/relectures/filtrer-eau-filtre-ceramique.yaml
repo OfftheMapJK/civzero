@@ -1,0 +1,62 @@
+fiche: filtrer-eau-filtre-ceramique
+date: '2026-11-11'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s1
+    passage: If the water is cloudy, first filter it through a clean cloth, paper towel, or coffee filter. Another option is to let it settle.
+    remarque: >-
+      Dans s1 cette consigne est donnée pour l'ébullition, la désinfection, les UV et le soleil, pas dans la section « Filter ». « elle bouchera moins vite la céramique » (Vérification) n'est dans
+      aucune source.
+  - 'n': 2
+    verdict: conforme
+    source: s1
+    passage: >-
+      Portable filters: ... Must have an absolute pore (hole) size of 0.3 micron or smaller to remove bacteria; Must have an absolute pore size of 1 micron or smaller to remove parasites (such as
+      Giardia or Cryptosporidium)
+    remarque: La fiche précise maintenant que ces tailles sont données pour les filtres portables et renvoie à la notice du filtre céramique.
+  - 'n': 3
+    verdict: conforme
+    source: s2
+    passage: Contaminated water is poured into a top container. It passes through the filter (or multiple filters) into the receptacle below. The lower receptacle usually is fitted with a tap.
+    remarque: « propre » et « sans déborder par les côtés » (Vérification) sont absents.
+  - 'n': 4
+    verdict: conforme
+    source: s1
+    passage: After filtering, add a chemical disinfectant—such as iodine, chlorine, or chlorine dioxide—to the filtered water. The disinfectant will kill any viruses and bacteria.
+    remarque: >-
+      La fiche propose aussi de faire bouillir l'eau filtrée : la section « Filter » de s1 ne parle que de désinfectant chimique ; s1 présente ailleurs l'ébullition comme la meilleure méthode pour
+      tuer les germes.
+  - 'n': 5
+    verdict: conforme
+    source: s2
+    passage: >-
+      The filters can be cleaned by brushing them with a soft brush and rinsing them with clean water. ... Filters with active carbon need to be replaced periodically because the carbon becomes
+      clogged with foreign material.
+    remarque: « la céramique est propre » (Vérification) est absent.
+  - 'n': 6
+    verdict: conforme
+    source: s2
+    passage: >-
+      If the unit is dropped or otherwise abused, the brittle nature of ceramic materials can allow fine, barely visible cracks, allowing larger contaminants through the filter. ... If a filter in a
+      multifilter receptacle is found to be broken, the filter hole can be plugged, and use can continue with fewer filters ... They also can be replaced without replacing the entire upper receptacle
+    remarque: >-
+      L'étape est ramenée à la source. « manipuler le filtre avec soin » est une formule de la fiche. « le filtre a été examiné » (Vérification) est absent de s2, qui précise que les fêlures sont à
+      peine visibles : l'examen peut ne rien révéler.
+chiffres:
+  - valeur: 0,3 micron (bactéries), taille absolue des pores
+    trouve: true
+    source: s1
+  - valeur: '1 micron (parasites : Giardia, Cryptosporidium), taille absolue des pores'
+    trouve: true
+    source: s1
+precautions_absentes: []
+niveaux: ''
+remarques: >-
+  Conventions : un ajout relevé seulement dans une ligne « Vérification » est noté ici sans changer le verdict de l'étape ; un ajout dans l'« Action » donne le verdict ajout ; une étape qui se déclare
+  « sans objet » compte sans source ; un chiffre absent des copies mais marqué À VALIDER dans la même phrase est noté trouve: false, a_valider: true. Copies lisibles et complètes : s1 est la page CDC,
+  s2 l'article entier. Principe : « les bactéries et les parasites » arrêtés et « les virus passent » sont conformes à s2 ; s1 ajoute que la plupart des filtres ne retiennent ni virus ni bactéries, ce
+  que la fiche couvre par la taille de 0,3 micron. Si ça coince : « la céramique est encrassée » n'est pas dans s2 ; « considérez le filtre comme un simple clarificateur » est une prudence de la fiche
+  ; la désinfection du récipient est marquée À VALIDER (s2 dit seulement « thoroughly sterilized »).
+verdict: conforme

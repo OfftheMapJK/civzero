@@ -17,6 +17,7 @@ variantes:
   - id: voisin-groupe-electrogene
     danger: orange
 danger: vert
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0

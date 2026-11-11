@@ -1,0 +1,58 @@
+fiche: rendre-eau-potable-faisant-bouillir
+date: '2026-11-11'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s1
+    passage: If the water is cloudy, first filter it through a clean cloth, paper towel, or coffee filter. Another option is to let it settle. Then, draw off the clear water
+    remarque: ''
+  - 'n': 2
+    verdict: conforme
+    source: s1
+    passage: Bring clear water to a rolling boil for 1 minute (at elevations above 6,500 feet, boil for 3 minutes).
+    remarque: « 2 000 mètres » est une conversion de 6 500 pieds, maintenant marquée À VALIDER dans la phrase de l'Action.
+  - 'n': 3
+    verdict: conforme
+    source: s1
+    passage: Let the boiled water cool.
+    remarque: « tiède ou froide au toucher de la casserole » (Vérification) est absent de s1.
+  - 'n': 4
+    verdict: conforme
+    source: s1
+    passage: Store the boiled water in clean, sanitized containers with tight covers.
+    remarque: « porte la date du jour » (Vérification) est absent de s1.
+  - 'n': 5
+    verdict: conforme
+    source: s1
+    passage: Pouring it from one container to another and then letting it stand for a few hours; Adding a pinch of salt for each quart or liter of boiled water
+    remarque: ''
+chiffres:
+  - valeur: 1 minute d'ébullition
+    trouve: true
+    source: s1
+  - valeur: 3 minutes en altitude
+    trouve: true
+    source: s1
+  - valeur: 6 500 pieds (seuil d'altitude, cité dans la ligne Source)
+    trouve: true
+    source: s1
+  - valeur: 2 000 mètres (conversion de 6 500 pieds, marquée À VALIDER dans la même phrase)
+    trouve: false
+    a_valider: true
+    source: ''
+  - valeur: une pincée de sel par litre
+    trouve: true
+    source: s1
+  - valeur: quelques heures de repos
+    trouve: true
+    source: s1
+precautions_absentes: []
+niveaux: ''
+remarques: >-
+  Conventions : un ajout relevé seulement dans une ligne « Vérification » est noté ici sans changer le verdict de l'étape ; un ajout dans l'« Action » donne le verdict ajout ; une étape qui se déclare
+  « sans objet » compte sans source ; un chiffre absent des copies mais marqué À VALIDER dans la même phrase est noté trouve: false, a_valider: true. Copie s1 (CDC) lisible et complète. Principe : «
+  en altitude, l'eau bout à une température plus basse » et « La chaleur tue les bactéries, les virus et les parasites » ne figurent pas tels quels dans s1, qui dit « kill germs » et donne seulement
+  la durée plus longue en altitude. Si ça coince : « laissez-la reposer plus longtemps, puis filtrez de nouveau » est absent de s1. Sécurité : brûlures et monoxyde de carbone (variante réchaud) n'ont
+  pas de source dans s1 et ne contredisent rien ; radiateurs, consignes du service de santé et eau polluée sont maintenant conformes à s1.
+verdict: conforme

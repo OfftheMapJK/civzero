@@ -10,9 +10,10 @@ import Rapport from './ecrans/Rapport.astro';
 import Toutes from './ecrans/Toutes.astro';
 import Recherche from './ecrans/Recherche.astro';
 import Piste from './ecrans/Piste.astro';
+import Texte from './ecrans/Texte.astro';
 const { p } = Astro.props;
 const ecrans: Record<string, any> = { accueil: Accueil, socle: Socle, savoir: Savoir, fiche: Fiche, etape: Etape,
-  complete: Complete, rapport: Rapport, toutes: Toutes, recherche: Recherche, piste: Piste };
+  complete: Complete, rapport: Rapport, toutes: Toutes, recherche: Recherche, piste: Piste, texte: Texte };
 const E = ecrans[p.kind];
 ---
 <E p={p} />

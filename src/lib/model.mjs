@@ -64,7 +64,7 @@ export function buildModel(c) {
       tier: tiers, dangerMot: t.niv[m.danger] || '', varianteMot: v ? t.niv[v] : '',
       exige: ecrite ? m.exige_avance || '' : '', ressources, vivant: traduireMots(cat.vivant || '', lang) };
     return { id: x.id, href: actif ? `f-${x.id}.html` : null, titre, niveau: m.danger, tableau,
-             sub: actif ? `${morceaux.join(' · ')} · ${t.brouillon}` : `${t.aVenir} · ${morceaux.join(' · ')}`,
+             sub: actif ? `${morceaux.join(' · ')} · ${t.statut[m.statut] || t.brouillon}` : `${t.aVenir} · ${morceaux.join(' · ')}`,
              note: x.hors_corpus ? t.horsCorpus : '',
              rang: [ORDRE_HORIZON[m.horizon] ?? 3, Math.min(...(m.tier?.length ? m.tier : [9])), actif ? 0 : 1] };
   };
@@ -89,7 +89,8 @@ export function buildModel(c) {
   const danger = (f) => (NIVEAUX_DANGER.includes(f.meta.danger)
     ? { niveau: f.meta.danger, mot: t.niv[f.meta.danger], label: labelCourt(f.meta.danger), risques: f.risques.map(mdi) }
     : null);
-  const badges = (f) => [{ t: `▒ ${t.brouillon.toUpperCase()} ▒`, trame: true },
+  // Le statut s'affiche en tête de fiche ; tant qu'aucune personne ne l'a confirmée, il reste tramé.
+  const badges = (f) => [{ t: `▒ ${(t.statut[f.meta.statut] || t.brouillon).toUpperCase()} ▒`, trame: ['brouillon', 'verifiee-ia'].includes(f.meta.statut || 'brouillon') },
     ...(f.meta.suspendu ? [{ t: lang === 'en' ? 'ON HOLD' : 'EN SUSPENS' }] : []),
     ...(t.H[f.meta.horizon] ? [{ t: t.H[f.meta.horizon] }] : [])];
 
@@ -101,8 +102,10 @@ export function buildModel(c) {
     type: a.type || '', par: a.par || '', competence: a.competence || '', date: a.date || '', contexte: a.contexte || '' }));
   const medias = (f, etape = null) => (f.meta.medias || [])
     .filter((m) => (etape === null ? !m.etape : m.etape === etape))
-    .map((m) => ({ fichier: m.fichier || '', type: m.type || 'image', legende: L(m.legende), titre: m.titre || '',
-                   auteur: m.auteur || '', url: m.source || '', licence: m.licence || '' }));
+    // Les fichiers sont dans public/medias/<id de la fiche>/ ; les pages françaises sont un dossier plus bas.
+    .map((m) => ({ fichier: m.fichier ? `${lang === 'fr' ? '../' : ''}medias/${f.id}/${m.fichier}` : '',
+                   type: m.type || 'image', legende: L(m.legende), titre: m.titre || '',
+                   auteur: m.auteur || '', url: m.source || '', licence: m.licence || '', nonRelu: m.relu === false }));
 
   // ------------------------------------------------------------ fiches ouvertes
   for (const f of fiches.filter((x) => x.actif)) {
@@ -212,6 +215,14 @@ export function buildModel(c) {
     add({ ...commun(`s-${so}`), kind: 'socle', title: `${L(s.nom)} · CivicNode`, modeTxt: t.beta,
           nom: L(s.nom), domaine: L(s.domaine), explique: L(s.nom_explique), domaines: doms, pistes: groupesPistes,
           avert: s.pistes ? t.pisteAvert : '', retour: HOME });
+  }
+
+  // ------------------------------------------------------------ pages de texte (sources et méthode)
+  for (const pt of c.pagesTexte || []) {
+    add({ ...commun(`a-${pt.id}`), kind: 'texte', title: `${pt.meta.titre} · CivicNode`, modeTxt: t.beta,
+          titre: pt.meta.titre, accroche: pt.meta.accroche || '', corpsHtml: md(pt.corps),
+          maj: pt.meta.maj ? String(pt.meta.maj instanceof Date ? pt.meta.maj.toISOString().slice(0, 10) : pt.meta.maj) : '',
+          nonTraduite: pt.traduite ? '' : t.nonTraduitePiste, retour: HOME });
   }
 
   // ------------------------------------------------------------ accueil, toutes, recherche

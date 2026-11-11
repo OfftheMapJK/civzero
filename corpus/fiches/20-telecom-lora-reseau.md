@@ -16,6 +16,7 @@ variantes:
   - id: noeud-exterieur-en-hauteur
     danger: orange
 danger: orange
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0

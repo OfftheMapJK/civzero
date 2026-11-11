@@ -12,7 +12,12 @@
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "station": "node scripts/verifier.mjs && CIVZERO_STATION=1 astro build && pagefind --site dist && node assistant/station.mjs",
-    "mesurer": "node assistant/mesurer.mjs"
+    "mesurer": "node assistant/mesurer.mjs",
+    "adapter": "node agent/adapter.mjs",
+    "integrer": "node agent/integrer.mjs",
+    "medias": "node agent/medias.mjs",
+    "sources": "node agent/sources.mjs",
+    "relire": "node agent/relire.mjs"
   },
   "dependencies": {
     "astro": "^5.0.0",

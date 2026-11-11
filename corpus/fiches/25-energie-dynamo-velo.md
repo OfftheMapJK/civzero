@@ -17,6 +17,7 @@ variantes:
   - id: dynamo-bouteille
     danger: orange
 danger: orange
+origine: creee
 statut: brouillon
 redaction: assistee-ia
 reproductions: 0

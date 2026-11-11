@@ -170,26 +170,27 @@
   danger: rouge
   vague: 3
   hors_corpus: true
-- id: stocker-eau-potable-trois-jours
-  socle: source
+- id: station-legere-smartphone
+  socle: strate
   savoirs:
-  - stocker-economiser-eau
+  - monter-station
+  - partager-sans-internet
   titre:
-    fr: Stocker de l'eau potable pour trois jours et la renouveler
-    en: Store three days of drinking water and keep it fresh
+    fr: Une station légère sur un vieux smartphone, avec Kiwix
+    en: A lightweight station on an old smartphone, with Kiwix
   horizon: hours
   tier:
   - 0
   danger: vert
   vague: 1
   hors_corpus: false
-- id: economiser-eau-quand-elle-ne
+- id: reutiliser-eau-sans-chasse
   socle: source
   savoirs:
   - stocker-economiser-eau
   titre:
-    fr: Économiser l'eau quand elle ne coule plus
-    en: Save water when the taps run dry
+    fr: Réutiliser l'eau et se passer de la chasse d'eau
+    en: Reuse water and do without the toilet flush
   horizon: instant
   tier:
   - 0

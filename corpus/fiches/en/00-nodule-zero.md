@@ -14,7 +14,7 @@ The prerequisite for every skill. It defines the danger levels the interface sho
 CivicNode gathers practical knowledge to get through an outage and to become more autonomous with what already exists. Every skill follows the same format and carries four pieces of information to read before you start:
 
 - **The danger level** (green, orange, red), always shown with a word and a shape: circle, triangle, octagon.
-- **The status**: draft → documented (sources checked by a person) → tested → reproduced by three people.
+- **The status** depends on where the skill comes from. A skill *adapted* from a source: draft → checked by AI (another AI compared it with its sources) → true to its sources (a person confirmed it) → tested → reproduced by three people. A skill *created* by CivicNode, with no authoritative source: draft → tested → reproduced. An orange skill also needs a review by a competent person in the field; a red skill stays under moratorium until two professionals have reviewed it.
 - **The time**: instant (a few minutes, with what is at hand), hours (from an hour to a weekend of work: gathering, buying, trying, assembling), seasons (weeks, months, or the time of living things).
 - **What the skill needs in advance**: a purchase, a download, an assembly.
 

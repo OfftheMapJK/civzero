@@ -1,0 +1,67 @@
+fiche: desinfecter-eau-chlore
+date: '2026-11-11'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s1
+    passage: >-
+      Follow the instructions on the bleach label for disinfecting drinking water. If the label does not have instructions, check the "active ingredient" on the label ... concentration of sodium
+      hypochlorite. ... Follow the instructions on the label or package of chlorine dioxide, chlorine, or iodine tablets or drops.
+    remarque: '« sans parfum » : s1 dit « unscented household liquid chlorine bleach ».'
+  - 'n': 2
+    verdict: conforme
+    source: s1
+    passage: If the water is cloudy, first filter it through a clean cloth, paper towel, or coffee filter. Another option is to let it settle.
+    remarque: ''
+  - 'n': 3
+    verdict: conforme
+    source: s1
+    passage: >-
+      1 quart or liter of water ... Add 2 drops of bleach ... 0.1 mL ... 1 gallon ... 8 drops ... ½ mL ... 1% ... 1 quart or liter ... 10 drops ... ½ mL ... If the water is cloudy, murky, colored, or
+      very cold, add double
+    remarque: >-
+      « murky » est rendu par « boueuse ». « 3,8 litres » est une conversion marquée À VALIDER. Le dosage français reste À VALIDER, sans chiffre. Les doses en cuillère et pour 5 gallons ne sont pas
+      reprises.
+  - 'n': 4
+    verdict: conforme
+    source: s1
+    passage: Stir the bleach and water mixture well. Let the water stand for at least 30 minutes before you drink it.
+    remarque: ''
+  - 'n': 5
+    verdict: conforme
+    source: s1
+    passage: Store the disinfected water in clean, sanitized containers with tight covers.
+    remarque: « porte la date du jour » (Vérification) est absent de s1.
+chiffres:
+  - valeur: 2 gouttes (0,1 ml) par litre, eau de Javel à 5–9 %
+    trouve: true
+    source: s1
+  - valeur: 8 gouttes (0,5 ml) par gallon américain, eau de Javel à 5–9 %
+    trouve: true
+    source: s1
+  - valeur: 3,8 litres (conversion d'un gallon, marquée À VALIDER dans la même phrase)
+    trouve: false
+    a_valider: true
+    source: ''
+  - valeur: 10 gouttes (0,5 ml) par litre, eau de Javel à 1 %
+    trouve: true
+    source: s1
+  - valeur: concentrations de 5 à 9 % puis de 1 % d'hypochlorite de sodium
+    trouve: true
+    source: s1
+  - valeur: doubler la dose (eau trouble, boueuse, colorée ou très froide)
+    trouve: true
+    source: s1
+  - valeur: au moins 30 minutes d'attente
+    trouve: true
+    source: s1
+precautions_absentes: []
+niveaux: ''
+remarques: >-
+  Conventions : un ajout relevé seulement dans une ligne « Vérification » est noté ici sans changer le verdict de l'étape ; un ajout dans l'« Action » donne le verdict ajout ; une étape qui se déclare
+  « sans objet » compte sans source ; un chiffre absent des copies mais marqué À VALIDER dans la même phrase est noté trouve: false, a_valider: true. Copie s1 (CDC) lisible et complète. Sécurité : «
+  ne jamais la mélanger avec un autre produit ménager » (gaz toxique), « hors de portée des enfants » et « beaucoup trop rend l'eau impropre » n'ont pas de source dans s1 ; « sans parfum ni additif »
+  : s1 dit seulement « unscented ». Ces énoncés ne contredisent rien. Si ça coince : la seringue ou la paille reste sans source (marquée À VALIDER, sans chiffre) ; la consigne de doubler la dose est
+  conforme à s1. Les avertissements sur l'iode, le carburant, les radiateurs et l'étiquette sont maintenant conformes à s1.
+verdict: conforme

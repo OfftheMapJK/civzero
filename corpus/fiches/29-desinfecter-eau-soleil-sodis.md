@@ -15,7 +15,8 @@ variantes:
   - id: bouteilles-pet-soleil
     danger: orange
 danger: orange
-statut: brouillon
+origine: adaptee
+statut: verifiee-ia
 redaction: adaptee-ia
 reproductions: 0
 impact:
@@ -41,7 +42,18 @@ provenance:
     modifie: true
     verifie_le: 2026-11-11
 attestations: []
-medias: []
+medias:
+  - fichier: pictogrammes-sodis.jpg
+    type: image
+    legende:
+      fr: "La méthode SODIS en pictogrammes : laver la bouteille, la remplir d'eau claire, l'exposer au soleil, boire."
+      en: "The SODIS method in pictograms: wash the bottle, fill it with clear water, expose it to the sun, drink."
+    titre: Pictograms SODIS
+    auteur: Samuel Luzi ; Fundación SODIS (pictogrammes)
+    source: https://commons.wikimedia.org/wiki/File:Pictograms_SODIS.jpg
+    licence: domaine public
+    verifie_le: "2026-11-11"
+    telecharger: https://commons.wikimedia.org/wiki/Special:FilePath/Pictograms_SODIS.jpg
 maj: 2026-11-11
 ---
 
@@ -60,13 +72,13 @@ La méthode SODIS (pour *solar water disinfection*) associe deux effets du solei
 > Risques propres à cette fiche :
 > - Une eau trouble, ou une exposition trop courte, reste contaminée alors qu'on la croit sûre.
 > - SODIS ne retire pas les produits chimiques : une eau polluée par l'industrie ou l'agriculture reste à éviter.
-> - Les microbes peuvent se multiplier de nouveau si l'eau traitée attend longtemps : la boire dans la journée qui suit. [À VALIDER : délai de conservation]
+> - Après le traitement, des bactéries peuvent se multiplier de nouveau à l'obscurité : garder l'eau dans sa bouteille et ne pas la laisser attendre. [À VALIDER : délai de conservation]
 
 ## 3. Pas-à-pas
 
 ### Étape 1 : Préparer les bouteilles
 
-- **Action :** prendre des bouteilles en plastique PET transparent et incolore, ou en verre, de 2 litres au plus, avec peu de rayures. Retirer les étiquettes et laver les bouteilles avant le premier usage. Ne pas prendre de bouteilles colorées ni en polycarbonate (code de recyclage 7).
+- **Action :** prendre des bouteilles en plastique PET transparent de 2 litres au plus, avec peu de rayures ; préférer les bouteilles incolores aux colorées. Le verre convient aussi, mais certains verres arrêtent les ultraviolets. Ne pas prendre de bouteilles en polycarbonate (code de recyclage 7), qui les arrêtent. Retirer les étiquettes et laver les bouteilles avant le premier usage.
 - **Vérification :** les bouteilles sont incolores, propres et sans étiquette.
 - **Source :** s1
 
@@ -84,15 +96,15 @@ La méthode SODIS (pour *solar water disinfection*) associe deux effets du solei
 
 ### Étape 4 : Exposer au soleil
 
-- **Action :** coucher les bouteilles en plein soleil, sans ombre, de préférence sur une tôle ou une surface qui réfléchit la lumière. Les laisser 6 heures par temps ensoleillé, ou 2 jours entiers par temps nuageux.
+- **Action :** coucher les bouteilles en plein soleil, sans ombre. Les sources diffèrent sur le support : Wikipédia conseille une tôle qui réfléchit la lumière, le CDC une surface sombre ; l'essentiel est le soleil direct. Les laisser 6 heures par temps ensoleillé, ou 2 jours par temps nuageux.
 - **Vérification :** les bouteilles sont restées au soleil toute la durée, et vous avez noté l'heure de début.
 - **Source :** s1, s2
 
-### Étape 5 : Boire dans la bouteille
+### Étape 5 : Garder l'eau dans la bouteille
 
-- **Action :** boire l'eau directement dans la bouteille ou la verser dans un verre propre, au moment de boire.
+- **Action :** garder l'eau traitée dans sa bouteille fermée jusqu'au moment de la boire.
 - **Vérification :** l'eau traitée n'est pas transvasée dans un récipient douteux.
-- **Source :** [À VALIDER : consigne de conservation après traitement]
+- **Source :** s1
 
 ### Étape 6 : Renouveler les bouteilles
 
@@ -110,8 +122,10 @@ La méthode SODIS (pour *solar water disinfection*) associe deux effets du solei
 
 ### Ce que dit la source
 
+Des études ont mesuré ce que le plastique PET libère dans l'eau : les phtalates et les adipates pendant l'exposition au soleil, l'antimoine dans des bouteilles stockées des mois en magasin. Les quantités trouvées sont très inférieures aux limites de l'Organisation mondiale de la santé (source s1).
+
 Par temps ensoleillé (moins de la moitié du ciel couvert), 6 heures suffisent ; par temps nuageux (de la moitié au ciel entièrement couvert, avec peu ou pas de pluie), il faut 2 jours. Au-delà d'une certaine turbidité (30 NTU), l'eau doit être filtrée ou décantée d'abord : c'est ce que vérifie le test du journal (source s1). Le CDC donne les mêmes durées (source s2).
 
 ### Pour aller plus loin
 
-- Le site de la fondation Eawag consacré à SODIS. [SOURCE À TROUVER : licence, référence seulement tant qu'elle n'est pas vérifiée]
+- Le site de l'institut suisse Eawag consacré à SODIS. [SOURCE À TROUVER : licence, référence seulement tant qu'elle n'est pas vérifiée]

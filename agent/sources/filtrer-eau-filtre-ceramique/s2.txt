@@ -1,0 +1,106 @@
+# Copie de la source s2 : « Ceramic water filter »
+# Auteur : Contributeurs de Wikipédia (anglais)
+# Lien : https://en.wikipedia.org/wiki/Ceramic_water_filter
+# Licence : CC BY-SA 4.0
+# Copiée le : 2026-11-11
+
+Ceramic water filter - Wikipedia Jump to content From Wikipedia, the free encyclopedia Fine-pored
+filter used for purifying water A Victorian ceramic water filter Ceramic water filters ( CWF ) are
+an inexpensive and effective type of water filter that rely on the small pore size of ceramic
+material to filter dirt, debris, and bacteria out of water. This makes them ideal for use in
+developing countries , [ 1 ] and portable ceramic filters are commonly used in backpacking . [ 2 ]
+Method of action [ edit ] Pot-type ceramic water filter dispensing clean water into a glass. Similar
+to other methods of filtering water, the filter removes particles larger than the size of the pores
+in the filter material. [ 3 ] Typically bacteria, protozoa, and microbial cysts are removed.
+However, filters are typically not effective against viruses since they are small enough to pass
+through to the "clean" side of the filter. Ceramic water filters (CWF) may be treated with silver in
+a form that will not leach away. The silver helps to kill or incapacitate bacteria and prevent the
+growth of mold and algae in the body of the filter. Ceramic filtration does not remove chemical
+contaminants, per se . However, some manufacturers (especially of ceramic candle filters)
+incorporate a high-performance activated carbon core inside the ceramic filter cartridge that
+reduces organic and metallic contaminants. The active carbon absorbs compounds such as chlorine .
+Filters with active carbon need to be replaced periodically because the carbon becomes clogged with
+foreign material. The two most common types of ceramic water filter are pot-type and candle-type
+filters. Pot-type [ edit ] Ceramic filters Ceramic filter systems consist of a porous ceramic filter
+that is attached to, or sits on top of a plastic or ceramic receptacle. Contaminated water is poured
+into a top container. It passes through the filter (or multiple filters) into the receptacle below.
+The lower receptacle usually is fitted with a tap. Contaminants larger than the minute holes of the
+ceramic structure will remain in the top half of the unit. The filters can be cleaned by brushing
+them with a soft brush and rinsing them with clean water. Hot water and soap can also be used.
+Candle-type [ edit ] In stationary use, ceramic candles have mechanical, operational and
+manufacturing advantages over simple inserts and pots. Filter candles allow sturdy metal and plastic
+receptacles to be used, which decreases the likelihood of a sanitary failure. Since their filter
+area is independent of the size of the attachment joint, there is less leakage than other geometries
+of replaceable filter, and more-expensive, higher-quality gaskets can be used. Since they are
+protected by the upper receptacle, rather than forming it, they are less likely to be damaged in
+ordinary use. They are easier to sanitize, because the sanitary side is inside the candle. The
+non-sanitary part is outside, where it is easy to clean. They fit more types of receptacles and
+applications than simple pots, and attach to a simple hole in a receptacle. They also can be
+replaced without replacing the entire upper receptacle, and larger receptacles can simply use more
+filter candles, permitting filter manufacture to be standardized. If a filter in a multifilter
+receptacle is found to be broken, the filter hole can be plugged, and use can continue with fewer
+filters and a longer refill-time until a replacement can be obtained. Also, standardizing the filter
+makes it economical to keep one or a few filters on hand. Other types [ edit ] There are also
+portable ceramic filters, such as the MSR Miniworks, which work via manual pumping, and in-line
+ceramic filters, which filters drinking water that comes through household plumbing. Cleaning these
+filters is the same as with the clay pot filter but also allows for reverse-flow cleaning, wherein
+clean water is forced through the filter backwards, pushing any contaminants out of the ceramic
+pores. Maintenance [ edit ] The major risks to the success of all forms of ceramic filtration are
+hairline cracks and cross-contamination. If the unit is dropped or otherwise abused, the brittle
+nature of ceramic materials can allow fine, barely visible cracks, allowing larger contaminants
+through the filter. Work is being done to modify clay/sawdust ratios during manufacture to improve
+the brittle nature and fracture toughness of these clay ceramic water filter materials. [ 4 ] If the
+"clean" water side of the ceramic membrane is brought into contact with dirty water, hands, cleaning
+cloths, etc., then the filtration will be ineffective. If such contact occurs, the clean side of the
+filter should be thoroughly sterilized before reuse. Development and expansion [ edit ] Modern
+ceramic water filter pot, manufactured by MSABI . Henry Doulton invented the modern form of ceramic
+candle sanitary water filter in 1827. In 1835, Queen Victoria commissioned him to produce such a
+device for her personal use. By 1846, Doulton ceramics was widely recognized as a premier
+manufacturer of an effective prevention device for treating infective water. In 1887, Doulton was
+knighted, in part for his work with water filters. Louis Pasteur 's research concerning bacteria
+also had provided a demonstrable reason for the filters' effect. Doulton's original organization for
+water filters remains in existence, although it has been sold and renamed several times. "Doulton"
+is currently (2013) a registered trademark of Fairey Ceramics. [ 5 ] Several universities including
+MIT; Universities of Colorado; Princeton University ; University of Wisconsin-Milwaukee; The Ohio
+State University ; Universities of Tulane, West Virginia, North Carolina in the US; University of
+Delft, Strathclyde in Europe, USAID , UNICEF, Zamorano University in Honduras, Rafael Landívar
+University in Guatemala, Earth University, Institute of Hydraulic resources, the Red Cross,
+Engineers Without Borders, United Nations, countries in Africa like Nigeria, Ghana, Burkina Faso,
+Kenya, etc. and countries in Asia like Nepal, Bangladesh, Cambodia, Sri Lanka, India, Vietnam,
+Uganda etc. and NGOs are supporting the expansion of the use of ceramic filters in drinking water
+development initiatives; most commonly, in the form of clay pot filters. [ 6 ] Fernando Mazariegos
+of Guatemala was responsible for developing Ceramic Pot Filter technology in 1981 while Director of
+Water Research at the Central American Research Institute in Guatemala City. He was the Director of
+Research and Development at Ecofiltro in Antigua, Guatemala. Ron Rivera studied under Fernando
+Mazariegos of Guatemala and was a key proponent and innovator in the field as part of the group to
+take the ceramic frustum shaped(pot) filter across international borders and helped developing
+nations to provide cheap high quality potable water. Ron Rivera also worked with Potters for Peace
+worldwide for the good and benefit of clay workers in developing nations to sustain their
+businesses. [ 7 ] The latest development is in India, NGOs such as Enactus IIT Madras, Rupayan
+Sansthan, Sehgal Foundation are supporting the expansion and use of indigenized frustum shaped
+ceramic water filters called Matikalp for drinking water development initiatives in Tamil Nadu,
+Rajasthan, Bihar and other states. [ 8 ] [ 9 ] In Africa, Uganda Spouts of Water works in
+collaboration with local communities and partners to produce and distribute ceramic water filters
+(Purifaaya) made from locally available materials. See also [ edit ] List of water supply and
+sanitation by country Chamberland filter References [ edit ] ↑ "Ceramic Pot Water Filter Purifier
+Studies" . Potters Without Borders . Retrieved August 26, 2018 . ↑ Nikki Salzman (2018). "Top 10
+Best Backpacking Water Filters of 2018" . The Adventure Junkies . Retrieved August 26, 2018 . ↑
+"Ceramic Filtration" . Centers for Disease Control and Prevention . 2011. ↑ Physical Properties of
+Porous Clay Ceramic-Ware , A. K. Plappally, I. Yakub, L. C. Brown, W. O. Soboyejo and A. B. O.
+Soboyejo. J. Eng. Mater. Technol. 2011, 133(3), 031004, accessed May 25, 2011. ↑ "History of the
+Doulton Ceramic Filter" . purewatergazette.net . Archived from the original on 2013-01-14 .
+Retrieved 2013-03-08 . ↑ Plappally, Anand Krishnan (2010). Theoretical and Empirical Modeling of
+Flow, Strength, Leaching and Micro-Structural Characteristics of V Shaped Porous Ceramic Water
+Filters (Thesis). The Ohio State University. ↑ Plappally, A., Chen, H., Ayinde, W., Alayande, S.,
+Usoro, A. Friedman, K C. Dare, E., Ogunyale, T., Yakub, I., Leftwich, M., Malatesta, K., Rivera, R.,
+Brown, L., Soboyejo, A., Soboyejo, W. 2011.A Field Study on the Use of Clay Ceramic Water Filters
+and Influences on the General Health in Nigeria. Journal of Health Behavior and Public Health
+1(1):1-14. ↑ "G Filter : A technology for an individual potter (English Subtitled)" . YouTube . 25
+March 2017. Archived from the original on 2021-12-19. ↑ S. Gupta, R. Satankar, A. Kaurwar, U.
+Aravind, M.Sharif, A. Plappally, 2018, Household Production of Ceramic Water Filters in Western
+Rajasthan, India, International Journal for Service Learning in Engineering, Humanitarian
+Engineering and Social Entrepreneurship, 13(1), 53-66, Pennsylvania State University. Retrieved from
+" https://en.wikipedia.org/w/index.php?title=Ceramic_water_filter&oldid=1380733705 " Categories :
+Appropriate technology Water filters Water supply and sanitation by country Hidden categories:
+Articles with short description Short description matches Wikidata Search Search Ceramic water
+filter 5 languages Add topic

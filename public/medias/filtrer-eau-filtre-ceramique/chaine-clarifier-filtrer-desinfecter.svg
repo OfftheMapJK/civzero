@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img" aria-labelledby="t d">
+  <title id="t">Clarifier, filtrer, désinfecter / Clear, filter, disinfect</title>
+  <desc id="d">Trois étapes dans l'ordre : 1, clarifier une eau trouble à travers un linge ; 2, la filtrer ; 3, la désinfecter en la faisant bouillir, au chlore ou au soleil. Schéma CivicNode, CC BY-SA 4.0.</desc>
+  <rect width="900" height="300" fill="#FFFFFF"/>
+  <g fill="none" stroke="#0A0A0A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <!-- 1 : verre trouble et linge -->
+    <path d="M90 90 L110 230 L190 230 L210 90 Z"/>
+    <path d="M98 150 L202 150" stroke-dasharray="6 8"/>
+    <path d="M80 92 Q150 135 220 92 L210 84 Q150 118 90 84 Z" fill="#E9DDC7"/>
+    <path d="M150 40 L150 100" stroke-dasharray="4 7"/>
+    <path d="M120 20 L180 20 L172 38 L128 38 Z"/>
+    <!-- flèche -->
+    <path d="M260 160 L330 160 M312 142 L330 160 L312 178"/>
+    <!-- 2 : filtre (bougie dans un seau) -->
+    <path d="M390 80 L390 180 L510 180 L510 80"/>
+    <rect x="394" y="110" width="112" height="66" fill="#C9C2B0" stroke="none"/>
+    <rect x="430" y="110" width="40" height="60" rx="18" fill="#E9DDC7"/>
+    <path d="M450 170 L450 205"/>
+    <path d="M400 205 L410 250 L490 250 L500 205 Z"/>
+    <path d="M450 212 L450 222" stroke-width="3"/>
+    <!-- flèche -->
+    <path d="M560 160 L630 160 M612 142 L630 160 L612 178"/>
+    <!-- 3 : casserole sur flamme, goutte de chlore, soleil -->
+    <path d="M690 150 L690 200 L800 200 L800 150"/>
+    <path d="M680 150 L810 150"/>
+    <path d="M800 165 L840 160"/>
+    <path d="M745 250 Q722 240 730 218 Q737 228 742 224 Q738 210 748 202 Q752 216 760 222 Q768 236 745 250 Z" fill="#F2C9A0"/>
+    <circle cx="840" cy="85" r="18"/>
+    <path d="M840 50 L840 58 M840 112 L840 120 M805 85 L813 85 M867 85 L875 85 M815 60 L821 66 M859 104 L865 110 M865 60 L859 66 M815 110 L821 104"/>
+    <path d="M720 75 Q732 95 732 105 A12 12 0 0 1 708 105 Q708 95 720 75 Z"/>
+  </g>
+  <g font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="34" fill="#0A0A0A" text-anchor="middle">
+    <text x="150" y="285">1</text>
+    <text x="450" y="285">2</text>
+    <text x="750" y="285">3</text>
+  </g>
+  <g fill="#0A0A0A" opacity="0.18">
+    <circle cx="130" cy="200" r="5"/><circle cx="160" cy="215" r="4"/><circle cx="175" cy="190" r="5"/><circle cx="145" cy="175" r="3"/>
+  </g>
+</svg>

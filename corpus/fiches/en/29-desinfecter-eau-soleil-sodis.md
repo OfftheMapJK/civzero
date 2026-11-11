@@ -37,13 +37,13 @@ The SODIS method (*solar water disinfection*) combines two effects of the sun: u
 > Risks specific to this skill:
 > - Cloudy water, or too short an exposure, stays contaminated while you believe it is safe.
 > - SODIS does not remove chemicals: water polluted by industry or farming is still to be avoided.
-> - Germs can multiply again if treated water waits a long time: drink it within the following day. [TO CHECK: storage time]
+> - After treatment, bacteria can multiply again in the dark: keep the water in its bottle and do not leave it waiting. [TO CHECK: storage time]
 
 ## 3. Step by step
 
 ### Step 1: Prepare the bottles
 
-- **Action:** take transparent, colourless PET plastic bottles, or glass ones, of 2 litres or less, with few scratches. Remove the labels and wash the bottles before first use. Do not use coloured bottles or polycarbonate ones (recycling code 7).
+- **Action:** take transparent PET plastic bottles of 2 litres or less, with few scratches; prefer colourless bottles to coloured ones. Glass also works, but some glass blocks ultraviolet light. Do not use polycarbonate bottles (recycling code 7), which block it. Remove the labels and wash the bottles before first use.
 - **Check:** the bottles are colourless, clean and unlabelled.
 - **Source:** s1
 
@@ -61,15 +61,15 @@ The SODIS method (*solar water disinfection*) combines two effects of the sun: u
 
 ### Step 4: Expose to the sun
 
-- **Action:** lay the bottles in full sun, with no shade, preferably on a metal sheet or a surface that reflects light. Leave them for 6 hours in sunny weather, or 2 full days in cloudy weather.
+- **Action:** lay the bottles in full sun, with no shade. The sources differ on what to put them on: Wikipedia advises a metal sheet that reflects light, the CDC a dark surface; what matters is direct sunlight. Leave them for 6 hours in sunny weather, or 2 days in cloudy weather.
 - **Check:** the bottles stayed in the sun for the whole time, and you noted the start time.
 - **Source:** s1, s2
 
-### Step 5: Drink from the bottle
+### Step 5: Keep the water in the bottle
 
-- **Action:** drink the water straight from the bottle or pour it into a clean glass, when you drink it.
+- **Action:** keep the treated water in its closed bottle until you drink it.
 - **Check:** the treated water is not poured into a doubtful container.
-- **Source:** [TO CHECK: storage instructions after treatment]
+- **Source:** s1
 
 ### Step 6: Replace the bottles
 
@@ -87,8 +87,10 @@ The SODIS method (*solar water disinfection*) combines two effects of the sun: u
 
 ### What the source says
 
+Studies have measured what PET plastic releases into the water: phthalates and adipates during sun exposure, antimony in bottles stored for months in shops. The amounts found are far below World Health Organization limits (source s1).
+
 In sunny weather (less than half the sky covered), 6 hours are enough; in cloudy weather (from half to fully covered, with little or no rain), it takes 2 days. Above a certain turbidity (30 NTU), the water must be filtered or settled first: this is what the newspaper test checks (source s1). The CDC gives the same durations (source s2).
 
 ### Further reading
 
-- The Eawag foundation's SODIS website. [SOURCE NEEDED: licence, reference only until checked]
+- The SODIS website of the Swiss institute Eawag. [SOURCE NEEDED: licence, reference only until checked]

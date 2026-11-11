@@ -1,0 +1,76 @@
+fiche: desinfecter-eau-soleil-sodis
+date: '2026-11-11'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s1
+    passage: >-
+      Colourless, transparent PET water or soda bottles of 2-litre or smaller size with few surface scratches are selected for use. Glass bottles are also suitable. ... Some glass or PVC materials may
+      prevent ultraviolet light from reaching the water. ... Polycarbonate (resin identification code 7) blocks all UVA and UVB rays, and therefore should not be used. Bottles that are clear are to be
+      preferred over bottles that have been colored
+    remarque: 'Vérification : « les bouteilles sont incolores » est plus strict que « préférer » de l''Action et de s1.'
+  - 'n': 2
+    verdict: conforme
+    source: s1
+    passage: place the filled bottle upright on top of a newspaper headline and look down through the bottle opening ... If the letters are not readable ... the water must be pretreated
+    remarque: Le renvoi à la fiche sur le filtre céramique n'est pas de s1.
+  - 'n': 3
+    verdict: conforme
+    source: s1
+    passage: bottles be filled three-quarters, shaken for 20 seconds (with the cap on), then filled completely, recapped
+    remarque: ''
+  - 'n': 4
+    verdict: conforme
+    source: s2
+    passage: >-
+      Lay the bottles down on their side and in the sun for 6 hours (if sunny) or 2 days (if cloudy). ... You can also lay the bottles on a dark surface (s2) ; exposed to the fullest sunlight possible
+      ... reflective metal surface (s1)
+    remarque: >-
+      La divergence sur le support est maintenant signalée. « l'essentiel est le soleil direct » est la synthèse de la fiche (s1 : « fullest sunlight possible »). « noter l'heure de début »
+      (Vérification) est absent.
+  - 'n': 5
+    verdict: conforme
+    source: s1
+    passage: The risk of re-contamination is minimized if the water is stored in the bottles. Refilling and storage in other containers increases the risk of contamination.
+    remarque: « fermée » et « jusqu'au moment de la boire » sont des précisions de la fiche ; s1 dit seulement de garder l'eau dans les bouteilles.
+  - 'n': 6
+    verdict: conforme
+    source: s1
+    passage: Heavily scratched or old, blind bottles should be replaced.
+    remarque: s1 dit que les rayures réduisent l'efficacité ; « laissent passer moins de lumière » est une reformulation de la fiche.
+chiffres:
+  - valeur: 2 litres au plus
+    trouve: true
+    source: s1
+  - valeur: bouteille remplie aux trois quarts
+    trouve: true
+    source: s1
+  - valeur: secouer 20 secondes
+    trouve: true
+    source: s1
+  - valeur: 6 heures par temps ensoleillé
+    trouve: true
+    source: s1
+  - valeur: 2 jours par temps nuageux
+    trouve: true
+    source: s1
+  - valeur: moins de la moitié du ciel couvert (ensoleillé) ; de la moitié au ciel entièrement couvert (nuageux)
+    trouve: true
+    source: s1
+  - valeur: polycarbonate, code de recyclage 7
+    trouve: true
+    source: s1
+  - valeur: 30 NTU
+    trouve: true
+    source: s1
+precautions_absentes: []
+niveaux: ''
+remarques: >-
+  Conventions : un ajout relevé seulement dans une ligne « Vérification » est noté ici sans changer le verdict de l'étape ; un ajout dans l'« Action » donne le verdict ajout ; une étape qui se déclare
+  « sans objet » compte sans source ; un chiffre absent des copies mais marqué À VALIDER dans la même phrase est noté trouve: false, a_valider: true. Copies lisibles et complètes : s1 est l'article
+  entier, s2 reproduit la page CDC. Ressource : la phrase sur le plastique est maintenant conforme à s1 (phtalates et adipates mesurés après 17 heures d'exposition ; antimoine mesuré dans des
+  bouteilles stockées des mois en magasin ; valeurs très inférieures aux limites de l'OMS). s2 dit que le soleil « améliore la qualité de l'eau en réduisant le nombre de germes » ; l'accroche («
+  désinfecter ») et le principe (« tuer la plupart des microbes ») sont plus affirmatifs. Principe : « en petite épaisseur » n'a pas de seuil dans s1. Sécurité : le délai de conservation reste À
+  VALIDER, sans chiffre.
+verdict: conforme

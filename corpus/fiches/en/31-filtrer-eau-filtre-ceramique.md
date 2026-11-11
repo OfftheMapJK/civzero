@@ -49,7 +49,7 @@ The very fine pores of ceramic stop dirt, bacteria and parasites. Viruses, which
 
 ### Step 2: Choose the filter
 
-- **Action:** read the instructions: to hold back bacteria, the pores must be 0.3 micron or smaller; for parasites, 1 micron or smaller. A pot or candle ceramic filter, or a portable filter, is suitable if it reaches these sizes.
+- **Action:** read the instructions: to hold back bacteria, the absolute pore size must be 0.3 micron or smaller; for parasites such as *Giardia* or *Cryptosporidium*, 1 micron or smaller. These sizes are given for portable filters: check in the ceramic filter's instructions that it reaches them.
 - **Check:** the instructions give a pore size of 0.3 micron or less.
 - **Source:** s1
 
@@ -61,20 +61,20 @@ The very fine pores of ceramic stop dirt, bacteria and parasites. Viruses, which
 
 ### Step 4: Disinfect the filtered water
 
-- **Action:** disinfect the filtered water to kill the remaining viruses and bacteria: boil it or chlorinate it.
+- **Action:** disinfect the filtered water to kill the remaining viruses and bacteria: boil it, or add a chemical disinfectant such as chlorine.
 - **Check:** the filtered water has been boiled or chlorinated before drinking.
 - **Source:** s1
 
 ### Step 5: Maintain the filter
 
-- **Action:** when the water flows more slowly, gently brush the ceramic with a soft brush and rinse with clean water, without touching the clean side with dirty hands or a cloth. Replace carbon cartridges according to the instructions.
-- **Check:** the flow is back, and the clean side has only touched clean water.
+- **Action:** gently brush the ceramic with a soft brush and rinse with clean water, without touching the clean side with dirty hands or a cloth. Carbon cartridges need replacing regularly, because the carbon clogs.
+- **Check:** the ceramic is clean, and the clean side has only touched clean water.
 - **Source:** s2
 
 ### Step 6: Check for cracks
 
-- **Action:** after a fall or a knock, examine the ceramic against the light. A cracked candle can be replaced without changing the whole filter.
-- **Check:** no crack is visible; otherwise, the candle is replaced.
+- **Action:** handle the filter with care: a fall or a knock can cause barely visible cracks, which let dirty water through. A cracked candle can be replaced without changing the whole filter; in a filter with several candles, you can plug the hole of a broken candle and carry on with the others.
+- **Check:** after a knock, the filter has been examined, and any cracked or broken candle has been replaced or its hole plugged.
 - **Source:** s2
 
 ## 4. If you get stuck

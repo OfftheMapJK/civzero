@@ -17,7 +17,8 @@ variantes:
   - id: ebullition-rechaud-coupure
     danger: orange
 danger: vert
-statut: brouillon
+origine: adaptee
+statut: verifiee-ia
 redaction: adaptee-ia
 reproductions: 0
 impact:
@@ -56,7 +57,9 @@ La chaleur tue les bactéries, les virus et les parasites. Il suffit d'une ébul
 > Risques propres à cette fiche :
 > - Brûlures : eau bouillante et casserole chaude. Laisser refroidir avant de transvaser, tenir les enfants à l'écart.
 > - Variante réchaud : un réchaud à gaz de camping, un barbecue ou un brasero ne s'allume jamais à l'intérieur, ni dans un garage. Leurs fumées contiennent du monoxyde de carbone, inodore et mortel.
-> - Une eau qui contient du carburant, des produits chimiques ou des matières radioactives ne devient pas potable en bouillant.
+> - Une eau qui contient du carburant, des produits chimiques ou des matières radioactives ne devient pas potable en bouillant : utiliser de l'eau en bouteille ou une autre source, et prévenir les services de santé.
+> - Ne jamais boire, cuisiner ni se laver avec l'eau des radiateurs ou du circuit de chauffage.
+> - Suivre les consignes des services de santé quand elles disent comment faire bouillir ou traiter l'eau.
 
 ## 3. Pas-à-pas
 
@@ -68,15 +71,15 @@ La chaleur tue les bactéries, les virus et les parasites. Il suffit d'une ébul
 
 ### Étape 2 : Porter à gros bouillons
 
-- **Action :** porter l'eau à ébullition franche, à gros bouillons, puis la maintenir 1 minute. Au-dessus de 2 000 mètres d'altitude, maintenir 3 minutes.
+- **Action :** porter l'eau à ébullition franche, à gros bouillons, puis la maintenir 1 minute. Au-dessus de 2 000 mètres d'altitude [À VALIDER : conversion de 6 500 pieds], maintenir 3 minutes.
 - **Vérification :** de grosses bulles montent sans arrêt depuis le fond pendant toute la durée.
-- **Source :** s1 (1 minute ; 3 minutes au-dessus de 6 500 pieds, soit environ 2 000 mètres) [À VALIDER : conversion]
+- **Source :** s1 (1 minute ; 3 minutes au-dessus de 6 500 pieds)
 
-### Étape 3 : Laisser refroidir à couvert
+### Étape 3 : Laisser refroidir
 
-- **Action :** couper le feu, couvrir et laisser refroidir sans rien plonger dans l'eau.
+- **Action :** couper le feu et laisser refroidir l'eau bouillie.
 - **Vérification :** l'eau est tiède ou froide au toucher de la casserole.
-- **Source :** sans objet
+- **Source :** s1
 
 ### Étape 4 : Stocker proprement
 
@@ -86,7 +89,7 @@ La chaleur tue les bactéries, les virus et les parasites. Il suffit d'une ébul
 
 ### Étape 5 : Améliorer le goût si besoin
 
-- **Action :** l'eau bouillie a un goût plat. La transvaser plusieurs fois d'un récipient à l'autre et la laisser reposer quelques heures, ou ajouter une pincée de sel par litre.
+- **Action :** l'eau bouillie a un goût plat. La verser d'un récipient à l'autre et la laisser reposer quelques heures, ou ajouter une pincée de sel par litre.
 - **Vérification :** le goût est acceptable pour boire.
 - **Source :** s1
 
