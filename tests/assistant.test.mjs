@@ -34,6 +34,13 @@ test("le panorama s'ouvre sur le principe du savoir qu'il couvre, cité depuis l
   assert.match(index.principes.get(r.savoir).principe, /consommer moins/);
 });
 
+test("une demande sur l'eau donne le panorama du savoir « Rendre l'eau potable », de l'instant aux heures", async () => {
+  const r = await repondre(index, "Comment rendre l'eau potable", { actif: false });
+  assert.equal(r.type, 'solutions');
+  assert.equal(r.savoir, 'rendre-eau-potable');
+  assert.ok(r.solutions.some((s) => s.id === 'rendre-eau-potable-faisant-bouillir'));
+});
+
 test("sans savoir commun à plusieurs fiches, le panorama n'annonce pas de principe", async () => {
   const r = await repondre(index, 'talkie walkie portée', { actif: false });
   if (r.type === 'solutions') assert.equal(r.savoir, '');

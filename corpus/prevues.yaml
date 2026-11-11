@@ -196,52 +196,13 @@
   danger: vert
   vague: 1
   hors_corpus: false
-- id: rendre-eau-potable-faisant-bouillir
+- id: construire-filtre-sable-lent
   socle: source
   savoirs:
   - rendre-eau-potable
   titre:
-    fr: Rendre l'eau potable en la faisant bouillir
-    en: Make water safe by boiling it
-  horizon: instant
-  tier:
-  - 0
-  danger: vert
-  vague: 1
-  hors_corpus: false
-- id: desinfecter-eau-soleil-sodis
-  socle: source
-  savoirs:
-  - rendre-eau-potable
-  titre:
-    fr: Désinfecter l'eau au soleil (SODIS)
-    en: Disinfect water with sunlight (SODIS)
-  horizon: instant
-  tier:
-  - 0
-  danger: orange
-  vague: 1
-  hors_corpus: false
-- id: desinfecter-eau-chlore
-  socle: source
-  savoirs:
-  - rendre-eau-potable
-  titre:
-    fr: Désinfecter l'eau au chlore
-    en: Disinfect water with chlorine
-  horizon: instant
-  tier:
-  - 0
-  danger: orange
-  vague: 1
-  hors_corpus: false
-- id: filtrer-eau-filtre-sable-lent
-  socle: source
-  savoirs:
-  - rendre-eau-potable
-  titre:
-    fr: 'Filtrer l''eau : filtre à sable lent, céramique'
-    en: 'Filter water: slow sand filter, ceramic'
+    fr: Construire un filtre à sable lent
+    en: Build a slow sand filter
   horizon: hours
   tier:
   - 1

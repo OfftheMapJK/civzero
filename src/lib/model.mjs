@@ -95,7 +95,8 @@ export function buildModel(c) {
 
   // Provenance (TASL : titre, auteur, source, licence), attestations et médias, quand la fiche en a.
   const provenance = (f) => (f.meta.provenance || []).map((s) => (typeof s === 'string' ? { titre: s } : {
-    titre: s.titre || '', auteur: s.auteur || '', url: s.source || s.url || '', licence: s.licence || '', modifie: !!s.modifie }));
+    titre: s.titre || '', auteur: s.auteur || '', url: s.source || s.url || '', licence: s.licence || '', modifie: !!s.modifie,
+    reference: s.usage !== 'adapte' && !!s.licence, id: s.id || '' }));
   const attestations = (f) => (f.meta.attestations || []).map((a) => ({
     type: a.type || '', par: a.par || '', competence: a.competence || '', date: a.date || '', contexte: a.contexte || '' }));
   const medias = (f, etape = null) => (f.meta.medias || [])

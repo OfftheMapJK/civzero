@@ -19,6 +19,7 @@ const STATUTS = ['brouillon', 'documentee', 'testee', 'reproduite'];
 const LICENCES_ADAPTABLES = /^(domaine public|public domain|cc0( 1\.0)?|cc by( \d\.\d)?|cc by-sa( \d\.\d)?|licence ouverte( 2\.0)?|etalab( 2\.0)?|odbl( 1\.0)?)$/i;
 const TYPES_ATTESTATION = ['testée', 'réalisée', 'confirmée', 'tested', 'made', 'confirmed'];
 const TYPES_MEDIA = ['image', 'schema', 'video'];
+const USAGES = ['adapte', 'reference'];
 
 const c = loadCorpus(RACINE, 'fr');
 const { structure, prevues, conf } = c;
@@ -109,13 +110,31 @@ for (const f of c.fiches) {
   if (/Entre les deux modes/.test(f.body)) avert(ou, 'la section « Entre les deux modes » a été retirée du gabarit');
 
   // Provenance, attestations, médias
+  // Provenance (voir agent/METHODE.md) : « adapte » = le texte de la fiche en dérive ; « reference » = seulement cité.
+  const idsSources = new Set();
   for (const s of m.provenance || []) {
     if (typeof s !== 'object') continue;   // anciennes pistes de sources, en texte libre
     if (!s.titre) err(ou, 'une source de la provenance n\'a pas de titre');
-    if (s.licence && !LICENCES_ADAPTABLES.test(s.licence)) {
-      err(ou, `la source « ${s.titre} » est sous « ${s.licence} » : cette licence ne permet pas de l'adapter dans une fiche`);
+    if (s.id) idsSources.add(s.id);
+    const usage = s.usage || 'reference';
+    if (!USAGES.includes(usage)) err(ou, `la source « ${s.titre} » a un usage inconnu « ${usage} » (permis : ${USAGES.join(', ')})`);
+    if (usage === 'adapte') {
+      if (!s.licence) err(ou, `la source « ${s.titre} » est adaptée mais sa licence n'est pas indiquée`);
+      else if (!LICENCES_ADAPTABLES.test(s.licence)) {
+        err(ou, `la source « ${s.titre} » est sous « ${s.licence} » : cette licence ne permet pas de l'adapter dans une fiche (mettre usage: reference)`);
+      }
+      if (!s.source && !s.url) err(ou, `la source adaptée « ${s.titre} » n'a pas de lien`);
+      if (!s.verifie_le) avert(ou, `la source adaptée « ${s.titre} » n'a pas de date de vérification (verifie_le)`);
     }
     if (!s.licence && !s.url && !s.source) avert(ou, `la source « ${s.titre} » n'a ni licence ni lien`);
+  }
+  if (m.redaction === 'adaptee-ia' && !(m.provenance || []).some((s) => s.usage === 'adapte')) {
+    err(ou, "fiche adaptée (redaction: adaptee-ia) sans aucune source adaptée dans la provenance");
+  }
+  for (const s of f.steps) {
+    for (const ref of (s.source.match(/\bs\d+\b/g) || [])) {
+      if (!idsSources.has(ref)) err(ou, `l'étape ${s.n} cite la source « ${ref} », absente de la provenance`);
+    }
   }
   for (const a of m.attestations || []) {
     if (!TYPES_ATTESTATION.includes(a.type)) err(ou, `attestation de type inconnu « ${a.type} » (permis : ${TYPES_ATTESTATION.join(', ')})`);
