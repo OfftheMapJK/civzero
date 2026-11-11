@@ -1,9 +1,8 @@
 ---
 id: communs-ressources-quartier
 titre: Repérer les ressources de son quartier
-bloc: telecom
-aussi: [communs]
-besoin: s-orienter
+socle: humus
+savoirs: [ressources-commune]
 horizon: hours
 temps: "une demi-journée de marche"
 vague: 2
@@ -23,7 +22,9 @@ impact:
   fin_de_vie: "sans objet"
   passerelle: "premier inventaire des communs du quartier"
 prerequis: [telecom-carte-hors-ligne]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

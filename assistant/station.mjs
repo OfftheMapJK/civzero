@@ -1,4 +1,4 @@
-// Serveur de la station CivZero : sert le site construit (dist/) et la page de l'assistant.
+// Serveur de la station CivicNode : sert le site construit (dist/) et la page de l'assistant.
 // Aucune dépendance en plus de celles du site. Aucune page n'a besoin de JavaScript.
 //
 //   PORT       port d'écoute (défaut 8000)
@@ -92,6 +92,9 @@ const SUPPL = `
 .sol .choix { margin-top: .75rem; }
 .d-vert { color: var(--vert); } .d-orange { color: var(--orange); } .d-rouge { color: var(--rouge); }
 .tour-q { font-weight: 700; font-size: 1.125rem; margin: 0 0 1rem; }
+.principe { max-width: 70ch; }
+.principe p { margin: .35rem 0 0; }
+.principe .note { display: block; font-size: .8125rem; font-weight: 700; letter-spacing: .06em; color: var(--dim); }
 .redige { max-width: 70ch; }
 .redige p { margin: .35rem 0 0; }
 .redige .note, .gabarit .note { display: block; font-size: .8125rem; font-weight: 700; letter-spacing: .06em; color: var(--dim); }
@@ -169,11 +172,21 @@ function niveaux(f) {
     .filter(Boolean).join(' · ');
 }
 
+// Le principe du savoir couvert par le panorama, cité tel quel depuis la structure : ce n'est pas l'assistant qui parle.
+function renduPrincipe(t, dernier) {
+  const sv = t.savoir && index.principes.get(t.savoir);
+  if (!sv) return '';
+  return `<div class="principe"><span class="note">PRINCIPE · SAVOIR « ${E(sv.titre).toUpperCase()} »</span>`
+    + `<p>${E(sv.principe)}</p>${dernier && sv.ordre ? `<p><strong>Dans quel ordre :</strong> ${E(sv.ordre)}</p>` : ''}`
+    + (dernier ? `<p class="src"><a href="${E(sv.lien)}">Toutes les fiches de ce savoir &gt;</a></p>` : '') + '</div>';
+}
+
 function renduSolutions(t, dernier) {
   const redige = t.intro || t.solutions.some((x) => x.texte);
-  let h = redige ? `<div class="redige"><span class="note">RÉPONSE RÉDIGÉE PAR L'ASSISTANT · À VÉRIFIER DANS LES FICHES</span>`
-      + `<p>${E(t.intro || 'Voici les solutions que proposent les fiches, de la plus rapide à la plus longue.')}</p></div>`
-    : '<div class="gabarit"><p>Voici les fiches qui répondent, de la plus rapide à la plus longue.</p></div>';
+  let h = renduPrincipe(t, dernier);
+  h += redige ? `<div class="redige"><span class="note">RÉPONSE RÉDIGÉE PAR L'ASSISTANT · À VÉRIFIER DANS LES FICHES</span>`
+      + `<p>${E(t.intro || 'Voici les solutions que proposent les fiches, de la plus immédiate à la plus longue.')}</p></div>`
+    : '<div class="gabarit"><p>Voici les fiches qui répondent, de la plus immédiate à la plus longue.</p></div>';
   for (const x of t.solutions) {
     const f = index.pano.parId.get(x.id);
     h += `<div class="sol"><h3>${E(x.libelle || f.titre)}</h3><p class="niv">${niveaux(f)}</p>`
@@ -212,7 +225,7 @@ function renduTour(conv, t, dernier) {
   if (!t.fiche) {
     return h + '<h2>Aucune fiche ne répond à cette question</h2>'
       + '<p class="lead">Votre question est enregistrée sur la station : elle aidera à choisir les prochaines fiches. '
-      + 'Essayez d\'autres mots, ou parcourez <a href="toutes.html">toutes les fiches</a>.</p></section>';
+      + 'Essayez d\'autres mots, ou parcourez <a href="fr/toutes.html">toutes les fiches</a>.</p></section>';
   }
   const f = index.parId.get(t.fiche);
   const red = t.redaction;
@@ -241,7 +254,7 @@ function renduTour(conv, t, dernier) {
     h += '<h2>Pas encore sur la station</h2><div class="choix">'
       + t.aVenir.map((id) => {
         const x = index.fermees.find((f) => f.id === id);
-        const niveaux = [x.horizon && ({ instant: 'INSTANT', hours: 'HEURES', seasons: 'SAISONS' }[x.horizon] || x.horizon.toUpperCase()),
+        const niveaux = [x.horizon && (NIVEAU_H[x.horizon] || x.horizon.toUpperCase()),
           x.tier.length && `TIER ${x.tier.join('–')}`, x.danger && `DANGER ${x.danger.toUpperCase()}`].filter(Boolean).join(' · ');
         return `<div class="opt vide"><span><span class="note">FICHE À VENIR${niveaux ? ` · ${niveaux}` : ''}</span><span class="t">${E(x.titre)}</span></span></div>`;
       }).join('') + '</div>';
@@ -266,13 +279,13 @@ async function pageAssistant(params) {
   }
   const actif = await modeleActif();
   const { fiche, etape } = conv.ctx;
-  const retour = fiche && etape ? `f-${fiche}-e${etape}.html` : fiche ? `f-${fiche}.html` : 'index.html';
+  const retour = fiche && etape ? `fr/f-${fiche}-e${etape}.html` : fiche ? `fr/f-${fiche}.html` : 'fr/index.html';
   const fil = conv.tours.map((t, i) => renduTour(conv, t, i === conv.tours.length - 1)).join('');
   const premier = !conv.tours.length;
   return { html: `<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Assistant · CivZero</title><style>${CSS}${SUPPL}</style></head><body>
-<header class="bar"><div class="in"><a href="index.html">CIVZERO // STATION HORS-LIGNE</a>
+<title>Assistant · CivicNode</title><style>${CSS}${SUPPL}</style></head><body>
+<header class="bar"><div class="in"><a href="fr/index.html">CIVICNODE // STATION HORS-LIGNE</a>
 <span>ASSISTANT : ${actif ? 'ACTIF' : 'ÉTEINT (RECHERCHE SEULE)'}</span></div></header>
 <main>
 <div class="crumb"><span>/ <strong>ASSISTANT D'ATELIER</strong>${fiche ? ` · ${E(index.parId.get(fiche).titreFiche)}${etape ? `, étape ${etape}` : ''}` : ''}</span><a href="assistant">NOUVELLE CONVERSATION</a></div>
@@ -288,7 +301,7 @@ ${!premier && MEMOIRE && conv.tours.length >= MEMOIRE ? `<p class="src">L'assist
 <div class="row"><a class="btn" href="${E(retour)}">[ &lt; REVENIR ]</a>${premier ? '' : ' <a class="btn" href="assistant">[ NOUVELLE CONVERSATION ]</a>'}</div>
 </main>
 <footer class="foot"><span>Version bêta. Les fiches sont des brouillons non relus : ne les appliquez pas comme sûres.</span>
-<span><a href="toutes.html">Toutes les fiches</a> · <a href="recherche.html">Recherche</a></span></footer>
+<span><a href="fr/toutes.html">Toutes les fiches</a> · <a href="fr/recherche.html">Recherche</a></span></footer>
 </body></html>` };
 }
 
@@ -312,6 +325,8 @@ http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://station');
     if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405); res.end(); return; }
+    // Depuis les pages françaises, le lien relatif « assistant » mène à /fr/assistant : on renvoie à /assistant.
+    if (url.pathname === '/fr/assistant') { res.writeHead(303, { Location: `/assistant${url.search}` }); res.end(); return; }
     if (url.pathname === '/assistant') {
       const p = await pageAssistant(url.searchParams);
       if (p.redirection) { res.writeHead(303, { Location: p.redirection }); res.end(); return; }
@@ -325,7 +340,7 @@ http.createServer(async (req, res) => {
     res.end('Erreur de la station : ' + e.message);
   }
 }).listen(PORT, HOTE, async () => {
-  console.log(`Station CivZero : http://localhost:${PORT}`);
+  console.log(`Station CivicNode : http://localhost:${PORT}`);
   console.log(`Assistant : ${(await modeleActif()) ? 'modèle trouvé' : 'aucun modèle, recherche seule'} (${process.env.LLAMA_URL || 'http://127.0.0.1:8080'})`);
   console.log('Questions enregistrées dans donnees/questions.jsonl. Ctrl + C pour arrêter.');
 });

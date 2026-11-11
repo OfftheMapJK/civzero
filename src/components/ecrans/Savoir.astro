@@ -1,0 +1,56 @@
+---
+// Un savoir : le principe commun, l'ordre de combinaison, le tableau de choix des fiches
+// (de l'instant aux saisons), puis les pistes en recherche qui s'y rattachent.
+import Base from '../../layouts/Base.astro';
+import Crumb from '../Crumb.astro';
+import Forme from '../Forme.astro';
+const { p } = Astro.props;
+const t = p.t;
+const c = t.colC;
+---
+<Base title={p.title} p={p}>
+  <Crumb c={p.crumb} t={t} />
+  <p class="prog">{t.savoirs.slice(0, -1)}</p>
+  <h1>&gt; {p.titre}</h1>
+  {p.principeHtml && <div class="prose"><h2>{t.principe}</h2><Fragment set:html={p.principeHtml} /></div>}
+  {p.ordreHtml && <div class="panel"><span class="lab">{t.ordre}</span><Fragment set:html={p.ordreHtml} /></div>}
+
+  <h2>{t.choixTitre}</h2>
+  <p class="src">{t.choixLead}</p>
+  <div class="tablebox">
+    <table class="tchoix">
+      <thead><tr><th>{c.fiche}</th><th>{c.temps}</th><th>{c.tier}</th><th>{c.danger}</th><th>{c.exige}</th><th>{c.ressources}</th><th>{c.vivant}</th></tr></thead>
+      <tbody>
+        {p.fiches.map((o: any) => (
+          <tr class:list={{ prevue: !o.href }}>
+            {o.href
+              ? <td><a href={o.href}>{o.titre}</a></td>
+              : <td class="avenir-txt">{o.titre} · {t.aVenirMin}</td>}
+            <td>{o.tableau.temps}</td>
+            <td>{o.tableau.tier}</td>
+            <td class="niv">{o.niveau && <Forme niveau={o.niveau} taille="1rem" t={t} />} {o.tableau.dangerMot}{o.tableau.varianteMot && <span class="src">{t.variante(o.tableau.varianteMot.toLowerCase())}</span>}</td>
+            <td>{o.tableau.exige}</td>
+            <td>{o.tableau.ressources}</td>
+            <td>{o.tableau.vivant}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {p.pistes.length > 0 && (
+    <>
+      <h2>{t.enRecherche}</h2>
+      <p class="src">{t.enRechercheLead}</p>
+      <div class="choix">
+        {p.pistes.map((x: any) => (
+          <a class="opt piste" href={x.href}>
+            <span><span class="t">{x.titre}</span><span class="s">{t.PISTE} · {x.maturiteMot}</span></span>
+            <span class="go" aria-hidden="true">&gt;</span>
+          </a>
+        ))}
+      </div>
+    </>
+  )}
+  <div class="row"><a class="btn" href={p.retour}>{t.retour}</a></div>
+</Base>

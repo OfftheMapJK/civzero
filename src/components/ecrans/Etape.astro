@@ -4,35 +4,38 @@ import Base from '../../layouts/Base.astro';
 import Crumb from '../Crumb.astro';
 import Badges from '../Badges.astro';
 import Danger from '../Danger.astro';
+import Provenance from '../Provenance.astro';
 import { STATION } from '../../lib/model.mjs';
 const { p } = Astro.props;
+const t = p.t;
 ---
-<Base title={p.title} modeTxt={p.modeTxt}>
-  <Crumb bloc={p.crumb.bloc} besoin={p.crumb.besoin} />
+<Base title={p.title} p={p}>
+  <Crumb c={p.crumb} t={t} />
   <h1>{p.titre}</h1>
   <Badges badges={p.badges} />
-  <Danger danger={p.danger} compact />
+  <Danger danger={p.danger} compact t={t} />
   <div class="prog">
-    <span>ÉTAPE {p.rang}/{p.total} <span aria-hidden="true">[{p.barre}]</span></span>
+    <span>{t.etape(p.rang, p.total)} <span aria-hidden="true">[{p.barre}]</span></span>
     <span class="sous">{p.etapeTitre}</span>
   </div>
   <p class="action" set:html={p.action} />
-  {p.verif && <div class="panel"><span class="lab">Vérification</span><span set:html={p.verif} /></div>}
-  {p.source && <p class="src">Source : <span set:html={p.source} /></p>}
+  {p.verif && <div class="panel"><span class="lab">{t.verif}</span><span set:html={p.verif} /></div>}
+  {p.source && <p class="src">{t.source} : <span set:html={p.source} /></p>}
+  <Provenance p={{ t, medias: p.medias }} />
   {p.coince.length > 0 ? (
     <details>
-      <summary>SI ÇA COINCE SUR CETTE ÉTAPE</summary>
-      <div>{p.coince.map((c) => <p><strong set:html={c.probleme} /> <span set:html={c.texte} /></p>)}</div>
+      <summary>{t.coinceEtape}</summary>
+      <div>{p.coince.map((c: any) => <p><strong set:html={c.probleme} /> <span set:html={c.texte} /></p>)}</div>
     </details>
   ) : (
-    <p class="src">Aucun blocage documenté pour cette étape. <a href={p.rapport}>Signaler un blocage</a></p>
+    <p class="src">{t.aucunBlocage} <a href={p.rapport}>{t.signaler}</a></p>
   )}
   {STATION && (
     <form class="cherche" action="assistant" method="get">
-      <label class="lab" for="q">Une question sur cette étape ?</label>
+      <label class="lab" for="q">{t.questionEtape}</label>
       <div>
-        <input id="q" name="q" type="search" placeholder="Ce qui coince…" />
-        <button class="btn" type="submit">[ DEMANDER ]</button>
+        <input id="q" name="q" type="search" placeholder={t.questionPh} />
+        <button class="btn" type="submit">{t.demander}</button>
       </div>
       <input type="hidden" name="fiche" value={p.ficheId} />
       <input type="hidden" name="etape" value={p.etapeN} />
@@ -42,5 +45,5 @@ const { p } = Astro.props;
     <a class="btn" href={p.precedent.href}>{p.precedent.t}</a>
     <a class="btn plein" href={p.suivant.href}>{p.suivant.t}</a>
   </div>
-  <p class="src"><a href={p.complete}>Voir la fiche complète sur une seule page</a></p>
+  <p class="src"><a href={p.complete}>{t.voirComplete}</a></p>
 </Base>

@@ -123,3 +123,24 @@ textarea { width: 100%; min-height: 26rem; font: inherit; font-size: 1rem; line-
   .opt { gap: .85rem; padding: .9rem 1rem; }
   .opt .k { width: auto; }
 }
+
+/* Bascule : langue, socles, médias */
+.bar-droite { display: flex; flex-wrap: wrap; gap: .25rem 1rem; align-items: center; }
+.langue { border: 2px solid var(--bg); padding: 0 .4rem; letter-spacing: .08em; }
+.langue:hover, .langue:focus-visible { background: var(--bg); color: var(--fg); }
+.crumb a { color: inherit; }
+.explique { font-style: italic; }
+.medias figure { margin: 0; display: flex; flex-direction: column; gap: .35rem; }
+.medias img, .medias video { max-width: 100%; height: auto; border: 2px solid var(--line); }
+.medias figcaption .src { display: block; }
+
+/* Tableau de choix d'un savoir, pistes du socle Spore */
+.tchoix td:first-child { min-width: 14rem; font-weight: 600; }
+.tchoix td:first-child a { display: inline-block; padding-block: .2rem; }
+.tchoix td.niv { white-space: nowrap; }
+.tchoix td.niv .src { display: block; white-space: normal; }
+.tchoix tr.prevue td { color: var(--dim); }
+.tchoix th { white-space: nowrap; }
+.opt.piste { border-style: dotted; }
+.badge.actif { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.badge.eteint { color: var(--dim); border-style: dashed; }

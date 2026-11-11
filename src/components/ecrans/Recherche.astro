@@ -1,23 +1,22 @@
 ---
-// Recherche plein texte hors-ligne (Pagefind). Demande JavaScript ; sans lui, la page renvoie à l'index.
+// Recherche plein texte hors-ligne (Pagefind), un index par langue. Demande JavaScript ; sans lui, la page renvoie à l'index.
 import Base from '../../layouts/Base.astro';
 const { p } = Astro.props;
+const t = p.t;
+const racine = p.lang === 'fr' ? '../' : '';
 ---
-<Base title={p.title} modeTxt={p.modeTxt}>
-  <link slot="head" rel="stylesheet" href="pagefind/pagefind-ui.css" />
-  <div class="crumb"><span>/ <strong>RECHERCHE</strong></span><a href="index.html">ACCUEIL</a></div>
-  <h1>&gt; Chercher dans les fiches</h1>
-  <div id="recherche"></div>
-  <noscript><p class="lead">La recherche demande JavaScript. Utilisez la page <a href="toutes.html">Toutes les fiches</a>.</p></noscript>
-  <script is:inline src="pagefind/pagefind-ui.js"></script>
+<Base title={p.title} p={p}>
+  <link slot="head" rel="stylesheet" href={`${racine}pagefind/pagefind-ui.css`} />
+  <div class="crumb"><span>/ <strong>{t.recherche.toUpperCase()}</strong></span><a href="index.html">{t.accueil}</a></div>
+  <h1>{t.chercherTitre}</h1>
+  <div id="recherche" data-sans-index={t.sansIndex}></div>
+  <noscript><p class="lead">{t.sansJs} <a href="toutes.html">{t.toutes}</a>.</p></noscript>
+  <script is:inline src={`${racine}pagefind/pagefind-ui.js`}></script>
   <script is:inline>
     window.addEventListener('DOMContentLoaded', function () {
       var zone = document.getElementById('recherche');
-      if (!window.PagefindUI) {
-        zone.textContent = "L'index de recherche n'est pas disponible ici. Utilisez la page Toutes les fiches.";
-        return;
-      }
-      var base = location.pathname.replace(/recherche(\.html)?$/, '');
+      if (!window.PagefindUI) { zone.textContent = zone.getAttribute('data-sans-index'); return; }
+      var base = location.pathname.replace(/(fr\/)?recherche(\.html)?$/, '');
       var ui = new PagefindUI({ element: '#recherche', baseUrl: base, showSubResults: true, showImages: false });
       var q = new URLSearchParams(location.search).get('q');
       if (q) ui.triggerSearch(q);

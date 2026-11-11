@@ -2,8 +2,8 @@
 id: energie-panneau-usb
 titre: Recharger son téléphone avec un petit panneau solaire USB
 accroche: "Elle explique comment se servir d'un panneau solaire pliable à sortie USB, et pourquoi il vaut mieux charger une batterie externe que le téléphone directement."
-bloc: energie
-besoin: produire-son-energie
+socle: ambre
+savoirs: [recharger-telephone, produire-electricite]
 horizon: hours
 temps: "un achat, puis une journée de soleil pour apprendre"
 vague: 1
@@ -25,7 +25,9 @@ impact:
   fin_de_vie: "panneau en filière de collecte des équipements électriques"
   passerelle: "première production d'énergie, vers la recharge solaire 12 V"
 prerequis: [nodule-zero, energie-lire-etiquette]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

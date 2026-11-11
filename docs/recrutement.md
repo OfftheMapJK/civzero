@@ -8,7 +8,7 @@
 
 Bonjour,
 
-Je monte CivZero, une bibliothèque de savoirs pratiques qui fonctionne sans Internet : comment tenir une coupure, garder un téléphone chargé, s'organiser avec ses voisins, puis, plus tard, alimenter une station sur batterie ou monter un réseau radio de quartier. Tout repose sur ce qui existe déjà et sur des moyens qui appartiennent à ceux qui les utilisent.
+Je monte CivicNode, une bibliothèque de savoirs pratiques qui fonctionne sans Internet : comment tenir une coupure, garder un téléphone chargé, s'organiser avec ses voisins, puis, plus tard, alimenter une station sur batterie ou monter un réseau radio de quartier. Tout repose sur ce qui existe déjà et sur des moyens qui appartiennent à ceux qui les utilisent.
 
 La bêta compte 21 fiches. Elles sont toutes en brouillon, et c'est là que j'ai besoin de vous : une fiche ne passe « testée » que si quelqu'un l'a refaite et a dit ce qui s'est passé.
 

@@ -1,8 +1,8 @@
 [
-  { "question": "Mon téléphone se vide quand même alors que j'ai tout coupé", "fiche": "energie-telephone-coupure", "etape": 1, "attendu": ["energie-telephone-coupure:c3"] },
+  { "question": "Mon téléphone se vide quand même alors que j'ai tout coupé", "fiche": "energie-telephone-coupure", "etape": 1, "attendu": ["energie-recharge-voiture:c1"] },
   { "question": "La batterie externe ne recharge pas mon portable", "attendu": ["energie-telephone-coupure:c1", "energie-telephone-coupure:e3"] },
-  { "question": "Comment recharger mon téléphone avec la voiture ?", "attendu": ["energie-telephone-coupure:e4"] },
-  { "question": "La prise allume-cigare de la voiture ne donne rien", "attendu": ["energie-telephone-coupure:c2"] },
+  { "question": "Comment recharger mon téléphone avec la voiture ?", "attendu": ["energie-recharge-voiture:e2", "energie-recharge-voiture"] },
+  { "question": "La prise allume-cigare de la voiture ne donne rien", "attendu": ["energie-recharge-voiture:c1"] },
   { "question": "Je ne capte aucune station dans la maison", "attendu": ["telecom-ecoute-radio:c2", "socle-coupure-72h:c2", "telecom-ecoute-radio:e3"] },
   { "question": "Il n'y a plus de piles pour le poste radio", "attendu": ["telecom-ecoute-radio:c1"] },
   { "question": "À quelle heure écouter les informations ?", "attendu": ["telecom-ecoute-radio:e4"] },

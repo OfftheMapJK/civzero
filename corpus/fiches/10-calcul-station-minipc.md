@@ -1,8 +1,8 @@
 ---
 id: calcul-station-minipc
-titre: Monter sa station CivZero sur un mini-PC de récupération
-bloc: calcul
-besoin: avoir-la-bibliotheque
+titre: Monter sa station CivicNode sur un mini-PC de récupération
+socle: strate
+savoirs: [monter-station]
 horizon: hours
 temps: "une journée"
 vague: 2
@@ -22,17 +22,19 @@ impact:
   fin_de_vie: "voir fiche energie-fin-de-vie"
   passerelle: "alimentation sur batterie 12 V et solaire en vague 3"
 prerequis: [nodule-zero, energie-lire-etiquette]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 
-# Monter sa station CivZero sur un mini-PC de récupération
+# Monter sa station CivicNode sur un mini-PC de récupération
 
-Transformer un petit ordinateur d'occasion en bibliothèque hors-ligne : les fiches CivZero et Wikipédia, consultables depuis un navigateur. L'assistant n'est pas traité ici.
+Transformer un petit ordinateur d'occasion en bibliothèque hors-ligne : les fiches CivicNode et Wikipédia, consultables depuis un navigateur. L'assistant n'est pas traité ici.
 
 ## 1. Principe
 
-La station est un ordinateur ordinaire qui fait tourner deux services : un lecteur de corpus hors-ligne (Kiwix) pour Wikipédia, et un petit serveur web pour les fiches CivZero, qui sont de simples pages HTML. Tout est installé pendant qu'on a Internet ; ensuite, plus rien n'en dépend.
+La station est un ordinateur ordinaire qui fait tourner deux services : un lecteur de corpus hors-ligne (Kiwix) pour Wikipédia, et un petit serveur web pour les fiches CivicNode, qui sont de simples pages HTML. Tout est installé pendant qu'on a Internet ; ensuite, plus rien n'en dépend.
 
 ## 2. Sécurité
 
@@ -70,10 +72,10 @@ Les commandes données sont indicatives. [À VALIDER : commandes exactes sur une
 - **Vérification :** depuis la station, `http://localhost:8080` affiche la page d'accueil Kiwix.
 - **Source :** documentation Kiwix
 
-### Étape 5 : Copier et servir les fiches CivZero
+### Étape 5 : Copier et servir les fiches CivicNode
 
 - **Action :** copier le dossier des fiches (site HTML) sur la station et le servir avec un serveur web léger comme `darkhttpd`, un programme unique disponible en paquet Debian : par exemple `darkhttpd /chemin/vers/site --port 8000`. [À VALIDER : commande exacte sur la machine réelle]
-- **Vérification :** l'accueil CivZero s'affiche dans le navigateur de la station.
+- **Vérification :** l'accueil CivicNode s'affiche dans le navigateur de la station.
 - **Source :** [SOURCE À TROUVER]
 
 ### Étape 6 : Démarrage automatique

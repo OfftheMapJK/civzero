@@ -2,9 +2,8 @@
 id: energie-trouver-recharge
 titre: Trouver où recharger son téléphone pendant une coupure
 accroche: "Elle aide à trouver une prise qui fonctionne encore autour de soi, sans rien posséder d'autre que son téléphone et son câble."
-bloc: energie
-aussi: [communs]
-besoin: garder-du-courant
+socle: ambre
+savoirs: [recharger-telephone]
 horizon: instant
 temps: "le temps de se déplacer"
 vague: 1
@@ -26,7 +25,9 @@ impact:
   fin_de_vie: "sans objet"
   passerelle: "vers l'inventaire des ressources du quartier"
 prerequis: [nodule-zero]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

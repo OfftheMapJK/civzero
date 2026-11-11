@@ -1,15 +1,15 @@
 ---
 // Forme du niveau de danger : cercle, triangle, octogone. Toujours accompagnée du mot.
-interface Props { niveau: string; taille?: string }
-const { niveau, taille = '1.5rem' } = Astro.props;
-const formes: Record<string, [string, string]> = {
-  vert: ['<circle cx="14" cy="14" r="11" style="fill:var(--vert)"/>', 'Cercle'],
-  orange: ['<polygon points="14,3 26,25 2,25" style="fill:var(--orange)"/>', 'Triangle'],
-  rouge: ['<polygon points="9,2 19,2 26,9 26,19 19,26 9,26 2,19 2,9" style="fill:var(--rouge)"/>', 'Octogone'],
+interface Props { niveau: string; taille?: string; t: any }
+const { niveau, taille = '1.5rem', t } = Astro.props;
+const formes: Record<string, string> = {
+  vert: '<circle cx="14" cy="14" r="11" style="fill:var(--vert)"/>',
+  orange: '<polygon points="14,3 26,25 2,25" style="fill:var(--orange)"/>',
+  rouge: '<polygon points="9,2 19,2 26,9 26,19 19,26 9,26 2,19 2,9" style="fill:var(--rouge)"/>',
 };
 const f = formes[niveau];
 ---
 {f && (
   <svg viewBox="0 0 28 28" width={taille} height={taille} role="img"
-       aria-label={`${f[1]} : niveau ${niveau}`} set:html={f[0]} />
+       aria-label={t.nivAria(t.forme[niveau], t.niv[niveau])} set:html={f} />
 )}

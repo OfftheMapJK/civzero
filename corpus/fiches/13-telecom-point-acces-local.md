@@ -1,8 +1,8 @@
 ---
 id: telecom-point-acces-local
 titre: Point d'accès Wi-Fi local
-bloc: telecom
-besoin: partager-le-savoir
+socle: mycelium
+savoirs: [partager-sans-internet]
 horizon: hours
 temps: "une demi-journée"
 vague: 2
@@ -28,7 +28,9 @@ impact:
   fin_de_vie: "voir fiche energie-fin-de-vie"
   passerelle: "alimentation solaire directe de la station"
 prerequis: [nodule-zero, calcul-station-minipc, energie-lire-etiquette]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

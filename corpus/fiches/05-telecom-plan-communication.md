@@ -2,9 +2,8 @@
 id: telecom-plan-communication
 titre: Plan de communication entre proches et voisins
 accroche: "Elle aide à décider à l'avance comment se joindre et où se retrouver quand les téléphones ne passent plus."
-bloc: telecom
-aussi: [communs]
-besoin: se-joindre
+socle: mycelium
+savoirs: [se-retrouver-parler]
 horizon: hours
 temps: "une réunion"
 vague: 1
@@ -24,7 +23,9 @@ impact:
   fin_de_vie: "sans objet"
   passerelle: "premier pas vers un réseau de proximité, puis un réseau radio entre stations"
 prerequis: []
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

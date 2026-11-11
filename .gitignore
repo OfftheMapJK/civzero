@@ -5,3 +5,9 @@ __pycache__/
 *.pyc
 .DS_Store
 donnees/
+
+# Fichiers de test temporaires
+*.tmp.mjs
+
+# Ancien accueil français, remplacé par fr/[slug].astro (suppression non permise depuis l assistant)
+src/pages/fr/_index-ancien.astro

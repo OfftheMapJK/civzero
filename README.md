@@ -1,4 +1,4 @@
-# CivZero
+# CivicNode
 
 Une station de savoirs pratiques hors-ligne pour tenir une coupure et gagner en autonomie avec ce qui existe déjà : réparer, détourner, mailler. L'écologie y est une contrainte de départ, pas un module.
 

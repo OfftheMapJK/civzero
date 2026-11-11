@@ -6,9 +6,12 @@
   "license": "AGPL-3.0-only",
   "scripts": {
     "dev": "astro dev",
+    "verifier": "node scripts/verifier.mjs",
+    "test": "node scripts/verifier.mjs && node --test tests/*.test.mjs",
+    "prebuild": "node scripts/verifier.mjs",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
-    "station": "CIVZERO_STATION=1 astro build && pagefind --site dist && node assistant/station.mjs",
+    "station": "node scripts/verifier.mjs && CIVZERO_STATION=1 astro build && pagefind --site dist && node assistant/station.mjs",
     "mesurer": "node assistant/mesurer.mjs"
   },
   "dependencies": {

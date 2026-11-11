@@ -1,0 +1,42 @@
+---
+// Un socle : son nom et ce qu'il veut dire, puis ses domaines et leurs savoirs.
+// Le socle Spore n'a pas de domaines : il range ses pistes par maturité.
+import Base from '../../layouts/Base.astro';
+const { p } = Astro.props;
+const t = p.t;
+---
+<Base title={p.title} p={p}>
+  <div class="crumb"><span>/ <strong>{p.nom}</strong></span><a href="index.html">{t.accueil}</a></div>
+  <p class="prog">{p.domaine.toUpperCase()}</p>
+  <h1>&gt; {p.nom}</h1>
+  <p class="lead explique">{p.explique}</p>
+  {p.avert && <div class="panel">{p.avert}</div>}
+  {p.domaines.map((d: any) => (
+    <>
+      <h2>{d.titre}</h2>
+      <div class="choix">
+        {d.savoirs.map((s: any) => (
+          <a class:list={['opt', { vide: !s.ouvert }]} href={s.href}>
+            <span><span class="t">{s.titre}</span><span class="s">{s.compte}</span></span>
+            <span class="go" aria-hidden="true">&gt;</span>
+          </a>
+        ))}
+      </div>
+    </>
+  ))}
+  {p.pistes.map((g: any) => (
+    <>
+      <h2>{g.titre}</h2>
+      <p class="src">{g.expl}</p>
+      <div class="choix">
+        {g.pistes.map((x: any) => (
+          <a class="opt piste" href={x.href}>
+            <span><span class="t">{x.titre}</span><span class="s">{x.accroche}</span></span>
+            <span class="go" aria-hidden="true">&gt;</span>
+          </a>
+        ))}
+      </div>
+    </>
+  ))}
+  <div class="row"><a class="btn" href={p.retour}>{t.retour}</a></div>
+</Base>

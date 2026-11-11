@@ -1,0 +1,770 @@
+# Structure de CivicNode : familles > socles > domaines > savoirs. Les fiches s'y rattachent par leur champ `savoirs`.
+familles:
+- id: sol
+  nom:
+    fr: Le sol
+    en: The ground
+  socles:
+  - lichen
+- id: subsister
+  nom:
+    fr: Subsister
+    en: Subsist
+  socles:
+  - ambre
+  - source
+  - graine
+  - ecorce
+  - baume
+- id: relier
+  nom:
+    fr: Relier
+    en: Connect
+  socles:
+  - mycelium
+  - humus
+  - pollen
+- id: transmettre
+  nom:
+    fr: Transmettre
+    en: Pass on
+  socles:
+  - strate
+- id: explorer
+  nom:
+    fr: Explorer
+    en: Explore
+  socles:
+  - spore
+socles:
+  lichen:
+    nom:
+      fr: Lichen
+      en: Lichen
+    domaine:
+      fr: Le vivant et la régénération
+      en: Living things and regeneration
+    nom_explique:
+      fr: Le lichen associe un champignon et une algue qui ne vivent bien qu'ensemble. Pionnier, il colonise la roche nue et fait naître le sol ; sentinelle, il disparaît quand l'air est pollué. S'adapter
+        dans les interstices, en alliance avec le vivant.
+      en: A lichen joins a fungus and an alga that only thrive together. A pioneer, it settles on bare rock and turns it into soil; a sentinel, it vanishes when the air is polluted. Adapting in the interstices,
+        in alliance with living things.
+  ambre:
+    nom:
+      fr: Ambre
+      en: Amber
+    domaine:
+      fr: Énergie
+      en: Energy
+    nom_explique:
+      fr: 'Le mot « électricité » vient du grec êlektron, l''ambre : frottée, cette résine fossile attire les petits objets. C''est la première électricité observée par les humains.'
+      en: 'The word “electricity” comes from the Greek ēlektron, amber: when rubbed, this fossil resin attracts small objects. It is the first electricity humans ever observed.'
+  source:
+    nom:
+      fr: Source
+      en: Spring
+    domaine:
+      fr: Eau et hygiène
+      en: Water and hygiene
+    nom_explique:
+      fr: Ce qui jaillit, se partage et se protège.
+      en: What wells up, is shared, and must be protected.
+  graine:
+    nom:
+      fr: Graine
+      en: Seed
+    domaine:
+      fr: Alimentation
+      en: Food
+    nom_explique:
+      fr: Semer, nourrir, conserver, transmettre. La graine contient la récolte suivante, à condition de la garder.
+      en: Sow, feed, keep, pass on. A seed holds the next harvest, as long as it is kept.
+  ecorce:
+    nom:
+      fr: Écorce
+      en: Bark
+    domaine:
+      fr: Habitat
+      en: Shelter
+    nom_explique:
+      fr: L'écorce protège l'arbre du froid, du chaud et parfois du feu. S'abriter, isoler, garder la chaleur ou le frais.
+      en: Bark shields a tree from cold, heat and sometimes fire. Taking shelter, insulating, keeping warm or cool.
+  baume:
+    nom:
+      fr: Baume
+      en: Balm
+    domaine:
+      fr: Soins et entraide
+      en: Care and mutual aid
+    nom_explique:
+      fr: 'Ce qui apaise et répare : la plante qu''on applique, le geste de l''autre. Le soin vu comme entraide et orientation vers les secours, jamais comme acte médical.'
+      en: 'What soothes and mends: the plant you apply, the hand of another. Care as mutual aid and as the way to the right help, never as a medical act.'
+  mycelium:
+    nom:
+      fr: Mycélium
+      en: Mycelium
+    domaine:
+      fr: Réseaux et télécoms
+      en: Networks
+    nom_explique:
+      fr: Le réseau souterrain des champignons relie les arbres d'une forêt et fait circuler eau, nutriments et signaux. Un réseau sans centre.
+      en: The underground web of fungi links the trees of a forest and carries water, nutrients and signals between them. A network with no centre.
+  humus:
+    nom:
+      fr: Humus
+      en: Humus
+    domaine:
+      fr: Communs
+      en: Commons
+    nom_explique:
+      fr: Le sol fertile se forme de ce que chacun dépose et nourrit tout le monde. « Humain » et « humus » partagent la même racine. S'organiser, partager, décider ensemble.
+      en: Fertile soil forms from what each one leaves and feeds everyone. “Human” and “humus” share the same root. Organising, sharing, deciding together.
+  pollen:
+    nom:
+      fr: Pollen
+      en: Pollen
+    domaine:
+      fr: Culture et arts
+      en: Culture and arts
+    nom_explique:
+      fr: Ce qui passe de l'un à l'autre, porté par le vent ou les insectes, presque invisible, et qui féconde. Une chanson, un récit, un savoir-faire transmis.
+      en: What passes from one to another, carried by wind or insects, almost invisible, and makes things grow. A song, a story, a skill handed on.
+  strate:
+    nom:
+      fr: Strate
+      en: Strata
+    domaine:
+      fr: Savoirs et archive
+      en: Knowledge and archive
+    nom_explique:
+      fr: 'Les couches de sédiments gardent la mémoire de la Terre. L''archive : les fiches, les encyclopédies, les cartes, les données.'
+      en: 'Layers of sediment keep the Earth''s memory. The archive: skills, encyclopedias, maps, data.'
+  spore:
+    nom:
+      fr: Spore
+      en: Spore
+    domaine:
+      fr: Pistes et recherches
+      en: Leads and research
+    nom_explique:
+      fr: 'La spore est minuscule, portée par le vent, et peut attendre longtemps le bon endroit pour germer. Ici, les pistes : des idées, des prototypes et des recherches en cours, sobres et à portée de
+        main, qui ne sont pas encore des fiches. On les suit, on les teste, on rapporte ce qu''on a appris.'
+      en: 'A spore is tiny, carried by the wind, and can wait a long time for the right place to sprout. Here are the leads: ideas, prototypes and ongoing research, frugal and within reach, that are not
+        skills yet. Follow them, test them, report what you learned.'
+    pistes: true
+domaines:
+  connaitre-vivant:
+    socle: lichen
+    titre:
+      fr: Connaître le vivant
+      en: Know living things
+  regenerer:
+    socle: lichen
+    titre:
+      fr: Régénérer
+      en: Regenerate
+  comprendre-electricite:
+    socle: ambre
+    titre:
+      fr: Comprendre l'électricité
+      en: Understand electricity
+  garder-courant:
+    socle: ambre
+    titre:
+      fr: Garder du courant
+      en: Keep the power on
+  produire-energie:
+    socle: ambre
+    titre:
+      fr: Produire son énergie
+      en: Generate your own energy
+  fin-de-vie:
+    socle: ambre
+    titre:
+      fr: Fin de vie
+      en: End of life
+  avoir-eau:
+    socle: source
+    titre:
+      fr: Avoir de l'eau
+      en: Have water
+  boire:
+    socle: source
+    titre:
+      fr: Boire sans risque
+      en: Drink safely
+  hygiene:
+    socle: source
+    titre:
+      fr: Hygiène
+      en: Hygiene
+  se-nourrir:
+    socle: graine
+    titre:
+      fr: Se nourrir en coupure
+      en: Eat through an outage
+  conserver:
+    socle: graine
+    titre:
+      fr: Conserver
+      en: Preserve food
+  produire-nourriture:
+    socle: graine
+    titre:
+      fr: Produire
+      en: Grow food
+  vivre-logement:
+    socle: ecorce
+    titre:
+      fr: Vivre chez soi sans réseau
+      en: Live at home off-grid
+  proteger:
+    socle: ecorce
+    titre:
+      fr: Protéger
+      en: Protect
+  batir:
+    socle: ecorce
+    titre:
+      fr: Bâtir
+      en: Build
+  preparer-soins:
+    socle: baume
+    titre:
+      fr: Se préparer
+      en: Get ready
+  en-situation:
+    socle: baume
+    titre:
+      fr: Quand ça arrive
+      en: When it happens
+  plantes-soin:
+    socle: baume
+    titre:
+      fr: Plantes
+      en: Plants
+  s-informer:
+    socle: mycelium
+    titre:
+      fr: S'informer
+      en: Stay informed
+  se-joindre:
+    socle: mycelium
+    titre:
+      fr: Se joindre
+      en: Reach each other
+  partager-savoir:
+    socle: mycelium
+    titre:
+      fr: Partager le savoir
+      en: Share knowledge
+  territoire:
+    socle: humus
+    titre:
+      fr: Connaître son territoire
+      en: Know your area
+  s-organiser:
+    socle: humus
+    titre:
+      fr: S'organiser
+      en: Organise
+  mettre-en-commun:
+    socle: humus
+    titre:
+      fr: Mettre en commun
+      en: Pool resources
+  se-retrouver:
+    socle: pollen
+    titre:
+      fr: Se retrouver
+      en: Gather
+  memoire:
+    socle: pollen
+    titre:
+      fr: Garder la mémoire
+      en: Keep memory alive
+  de-ses-mains:
+    socle: pollen
+    titre:
+      fr: De ses mains
+      en: By hand
+  station:
+    socle: strate
+    titre:
+      fr: La station
+      en: The station
+  savoirs-hors-ligne:
+    socle: strate
+    titre:
+      fr: Savoirs hors-ligne
+      en: Offline knowledge
+  contribuer:
+    socle: strate
+    titre:
+      fr: Contribuer
+      en: Contribute
+savoirs:
+  observer-vivant:
+    domaine: connaitre-vivant
+    titre:
+      fr: Observer le vivant autour de soi
+      en: Observe the life around you
+    principe:
+      fr: 'Avant d''agir sur un lieu, on regarde ce qui y vit, à différentes saisons et heures de la journée. Noter ce qu''on voit, même sans connaître les noms, apprend vite où sont les zones riches, les
+        zones pauvres et ce qui change. L''observation se partage : les programmes de sciences participatives transforment les notes de chacun en connaissance commune.'
+      en: 'Before acting on a place, look at what lives there, in different seasons and at different times of day. Writing down what you see, even without knowing the names, quickly shows where the rich
+        and poor areas are and what is changing. Observation can be shared: citizen science programmes turn everyone''s notes into common knowledge.'
+  lire-sol:
+    domaine: connaitre-vivant
+    titre:
+      fr: Lire un sol
+      en: Read a soil
+    principe:
+      fr: 'Un sol se lit avec les mains et les yeux avant de se travailler : sa texture (sable, limon, argile), sa structure, son odeur, l''eau qui s''y infiltre et les êtres vivants qu''on y trouve. Un
+        sol tassé, sans vers de terre, qui garde l''eau en flaque ou la laisse filer, dit ce dont il manque. Lire d''abord évite d''apporter ce qui n''est pas utile.'
+      en: 'A soil is read with hands and eyes before it is worked: its texture (sand, silt, clay), its structure, its smell, how water soaks in, and the living things found in it. A compacted soil with
+        no earthworms, where water pools or drains straight away, tells you what it lacks. Reading first avoids adding what is not needed.'
+  faire-vivre-sol:
+    domaine: regenerer
+    titre:
+      fr: Faire vivre le sol
+      en: Bring soil to life
+    principe:
+      fr: 'Un sol vivant se nourrit de matière organique et se protège du soleil, de la pluie battante et du piétinement. Trois gestes suffisent le plus souvent : rendre au sol ce qui en vient (compost,
+        feuilles, tontes), le garder couvert (paillis, plantes de couverture) et le travailler le moins possible. La vie du sol fait le reste, à son rythme, sur des saisons.'
+      en: 'A living soil feeds on organic matter and is protected from sun, heavy rain and trampling. Three gestures are usually enough: give back to the soil what comes from it (compost, leaves, grass
+        clippings), keep it covered (mulch, cover crops) and dig it as little as possible. Soil life does the rest, at its own pace, over seasons.'
+    ordre:
+      fr: D'abord couvrir et nourrir (paillis, compost), ensuite seulement planter. On n'apporte jamais d'engrais sur un sol qu'on n'a pas lu.
+      en: First cover and feed (mulch, compost), and only then plant. Never add fertiliser to a soil you have not read.
+  accueillir-biodiversite:
+    domaine: regenerer
+    titre:
+      fr: Accueillir la biodiversité
+      en: Welcome biodiversity
+    principe:
+      fr: 'La biodiversité revient quand on lui laisse de la place, de la nourriture et des abris : une haie d''essences locales, un coin non fauché, un point d''eau, un tas de bois. Souvent, il s''agit
+        moins de faire que de cesser de faire : moins tondre, ne pas traiter, ne pas tout nettoyer. La diversité des plantes et des habitats attire celle des animaux.'
+      en: 'Biodiversity comes back when it is given space, food and shelter: a hedge of local species, an unmown corner, a water point, a pile of wood. It is often less about doing than about stopping:
+        mowing less, not spraying, not tidying everything. A variety of plants and habitats draws a variety of animals.'
+  lire-mesurer:
+    domaine: comprendre-electricite
+    titre:
+      fr: Lire et mesurer
+      en: Read and measure
+    principe:
+      fr: 'Avant de brancher, de recharger ou de dimensionner, on lit ce qu''un appareil consomme et ce qu''une source fournit. Une étiquette, un multimètre et une feuille de papier suffisent à éviter la
+        plupart des erreurs : le mauvais chargeur, la batterie trop petite, le fil qui chauffe.'
+      en: 'Before plugging in, charging or sizing anything, read what a device uses and what a source supplies. A label, a multimeter and a sheet of paper are enough to avoid most mistakes: the wrong charger,
+        the battery that is too small, the wire that heats up.'
+  recharger-telephone:
+    domaine: garder-courant
+    titre:
+      fr: Recharger un téléphone sans réseau
+      en: Charge a phone off-grid
+    principe:
+      fr: 'Deux leviers, dans cet ordre : consommer moins, puis trouver une source. Faire durer la charge ne demande qu''un instant et ne coûte rien. Viennent ensuite les sources qu''on a déjà (une prise
+        ailleurs, les batteries de la maison, la voiture), puis celles qui se préparent (manivelle, panneau USB) et celles qui se construisent (dynamo, génératrice).'
+      en: 'Two levers, in this order: use less, then find a source. Making the charge last takes an instant and costs nothing. Then come the sources you already have (a socket elsewhere, the batteries at
+        home, the car), then those you prepare (crank, USB panel) and those you build (bike dynamo, pedal generator).'
+  alimenter-station:
+    domaine: garder-courant
+    titre:
+      fr: Alimenter la station
+      en: Power the station
+    principe:
+      fr: 'La station tourne sur 12 V : une batterie, une protection, des câbles bien dimensionnés, et une source pour recharger la batterie. On mesure d''abord ce que consomme la station, on protège chaque
+        circuit par un fusible au plus près de la batterie, puis on choisit la batterie et la recharge. Une installation protégée et mesurée tient des années ; une installation improvisée chauffe.'
+      en: 'The station runs on 12 V: a battery, protection, correctly sized wires, and a source to recharge the battery. First measure what the station uses, protect each circuit with a fuse as close to
+        the battery as possible, then choose the battery and the charging. A protected, measured installation lasts for years; an improvised one heats up.'
+    ordre:
+      fr: 'Dans cet ordre : mesurer la consommation, protéger le circuit (fusible et section de câble), brancher la batterie, ajouter la recharge solaire.'
+      en: 'In this order: measure consumption, protect the circuit (fuse and wire size), connect the battery, add solar charging.'
+  produire-electricite:
+    domaine: produire-energie
+    titre:
+      fr: Produire son électricité
+      en: Generate electricity
+    principe:
+      fr: 'Produire son électricité, c''est convertir une énergie disponible sur place (le soleil, le mouvement, le vent) et la stocker pour plus tard. Les petites puissances sont à portée de main : un
+        panneau USB recharge un téléphone, une dynamo un éclairage. Au-delà, on passe par une batterie et un régulateur. On commence petit, on mesure, et l''on ne produit que ce qu''on consomme vraiment.'
+      en: 'Generating electricity means converting energy available on site (sunlight, movement, wind) and storing it for later. Small amounts are within reach: a USB panel charges a phone, a dynamo powers
+        a light. Beyond that, you need a battery and a charge controller. Start small, measure, and only produce what you actually use.'
+  se-defaire-batterie:
+    domaine: fin-de-vie
+    titre:
+      fr: Se défaire d'une batterie sans danger
+      en: Get rid of a battery safely
+    principe:
+      fr: 'Une batterie usée garde de l''énergie et contient des matières toxiques : elle ne va ni à la poubelle ni au feu. Une batterie gonflée, chaude, percée ou qui sent se met à l''écart, à l''extérieur,
+        sur une surface qui ne brûle pas, et rejoint un point de collecte. Avant de jeter, on se demande si l''appareil se répare ; avant de réutiliser des cellules, on mesure le risque.'
+      en: 'A worn-out battery still holds energy and contains toxic materials: it goes neither in the bin nor in a fire. A swollen, hot, punctured or smelly battery is set apart, outdoors, on a non-flammable
+        surface, and taken to a collection point. Before throwing a device away, ask whether it can be repaired; before reusing cells, weigh the risk.'
+  stocker-economiser-eau:
+    domaine: avoir-eau
+    titre:
+      fr: Stocker et économiser l'eau
+      en: Store and save water
+    principe:
+      fr: 'En cas de coupure, l''eau stockée d''avance est la plus sûre : environ 2 litres par personne et par jour pour boire, plus de quoi cuisiner et se laver un peu, dans des récipients propres, fermés,
+        à l''abri de la lumière, renouvelés régulièrement. Quand l''eau ne coule plus, on la réserve à l''essentiel : boire, cuisiner, se laver les mains. Une même eau sert plusieurs fois, de la plus propre
+        à la moins propre.'
+      en: 'During an outage, water stored in advance is the safest: about 2 litres per person per day for drinking, plus some for cooking and washing a little, in clean, closed containers, out of the light,
+        renewed regularly. When taps run dry, keep water for the essentials: drinking, cooking, washing hands. The same water can be used several times, from the cleanest use to the dirtiest.'
+  trouver-recuperer-eau:
+    domaine: avoir-eau
+    titre:
+      fr: Trouver et récupérer l'eau
+      en: Find and collect water
+    principe:
+      fr: 'Toute eau trouvée doit être considérée comme non potable tant qu''on ne l''a pas traitée. La pluie récupérée sur un toit, l''eau d''une source, d''un puits ou d''un cours d''eau n''ont pas les
+        mêmes risques : on juge d''abord d''où elle vient et ce qui se trouve en amont (élevage, cultures, route, industrie). L''eau de pluie, bien recueillie, sert largement à tout sauf à boire sans traitement.'
+      en: 'Any water you find must be treated as unsafe to drink until it has been treated. Rainwater from a roof, water from a spring, a well or a stream do not carry the same risks: first judge where
+        it comes from and what lies upstream (livestock, crops, a road, industry). Well-collected rainwater is useful for almost everything except drinking untreated.'
+  rendre-eau-potable:
+    domaine: boire
+    titre:
+      fr: Rendre l'eau potable
+      en: Make water safe to drink
+    principe:
+      fr: 'D''abord rendre l''eau claire, ensuite la désinfecter : une eau trouble se désinfecte mal. Filtrer retire les particules ; faire bouillir, exposer au soleil ou chlorer tue les microbes. Aucune
+        de ces méthodes ne retire les produits chimiques : une eau polluée par l''industrie ou l''agriculture reste à éviter.'
+      en: 'First make the water clear, then disinfect it: cloudy water is hard to disinfect. Filtering removes particles; boiling, sunlight or chlorine kill germs. None of these methods removes chemicals:
+        water polluted by industry or farming is still to be avoided.'
+  rester-propre:
+    domaine: hygiene
+    titre:
+      fr: Rester propre avec peu d'eau
+      en: Stay clean with little water
+    principe:
+      fr: 'Avec peu d''eau, on garde l''essentiel : se laver les mains avant de manger et de cuisiner et après les toilettes, garder propres les zones du corps qui s''irritent, laver ce qui touche la nourriture.
+        Un filet d''eau qui coule et du savon nettoient mieux qu''une bassine partagée. Le savon compte plus que la quantité d''eau.'
+      en: 'With little water, keep to the essentials: wash your hands before eating or cooking and after using the toilet, keep the parts of the body that get irritated clean, wash whatever touches food.
+        A thin stream of running water and soap cleans better than a shared basin. Soap matters more than the amount of water.'
+  assainir:
+    domaine: hygiene
+    titre:
+      fr: Assainir sans réseau
+      en: Sanitation without sewers
+    principe:
+      fr: 'Sans réseau d''égout, on sépare et on éloigne ce qui peut rendre malade de l''eau qu''on boit et des aliments qu''on mange. Toilettes sèches, eaux grises filtrées par le sol et les plantes :
+        chaque méthode transforme un déchet en matière utile, à condition de respecter les distances avec les points d''eau et les temps de compostage. En cas de doute, on éloigne et on attend.'
+      en: 'Without sewers, separate and keep away whatever can make people ill from the water you drink and the food you eat. Dry toilets, greywater filtered by soil and plants: each method turns waste
+        into a useful material, as long as distances from water points and composting times are respected. When in doubt, keep it away and wait.'
+  tenir-reserves:
+    domaine: se-nourrir
+    titre:
+      fr: Tenir avec ses réserves
+      en: Live off your stores
+    principe:
+      fr: 'Une réserve utile se compose de ce qu''on mange déjà, qui se garde sans froid et se prépare avec peu d''eau et d''énergie. On la fait tourner : on consomme le plus ancien, on remplace au fur
+        et à mesure, et elle ne se perd pas. Elle se complète par ce qui se glane et se partage autour de soi.'
+      en: 'A useful food store is made of what you already eat, keeps without cold, and can be prepared with little water and energy. Rotate it: eat the oldest first, replace as you go, and nothing is wasted.
+        It can be topped up with what is gleaned and shared nearby.'
+  cuire-econome:
+    domaine: se-nourrir
+    titre:
+      fr: Cuire avec peu d'énergie
+      en: Cook with little energy
+    principe:
+      fr: 'Pour cuire avec peu d''énergie, on garde la chaleur au lieu d''en produire davantage : un couvercle, une marmite épaisse, une caisse isolée qui termine la cuisson sans feu, ou le soleil. Faire
+        tremper les légumes secs et couper petit raccourcit la cuisson. Chaque minute de flamme économisée l''est aussi en combustible.'
+      en: 'To cook with little energy, keep the heat in rather than producing more: a lid, a thick pot, an insulated box that finishes cooking without a flame, or the sun. Soaking pulses and cutting food
+        small shortens cooking. Every minute of flame saved is fuel saved.'
+  conserver-sans-frigo:
+    domaine: conserver
+    titre:
+      fr: Conserver sans réfrigérateur
+      en: Preserve food without a fridge
+    principe:
+      fr: 'Un aliment se gâte à cause de l''eau, de l''air, de la chaleur et des microbes. Chaque méthode agit sur l''un de ces facteurs : le séchage retire l''eau, la cave garde au frais, le vinaigre et
+        la fermentation rendent le milieu acide, le sucre retient l''eau. On choisit la méthode selon l''aliment.'
+      en: 'Food spoils because of water, air, heat and germs. Each method acts on one of them: drying removes water, a cellar keeps things cool, vinegar and fermentation make food acidic, sugar binds the
+        water. Choose the method according to the food.'
+  conserver-chaleur:
+    domaine: conserver
+    titre:
+      fr: Conserver par la chaleur
+      en: Preserve with heat
+    principe:
+      fr: 'La chaleur conserve en détruisant les microbes, puis le bocal fermé empêche qu''ils reviennent. C''est la méthode la plus exigeante : temps et températures doivent être respectés à la lettre,
+        surtout pour les aliments peu acides (légumes, viandes), où un défaut peut rendre gravement malade. On suit une recette éprouvée, sans improviser, et l''on jette tout bocal bombé ou qui sent mauvais.'
+      en: 'Heat preserves by destroying germs, then the sealed jar keeps them from coming back. It is the most demanding method: times and temperatures must be followed exactly, especially for low-acid
+        foods (vegetables, meat), where a mistake can cause serious illness. Follow a proven recipe without improvising, and throw away any bulging or bad-smelling jar.'
+  cultiver-potager:
+    domaine: produire-nourriture
+    titre:
+      fr: Cultiver un potager
+      en: Grow a vegetable garden
+    principe:
+      fr: Un petit potager nourrit mieux s'il commence petit, près de la maison, sur un sol vivant et couvert. On choisit des plantes faciles, adaptées au climat et à la saison, on arrose au pied et le
+        matin, et l'on garde ses propres graines pour l'année suivante. Les erreurs d'une saison enseignent la suivante.
+      en: A small garden feeds you better if it starts small, close to the house, on a living, covered soil. Choose easy plants suited to the climate and the season, water at the foot of the plant and in
+        the morning, and save your own seeds for the next year. One season's mistakes teach the next.
+  arbres-animaux:
+    domaine: produire-nourriture
+    titre:
+      fr: Arbres et animaux
+      en: Trees and animals
+    principe:
+      fr: 'Arbres fruitiers et petits animaux s''inscrivent dans le temps long : on les choisit adaptés au lieu, on les installe bien, et ils donnent pendant des années. Un animal demande des soins chaque
+        jour, un abri, de l''eau et une attention à son bien-être ; on s''engage seulement si l''on peut tenir dans la durée.'
+      en: 'Fruit trees and small animals belong to the long term: choose them to suit the place, settle them properly, and they give for years. An animal needs care every day, shelter, water and attention
+        to its welfare; only commit if you can keep it up over time.'
+  cueillir:
+    domaine: produire-nourriture
+    titre:
+      fr: Cueillir
+      en: Forage
+    principe:
+      fr: 'Une règle avant toutes les autres : on ne mange jamais une plante qu''on n''a pas identifiée avec certitude. Certaines plantes comestibles ont des sosies mortels. On apprend quelques espèces
+        sûres avec une personne qui les connaît, on cueille loin des routes et des cultures traitées, et l''on ne prend qu''une petite part pour que la plante se renouvelle.'
+      en: 'One rule above all: never eat a plant you have not identified with certainty. Some edible plants have deadly look-alikes. Learn a few safe species with someone who knows them, pick away from
+        roads and sprayed fields, and only take a small share so the plant can grow back.'
+  chaleur-frais:
+    domaine: vivre-logement
+    titre:
+      fr: Garder la chaleur ou le frais
+      en: Keep warm or cool
+    principe:
+      fr: 'Garder la chaleur ou le frais, c''est d''abord limiter les échanges avec l''extérieur : fermer, calfeutrer, isoler, occulter, puis ne chauffer ou rafraîchir que la pièce où l''on vit. Tout en
+        gardant de l''air neuf : un logement trop fermé devient humide et peut devenir dangereux si l''on y fait brûler quelque chose.'
+      en: 'Keeping warm or cool means first limiting exchanges with the outside: close, draught-proof, insulate, shade, then heat or cool only the room you live in. While still letting fresh air in: a home
+        that is shut too tight becomes damp, and can become dangerous if anything is burning inside.'
+    ordre:
+      fr: 'Dans cet ordre : se couvrir soi-même, regrouper la vie dans une pièce, limiter les pertes (rideaux, calfeutrage), et seulement ensuite chauffer, en aérant.'
+      en: 'In this order: dress warmly, gather life into one room, cut losses (curtains, draught-proofing), and only then heat, while ventilating.'
+  s-eclairer:
+    domaine: vivre-logement
+    titre:
+      fr: S'éclairer
+      en: Light your home
+    principe:
+      fr: 'Sans réseau, la lumière la plus sûre est électrique : lampes frontales et lampes à piles ou rechargeables, gardées toujours au même endroit. Une bougie ou une lampe à combustible ne se laisse
+        jamais sans surveillance et demande de l''air. On éclaire la tâche plutôt que la pièce, et on économise ainsi l''énergie.'
+      en: 'Off-grid, the safest light is electric: head torches and battery or rechargeable lamps, always kept in the same place. A candle or fuel lamp is never left unattended and needs air. Light the
+        task rather than the room, and you save energy.'
+  intemperies:
+    domaine: proteger
+    titre:
+      fr: Faire face aux intempéries
+      en: Weather the elements
+    principe:
+      fr: Face aux intempéries, on se renseigne avant, on protège ce qui peut l'être, et l'on part quand les autorités le demandent. Connaître les risques de son lieu (inondation, tempête, submersion),
+        préparer ce qu'on emporte et savoir où se mettre à l'abri compte plus que tout équipement. La vie passe avant les biens.
+      en: Facing the elements, find out beforehand, protect what can be protected, and leave when the authorities tell you to. Knowing the risks of where you live (flood, storm, coastal flooding), preparing
+        what you would take and knowing where to shelter matter more than any equipment. Lives come before property.
+  batir-isoler:
+    domaine: batir
+    titre:
+      fr: Bâtir et isoler avec des matériaux sains
+      en: Build and insulate with natural materials
+    principe:
+      fr: 'Les matériaux sains se trouvent souvent tout près : terre, paille, bois, chanvre, matériaux de réemploi. Ils régulent l''humidité et se défont en fin de vie. Ils demandent de respecter leurs
+        règles : rester au sec, laisser respirer les murs, ne pas mélanger n''importe quoi. On commence par de petits ouvrages et l''on s''entoure de personnes qui ont déjà construit ainsi.'
+      en: 'Healthy materials are often close at hand: earth, straw, timber, hemp, salvaged materials. They regulate moisture and break down at the end of their life. They require following their rules:
+        stay dry, let walls breathe, do not mix just anything. Start with small projects and work with people who have already built this way.'
+  preparer-les-soins:
+    domaine: preparer-soins
+    titre:
+      fr: Préparer les soins
+      en: Prepare for care
+    principe:
+      fr: 'Se préparer aux soins, c''est avoir avant ce qu''il faudra pendant : une trousse vérifiée, ses traitements et ordonnances pour quelques jours d''avance, les numéros utiles sur papier, et quelques
+        gestes de premiers secours appris auprès d''un organisme reconnu. Un geste appris en formation vaut mieux qu''une fiche lue au dernier moment.'
+      en: 'Preparing for care means having beforehand what you will need during: a checked first-aid kit, your treatments and prescriptions for a few days ahead, useful numbers on paper, and a few first-aid
+        gestures learned from a recognised organisation. A gesture learned in training is worth more than a skill read at the last minute.'
+  alerter-veiller:
+    domaine: en-situation
+    titre:
+      fr: Alerter et veiller
+      en: Alert and look out for others
+    principe:
+      fr: 'Quand quelqu''un est en danger, on se protège, on alerte, puis on aide, dans cet ordre. Sans réseau, il faut savoir d''avance comment joindre les secours autrement et qui, autour de soi, a besoin
+        qu''on passe le voir : personnes âgées, isolées, malades, dépendantes d''un appareil électrique. Veiller les uns sur les autres se prépare avant la crise.'
+      en: 'When someone is in danger, protect yourself, raise the alarm, then help, in that order. Without a network, you need to know in advance how else to reach emergency services, and who around you
+        needs a visit: elderly, isolated or ill people, and those who depend on an electrical device. Looking out for each other is prepared before the crisis.'
+  prevenir:
+    domaine: en-situation
+    titre:
+      fr: Prévenir
+      en: Prevent
+    principe:
+      fr: 'La plupart des maladies et des accidents d''une période difficile se préviennent : boire assez, se protéger de la chaleur et du froid, se laver les mains, garder l''eau et la nourriture propres.
+        On connaît les premiers signes d''alerte (confusion, peau très chaude ou glacée, frissons incontrôlables) et l''on agit tôt, en demandant de l''aide.'
+      en: 'Most illnesses and accidents in hard times can be prevented: drink enough, protect yourself from heat and cold, wash your hands, keep water and food clean. Know the early warning signs (confusion,
+        very hot or ice-cold skin, uncontrollable shivering) and act early, by asking for help.'
+  moral:
+    domaine: en-situation
+    titre:
+      fr: Prendre soin du moral
+      en: Look after morale
+    principe:
+      fr: Le moral tient mieux avec un rythme, des nouvelles fiables, des tâches utiles et des gens autour de soi. On garde des heures de lever et de repas, on limite les rumeurs, on se répartit les rôles
+        et l'on se parle de ce qui pèse. Ce qui reste difficile longtemps mérite l'aide d'un professionnel.
+      en: Morale holds up better with a routine, reliable news, useful tasks and people around you. Keep regular times for getting up and eating, limit rumours, share out roles and talk about what weighs
+        on you. Anything that stays hard for a long time deserves help from a professional.
+  plantes-qui-soignent:
+    domaine: plantes-soin
+    titre:
+      fr: Connaître les plantes qui soignent
+      en: Know healing plants
+    principe:
+      fr: 'Connaître les plantes qui soignent, c''est d''abord savoir les reconnaître sans erreur et connaître leurs limites. Une plante n''est pas sans danger parce qu''elle est naturelle : dose, mélange
+        avec un traitement, grossesse ou âge comptent. On apprend avec des sources sérieuses et des personnes formées, on ne remplace jamais un traitement prescrit, et l''on demande l''avis d''un soignant.'
+      en: 'Knowing healing plants means first recognising them without mistakes and knowing their limits. A plant is not harmless because it is natural: dose, mixing with a treatment, pregnancy or age all
+        matter. Learn from serious sources and trained people, never replace a prescribed treatment, and ask a health professional''s advice.'
+  recevoir-information:
+    domaine: s-informer
+    titre:
+      fr: Recevoir l'information sans réseau
+      en: Get news off-grid
+    principe:
+      fr: 'Les émetteurs de radio publique ont leurs propres alimentations de secours : quand le téléphone ne passe plus, un poste à piles ou à manivelle capte souvent encore. On écoute à heures fixes,
+        on note ce qui compte, et l''on connaît les autres canaux d''alerte.'
+      en: 'Public radio transmitters have their own backup power: when phones go silent, a battery or crank radio can often still pick them up. Listen at set times, write down what matters, and know the
+        other alert channels.'
+  se-retrouver-parler:
+    domaine: se-joindre
+    titre:
+      fr: Se retrouver et se parler sans téléphone
+      en: Find and talk to each other without phones
+    principe:
+      fr: 'Sans réseau, on ne s''appelle plus : on se retrouve. Tout se décide avant : où se retrouver, à quelle heure, qui prévient qui. Le papier, un point de rendez-vous et, à courte distance, des talkies-walkies
+        suffisent à garder le lien.'
+      en: 'Without a network you can no longer call: you meet. Everything is decided beforehand: where to meet, at what time, who tells whom. Paper, a meeting point and, over short distances, walkie-talkies
+        are enough to stay in touch.'
+  communiquer-loin:
+    domaine: se-joindre
+    titre:
+      fr: Communiquer loin
+      en: Communicate over distance
+    principe:
+      fr: 'Pour communiquer loin sans réseau téléphonique, on utilise les ondes radio, avec des règles : certaines fréquences sont libres d''usage, d''autres exigent une licence, et la puissance est limitée.
+        Les petites radios LoRa envoient des messages texte à quelques kilomètres ; la radio d''amateur va beaucoup plus loin, après un examen. On commence par écouter, on apprend les règles, puis l''on
+        émet.'
+      en: 'To communicate over distance without a phone network, use radio waves, with rules: some frequencies are free to use, others require a licence, and power is limited. Small LoRa radios send text
+        messages over a few kilometres; amateur radio goes much further, after an exam. Start by listening, learn the rules, then transmit.'
+  partager-sans-internet:
+    domaine: partager-savoir
+    titre:
+      fr: Partager le savoir sans Internet
+      en: Share knowledge without the Internet
+    principe:
+      fr: 'Le savoir se copie sans s''user : une fiche passe d''un téléphone à l''autre par fichier, par clé USB ou par un petit réseau Wi-Fi local, sans Internet. On partage des formats simples, lisibles
+        partout (pages HTML, PDF, fichiers ZIM pour Kiwix), et l''on indique toujours la version et la source, pour que chacun sache ce qu''il a entre les mains.'
+      en: 'Knowledge can be copied without wearing out: a skill passes from one phone to another as a file, on a USB stick or over a small local Wi-Fi network, without the Internet. Share simple formats
+        that open anywhere (HTML pages, PDFs, ZIM files for Kiwix), and always state the version and the source, so everyone knows what they have in hand.'
+  ressources-commune:
+    domaine: territoire
+    titre:
+      fr: Ressources et plans de sa commune
+      en: Your local resources and plans
+    principe:
+      fr: 'Chaque commune a ses ressources et ses plans : points d''eau, lieux d''accueil, personnes ressources, plan communal de sauvegarde, document d''information sur les risques. Les connaître avant
+        la crise, les repérer sur une carte et les garder sur papier permet d''agir vite. Ces documents sont publics : on les demande en mairie ou on les consulte en ligne.'
+      en: 'Every town has its resources and plans: water points, shelters, people who can help, an emergency plan, a document on local risks. Knowing them before a crisis, marking them on a map and keeping
+        them on paper lets you act fast. These documents are public: ask for them at the town hall or look them up online.'
+  faire-ensemble:
+    domaine: s-organiser
+    titre:
+      fr: Faire ensemble
+      en: Work together
+    principe:
+      fr: 'Faire ensemble demande peu d''outils mais quelques règles claires : un but partagé, des rôles, une façon de décider, et un moment pour régler les désaccords. Un groupe qui se connaît avant la
+        crise agit mieux pendant. On commence par une petite action concrète, entre voisins, puis on élargit.'
+      en: 'Working together needs few tools but a few clear rules: a shared goal, roles, a way of deciding, and a time to settle disagreements. A group that knows each other before a crisis acts better
+        during it. Start with a small, concrete action between neighbours, then widen.'
+  mettre-commun:
+    domaine: mettre-en-commun
+    titre:
+      fr: Mettre en commun
+      en: Pool resources
+    principe:
+      fr: 'Mettre en commun, c''est partager l''usage de ce que chacun possède peu : un outil, un jardin, un savoir-faire, un temps. Un bien commun dure si ses règles sont connues de tous : qui peut s''en
+        servir, comment, qui l''entretient, que faire quand ça se passe mal. Écrites simplement et revues ensemble, elles évitent la plupart des conflits.'
+      en: 'Pooling resources means sharing the use of things each person rarely needs: a tool, a garden, a skill, some time. A common good lasts if everyone knows its rules: who can use it, how, who maintains
+        it, what to do when things go wrong. Written simply and reviewed together, they prevent most conflicts.'
+  veiller-ensemble:
+    domaine: se-retrouver
+    titre:
+      fr: Veiller ensemble
+      en: Spend evenings together
+    principe:
+      fr: 'Se réunir le soir, sans écran, autour d''une lumière, d''histoires, de chansons ou de jeux, tisse des liens qui servent ensuite dans les jours difficiles. Il faut peu de chose : un lieu, une
+        heure, quelqu''un qui invite. Le répertoire du domaine public et les jeux qu''on fabrique soi-même appartiennent à tout le monde.'
+      en: 'Gathering in the evening, without screens, around a light, stories, songs or games, weaves bonds that help later on in hard days. It takes little: a place, a time, someone to invite. Public-domain
+        songs and home-made games belong to everyone.'
+  garder-memoire:
+    domaine: memoire
+    titre:
+      fr: Garder la mémoire
+      en: Keep memory alive
+    principe:
+      fr: 'La mémoire d''un lieu tient dans les récits, les gestes et les objets de ceux qui y vivent. On la recueille avec leur accord, on note qui parle, quand et où, et on la rend accessible : un carnet,
+        un journal de quartier, un fichier partagé. Garder la mémoire, c''est aussi garder ce qu''on a appris des crises passées.'
+      en: 'The memory of a place lives in the stories, gestures and objects of those who live there. Collect it with their consent, note who is speaking, when and where, and make it accessible: a notebook,
+        a neighbourhood newsletter, a shared file. Keeping memory alive also means keeping what was learned from past crises.'
+  musique:
+    domaine: de-ses-mains
+    titre:
+      fr: Faire de la musique avec ce qu'on a
+      en: Make music with what you have
+    principe:
+      fr: 'La musique se fait avec ce qu''on a : la voix, les mains, des objets qui résonnent, des instruments simples fabriqués à partir de matériaux de récupération. Le rythme et le chant partagés rassemblent
+        sans demander d''électricité ni de savoir lire la musique.'
+      en: 'Music can be made with what you have: voices, hands, objects that resonate, simple instruments made from salvaged materials. Shared rhythm and singing bring people together without needing electricity
+        or the ability to read music.'
+  arts-main:
+    domaine: de-ses-mains
+    titre:
+      fr: Arts de la main
+      en: Handcrafts
+    principe:
+      fr: 'Les arts de la main transforment des matières locales en objets utiles et beaux : fibres, osier, argile, plantes tinctoriales. Ils s''apprennent par le geste, en regardant faire et en recommençant,
+        et réparent autant qu''ils fabriquent. On commence par un petit objet, avec des outils simples.'
+      en: 'Handcrafts turn local materials into useful, beautiful objects: fibres, willow, clay, dye plants. They are learned through the hands, by watching and trying again, and they mend as much as they
+        make. Start with a small object and simple tools.'
+  monter-station:
+    domaine: station
+    titre:
+      fr: Monter et tenir la station
+      en: Build and run the station
+    principe:
+      fr: La station est un ordinateur sobre, souvent de récupération, qui garde les fiches, des encyclopédies et des cartes, et les sert aux appareils voisins sans Internet. Elle se monte avec des logiciels
+        libres, consomme peu, se met à jour par clé USB et s'alimente en 12 V. On la monte quand le réseau fonctionne encore, pour qu'elle soit prête quand il ne fonctionne plus.
+      en: The station is a frugal computer, often salvaged, that keeps the skills, encyclopedias and maps, and serves them to nearby devices without the Internet. It is built with free software, uses little
+        power, is updated by USB stick and runs on 12 V. Build it while the network still works, so it is ready when it no longer does.
+    ordre:
+      fr: 'Dans cet ordre : télécharger les données publiques et les contenus, installer la station, la tester sur secteur, puis passer sur batterie 12 V.'
+      en: 'In this order: download the public data and content, install the station, test it on mains power, then move it to a 12 V battery.'
+  garder-savoir:
+    domaine: savoirs-hors-ligne
+    titre:
+      fr: Garder le savoir sans Internet
+      en: Keep knowledge without the Internet
+    principe:
+      fr: 'Le savoir utile doit rester lisible quand Internet disparaît : sur papier, sur clé USB, dans un téléphone, dans une station. On multiplie les supports, on choisit des formats ouverts qui s''ouvrent
+        sans logiciel particulier, et l''on vérifie de temps en temps qu''ils se lisent encore. Le papier reste le support le plus robuste pour l''essentiel.'
+      en: 'Useful knowledge must stay readable when the Internet goes: on paper, on a USB stick, on a phone, on a station. Use several media, choose open formats that open without special software, and
+        check now and then that they still read. Paper remains the most robust medium for the essentials.'
+  se-reperer:
+    domaine: savoirs-hors-ligne
+    titre:
+      fr: Se repérer et compter sans machine
+      en: Find your way and calculate without machines
+    principe:
+      fr: 'Se repérer et compter sans machine s''appuie sur quelques outils et beaucoup de pratique : une carte papier, une boussole, le soleil et les étoiles, les ordres de grandeur et la règle de trois.
+        On s''exerce quand tout va bien, pour que ces gestes viennent naturellement quand l''écran s''éteint.'
+      en: 'Finding your way and calculating without machines rely on a few tools and plenty of practice: a paper map, a compass, the sun and stars, orders of magnitude and the rule of three. Practise while
+        all is well, so these skills come naturally when the screen goes dark.'
+  transmettre:
+    domaine: contribuer
+    titre:
+      fr: Transmettre ce qu'on sait
+      en: Pass on what you know
+    principe:
+      fr: Ce qu'on sait faire ne sert pleinement que si d'autres peuvent le refaire. On l'écrit simplement, étape par étape, on dit ce qui peut mal tourner et d'où vient le savoir, puis on le fait relire
+        et tester par d'autres. Un rapport d'échec améliore une fiche autant qu'une réussite.
+      en: What you know how to do is only fully useful if others can do it again. Write it simply, step by step, say what can go wrong and where the knowledge comes from, then have others review and test
+        it. A report of failure improves a skill as much as a success.

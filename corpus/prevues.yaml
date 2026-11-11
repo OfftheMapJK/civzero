@@ -1,0 +1,1246 @@
+# Fiches prévues, pas encore écrites (générées depuis catalogue.csv). Elles apparaissent en pointillés dans leurs savoirs.
+- id: inventorier-vivant-quartier
+  socle: lichen
+  savoirs:
+  - observer-vivant
+  titre:
+    fr: Inventorier le vivant de son quartier
+    en: Survey the wildlife of your neighbourhood
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: lire-sol-texture-vie-tassement
+  socle: lichen
+  savoirs:
+  - lire-sol
+  titre:
+    fr: 'Lire un sol : texture, vie, tassement'
+    en: 'Read a soil: texture, life, compaction'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: faire-compost
+  socle: lichen
+  savoirs:
+  - faire-vivre-sol
+  titre:
+    fr: Faire un compost
+    en: Make compost
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: regenerer-sol-abime-paillis-couverts
+  socle: lichen
+  savoirs:
+  - faire-vivre-sol
+  titre:
+    fr: 'Régénérer un sol abîmé : paillis, couverts, engrais verts'
+    en: 'Restore a damaged soil: mulch, cover crops, green manure'
+  horizon: seasons
+  tier:
+  - 0
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: planter-haie-champetre-essences-locales
+  socle: lichen
+  savoirs:
+  - accueillir-biodiversite
+  titre:
+    fr: Planter une haie champêtre d'essences locales
+    en: Plant a hedgerow of local species
+  horizon: seasons
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: accueillir-pollinisateurs
+  socle: lichen
+  savoirs:
+  - accueillir-biodiversite
+  titre:
+    fr: Accueillir les pollinisateurs
+    en: Welcome pollinators
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: laisser-coin-sauvage-friche-fauche
+  socle: lichen
+  savoirs:
+  - accueillir-biodiversite
+  titre:
+    fr: 'Laisser un coin sauvage : friche, fauche tardive'
+    en: 'Leave a wild corner: rewilding, late mowing'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: creuser-petite-mare
+  socle: lichen
+  savoirs:
+  - accueillir-biodiversite
+  titre:
+    fr: Creuser une petite mare
+    en: Dig a small pond
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: lire-bioindicateurs-lichens-insectes-eau
+  socle: lichen
+  savoirs:
+  - observer-vivant
+  titre:
+    fr: 'Lire les bioindicateurs : lichens, insectes d''eau'
+    en: 'Read bioindicators: lichens, aquatic insects'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: contribuer-sciences-participatives
+  socle: lichen
+  savoirs:
+  - observer-vivant
+  titre:
+    fr: Contribuer aux sciences participatives
+    en: Take part in citizen science
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: cohabiter-faune-nichoirs-passages-pieges
+  socle: lichen
+  savoirs:
+  - accueillir-biodiversite
+  titre:
+    fr: 'Cohabiter avec la faune : nichoirs, passages, sans pièges'
+    en: 'Live alongside wildlife: nest boxes, passages, no traps'
+  horizon: hours
+  tier:
+  - 0
+  - 1
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: petite-eolienne-recuperation
+  socle: ambre
+  savoirs:
+  - produire-electricite
+  titre:
+    fr: Petite éolienne de récupération
+    en: A small salvaged wind turbine
+  horizon: seasons
+  tier:
+  - 2
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: reutiliser-cellules-lithium-recuperees
+  socle: ambre
+  savoirs:
+  - se-defaire-batterie
+  titre:
+    fr: Réutiliser des cellules lithium récupérées
+    en: Reuse salvaged lithium cells
+  horizon: hours
+  tier:
+  - 2
+  danger: rouge
+  vague: 3
+  hors_corpus: true
+- id: stocker-eau-potable-trois-jours
+  socle: source
+  savoirs:
+  - stocker-economiser-eau
+  titre:
+    fr: Stocker de l'eau potable pour trois jours et la renouveler
+    en: Store three days of drinking water and keep it fresh
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: economiser-eau-quand-elle-ne
+  socle: source
+  savoirs:
+  - stocker-economiser-eau
+  titre:
+    fr: Économiser l'eau quand elle ne coule plus
+    en: Save water when the taps run dry
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: rendre-eau-potable-faisant-bouillir
+  socle: source
+  savoirs:
+  - rendre-eau-potable
+  titre:
+    fr: Rendre l'eau potable en la faisant bouillir
+    en: Make water safe by boiling it
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: desinfecter-eau-soleil-sodis
+  socle: source
+  savoirs:
+  - rendre-eau-potable
+  titre:
+    fr: Désinfecter l'eau au soleil (SODIS)
+    en: Disinfect water with sunlight (SODIS)
+  horizon: instant
+  tier:
+  - 0
+  danger: orange
+  vague: 1
+  hors_corpus: false
+- id: desinfecter-eau-chlore
+  socle: source
+  savoirs:
+  - rendre-eau-potable
+  titre:
+    fr: Désinfecter l'eau au chlore
+    en: Disinfect water with chlorine
+  horizon: instant
+  tier:
+  - 0
+  danger: orange
+  vague: 1
+  hors_corpus: false
+- id: filtrer-eau-filtre-sable-lent
+  socle: source
+  savoirs:
+  - rendre-eau-potable
+  titre:
+    fr: 'Filtrer l''eau : filtre à sable lent, céramique'
+    en: 'Filter water: slow sand filter, ceramic'
+  horizon: hours
+  tier:
+  - 1
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: recuperer-eau-pluie
+  socle: source
+  savoirs:
+  - trouver-recuperer-eau
+  titre:
+    fr: Récupérer l'eau de pluie
+    en: Harvest rainwater
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: trouver-eau-autour-soi-savoir
+  socle: source
+  savoirs:
+  - trouver-recuperer-eau
+  titre:
+    fr: Trouver l'eau autour de soi et savoir si elle est sûre
+    en: Find water nearby and know if it is safe
+  horizon: hours
+  tier:
+  - 0
+  danger: orange
+  vague: 2
+  hors_corpus: false
+- id: se-laver-mains-tres-peu
+  socle: source
+  savoirs:
+  - rester-propre
+  titre:
+    fr: Se laver les mains avec très peu d'eau
+    en: Wash your hands with very little water
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: installer-toilettes-seches
+  socle: source
+  savoirs:
+  - assainir
+  titre:
+    fr: Installer des toilettes sèches
+    en: Set up a dry toilet
+  horizon: hours
+  tier:
+  - 1
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: traiter-eaux-grises-simplement
+  socle: source
+  savoirs:
+  - assainir
+  titre:
+    fr: Traiter ses eaux grises simplement
+    en: Treat greywater simply
+  horizon: hours
+  tier:
+  - 1
+  - 2
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: constituer-reserve-alimentaire-faire-tourner
+  socle: graine
+  savoirs:
+  - tenir-reserves
+  titre:
+    fr: Constituer une réserve alimentaire et la faire tourner
+    en: Build a food store and rotate it
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: cuire-marmite-norvegienne
+  socle: graine
+  savoirs:
+  - cuire-econome
+  titre:
+    fr: Cuire avec une marmite norvégienne
+    en: Cook with a haybox
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: cuire-soleil-cuiseur-solaire
+  socle: graine
+  savoirs:
+  - cuire-econome
+  titre:
+    fr: 'Cuire au soleil : le cuiseur solaire'
+    en: 'Cook with the sun: the solar cooker'
+  horizon: hours
+  tier:
+  - 1
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: secher-aliments-air-soleil
+  socle: graine
+  savoirs:
+  - conserver-sans-frigo
+  titre:
+    fr: Sécher ses aliments à l'air et au soleil
+    en: Dry food in the air and sun
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: stocker-recoltes-cave-ou-silo
+  socle: graine
+  savoirs:
+  - conserver-sans-frigo
+  titre:
+    fr: Stocker ses récoltes en cave ou en silo
+    en: Store crops in a cellar or clamp
+  horizon: hours
+  tier:
+  - 0
+  - 1
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: conserver-vinaigre
+  socle: graine
+  savoirs:
+  - conserver-sans-frigo
+  titre:
+    fr: Conserver au vinaigre
+    en: Preserve in vinegar
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: conserver-sucre-confitures-fruits-confits
+  socle: graine
+  savoirs:
+  - conserver-sans-frigo
+  titre:
+    fr: 'Conserver au sucre : confitures et fruits confits'
+    en: 'Preserve with sugar: jams and candied fruit'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: lacto-fermenter-legumes
+  socle: graine
+  savoirs:
+  - conserver-sans-frigo
+  titre:
+    fr: Lacto-fermenter ses légumes
+    en: Lacto-ferment vegetables
+  horizon: hours
+  tier:
+  - 0
+  danger: orange
+  vague: 2
+  hors_corpus: false
+- id: faire-conserves-bocaux
+  socle: graine
+  savoirs:
+  - conserver-chaleur
+  titre:
+    fr: Faire des conserves en bocaux
+    en: Can food in jars
+  horizon: hours
+  tier:
+  - 1
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: garder-frais-electricite-frigo-desert
+  socle: graine
+  savoirs:
+  - conserver-sans-frigo
+  titre:
+    fr: 'Garder au frais sans électricité : le frigo du désert'
+    en: 'Keep food cool without power: the pot-in-pot cooler'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: cultiver-petit-potager-bacs-ou
+  socle: graine
+  savoirs:
+  - cultiver-potager
+  titre:
+    fr: Cultiver un petit potager en bacs ou en buttes
+    en: Grow a small garden in beds or mounds
+  horizon: seasons
+  tier:
+  - 0
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: garder-echanger-semences
+  socle: graine
+  savoirs:
+  - cultiver-potager
+  titre:
+    fr: Garder et échanger ses semences
+    en: Save and swap seeds
+  horizon: seasons
+  tier:
+  - 0
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: cueillir-plantes-sauvages-comestibles-se
+  socle: graine
+  savoirs:
+  - cueillir
+  titre:
+    fr: Cueillir les plantes sauvages comestibles sans se tromper
+    en: Forage wild edible plants without mistakes
+  horizon: hours
+  tier:
+  - 0
+  danger: orange
+  vague: 2
+  hors_corpus: false
+- id: glaner-recuperer-invendus-fruits-espaces
+  socle: graine
+  savoirs:
+  - tenir-reserves
+  titre:
+    fr: 'Glaner et récupérer : invendus, fruits des espaces publics'
+    en: 'Glean and recover: unsold food, fruit in public spaces'
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: elever-quelques-poules
+  socle: graine
+  savoirs:
+  - arbres-animaux
+  titre:
+    fr: Élever quelques poules
+    en: Keep a few hens
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: planter-greffer-arbres-fruitiers
+  socle: graine
+  savoirs:
+  - arbres-animaux
+  titre:
+    fr: Planter et greffer des arbres fruitiers
+    en: Plant and graft fruit trees
+  horizon: seasons
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: garder-chaleur-chauffage
+  socle: ecorce
+  savoirs:
+  - chaleur-frais
+  titre:
+    fr: Garder la chaleur sans chauffage
+    en: Stay warm without heating
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: garder-frais-climatisation
+  socle: ecorce
+  savoirs:
+  - chaleur-frais
+  titre:
+    fr: Garder le frais sans climatisation
+    en: Stay cool without air conditioning
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: s-eclairer-reseau-securite
+  socle: ecorce
+  savoirs:
+  - s-eclairer
+  titre:
+    fr: S'éclairer sans réseau, en sécurité
+    en: Light your home off-grid, safely
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: calfeutrer-etouffer-courants-air-aeration
+  socle: ecorce
+  savoirs:
+  - chaleur-frais
+  titre:
+    fr: 'Calfeutrer sans étouffer : courants d''air et aération'
+    en: 'Draught-proof without suffocating: draughts and ventilation'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: venir-bout-humidite-moisissures
+  socle: ecorce
+  savoirs:
+  - chaleur-frais
+  titre:
+    fr: Venir à bout de l'humidité et des moisissures
+    en: Deal with damp and mould
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: isoler-materiaux-biosources-recuperation
+  socle: ecorce
+  savoirs:
+  - batir-isoler
+  titre:
+    fr: Isoler avec des matériaux biosourcés de récupération
+    en: Insulate with salvaged natural materials
+  horizon: seasons
+  tier:
+  - 1
+  - 2
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: construire-enduire-terre-crue
+  socle: ecorce
+  savoirs:
+  - batir-isoler
+  titre:
+    fr: Construire et enduire en terre crue
+    en: Build and plaster with earth
+  horizon: seasons
+  tier:
+  - 1
+  - 2
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: monter-abri-temporaire
+  socle: ecorce
+  savoirs:
+  - intemperies
+  titre:
+    fr: Monter un abri temporaire
+    en: Put up a temporary shelter
+  horizon: hours
+  tier:
+  - 1
+  danger: orange
+  vague: 2
+  hors_corpus: false
+- id: proteger-logement-inondation-ou-submersion
+  socle: ecorce
+  savoirs:
+  - intemperies
+  titre:
+    fr: Protéger son logement d'une inondation ou d'une submersion
+    en: Protect your home from flooding
+  horizon: hours
+  tier:
+  - 1
+  danger: orange
+  vague: 2
+  hors_corpus: false
+- id: chauffer-bois-securite
+  socle: ecorce
+  savoirs:
+  - chaleur-frais
+  titre:
+    fr: Chauffer au bois en sécurité
+    en: Heat with wood safely
+  horizon: hours
+  tier:
+  - 1
+  danger: rouge
+  vague: 2
+  hors_corpus: true
+- id: composer-tenir-jour-trousse-secours
+  socle: baume
+  savoirs:
+  - preparer-les-soins
+  titre:
+    fr: Composer et tenir à jour une trousse de secours
+    en: Put together and maintain a first-aid kit
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: se-former-premiers-secours-ou
+  socle: baume
+  savoirs:
+  - preparer-les-soins
+  titre:
+    fr: 'Se former aux premiers secours : où et comment'
+    en: 'Learn first aid: where and how'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: alerter-secours-quand-reseau-est
+  socle: baume
+  savoirs:
+  - alerter-veiller
+  titre:
+    fr: Alerter les secours quand le réseau est coupé
+    en: Call for help when the network is down
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: veiller-personnes-isolees-pendant-coupure
+  socle: baume
+  savoirs:
+  - alerter-veiller
+  titre:
+    fr: Veiller sur les personnes isolées pendant une coupure
+    en: Look out for isolated people during an outage
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: garder-traitements-ordonnances-coupure
+  socle: baume
+  savoirs:
+  - preparer-les-soins
+  titre:
+    fr: Garder ses traitements et ses ordonnances en coupure
+    en: Keep your medication and prescriptions through an outage
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: reconnaitre-coup-chaleur-hypothermie-prevenir
+  socle: baume
+  savoirs:
+  - prevenir
+  titre:
+    fr: Reconnaître le coup de chaleur et l'hypothermie, et prévenir
+    en: Recognise heatstroke and hypothermia, and prevent them
+  horizon: instant
+  tier:
+  - 0
+  danger: orange
+  vague: 1
+  hors_corpus: false
+- id: prendre-soin-moral-pendant-crise
+  socle: baume
+  savoirs:
+  - moral
+  titre:
+    fr: Prendre soin du moral pendant une crise
+    en: Look after morale in a crisis
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: hygiene-prevention-maladies-situation-degradee
+  socle: baume
+  savoirs:
+  - prevenir
+  titre:
+    fr: Hygiène et prévention des maladies en situation dégradée
+    en: Hygiene and disease prevention in hard conditions
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: recenser-competences-entraide-quartier
+  socle: baume
+  savoirs:
+  - alerter-veiller
+  titre:
+    fr: Recenser les compétences d'entraide du quartier
+    en: Map the mutual-aid skills of your neighbourhood
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: plantes-medicinales-connaitre-s-automediquer
+  socle: baume
+  savoirs:
+  - plantes-qui-soignent
+  titre:
+    fr: 'Plantes médicinales : connaître sans s''automédiquer'
+    en: 'Medicinal plants: know them without self-medicating'
+  horizon: hours
+  tier:
+  - 0
+  danger: orange
+  vague: 2
+  hors_corpus: false
+- id: communiquer-courte-distance-talkies-walkies
+  socle: mycelium
+  savoirs:
+  - se-retrouver-parler
+  titre:
+    fr: Communiquer à courte distance avec des talkies-walkies sans licence
+    en: Talk over short distances with licence-free walkie-talkies
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: devenir-radioamateur
+  socle: mycelium
+  savoirs:
+  - communiquer-loin
+  titre:
+    fr: Devenir radioamateur
+    en: Become a radio amateur
+  horizon: seasons
+  tier:
+  - 2
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: ecouter-ondes-courtes-nouvelles-monde
+  socle: mycelium
+  savoirs:
+  - recevoir-information
+  titre:
+    fr: 'Écouter les ondes courtes : nouvelles du monde'
+    en: 'Listen to shortwave: news from the world'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: tableau-affichage-points-rendez-vous
+  socle: mycelium
+  savoirs:
+  - se-retrouver-parler
+  titre:
+    fr: Tableau d'affichage et points de rendez-vous du quartier
+    en: Neighbourhood notice board and meeting points
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: recevoir-alertes-officielles
+  socle: mycelium
+  savoirs:
+  - recevoir-information
+  titre:
+    fr: Recevoir les alertes officielles
+    en: Receive official alerts
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: connaitre-plans-commune-dicrim-pcs
+  socle: humus
+  savoirs:
+  - ressources-commune
+  titre:
+    fr: 'Connaître les plans de sa commune : DICRIM, PCS, réserve communale'
+    en: Know your town's emergency plans
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: creer-reseau-entraide-voisinage
+  socle: humus
+  savoirs:
+  - faire-ensemble
+  titre:
+    fr: Créer un réseau d'entraide de voisinage
+    en: Start a neighbourhood mutual-aid network
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: animer-reunion-qui-decide
+  socle: humus
+  savoirs:
+  - faire-ensemble
+  titre:
+    fr: Animer une réunion qui décide
+    en: Run a meeting that makes decisions
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: gerer-bien-commun-regles-usage
+  socle: humus
+  savoirs:
+  - mettre-commun
+  titre:
+    fr: 'Gérer un bien commun : règles d''usage'
+    en: 'Manage a common good: rules of use'
+  horizon: seasons
+  tier:
+  - 0
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: monter-bibliotheque-objets
+  socle: humus
+  savoirs:
+  - mettre-commun
+  titre:
+    fr: Monter une bibliothèque d'objets
+    en: Set up a library of things
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: organiser-repair-cafe
+  socle: humus
+  savoirs:
+  - mettre-commun
+  titre:
+    fr: Organiser un repair café
+    en: Run a repair café
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: partager-jardin-ou-terrain
+  socle: humus
+  savoirs:
+  - mettre-commun
+  titre:
+    fr: Partager un jardin ou un terrain
+    en: Share a garden or a plot
+  horizon: seasons
+  tier:
+  - 0
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: echanger-argent-troc-sel-monnaie
+  socle: humus
+  savoirs:
+  - mettre-commun
+  titre:
+    fr: 'Échanger sans argent : troc, SEL, monnaie locale'
+    en: 'Trade without money: barter, time banks, local currency'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: creer-association
+  socle: humus
+  savoirs:
+  - faire-ensemble
+  titre:
+    fr: Créer une association
+    en: Found an association
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: apaiser-conflit-voisinage
+  socle: humus
+  savoirs:
+  - faire-ensemble
+  titre:
+    fr: Apaiser un conflit de voisinage
+    en: Ease a neighbourhood conflict
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: organiser-veillee-electricite
+  socle: pollen
+  savoirs:
+  - veiller-ensemble
+  titre:
+    fr: Organiser une veillée sans électricité
+    en: Hold an evening gathering without electricity
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: chanter-ensemble-repertoire-domaine-public
+  socle: pollen
+  savoirs:
+  - veiller-ensemble
+  titre:
+    fr: 'Chanter ensemble : répertoire du domaine public'
+    en: 'Sing together: public-domain songs'
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: raconter-art-conte
+  socle: pollen
+  savoirs:
+  - veiller-ensemble
+  titre:
+    fr: 'Raconter : l''art du conte'
+    en: Storytelling
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: collecter-memoire-recits-quartier
+  socle: pollen
+  savoirs:
+  - garder-memoire
+  titre:
+    fr: Collecter la mémoire et les récits du quartier
+    en: Collect the memories and stories of your neighbourhood
+  horizon: seasons
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: jouer-ecran-jeux-traditionnels-fabriquer
+  socle: pollen
+  savoirs:
+  - veiller-ensemble
+  titre:
+    fr: 'Jouer sans écran : jeux traditionnels à fabriquer'
+    en: 'Play without screens: traditional games to make'
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: fabriquer-instruments-simples
+  socle: pollen
+  savoirs:
+  - musique
+  titre:
+    fr: Fabriquer des instruments simples
+    en: Make simple instruments
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: faire-journal-quartier-imprimante
+  socle: pollen
+  savoirs:
+  - garder-memoire
+  titre:
+    fr: Faire un journal de quartier sans imprimante
+    en: Make a neighbourhood newsletter without a printer
+  horizon: hours
+  tier:
+  - 0
+  - 1
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: tenir-carnet-observation-dessin-naturaliste
+  socle: pollen
+  savoirs:
+  - garder-memoire
+  - observer-vivant
+  titre:
+    fr: 'Tenir un carnet d''observation : dessin naturaliste'
+    en: Keep a nature journal
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: raccommoder-filer-tisser
+  socle: pollen
+  savoirs:
+  - arts-main
+  titre:
+    fr: Raccommoder, filer, tisser
+    en: Mend, spin, weave
+  horizon: hours
+  tier:
+  - 0
+  - 1
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: teindre-plantes
+  socle: pollen
+  savoirs:
+  - arts-main
+  titre:
+    fr: Teindre avec les plantes
+    en: Dye with plants
+  horizon: hours
+  tier:
+  - 1
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: vannerie-osier-ronce
+  socle: pollen
+  savoirs:
+  - arts-main
+  titre:
+    fr: 'Vannerie : osier et ronce'
+    en: 'Basketry: willow and bramble'
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: poterie-tour-ni-four-electrique
+  socle: pollen
+  savoirs:
+  - arts-main
+  titre:
+    fr: Poterie sans tour ni four électrique
+    en: Pottery without a wheel or electric kiln
+  horizon: hours
+  tier:
+  - 1
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: consulter-wikipedia-hors-ligne-kiwix
+  socle: strate
+  savoirs:
+  - garder-savoir
+  titre:
+    fr: Consulter Wikipédia hors-ligne avec Kiwix
+    en: Read Wikipedia offline with Kiwix
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: garder-documents-importants-papier-cle
+  socle: strate
+  savoirs:
+  - garder-savoir
+  titre:
+    fr: 'Garder ses documents importants : papier et clé'
+    en: 'Keep your important papers: paper and USB stick'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 1
+  hors_corpus: false
+- id: se-constituer-bibliotheque-papier-base
+  socle: strate
+  savoirs:
+  - garder-savoir
+  titre:
+    fr: Se constituer une bibliothèque papier de base
+    en: Build a basic paper library
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: reemployer-vieil-ordinateur-sous-linux
+  socle: strate
+  savoirs:
+  - monter-station
+  titre:
+    fr: Réemployer un vieil ordinateur sous Linux
+    en: Give an old computer a second life with Linux
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: s-orienter-gps-carte-boussole
+  socle: strate
+  savoirs:
+  - se-reperer
+  titre:
+    fr: 'S''orienter sans GPS : carte, boussole, étoiles'
+    en: 'Find your way without GPS: map, compass, stars'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: calculer-main-ordres-grandeur-regle
+  socle: strate
+  savoirs:
+  - se-reperer
+  titre:
+    fr: 'Calculer à la main : ordres de grandeur, règle de trois'
+    en: 'Calculate by hand: orders of magnitude, rule of three'
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: telecharger-donnees-publiques-territoire
+  socle: strate
+  savoirs:
+  - monter-station
+  titre:
+    fr: Télécharger les données publiques de son territoire
+    en: Download the public data for your area
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: ecrire-documenter-fiche-civzero
+  socle: strate
+  savoirs:
+  - transmettre
+  titre:
+    fr: Écrire et documenter une fiche CivicNode
+    en: Write and document a skill
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false

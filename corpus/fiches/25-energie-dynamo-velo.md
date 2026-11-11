@@ -2,8 +2,8 @@
 id: energie-dynamo-velo
 titre: Recharger son téléphone avec la dynamo d'un vélo
 accroche: "Elle montre comment recharger un téléphone en roulant, avec un moyeu-dynamo et un chargeur USB prévu pour lui, sans brancher le téléphone directement sur la dynamo."
-bloc: energie
-besoin: produire-son-energie
+socle: ambre
+savoirs: [recharger-telephone, produire-electricite]
 horizon: hours
 temps: "une demi-journée de montage, plus les commandes de pièces"
 vague: 3
@@ -26,7 +26,9 @@ impact:
   fin_de_vie: "chargeur et batterie tampon en point de collecte"
   passerelle: "le déplacement produit de l'énergie ; vers la génératrice à pédales"
 prerequis: [nodule-zero, energie-lire-etiquette]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

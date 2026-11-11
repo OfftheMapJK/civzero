@@ -1,9 +1,8 @@
 ---
 id: energie-station-batterie
 titre: Alimenter la station depuis une batterie 12 V
-bloc: energie
-aussi: [calcul]
-besoin: garder-du-courant
+socle: ambre
+savoirs: [alimenter-station]
 horizon: hours
 temps: "une journée d'atelier"
 vague: 3
@@ -24,7 +23,9 @@ impact:
   fin_de_vie: "voir fiche energie-fin-de-vie"
   passerelle: "recharge solaire de la batterie"
 prerequis: [nodule-zero, energie-protection-12v, energie-multimetre, energie-lire-etiquette, calcul-station-minipc]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

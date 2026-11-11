@@ -2,9 +2,8 @@
 id: energie-generatrice-pedales
 titre: Fabriquer une génératrice à pédales pour recharger
 accroche: "Elle décrit comment un vélo sur support, un moteur récupéré et une batterie 12 V forment une petite centrale d'atelier, à monter à plusieurs et à faire relire avant tout essai."
-bloc: energie
-aussi: [communs]
-besoin: produire-son-energie
+socle: ambre
+savoirs: [recharger-telephone, produire-electricite]
 horizon: seasons
 temps: "plusieurs semaines à quelques mois, à plusieurs"
 vague: 3
@@ -25,7 +24,9 @@ impact:
   fin_de_vie: "batterie en filière de collecte"
   passerelle: "une centrale collective pour un atelier, une école, un tiers-lieu"
 prerequis: [nodule-zero, energie-multimetre, energie-protection-12v, energie-recharge-solaire, energie-station-batterie]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

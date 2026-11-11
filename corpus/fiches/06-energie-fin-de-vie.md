@@ -1,8 +1,8 @@
 ---
 id: energie-fin-de-vie
 titre: Que faire d'une batterie ou d'un appareil hors d'usage
-bloc: energie
-besoin: se-debarrasser-sans-polluer
+socle: ambre
+savoirs: [se-defaire-batterie]
 horizon: instant
 temps: "quelques minutes"
 vague: 1
@@ -24,7 +24,9 @@ impact:
   fin_de_vie: "c'est l'objet de la fiche"
   passerelle: "réparer ou récupérer des pièces avant de jeter"
 prerequis: [nodule-zero]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

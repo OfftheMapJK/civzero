@@ -1,12 +1,12 @@
 ---
-// Une fiche dans une liste : active (lien) ou à venir (grisée, en pointillés).
+// Une fiche dans une liste : ouverte (lien) ou à venir (grisée, en pointillés).
 import Forme from './Forme.astro';
-interface Props { o: { href: string | null; titre: string; niveau: string; sub: string; note: string } }
-const { o } = Astro.props;
+interface Props { o: { href: string | null; titre: string; niveau: string; sub: string; note: string }; t: any }
+const { o, t } = Astro.props;
 ---
 {o.href ? (
   <a class="opt" href={o.href}>
-    <Forme niveau={o.niveau} taille="1.75rem" />
+    <Forme niveau={o.niveau} taille="1.75rem" t={t} />
     <span>
       <span class="t">{o.titre}</span>
       <span class="s">{o.sub}</span>
@@ -19,7 +19,8 @@ const { o } = Astro.props;
     <span>
       <span class="t">{o.titre}</span>
       <span class="s">{o.sub}</span>
+      {o.note && <span class="note">{o.note}</span>}
     </span>
-    <span class="go">À VENIR</span>
+    <span class="go">{t.AVENIR}</span>
   </div>
 )}

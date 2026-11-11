@@ -1,8 +1,8 @@
 ---
 id: calcul-maj-usb
 titre: Mettre à jour la station par clé USB
-bloc: calcul
-besoin: mettre-a-jour
+socle: strate
+savoirs: [monter-station]
 horizon: hours
 temps: "une heure"
 vague: 2
@@ -22,7 +22,9 @@ impact:
   fin_de_vie: "sans objet"
   passerelle: "la même clé ramène les rapports de reproduction"
 prerequis: [calcul-station-minipc]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 
@@ -89,4 +91,4 @@ On télécharge la nouvelle version là où il y a du réseau, on vérifie qu'el
 ### Pistes de sources (non vérifiées)
 
 - Wikipédia : « SHA-2 », « Somme de contrôle »
-- [SOURCE À TROUVER : page de téléchargement officielle du corpus CivZero]
+- [SOURCE À TROUVER : page de téléchargement officielle du corpus CivicNode]

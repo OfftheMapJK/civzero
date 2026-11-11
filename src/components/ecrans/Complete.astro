@@ -4,14 +4,15 @@ import Base from '../../layouts/Base.astro';
 import Crumb from '../Crumb.astro';
 import Badges from '../Badges.astro';
 const { p } = Astro.props;
+const t = p.t;
 ---
-<Base title={p.title} modeTxt={p.modeTxt} indexer>
-  <Crumb bloc={p.crumb.bloc} besoin={p.crumb.besoin} />
+<Base title={p.title} p={p} indexer>
+  <Crumb c={p.crumb} t={t} />
   <h1>{p.titre}</h1>
   <Badges badges={p.badges} />
   <div class="prose" set:html={p.bodyHtml} />
   <div class="row" data-pagefind-ignore>
-    <a class="btn" href={p.fiche}>[ &lt; PRÉSENTATION ]</a>
-    <a class="btn" href={p.rapport}>[ FAIRE UN RAPPORT ]</a>
+    <a class="btn" href={p.fiche}>{t.presentation}</a>
+    <a class="btn" href={p.rapport}>{t.rapportBtn}</a>
   </div>
 </Base>

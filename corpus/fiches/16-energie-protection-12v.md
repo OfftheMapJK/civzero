@@ -1,8 +1,8 @@
 ---
 id: energie-protection-12v
 titre: Mesure et protection d'un circuit 12 V — fusible et section de câble
-bloc: energie
-besoin: garder-du-courant
+socle: ambre
+savoirs: [alimenter-station]
 horizon: hours
 temps: "une demi-journée d'atelier"
 vague: 3
@@ -23,7 +23,9 @@ impact:
   fin_de_vie: "voir fiche energie-fin-de-vie"
   passerelle: "base de toute installation solaire autonome"
 prerequis: [nodule-zero, energie-lire-etiquette, energie-multimetre, energie-bilan-papier]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

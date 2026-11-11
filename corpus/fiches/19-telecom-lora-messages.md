@@ -1,8 +1,8 @@
 ---
 id: telecom-lora-messages
 titre: Envoyer des messages texte par radio LoRa
-bloc: telecom
-besoin: se-joindre
+socle: mycelium
+savoirs: [communiquer-loin]
 horizon: hours
 temps: "une journée"
 vague: 3
@@ -22,7 +22,9 @@ impact:
   fin_de_vie: "voir fiche energie-fin-de-vie"
   passerelle: "premier maillon d'un réseau radio de quartier"
 prerequis: [nodule-zero]
-sources:
+attestations: []
+medias: []
+provenance:
   - id: s1
     titre: "Meshtastic — Configuration LoRa"
     url: https://meshtastic.org/docs/configuration/radio/lora

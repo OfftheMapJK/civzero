@@ -1,8 +1,8 @@
 ---
 id: calcul-lire-sans-station
 titre: Lire les fiches sans station
-bloc: calcul
-besoin: avoir-la-bibliotheque
+socle: strate
+savoirs: [garder-savoir]
 horizon: instant
 temps: "quelques minutes"
 vague: 2
@@ -24,13 +24,15 @@ impact:
   fin_de_vie: "sans objet"
   passerelle: "chaque appareil devient une petite station"
 prerequis: []
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 
 # Lire les fiches sans station
 
-Les fiches CivZero sont de simples pages HTML : n'importe quel ordinateur ou téléphone peut les lire, sans serveur ni Internet.
+Les fiches CivicNode sont de simples pages HTML : n'importe quel ordinateur ou téléphone peut les lire, sans serveur ni Internet.
 
 ## 1. Principe
 
@@ -53,7 +55,7 @@ Le site des fiches fonctionne sans JavaScript ni serveur. On ouvre le fichier d'
 ### Étape 2 : Sur un ordinateur
 
 - **Action :** ouvrir `index.html` dans un navigateur, par un double-clic.
-- **Vérification :** l'accueil CivZero s'affiche et les liens mènent aux fiches.
+- **Vérification :** l'accueil CivicNode s'affiche et les liens mènent aux fiches.
 - **Source :** sans objet
 
 ### Étape 3 : Sur un téléphone

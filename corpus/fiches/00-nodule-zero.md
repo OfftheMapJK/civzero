@@ -2,8 +2,8 @@
 id: nodule-zero
 titre: Nodule Zéro — principes et sécurité
 accroche: "C'est le préalable à toutes les fiches : les réflexes de sécurité et la façon de lire un niveau de danger."
-bloc: socle
-besoin: commencer
+socle: commencer
+savoirs: []
 horizon: instant
 temps: "une heure de lecture"
 vague: 1
@@ -21,7 +21,9 @@ impact:
   fin_de_vie: "voir fiche energie-fin-de-vie"
   passerelle: "chaque fiche relie un geste d'urgence à une pratique durable"
 prerequis: []
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 
@@ -31,14 +33,14 @@ Prérequis de toutes les fiches. Il définit les niveaux de danger que l'interfa
 
 ## 1. Principe
 
-CivZero rassemble des savoirs pratiques pour tenir une coupure et gagner en autonomie avec ce qui existe déjà. Chaque fiche suit le même format et porte quatre informations à lire avant de commencer :
+CivicNode rassemble des savoirs pratiques pour tenir une coupure et gagner en autonomie avec ce qui existe déjà. Chaque fiche suit le même format et porte quatre informations à lire avant de commencer :
 
 - **Le niveau de danger** (vert, orange, rouge), toujours affiché avec un mot et une forme : cercle, triangle, octogone.
 - **Le statut** : brouillon → documentée (sources vérifiées par un humain) → testée → reproduite par trois personnes.
 - **Le temps** : instant (quelques minutes, avec ce qui est là), heures (de l'heure au week-end de travail : rassembler, acheter, essayer, monter), saisons (des semaines, des mois, ou le temps du vivant).
 - **Ce que la fiche exige d'avance** : un achat, un téléchargement, un montage.
 
-Deux natures de source coexistent et ne se confondent jamais : les **fiches CivZero**, avec leur statut, et les **références externes** (Wikipédia et autres corpus embarqués), que CivZero met à disposition sans les avoir validées.
+Deux natures de source coexistent et ne se confondent jamais : les **fiches CivicNode**, avec leur statut, et les **références externes** (Wikipédia et autres corpus embarqués), que CivicNode met à disposition sans les avoir validées.
 
 ## 2. Sécurité
 

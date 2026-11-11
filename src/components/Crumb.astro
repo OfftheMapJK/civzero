@@ -1,9 +1,10 @@
 ---
+// Fil d'Ariane : socle / savoir, et retour à l'accueil.
 import { HOME } from '../lib/model.mjs';
-interface Props { bloc: string; besoin?: string; modeLabel?: string }
-const { bloc, besoin, modeLabel } = Astro.props;
+interface Props { c: { a: string; aHref?: string; b?: string; bHref?: string }; t: any }
+const { c, t } = Astro.props;
 ---
 <div class="crumb">
-  <span>/ {besoin ? <>{bloc} / <strong>{besoin}</strong></> : <strong>{bloc}</strong>}</span>
-  {modeLabel ? <span>MODE : {modeLabel}</span> : <a href={HOME}>ACCUEIL</a>}
+  <span>/ {c.aHref ? <a href={c.aHref}>{c.a}</a> : c.a}{c.b && <> / <strong>{c.bHref ? <a href={c.bHref}>{c.b}</a> : c.b}</strong></>}</span>
+  <a href={HOME}>{t.accueil}</a>
 </div>

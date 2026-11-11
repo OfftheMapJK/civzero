@@ -1,8 +1,8 @@
 ---
 id: energie-recharge-solaire
 titre: Recharger une batterie 12 V avec un panneau et un régulateur
-bloc: energie
-besoin: produire-son-energie
+socle: ambre
+savoirs: [produire-electricite, alimenter-station]
 horizon: hours
 temps: "une à deux journées d'atelier"
 vague: 3
@@ -25,7 +25,9 @@ impact:
   fin_de_vie: "panneaux et batteries en filière de collecte"
   passerelle: "énergie produite localement, première brique d'autonomie"
 prerequis: [nodule-zero, energie-protection-12v, energie-multimetre, energie-lire-etiquette]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

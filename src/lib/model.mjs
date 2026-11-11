@@ -1,219 +1,248 @@
-// Construit le modèle de toutes les pages du site : l'entonnoir est calculé depuis les en-têtes.
-// Les composants Astro ne font qu'afficher ce modèle ; tous les liens sont décidés ici.
+// Construit le modèle de toutes les pages du site, pour une langue.
+// Structure : familles > socles > domaines > savoirs > fiches (les compétences) > étapes.
+// Les composants Astro ne font qu'afficher ce modèle ; tous les liens et tous les textes sont décidés ici.
 import { md, mdi } from './corpus.mjs';
+import { T } from './i18n.mjs';
 
-export const DATE = '09/11/2026';
+export const DATE = '10/11/2026';
 export const HOME = 'index.html';
 // Version station : construite avec CIVZERO_STATION=1, elle donne accès à l'assistant.
 export const STATION = process.env.CIVZERO_STATION === '1';
-// Une seule entrée : les solutions sont rangées par temps de travail, de l'instant aux saisons.
-export const HORIZONS = { instant: 'INSTANT', hours: 'HEURES', seasons: 'SAISONS' };
 const ORDRE_HORIZON = { instant: 0, hours: 1, seasons: 2 };
 const RANG_DANGER = { vert: 1, orange: 2, rouge: 3 };
 const NIVEAUX_DANGER = ['vert', 'orange', 'rouge'];
-const cap = (t) => (t ? t.charAt(0).toUpperCase() + t.slice(1) : t);
+const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+export const MATURITES = ['idee', 'prototype', 'terrain', 'documentee'];
+// Le vocabulaire du catalogue (coût, matériel, vivant), traduit mot à mot pour l'anglais.
+const MOTS_EN = { gratuit: 'free', aucun: 'none', 'récupération': 'salvaged', neuf: 'new', occasion: 'second-hand',
+  local: 'local', existant: 'already owned', voiture: 'car', adaptateur: 'adapter', plants: 'seedlings', 'bâche': 'tarp',
+  vinaigre: 'vinegar', bocaux: 'jars', sucre: 'sugar', 'porte-greffes': 'rootstock',
+  'préserve': 'preserves', 'prélève': 'takes from', 'régénère': 'regenerates' };
+const traduireMots = (s, lang) => (lang === 'en' ? s.replace(/[\p{L}-]+/gu, (w) => MOTS_EN[w] ?? w) : s);
 
 export function buildModel(c) {
-  const { fiches, labels, conf, blocs, besoins, niveaux } = c;
+  const { fiches, labels, conf, structure, prevues } = c;
+  const pistes = c.pistes || [];
+  const catalogue = c.catalogue || [];
+  const catParNum = new Map(catalogue.filter((r) => r.numero).map((r) => [r.numero, r]));
+  const catParTitre = new Map(catalogue.map((r) => [r.titre, r]));
+  const lang = c.lang || 'fr';
+  const t = T[lang];
+  const L = (o) => (o && typeof o === 'object' ? o[lang] ?? o.fr ?? '' : o || '');
+  // L'anglais est à la racine du site, le français dans fr/ : le bouton de langue mène à la même page.
+  const autre = (slug) => (lang === 'en' ? `fr/${slug}.html` : `../${slug}.html`);
+  const commun = (slug) => ({ slug, lang, t, autre: autre(slug), date: DATE });
+
   const demo = Array.isArray(conf.demo) && conf.demo.length ? new Set(conf.demo) : null;
   for (const f of fiches) f.actif = !demo || demo.has(f.id);
-  const byId = Object.fromEntries(fiches.map((f) => [f.id, f]));
   const depot = (conf.depot || '').trim();
   const email = (conf.email || '').trim();
+  const { socles, domaines, savoirs, familles } = structure;
 
   const labelCourt = (niv) => {
-    const t = labels[niv] || '';
-    return t.startsWith('[À VALIDER') ? 'Libellé officiel en attente de relecture (Nodule Zéro)' : t;
+    const x = labels[niv] || '';
+    return x.startsWith('[À VALIDER') || x.startsWith('[TO CHECK') ? t.labelAttente : x;
   };
-  const minTier = (f) => Math.min(...f.meta.tier);
-  const rangH = (f) => ORDRE_HORIZON[f.meta.horizon] ?? 3;
-  // Le niveau d'une fiche est celui du geste principal ; une variante plus risquée est signalée à côté.
-  const varianteRisquee = (f) => (f.meta.variantes || [])
-    .filter((v) => (RANG_DANGER[v.danger] || 0) > (RANG_DANGER[f.meta.danger] || 0))
+  const varianteRisquee = (m) => (m.variantes || [])
+    .filter((v) => (RANG_DANGER[v.danger] || 0) > (RANG_DANGER[m.danger] || 0))
     .sort((a, z) => RANG_DANGER[z.danger] - RANG_DANGER[a.danger])[0]?.danger || '';
-  const blocTitre = (b) => (blocs[b] ? blocs[b].titre : 'SOCLE');
-  const besoinTitre = (b) => besoins[b].titre;
+
+  // Une entrée de liste, que ce soit une fiche écrite ou une fiche prévue.
+  const item = (x) => {
+    const ecrite = !!x.steps;
+    const m = ecrite ? x.meta : x;
+    const titre = ecrite ? m.titre : L(x.titre);
+    const tiers = (m.tier || []).join('–');
+    const v = varianteRisquee(m);
+    const d = NIVEAUX_DANGER.includes(m.danger) ? t.danger(t.niv[m.danger].toLowerCase()) + (v ? t.variante(t.niv[v].toLowerCase()) : '')
+      : t.prerequis;
+    const morceaux = [t.h[m.horizon], tiers !== '' && `Tier ${tiers}`, d].filter(Boolean);
+    const actif = ecrite && x.actif;
+    const cat = (ecrite ? catParNum.get(x.num) : catParTitre.get(x.titre?.fr)) || {};
+    const ressources = [cat.cout, cat.materiel].filter(Boolean).map((w) => traduireMots(w, lang)).join(' · ');
+    const tableau = { temps: [t.h[m.horizon], ecrite ? m.temps : ''].filter(Boolean).join(' : '),
+      tier: tiers, dangerMot: t.niv[m.danger] || '', varianteMot: v ? t.niv[v] : '',
+      exige: ecrite ? m.exige_avance || '' : '', ressources, vivant: traduireMots(cat.vivant || '', lang) };
+    return { id: x.id, href: actif ? `f-${x.id}.html` : null, titre, niveau: m.danger, tableau,
+             sub: actif ? `${morceaux.join(' · ')} · ${t.brouillon}` : `${t.aVenir} · ${morceaux.join(' · ')}`,
+             note: x.hors_corpus ? t.horsCorpus : '',
+             rang: [ORDRE_HORIZON[m.horizon] ?? 3, Math.min(...(m.tier?.length ? m.tier : [9])), actif ? 0 : 1] };
+  };
+  const trier = (liste) => liste.sort((a, z) => a.rang[0] - z.rang[0] || a.rang[2] - z.rang[2] || a.rang[1] - z.rang[1]
+    || a.titre.localeCompare(z.titre));
+
+  const fichesDuSavoir = (sv) => trier([
+    ...fiches.filter((f) => (f.meta.savoirs || []).includes(sv)).map(item),
+    ...prevues.filter((p) => (p.savoirs || []).includes(sv)).map(item),
+  ]);
+  const socleDe = (sv) => domaines[savoirs[sv]?.domaine]?.socle;
+  const crumbFiche = (f) => {
+    const sv = (f.meta.savoirs || [])[0];
+    if (!sv) return { a: t.commencer, aHref: HOME };
+    const so = socleDe(sv);
+    return { a: L(socles[so].nom), aHref: `s-${so}.html`, b: L(savoirs[sv].titre), bHref: `v-${sv}.html` };
+  };
 
   const pages = [];
   const add = (p) => { pages.push(p); return `${p.slug}.html`; };
 
-  const danger = (f) => NIVEAUX_DANGER.includes(f.meta.danger)
-    ? { niveau: f.meta.danger, label: labelCourt(f.meta.danger), risques: f.risques.map(mdi) }
-    : null;
-  const badges = (f, court = false) => [
-    { t: '▒ BROUILLON ▒', trame: true },
-    ...(f.meta.suspendu ? [{ t: 'EN SUSPENS' }] : []),
-    ...(court || !HORIZONS[f.meta.horizon] ? [] : [{ t: HORIZONS[f.meta.horizon] }]),
-  ];
-  const crumbFiche = (f) => ({ bloc: blocTitre(f.meta.bloc), besoin: besoinTitre(f.meta.besoin) });
+  const danger = (f) => (NIVEAUX_DANGER.includes(f.meta.danger)
+    ? { niveau: f.meta.danger, mot: t.niv[f.meta.danger], label: labelCourt(f.meta.danger), risques: f.risques.map(mdi) }
+    : null);
+  const badges = (f) => [{ t: `▒ ${t.brouillon.toUpperCase()} ▒`, trame: true },
+    ...(f.meta.suspendu ? [{ t: lang === 'en' ? 'ON HOLD' : 'EN SUSPENS' }] : []),
+    ...(t.H[f.meta.horizon] ? [{ t: t.H[f.meta.horizon] }] : [])];
 
-  const optFiche = (f, extra = '') => {
-    const h = HORIZONS[f.meta.horizon] ? `${cap(HORIZONS[f.meta.horizon].toLowerCase())} · ` : '';
-    const v = varianteRisquee(f);
-    const d = NIVEAUX_DANGER.includes(f.meta.danger)
-      ? `Danger estimé : ${f.meta.danger}${v ? ` (variante ${v})` : ''}` : 'Prérequis de toutes les fiches';
-    return { href: f.actif ? `f-${f.id}.html` : null, titre: f.meta.titre, niveau: f.meta.danger,
-             sub: f.actif ? `${extra}${h}${d} · brouillon` : `À venir · ${h}${d}`, note: '' };
-  };
+  // Provenance (TASL : titre, auteur, source, licence), attestations et médias, quand la fiche en a.
+  const provenance = (f) => (f.meta.provenance || []).map((s) => (typeof s === 'string' ? { titre: s } : {
+    titre: s.titre || '', auteur: s.auteur || '', url: s.source || s.url || '', licence: s.licence || '', modifie: !!s.modifie }));
+  const attestations = (f) => (f.meta.attestations || []).map((a) => ({
+    type: a.type || '', par: a.par || '', competence: a.competence || '', date: a.date || '', contexte: a.contexte || '' }));
+  const medias = (f, etape = null) => (f.meta.medias || [])
+    .filter((m) => (etape === null ? !m.etape : m.etape === etape))
+    .map((m) => ({ fichier: m.fichier || '', type: m.type || 'image', legende: L(m.legende), titre: m.titre || '',
+                   auteur: m.auteur || '', url: m.source || '', licence: m.licence || '' }));
 
-  // ------------------------------------------------------------ fiches actives
+  // ------------------------------------------------------------ fiches ouvertes
   for (const f of fiches.filter((x) => x.actif)) {
     const pre = `f-${f.id}`;
     const n = f.steps.length;
     const general = f.coince.filter((x) => !x.etapes.length);
+    const base = { crumb: crumbFiche(f), titre: f.meta.titre, modeTxt: t.beta, nonTraduite: f.traduite ? '' : t.nonTraduite };
     add({
-      slug: pre, kind: 'fiche', title: `${f.meta.titre} · CivZero`, modeTxt: 'BÊTA',
-      crumb: crumbFiche(f), titre: f.meta.titre, badges: badges(f), danger: danger(f),
-      securiteHtml: !NIVEAUX_DANGER.includes(f.meta.danger) ? md(f.secs[2])
-        : (f.s2Reste ? md(f.s2Reste) : ''),
+      ...commun(pre), kind: 'fiche', title: `${f.meta.titre} · CivicNode`, ...base,
+      badges: badges(f), danger: danger(f),
+      securiteHtml: !NIVEAUX_DANGER.includes(f.meta.danger) ? md(f.secs[2]) : (f.s2Reste ? md(f.s2Reste) : ''),
       suspension: f.meta.suspendu ? f.meta.raison_suspension : '',
       exige: f.meta.exige_avance,
       variantes: (f.meta.variantes || []).map((v) => ({ niveau: v.danger, nom: v.id.replaceAll('-', ' ') })),
-      principeHtml: md(f.secs[1]),
-      prefaceHtml: f.preface ? md(f.preface) : '',
+      principeHtml: md(f.secs[1]), prefaceHtml: f.preface ? md(f.preface) : '',
       premiere: n ? `${pre}-e${f.steps[0].n}.html` : null,
       etapes: f.steps.map((s) => ({ titre: s.titre, href: `${pre}-e${s.n}.html` })),
       coince: general.map((x) => ({ probleme: mdi(x.probleme), texte: mdi(x.texte) })),
+      provenance: provenance(f), attestations: attestations(f), medias: medias(f),
       complete: `${pre}-complete.html`, rapport: `${pre}-rapport.html`,
     });
 
     f.steps.forEach((s, i) => {
       add({
-        slug: `${pre}-e${s.n}`, kind: 'etape', title: `Étape ${i + 1} · ${f.meta.titre} · CivZero`, modeTxt: 'BÊTA',
-        crumb: crumbFiche(f), titre: f.meta.titre, badges: badges(f, true), danger: danger(f),
+        ...commun(`${pre}-e${s.n}`), kind: 'etape', title: `${t.etape(i + 1, n)} · ${f.meta.titre} · CivicNode`, ...base,
+        badges: badges(f).slice(0, 1), danger: danger(f),
         rang: i + 1, total: n, barre: '■'.repeat(i + 1) + '□'.repeat(n - i - 1),
         ficheId: f.id, etapeN: s.n, etapeTitre: s.titre, action: mdi(cap(s.action)), verif: s.verif ? mdi(cap(s.verif)) : '',
-        source: s.source ? mdi(s.source) : '',
-        coince: f.coince.filter((x) => x.etapes.includes(s.n))
-          .map((x) => ({ probleme: mdi(x.probleme), texte: mdi(x.texte) })),
-        precedent: i ? { href: `${pre}-e${f.steps[i - 1].n}.html`, t: '[ < ÉTAPE PRÉCÉDENTE ]' }
-                     : { href: `${pre}.html`, t: '[ < PRÉSENTATION ]' },
-        suivant: i < n - 1 ? { href: `${pre}-e${f.steps[i + 1].n}.html`, t: '[ ÉTAPE SUIVANTE > ]' }
-                           : { href: `${pre}-rapport.html`, t: '[ TERMINÉ : FAIRE UN RAPPORT > ]' },
+        source: s.source ? mdi(s.source) : '', medias: medias(f, s.n),
+        coince: f.coince.filter((x) => x.etapes.includes(s.n)).map((x) => ({ probleme: mdi(x.probleme), texte: mdi(x.texte) })),
+        precedent: i ? { href: `${pre}-e${f.steps[i - 1].n}.html`, t: t.precedente } : { href: `${pre}.html`, t: t.presentation },
+        suivant: i < n - 1 ? { href: `${pre}-e${f.steps[i + 1].n}.html`, t: t.suivante } : { href: `${pre}-rapport.html`, t: t.termine },
         complete: `${pre}-complete.html`, rapport: `${pre}-rapport.html`,
       });
     });
 
     add({
-      slug: `${pre}-complete`, kind: 'complete', title: `${f.meta.titre} (complète) · CivZero`, modeTxt: 'BÊTA',
-      crumb: crumbFiche(f), titre: f.meta.titre, badges: badges(f),
-      bodyHtml: md(f.body.replace('[Libellé officiel affiché depuis le Nodule Zéro]', labelCourt(f.meta.danger))),
+      ...commun(`${pre}-complete`), kind: 'complete', title: `${f.meta.titre} · CivicNode`, ...base, badges: badges(f),
+      bodyHtml: md(f.body.replace('[Libellé officiel affiché depuis le Nodule Zéro]', labelCourt(f.meta.danger))
+                        .replace('[Official label shown from Nodule Zero]', labelCourt(f.meta.danger))),
       fiche: `${pre}.html`, rapport: `${pre}-rapport.html`,
     });
 
-    const params = new URLSearchParams({ template: 'rapport-reproduction.yml', title: `Rapport : ${f.id}`,
-                                         fiche: f.id, version: DATE });
+    const params = new URLSearchParams({ template: 'rapport-reproduction.yml', title: `Rapport : ${f.id}`, fiche: f.id, version: DATE });
     add({
-      slug: `${pre}-rapport`, kind: 'rapport', title: `Rapport · ${f.meta.titre} · CivZero`, modeTxt: 'BÊTA',
-      crumb: crumbFiche(f), titre: f.meta.titre,
-      modele: `RAPPORT DE REPRODUCTION — CivZero\nFiche : ${f.id} (${f.meta.titre})\nVersion du corpus : ${DATE}\n`
-        + `Statut de la fiche : ${f.meta.statut}\n\nDate :\nMilieu (urbain / rural / aride) :\nVariante suivie :\n`
-        + 'Matériel utilisé, et son origine (récupération / achat) :\nRésultat (réussi / partiel / échec) :\n'
-        + 'Étape où ça a coincé :\nCe qui a coincé, et ce que vous avez fait :\n'
-        + 'Une étape vous a semblé fausse ou dangereuse ? Laquelle et pourquoi :\n'
-        + 'Incident ou quasi-accident (oui / non, décrire) :\nPhoto (oui / non) :\n',
-      github: depot ? `https://github.com/${depot}/issues/new?${params}` : null,
-      email: email || null,
+      ...commun(`${pre}-rapport`), kind: 'rapport', title: `${t.rapportBtn.replace(/[[\]]/g, '').trim()} · ${f.meta.titre}`, ...base,
+      modele: t.modeleRapport(f, DATE),
+      github: depot ? `https://github.com/${depot}/issues/new?${params}` : null, email: email || null,
       fiche: `${pre}.html`,
     });
   }
 
-  // ------------------------------------------------------------ entonnoir
-  const candidats = (b) => fiches.filter((f) => f.meta.besoin === b);
-  const actifs = (b) => candidats(b).filter((f) => f.actif);
-  const prevues = (b) => candidats(b).filter((f) => !f.actif);
-  const matches = (b, u) => actifs(b).filter((f) => minTier(f) <= u)
-    .sort((a, z) => rangH(a) - rangH(z) || a.meta.vague - z.meta.vague || a.num.localeCompare(z.num));
-  const tierUtile = (b) => new Set([0, 1, 2].map((u) => matches(b, u).map((f) => f.id).join())).size > 1;
-
-  const listePage = (slug, b, liste, titre, retour) => add({
-    slug, kind: 'liste', title: `${besoinTitre(b)} · CivZero`, modeTxt: 'BÊTA',
-    crumb: { bloc: blocTitre(besoins[b].bloc), besoin: besoinTitre(b) },
-    titre, fiches: liste.map((f) => optFiche(f)), prevues: prevues(b).map((f) => optFiche(f)),
-    retour, home: HOME,
-  });
-
-  const cibleBesoin = (b) => {
-    const a = actifs(b);
-    if (!a.length) return null;
-    if (tierUtile(b)) return `e-${b}.html`;
-    if (a.length === 1 && !prevues(b).length) return `f-${a[0].id}.html`;
-    return `e-${b}-liste.html`;
-  };
-
-  for (const [bloc, bd] of Object.entries(blocs)) {
-    const bes = Object.keys(besoins).filter((b) => besoins[b].bloc === bloc);
-    if (!bes.some((b) => actifs(b).length)) continue;          // bloc entièrement à venir
-    const opts = bes.map((b) => {
-      const nb = candidats(b).length, na = actifs(b).length;
-      return { titre: besoinTitre(b), desc: besoins[b].description, href: cibleBesoin(b),
-               compte: na ? `${na} fiche${na > 1 ? 's' : ''}${nb > na ? ` · ${nb - na} à venir` : ''}`
-                          : `${nb} fiche${nb > 1 ? 's' : ''} à venir` };
-    }).sort((a, z) => (a.href === null) - (z.href === null));
-    add({ slug: `e-${bloc}`, kind: 'bloc', title: `${bd.titre} · CivZero`, modeTxt: 'BÊTA',
-          bloc: bd.titre, options: opts, retour: HOME });
-
-    for (const b of bes) {
-      if (!actifs(b).length) continue;
-      if (!tierUtile(b)) {
-        if (actifs(b).length > 1 || prevues(b).length) {
-          const n = actifs(b).length;
-          listePage(`e-${b}-liste`, b, matches(b, 2),
-                    `${n} fiche${n > 1 ? 's' : ''} pour ce besoin, de l'instant aux saisons`, `e-${bloc}.html`);
-        }
-        continue;
-      }
-      const dispo = [], vides = [];
-      for (const u of [0, 1, 2]) {
-        const r = matches(b, u);
-        const [t, s_] = niveaux[u];
-        const o = { k: `TIER ${u}`, t, s: s_, mene: '', href: `e-${b}-t${u}.html`, vide: !r.length };
-        if (r.length === 1) { o.href = `f-${r[0].id}.html`; o.mene = `Mène à : ${r[0].meta.titre}`; }
-        else if (r.length) {
-          o.mene = `${r.length} fiches`;
-          listePage(`e-${b}-t${u}`, b, r, `${r.length} fiches avec ce matériel, de l'instant aux saisons`, `e-${b}.html`);
-        } else {
-          add({ slug: `e-${b}-t${u}`, kind: 'impasse', title: 'Aucune fiche · CivZero', modeTxt: 'BÊTA',
-                crumb: { bloc: bd.titre, besoin: besoinTitre(b) },
-                besoin: besoinTitre(b), materiel: `TIER ${u} · ${t}`,
-                proches: actifs(b).map((f) => optFiche(f, `Demande : TIER ${minTier(f)} · `)),
-                retour: `e-${b}.html` });
-        }
-        (r.length ? dispo : vides).push(o);
-      }
-      add({ slug: `e-${b}`, kind: 'tier', title: `${besoinTitre(b)} · CivZero`, modeTxt: 'BÊTA',
-            crumb: { bloc: bd.titre, besoin: besoinTitre(b) },
-            options: [...dispo, ...vides], retour: `e-${bloc}.html` });
-    }
+  // ------------------------------------------------------------ pistes (socle Spore)
+  const itemPiste = (pi) => ({ id: pi.id, href: `p-${pi.id}.html`, titre: pi.meta.titre, accroche: pi.meta.accroche || '',
+    maturite: pi.meta.maturite, maturiteMot: t.maturite[pi.meta.maturite] || '' });
+  const socleSpore = Object.keys(socles).find((so) => socles[so].pistes) || 'spore';
+  for (const pi of pistes) {
+    const m = pi.meta;
+    const params = new URLSearchParams({ title: `Piste : ${pi.id}`, body: `Piste : ${pi.id}\nVersion : ${DATE}\n\n` });
+    add({
+      ...commun(`p-${pi.id}`), kind: 'piste', title: `${m.titre} · CivicNode`, modeTxt: t.beta,
+      crumb: { a: L(socles[socleSpore]?.nom), aHref: `s-${socleSpore}.html`, b: t.maturite[m.maturite] },
+      titre: m.titre, accroche: m.accroche || '', maturite: m.maturite, maturiteMot: t.maturite[m.maturite] || '',
+      maturiteExpl: t.maturiteExpl[m.maturite] || '', echelle: MATURITES.map((x) => ({ mot: t.maturite[x], actif: x === m.maturite })),
+      nonTraduite: pi.traduite ? '' : t.nonTraduitePiste,
+      sections: pi.sections.map((x) => ({ titre: x.titre, html: md(x.texte) })),
+      acteurs: (m.acteurs || []).map((a) => ({ nom: a.nom || '', lieu: a.lieu || '', url: a.url || '' })),
+      savoirs: (m.savoirs || []).filter((sv) => savoirs[sv]).map((sv) => ({ titre: L(savoirs[sv].titre), href: `v-${sv}.html` })),
+      provenance: provenance(pi), maj: m.maj ? String(m.maj instanceof Date ? m.maj.toISOString().slice(0, 10) : m.maj) : '',
+      github: depot ? `https://github.com/${depot}/issues/new?${params}` : null, email: email || null,
+      retour: `s-${socleSpore}.html`,
+    });
   }
 
-  // ------------------------------------------------------------ accueils et index
+  // ------------------------------------------------------------ savoirs
+  const compte = (liste) => [liste.filter((x) => x.href).length, liste.filter((x) => !x.href).length];
+  for (const [sv, s] of Object.entries(savoirs)) {
+    const so = socleDe(sv);
+    const liste = fichesDuSavoir(sv);
+    add({
+      ...commun(`v-${sv}`), kind: 'savoir', title: `${L(s.titre)} · CivicNode`, modeTxt: t.beta,
+      crumb: { a: L(socles[so].nom), aHref: `s-${so}.html`, b: L(domaines[s.domaine].titre) },
+      titre: L(s.titre), principeHtml: s.principe ? md(L(s.principe)) : '', ordreHtml: s.ordre ? md(L(s.ordre)) : '',
+      fiches: liste, retour: `s-${so}.html`,
+      pistes: pistes.filter((pi) => (pi.meta.savoirs || []).includes(sv)).map(itemPiste),
+    });
+  }
+
+  // ------------------------------------------------------------ socles
+  const fichesDuSocle = (so) => {
+    const svs = Object.keys(savoirs).filter((sv) => socleDe(sv) === so);
+    const ids = new Set();
+    const liste = [];
+    for (const sv of svs) for (const x of fichesDuSavoir(sv)) if (!ids.has(x.id)) { ids.add(x.id); liste.push(x); }
+    return liste;
+  };
+  for (const [so, s] of Object.entries(socles)) {
+    const doms = Object.entries(domaines).filter(([, d]) => d.socle === so).map(([dk, d]) => ({
+      titre: L(d.titre),
+      savoirs: Object.entries(savoirs).filter(([, x]) => x.domaine === dk).map(([sv, x]) => {
+        const [a, b] = compte(fichesDuSavoir(sv));
+        return { titre: L(x.titre), href: `v-${sv}.html`, compte: t.compteSavoir(a, b), ouvert: a > 0 };
+      }),
+    }));
+    const groupesPistes = s.pistes ? MATURITES.map((mat) => ({ titre: t.maturite[mat], expl: t.maturiteExpl[mat],
+      pistes: pistes.filter((pi) => pi.meta.maturite === mat).map(itemPiste) })).filter((g) => g.pistes.length) : [];
+    add({ ...commun(`s-${so}`), kind: 'socle', title: `${L(s.nom)} · CivicNode`, modeTxt: t.beta,
+          nom: L(s.nom), domaine: L(s.domaine), explique: L(s.nom_explique), domaines: doms, pistes: groupesPistes,
+          avert: s.pistes ? t.pisteAvert : '', retour: HOME });
+  }
+
+  // ------------------------------------------------------------ accueil, toutes, recherche
   const accueil = {
-    modeTxt: 'BÊTA',
-    expl: "Les solutions sont rangées selon le temps qu'elles demandent : un instant, quelques heures, plusieurs saisons. "
-      + "Chaque fiche dit aussi son niveau de danger et ce qu'il faut avoir.",
-    socle: fiches.filter((f) => f.meta.besoin === 'commencer').map((f) => optFiche(f)),
-    blocs: Object.entries(blocs).map(([bloc, bd]) => {
-      const bes = Object.keys(besoins).filter((b) => besoins[b].bloc === bloc);
-      const nf = fiches.filter((f) => f.meta.bloc === bloc);
-      const na = nf.filter((f) => f.actif).length;
-      return { titre: bd.titre, sous: bd.sous_titre, href: na ? `e-${bloc}.html` : null,
-               compte: na ? `${na} fiche${na > 1 ? 's' : ''} · ${nf.length - na} à venir` : `${nf.length} fiches à venir`,
-               nbBesoins: bes.length };
-    }),
-    aVenir: c.aVenir,
+    ...commun('index'), kind: 'accueil', title: `CivicNode · ${t.baseline}`, modeTxt: t.beta,
+    commencer: fiches.filter((f) => f.meta.socle === 'commencer').map(item),
+    familles: familles.map((fa) => ({
+      nom: L(fa.nom),
+      socles: fa.socles.map((so) => {
+        if (socles[so].pistes) {
+          return { nom: L(socles[so].nom), domaine: L(socles[so].domaine), href: `s-${so}.html`,
+                   compte: t.comptePistes(pistes.length), ouvert: pistes.length > 0 };
+        }
+        const [a, b] = compte(fichesDuSocle(so));
+        return { nom: L(socles[so].nom), domaine: L(socles[so].domaine), href: `s-${so}.html`, compte: t.compteSocle(a, b), ouvert: a > 0 };
+      }),
+    })),
   };
 
-  add({
-    slug: 'toutes', kind: 'toutes', title: 'Toutes les fiches · CivZero', modeTxt: 'BÊTA',
-    total: fiches.length, actives: fiches.filter((f) => f.actif).length,
-    vagues: [[1, 'Vague 1 · sans station ni achat'], [2, 'Vague 2 · avec la station'], [3, "Vague 3 · vers l'alternative"]]
-      .map(([v, t]) => ({ titre: t, lignes: fiches.filter((f) => f.meta.vague === v).map((f) => ({
-        num: f.num, titre: f.meta.titre, href: f.actif ? `f-${f.id}.html` : null, niveau: f.meta.danger,
-        horizon: HORIZONS[f.meta.horizon] || '',
-        tier: minTier(f), exige: f.meta.exige_avance, suspendu: !!f.meta.suspendu })) })),
-  });
-  add({ slug: 'recherche', kind: 'recherche', title: 'Recherche · CivZero', modeTxt: 'BÊTA' });
+  const ligne = (x) => {
+    const f = fiches.find((y) => y.id === x.id);
+    const m = f ? f.meta : prevues.find((p) => p.id === x.id);
+    return { num: f ? f.num : '', titre: x.titre, href: x.href, niveau: m.danger, niveauMot: t.niv[m.danger] || '',
+             temps: t.h[m.horizon] || '', tier: (m.tier || []).join('–'), exige: f ? f.meta.exige_avance || '' : '',
+             suspendu: !!(f && f.meta.suspendu), prevue: !f };
+  };
+  const groupes = [{ titre: t.commencer, lignes: fiches.filter((f) => f.meta.socle === 'commencer').map(item).map(ligne) },
+    ...Object.entries(socles).filter(([, s]) => !s.pistes)
+      .map(([so, s]) => ({ titre: `${L(s.nom)} · ${L(s.domaine)}`, lignes: fichesDuSocle(so).map(ligne) }))];
+  add({ ...commun('toutes'), kind: 'toutes', title: `${t.toutes} · CivicNode`, modeTxt: t.beta,
+        total: fiches.length + prevues.length, actives: fiches.filter((f) => f.actif).length, groupes });
+  add({ ...commun('recherche'), kind: 'recherche', title: `${t.recherche} · CivicNode`, modeTxt: t.beta });
 
-  return { pages, home: { slug: 'index', kind: 'accueil', title: 'Station CivZero', ...accueil } };
+  return { pages, home: accueil };
 }

@@ -1,0 +1,33 @@
+---
+// Provenance (titre, auteur, source, licence), attestations et médias d'une fiche, quand elle en a.
+interface Props { p: any }
+const { p } = Astro.props;
+const t = p.t;
+---
+{p.medias?.length > 0 && (
+  <div class="prose medias">
+    <h2>{t.medias}</h2>
+    {p.medias.map((m: any) => (
+      <figure>
+        {m.type === 'video'
+          ? <video src={m.fichier} controls preload="none" />
+          : <img src={m.fichier} alt={m.legende} loading="lazy" />}
+        <figcaption>{m.legende} <span class="src">{[m.titre, m.auteur, m.licence].filter(Boolean).join(' · ')}{m.url && <> · <a href={m.url}>source</a></>}</span></figcaption>
+      </figure>
+    ))}
+  </div>
+)}
+{p.attestations?.length > 0 && (
+  <div class="prose">
+    <h2>{t.attestations}</h2>
+    <ul>{p.attestations.map((a: any) => <li><strong>{a.type}</strong> · {a.par}{a.competence && <>, {a.competence}</>}{a.date && <> · {a.date}</>}{a.contexte && <> · {a.contexte}</>}</li>)}</ul>
+  </div>
+)}
+{p.provenance?.length > 0 && (
+  <div class="prose">
+    <h2>{t.provenance}</h2>
+    <ul>{p.provenance.map((s: any) => (
+      <li>{s.url ? <a href={s.url}>{s.titre}</a> : s.titre}{s.auteur && <> · {s.auteur}</>}{s.licence && <> · {t.licence} {s.licence}</>}{s.modifie && <> · {t.modifie}</>}</li>
+    ))}</ul>
+  </div>
+)}

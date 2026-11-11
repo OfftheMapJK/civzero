@@ -1,8 +1,8 @@
 ---
 id: energie-bilan-papier
 titre: Estimer sa consommation et son autonomie, sur papier
-bloc: energie
-besoin: comprendre-ses-appareils
+socle: ambre
+savoirs: [lire-mesurer]
 horizon: hours
 temps: "une heure"
 vague: 1
@@ -22,7 +22,9 @@ impact:
   fin_de_vie: "sans objet"
   passerelle: "dimensionner juste évite d'acheter trop grand"
 prerequis: [energie-lire-etiquette]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

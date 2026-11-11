@@ -2,8 +2,8 @@
 id: telecom-ecoute-radio
 titre: Écoute radio pour s'informer
 accroche: "Elle montre comment recevoir l'information sans réseau mobile ni Internet."
-bloc: telecom
-besoin: s-informer
+socle: mycelium
+savoirs: [recevoir-information]
 horizon: hours
 temps: "un achat, puis quelques minutes"
 vague: 1
@@ -23,7 +23,9 @@ impact:
   fin_de_vie: "piles en point de collecte"
   passerelle: "poste à manivelle ou solaire, sans piles"
 prerequis: []
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

@@ -76,13 +76,13 @@ Danger estimé : vert · Sources à trouver : 3
 
 - Aucun point à valider ; vérifier les sources.
 
-## 10 · Monter sa station CivZero sur un mini-PC de récupération
+## 10 · Monter sa station CivicNode sur un mini-PC de récupération
 
 Danger estimé : vert · Sources à trouver : 3
 
 - [ ] **3. Pas-à-pas** — commandes exactes sur une machine réelle
 - [ ] **Étape 1 : Vérifier la machine** — configuration minimale de référence, par exemple 8 Go de mémoire et 256 Go de stockage
-- [ ] **Étape 5 : Copier et servir les fiches CivZero** — commande exacte sur la machine réelle
+- [ ] **Étape 5 : Copier et servir les fiches CivicNode** — commande exacte sur la machine réelle
 - [ ] **Étape 6 : Démarrage automatique** — fichiers de service systemd
 
 ## 11 · Mettre à jour la station par clé USB

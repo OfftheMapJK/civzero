@@ -1,4 +1,4 @@
-# CivZero — corpus de la phase 1 (bêta)
+# CivicNode — corpus de la phase 1 (bêta)
 
 Toutes les fiches sont au statut **brouillon** et rédigées avec l'assistance d'une IA. Aucune n'est à appliquer comme sûre avant relecture. Voir `RELECTURE.md`.
 
@@ -37,7 +37,7 @@ Le champ `horizon` remplace l'ancien champ `mode` (« Je prépare » / « Ça a 
 
 | # | Fiche | Bloc | Tier | Danger estimé | Exige d'avance |
 | --- | --- | --- | --- | --- | --- |
-| 10 | [Monter sa station CivZero sur un mini-PC de récupération](fiches/10-calcul-station-minipc.md) | calcul | 1, 2 | vert | un mini-PC ou un portable de récupération, une clé USB d'installation, un accès Internet pendant l'installation |
+| 10 | [Monter sa station CivicNode sur un mini-PC de récupération](fiches/10-calcul-station-minipc.md) | calcul | 1, 2 | vert | un mini-PC ou un portable de récupération, une clé USB d'installation, un accès Internet pendant l'installation |
 | 11 | [Mettre à jour la station par clé USB](fiches/11-calcul-maj-usb.md) | calcul | 1 | vert | une clé USB, un accès Internet ailleurs pour télécharger la nouvelle version |
 | 12 | [Lire les fiches sans station](fiches/12-calcul-lire-sans-station.md) | calcul | 0 | vert | avoir copié l'archive des fiches sur l'appareil ou sur une clé |
 | 13 | [Point d'accès Wi-Fi local](fiches/13-telecom-point-acces-local.md) *(en suspens)* | telecom | 1 | orange | la station montée ; selon la variante, une carte Wi-Fi compatible ou un routeur Wi-Fi du commerce |
@@ -73,3 +73,46 @@ Ce que le corpus propose, de l'instant aux saisons. Les fiches 21 à 26 sont des
 | saisons | Génératrice à pédales | 26 | 2 | orange |
 
 Pistes écartées pour la bêta : générateur thermoélectrique sur un réchaud (matériel spécifique, peu répandu), piles assemblées à la main (risque d'incendie), « batteries » de fruits ou de légumes (énergie dérisoire).
+
+## Structure et gabarit (bascule du 10/11/2026)
+
+**Structure.** `structure.yaml` décrit les familles, les onze socles (dont Spore, ajouté ensuite) (nom, domaine, explication du nom, en anglais et en français), leurs domaines et leurs savoirs (titre, principe commun). Chaque fiche se rattache à un ou plusieurs savoirs. `prevues.yaml` liste les fiches prévues, pas encore écrites ; il est tiré de `catalogue.csv` et ces fiches apparaissent en pointillés dans leurs savoirs. `besoins.yaml` (ancien entonnoir) n'est plus utilisé.
+
+**Champs ajoutés au gabarit :**
+
+- `socle` : le socle d'origine (`commencer` pour le Nodule Zéro et la fiche 72 heures).
+- `savoirs` : la liste des savoirs auxquels la fiche appartient ; le premier est le principal.
+- `provenance` : les sources adaptées, une entrée par source : `titre`, `auteur`, `source` (le lien), `licence`, `modifie` (vrai si adaptée). Seuls le domaine public, CC BY et CC BY-SA peuvent entrer dans le texte d'une fiche.
+- `attestations` : `type` (testée, réalisée, confirmée), `par` (nom ou pseudonyme, publié seulement avec l'accord de la personne), `competence` (par exemple « ingénieure agronome »), `date`, `contexte`.
+- `medias` : `fichier`, `type` (image, schema, video), `legende` (`fr` et `en`), `titre`, `auteur`, `source`, `licence`, et `etape` pour un média propre à une étape.
+
+Ces champs sont vides pour l'instant ; le site affiche les sections dès qu'ils sont remplis.
+
+**Une fiche, une méthode.** Les variantes d'un même geste restent dans la même fiche ; une méthode différente (autre matériel, autre danger) devient sa propre fiche. La fiche 03 a ainsi perdu sa partie voiture, devenue la fiche 27, *Recharger son téléphone à la voiture*.
+
+**Traductions.** Le site est en anglais à la racine et en français dans `fr/`, avec un bouton de langue sur chaque page. Une fiche traduite est dans `fiches/en/`, sous le même nom de fichier : son en-tête ne contient que les champs à traduire (`titre`, `accroche`, `temps`, `exige_avance`), les autres restent ceux de la fiche française. Les repères du texte sont en anglais : `### Step 1: …`, `- **Action:**`, `- **Check:**`, `- **Source:**`, `Risks specific to this skill:`, `**LEVEL: GREEN (circle)**`. Depuis le 10/11/2026, les 28 fiches écrites sont traduites ; `fiches/en/titres.yaml` ne sert plus que de secours pour une nouvelle fiche pas encore traduite. Les traductions sont des brouillons, comme le reste.
+
+## Socle Spore : les pistes (10/11/2026)
+
+Un onzième socle, **Spore**, dans une cinquième famille, **Explorer**. Il ne contient pas de fiches mais des **pistes** : des idées, des prototypes et des recherches en cours, sobres, bas carbone et à portée de main, qui deviendront peut-être des fiches. La spore attend le bon endroit pour germer.
+
+Une piste est un fichier de `pistes/` (traduction dans `pistes/en/`, même nom de fichier, en-tête limité à `titre`, `accroche` et, si besoin, `acteurs`). En-tête : `id`, `titre`, `accroche`, `socle: spore`, `savoirs` (au moins un), `maturite` (`idee`, `prototype`, `terrain`, `documentee`), `acteurs` (`nom`, `lieu`, `url`), `provenance`, `maj`. Six sections, sans étapes : `## 1. L'idée`, `## 2. Où on en est`, `## 3. Qui y travaille`, `## 4. Questions ouvertes`, `## 5. Comment contribuer`, `## 6. Vigilance`. Quand la méthode est prête et testée, la piste devient une fiche.
+
+Chaque piste a sa page (`p-<id>`), le socle Spore les range par maturité, et chaque savoir lié les affiche dans une section « En recherche ». Trois premières pistes :
+
+- **Recycler l'urine en engrais** (testée sur le terrain) : programme OCAPI, essais au champ depuis 2024.
+- **Isoler avec du mycélium** (prototype) : Station Hyphae en Normandie, panneaux paille et pleurote en Charente.
+- **Un vieux smartphone comme station de savoirs de poche** (prototype) : Kiwix sur un téléphone de récupération.
+
+## Savoirs : principe, ordre, tableau de choix
+
+Les 45 savoirs ont maintenant leur **principe** (ce que toutes leurs fiches ont en commun), en français et en anglais. Certains ont aussi un **ordre** de combinaison (`ordre` dans `structure.yaml`), affiché sous le principe. La page d'un savoir présente ses fiches dans un **tableau de choix** : temps, tier, danger (et variante plus risquée), ce qu'il faut d'avance, coût et matériel, rapport au vivant. Coût, matériel et vivant viennent de `catalogue.csv` (par le numéro pour une fiche écrite, par le titre pour une fiche prévue).
+
+L'assistant ouvre un panorama de solutions par le principe du savoir qu'il couvre, cité tel quel, avec un lien vers la page du savoir. Il ne l'affiche que si ce savoir porte au moins deux des fiches proposées.
+
+## Vérifier avant de publier
+
+    npm run verifier    # contrôle le corpus : champs, valeurs permises, savoirs, traductions, licences
+    npm test            # le vérificateur, puis les tests du site et de l'assistant
+
+Le vérificateur tourne aussi tout seul avant chaque `npm run build` et `npm run station`, et GitHub lance `npm test` avant chaque publication : si une erreur est trouvée, le site en ligne reste sur la version précédente. Une erreur bloque (le site serait faux) ; un avertissement signale ce qui est à corriger sans bloquer.

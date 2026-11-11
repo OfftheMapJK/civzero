@@ -1,6 +1,6 @@
-# Contribuer à CivZero
+# Contribuer à CivicNode
 
-CivZero grandit par la reproduction : une fiche ne vaut que si d'autres personnes l'ont refaite, ailleurs, avec un autre matériel.
+CivicNode grandit par la reproduction : une fiche ne vaut que si d'autres personnes l'ont refaite, ailleurs, avec un autre matériel.
 
 ## 1. Tester une fiche
 

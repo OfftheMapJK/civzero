@@ -2,9 +2,8 @@
 id: socle-coupure-72h
 titre: Préparer une coupure de 72 heures — énergie et communication
 accroche: "Elle suit la recommandation de la Commission européenne de mars 2025, pouvoir tenir 72 heures seul, et le guide français « Tous responsables »."
-bloc: socle
-aussi: [telecom]
-besoin: commencer
+socle: commencer
+savoirs: []
 horizon: hours
 temps: "un week-end pour rassembler et vérifier"
 vague: 1
@@ -24,7 +23,9 @@ impact:
   fin_de_vie: "piles usagées en point de collecte"
   passerelle: "piles rechargeables et recharge solaire à terme"
 prerequis: [nodule-zero]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 
@@ -34,7 +35,7 @@ Porte d'entrée de la préparation. Cette fiche couvre la lumière, l'informatio
 
 ## 1. Principe
 
-En mars 2025, la Commission européenne a recommandé que chaque foyer puisse tenir au moins 72 heures seul. En France, le guide « Tous responsables » du SGDSN, publié en novembre 2025, décrit un kit d'urgence de ce type. Cette fiche reprend la partie énergie et communication et la relie aux autres fiches CivZero.
+En mars 2025, la Commission européenne a recommandé que chaque foyer puisse tenir au moins 72 heures seul. En France, le guide « Tous responsables » du SGDSN, publié en novembre 2025, décrit un kit d'urgence de ce type. Cette fiche reprend la partie énergie et communication et la relie aux autres fiches CivicNode.
 
 ## 2. Sécurité
 

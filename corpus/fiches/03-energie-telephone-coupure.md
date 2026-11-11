@@ -2,22 +2,20 @@
 id: energie-telephone-coupure
 titre: Garder un téléphone chargé pendant une coupure
 accroche: "Elle montre comment faire durer et recharger un téléphone quand le courant s'arrête."
-bloc: energie
-besoin: garder-du-courant
+socle: ambre
+savoirs: [recharger-telephone]
 horizon: instant
 temps: "quelques minutes"
 vague: 1
 milieu: [urbain, rural]
 tier: [0, 1]
-exige_avance: "une batterie externe chargée et un câble ; en option un adaptateur USB pour prise 12 V de voiture"
+exige_avance: "une batterie externe chargée et un câble"
 origine_materiel: mixte
 variantes:
   - id: economie-energie
     danger: vert
   - id: batterie-externe
     danger: vert
-  - id: prise-12v-voiture
-    danger: orange
 danger: vert
 statut: brouillon
 redaction: assistee-ia
@@ -27,7 +25,9 @@ impact:
   fin_de_vie: "batterie externe hors d'usage en point de collecte"
   passerelle: "vers la recharge solaire de petits appareils"
 prerequis: [nodule-zero, energie-lire-etiquette]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 
@@ -43,11 +43,7 @@ Deux leviers : consommer moins, et recharger depuis une réserve. Un téléphone
 
 > **NIVEAU : VERT (cercle)** — [Libellé officiel affiché depuis le Nodule Zéro]
 >
-> Variante voiture : orange.
->
 > Risques propres à cette fiche :
-> - Variante voiture : ne jamais faire tourner un moteur dans un garage ou un lieu fermé. Les gaz d'échappement contiennent du monoxyde de carbone, inodore et mortel.
-> - Variante voiture : recharger moteur arrêté peut vider la batterie de démarrage.
 > - Batterie externe gonflée, chaude ou abîmée : ne plus l'utiliser (voir fiche *hors d'usage*).
 
 ## 3. Pas-à-pas
@@ -70,19 +66,13 @@ Deux leviers : consommer moins, et recharger depuis une réserve. Un téléphone
 - **Vérification :** le téléphone indique qu'il charge.
 - **Source :** [SOURCE À TROUVER]
 
-### Étape 4 : Recharger depuis une voiture (variante orange)
-
-- **Action :** voiture **à l'air libre**. Brancher un adaptateur USB sur la prise 12 V. Selon le véhicule, la prise n'est alimentée que contact mis. [À VALIDER : durée raisonnable de recharge moteur arrêté avant de risquer la batterie de démarrage]
-- **Vérification :** le téléphone charge, la voiture est dehors et le moteur coupé ou le véhicule à l'extérieur.
-- **Source :** notice du véhicule
-
-### Étape 5 : Choisir quel téléphone charger en premier
+### Étape 4 : Choisir quel téléphone charger en premier
 
 - **Action :** donner la priorité au téléphone qui reçoit les alertes et contient le plan de communication.
 - **Vérification :** ce téléphone est au-dessus de 50 %.
 - **Source :** sans objet
 
-### Étape 6 : Garder une source d'information sans téléphone
+### Étape 5 : Garder une source d'information sans téléphone
 
 - **Action :** avoir une radio à piles ou à manivelle (fiche *Écoute radio*).
 - **Vérification :** la radio fonctionne sans le téléphone.
@@ -91,7 +81,6 @@ Deux leviers : consommer moins, et recharger depuis une réserve. Un téléphone
 ## 4. Si ça coince
 
 - **Étape 3 — la batterie externe ne charge pas le téléphone.** Essayez un autre câble ou un autre port. Certains câbles ne transportent que des données ou supportent mal le courant.
-- **Étape 4 — la prise de la voiture ne donne rien.** Mettez le contact sans démarrer, ou vérifiez le fusible de la prise dans la notice du véhicule.
 - **Étape 1 — le téléphone se vide quand même.** Fermez les applications ouvertes et éteignez-le complètement entre deux heures de contact.
 
 ## 5. Ressource

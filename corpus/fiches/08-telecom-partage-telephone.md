@@ -1,8 +1,8 @@
 ---
 id: telecom-partage-telephone
 titre: Passer des fiches de téléphone à téléphone
-bloc: telecom
-besoin: partager-le-savoir
+socle: mycelium
+savoirs: [partager-sans-internet]
 horizon: instant
 temps: "quelques minutes"
 vague: 1
@@ -24,13 +24,15 @@ impact:
   fin_de_vie: "sans objet"
   passerelle: "chaque copie fait une bibliothèque de plus dans le quartier"
 prerequis: []
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 
 # Passer des fiches de téléphone à téléphone
 
-Faire circuler le corpus CivZero sans Internet ni station : un téléphone qui l'a peut le donner à un autre.
+Faire circuler le corpus CivicNode sans Internet ni station : un téléphone qui l'a peut le donner à un autre.
 
 ## 1. Principe
 
@@ -46,7 +48,7 @@ Les téléphones savent échanger des fichiers directement, sans réseau mobile 
 
 ### Étape 1 : Avoir le corpus sous forme de fichier
 
-- **Action :** sur le téléphone qui donne, repérer l'archive des fiches CivZero ou le fichier `.zim` lu par l'application Kiwix.
+- **Action :** sur le téléphone qui donne, repérer l'archive des fiches CivicNode ou le fichier `.zim` lu par l'application Kiwix.
 - **Vérification :** vous trouvez le fichier dans le gestionnaire de fichiers et connaissez sa taille.
 - **Source :** [SOURCE À TROUVER]
 
@@ -65,7 +67,7 @@ Les téléphones savent échanger des fichiers directement, sans réseau mobile 
 ### Étape 4 : Vérifier chez le destinataire
 
 - **Action :** ouvrir l'archive dans le navigateur ou le fichier dans Kiwix sur le téléphone qui reçoit.
-- **Vérification :** l'accueil CivZero ou la page d'accueil Kiwix s'affiche.
+- **Vérification :** l'accueil CivicNode ou la page d'accueil Kiwix s'affiche.
 - **Source :** [SOURCE À TROUVER]
 
 ### Étape 5 : Vérifier la date de version

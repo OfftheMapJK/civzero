@@ -1,0 +1,48 @@
+---
+// Une piste du socle Spore : une idée, un prototype ou une recherche en cours. Pas d'étapes ni de niveau de danger :
+// l'échelle de maturité, les sections, les acteurs, les savoirs liés, les sources, et comment contribuer.
+import Base from '../../layouts/Base.astro';
+import Crumb from '../Crumb.astro';
+import Provenance from '../Provenance.astro';
+const { p } = Astro.props;
+const t = p.t;
+---
+<Base title={p.title} p={p} indexer>
+  <Crumb c={p.crumb} t={t} />
+  <p class="prog">{t.PISTE}</p>
+  <h1>{p.titre}</h1>
+  <div class="badges">
+    {p.echelle.map((e: any) => <span class:list={['badge', { eteint: !e.actif, actif: e.actif }]}>{e.actif ? `■ ${e.mot}` : e.mot}</span>)}
+  </div>
+  <p class="src">{p.maturiteExpl}</p>
+  {p.accroche && <p class="lead">{p.accroche}</p>}
+  <div class="panel">{t.pisteAvert}</div>
+  {p.nonTraduite && <div class="panel">{p.nonTraduite}</div>}
+
+  {p.sections.map((s: any) => <div class="prose"><h2>{s.titre}</h2><Fragment set:html={s.html} /></div>)}
+
+  {p.acteurs.length > 0 && (
+    <div class="prose">
+      <h2>{t.acteurs}</h2>
+      <ul>{p.acteurs.map((a: any) => <li>{a.url ? <a href={a.url}>{a.nom}</a> : a.nom}{a.lieu && <> · {a.lieu}</>}</li>)}</ul>
+    </div>
+  )}
+  {p.savoirs.length > 0 && (
+    <>
+      <h2>{t.savoirsLies}</h2>
+      <div class="choix">
+        {p.savoirs.map((s: any) => (
+          <a class="opt" href={s.href}><span><span class="t">{s.titre}</span></span><span class="go" aria-hidden="true">&gt;</span></a>
+        ))}
+      </div>
+    </>
+  )}
+  <Provenance p={p} />
+  {p.maj && <p class="src">{t.majLe(p.maj)}</p>}
+
+  <div class="row">
+    {p.github && <a class="btn" href={p.github}>{t.pisteContribuer}</a>}
+    <a class="btn" href={p.retour}>{t.retour}</a>
+  </div>
+  {p.email && <p class="src">{t.pisteContribuerEmail} {p.email}</p>}
+</Base>

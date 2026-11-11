@@ -42,7 +42,7 @@ for f, m, _, _ in data:
             errors.append(f"{f.name}: prérequis inconnu « {p} »")
 
 # README
-out = ["# CivZero — corpus de la phase 1 (bêta)", "",
+out = ["# CivicNode — corpus de la phase 1 (bêta)", "",
        "Toutes les fiches sont au statut **brouillon** et rédigées avec l'assistance d'une IA. Aucune n'est à appliquer comme sûre avant relecture. Voir `RELECTURE.md`.", ""]
 for v, label in [(1, "Vague 1 — sans station ni achat"), (2, "Vague 2 — avec la station"), (3, "Vague 3 — vers l'alternative")]:
     out += [f"## {label}", "", "| # | Fiche | Bloc | Tier | Danger estimé | Exige d'avance |", "| --- | --- | --- | --- | --- | --- |"]

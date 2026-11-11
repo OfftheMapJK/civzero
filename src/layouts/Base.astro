@@ -1,32 +1,37 @@
 ---
-// Gabarit commun : barre d'état, contenu, pied de page rappelant le statut bêta.
+// Gabarit commun : barre d'état avec le bouton de langue, contenu, pied de page rappelant le statut bêta.
 import '../styles/global.css';
-import { DATE, HOME } from '../lib/model.mjs';
+import { HOME } from '../lib/model.mjs';
 
-interface Props { title: string; modeTxt?: string; indexer?: boolean }
-const { title, modeTxt = 'BÊTA', indexer = false } = Astro.props;
+interface Props { title: string; p: any; indexer?: boolean }
+const { title, p, indexer = false } = Astro.props;
+const t = p.t;
 ---
 <!doctype html>
-<html lang="fr">
+<html lang={p.lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
+    <link rel="alternate" hreflang={t.autre} href={p.autre} />
     <slot name="head" />
   </head>
   <body>
     <header class="bar">
       <div class="in">
-        <a href={HOME}>CIVZERO // STATION HORS-LIGNE</a>
-        <span>SYNCHRO {DATE} · {modeTxt}</span>
+        <a href={HOME}>{t.brand}</a>
+        <span class="bar-droite">
+          <span>{t.sync} {p.date} · {p.modeTxt}</span>
+          <a class="langue" href={p.autre} hreflang={t.autre} lang={t.autre} title={t.autreNom}>{t.autreLabel}</a>
+        </span>
       </div>
     </header>
     <main data-pagefind-body={indexer ? '' : undefined}>
       <slot />
     </main>
     <footer class="foot">
-      <span>Version bêta du {DATE}. Toutes les fiches sont des brouillons rédigés avec l'assistance d'une IA, non relus : ne les appliquez pas comme sûres.</span>
-      <span><a href="toutes.html">Toutes les fiches</a> · <a href="recherche.html">Recherche</a></span>
+      <span>{t.foot(p.date)}</span>
+      <span><a href="toutes.html">{t.toutes}</a> · <a href="recherche.html">{t.recherche}</a></span>
     </footer>
   </body>
 </html>

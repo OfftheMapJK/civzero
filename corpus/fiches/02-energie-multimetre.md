@@ -1,8 +1,8 @@
 ---
 id: energie-multimetre
 titre: Se servir d'un multimètre — tension et continuité
-bloc: energie
-besoin: comprendre-ses-appareils
+socle: ambre
+savoirs: [lire-mesurer]
 horizon: hours
 temps: "une heure d'essai"
 vague: 1
@@ -24,7 +24,9 @@ impact:
   fin_de_vie: "pile en point de collecte"
   passerelle: "un multimètre permet de diagnostiquer au lieu de jeter"
 prerequis: [nodule-zero, energie-lire-etiquette]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

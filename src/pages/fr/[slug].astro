@@ -1,0 +1,18 @@
+---
+// Pages en français, dans fr/. L'accueil passe aussi par ici (slug « index ») : avec build.format 'file',
+// un fichier fr/index.astro produirait fr.html, hors du dossier, et ses liens relatifs mèneraient aux pages anglaises.
+import { loadCorpus } from '../../lib/corpus.mjs';
+import { buildModel } from '../../lib/model.mjs';
+import Ecran from '../../components/Ecran.astro';
+import Accueil from '../../components/ecrans/Accueil.astro';
+
+export function getStaticPaths() {
+  const { pages, home } = buildModel(loadCorpus(undefined, 'fr'));
+  return [
+    { params: { slug: 'index' }, props: { p: home, accueil: true } },
+    ...pages.map((p) => ({ params: { slug: p.slug }, props: { p } })),
+  ];
+}
+const { p, accueil } = Astro.props;
+---
+{accueil ? <Accueil p={p} /> : <Ecran p={p} />}

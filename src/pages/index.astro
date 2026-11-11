@@ -2,6 +2,6 @@
 import { loadCorpus } from '../lib/corpus.mjs';
 import { buildModel } from '../lib/model.mjs';
 import Accueil from '../components/ecrans/Accueil.astro';
-const { home } = buildModel(loadCorpus());
+const { home } = buildModel(loadCorpus(undefined, 'en'));
 ---
 <Accueil p={home} />

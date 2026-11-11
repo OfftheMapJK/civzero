@@ -2,8 +2,8 @@
 id: energie-recharge-sous-la-main
 titre: Recharger son téléphone avec les batteries de la maison
 accroche: "Elle fait le tour des appareils de la maison qui gardent de l'énergie quand le courant s'arrête : ordinateur portable, onduleur, vélo électrique, batteries d'outils."
-bloc: energie
-besoin: garder-du-courant
+socle: ambre
+savoirs: [recharger-telephone]
 horizon: instant
 temps: "quelques minutes"
 vague: 1
@@ -29,7 +29,9 @@ impact:
   fin_de_vie: "batteries hors d'usage en point de collecte"
   passerelle: "savoir où est stockée l'énergie chez soi"
 prerequis: [nodule-zero, energie-lire-etiquette]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

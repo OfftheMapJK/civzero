@@ -2,8 +2,8 @@
 id: energie-manivelle
 titre: Recharger son téléphone à la manivelle
 accroche: "Elle explique ce qu'on peut attendre d'une radio ou d'un chargeur à manivelle : de quoi passer un appel ou lire un message, pas une recharge complète."
-bloc: energie
-besoin: produire-son-energie
+socle: ambre
+savoirs: [recharger-telephone]
 horizon: hours
 temps: "un achat ; ensuite, disponible en quelques secondes"
 vague: 1
@@ -23,7 +23,9 @@ impact:
   fin_de_vie: "appareil en filière de collecte des équipements électriques"
   passerelle: "comprendre l'effort humain que représente un peu d'énergie"
 prerequis: [nodule-zero]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

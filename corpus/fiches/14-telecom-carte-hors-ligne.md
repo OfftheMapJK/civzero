@@ -1,8 +1,8 @@
 ---
 id: telecom-carte-hors-ligne
 titre: Carte hors-ligne de sa région
-bloc: telecom
-besoin: s-orienter
+socle: strate
+savoirs: [se-reperer]
 horizon: hours
 temps: "une heure, avec Internet"
 vague: 2
@@ -24,7 +24,9 @@ impact:
   fin_de_vie: "sans objet"
   passerelle: "cartographie collaborative OpenStreetMap"
 prerequis: []
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

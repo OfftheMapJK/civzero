@@ -2,8 +2,8 @@
 id: energie-lire-etiquette
 titre: Lire une étiquette — batterie, chargeur, appareil
 accroche: "Elle apprend à savoir ce qu'un appareil consomme et ce qu'un chargeur fournit, sans rien brancher."
-bloc: energie
-besoin: comprendre-ses-appareils
+socle: ambre
+savoirs: [lire-mesurer]
 horizon: instant
 temps: "quelques minutes"
 vague: 1
@@ -23,7 +23,9 @@ impact:
   fin_de_vie: "sans objet"
   passerelle: "savoir associer chargeurs et appareils évite d'en racheter"
 prerequis: [nodule-zero]
-sources: []
+provenance: []
+attestations: []
+medias: []
 maj: 2026-11-09
 ---
 

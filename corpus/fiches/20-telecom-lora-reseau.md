@@ -1,9 +1,8 @@
 ---
 id: telecom-lora-reseau
 titre: Mettre plusieurs stations LoRa en réseau
-bloc: telecom
-aussi: [communs]
-besoin: se-joindre
+socle: mycelium
+savoirs: [communiquer-loin]
 horizon: seasons
 temps: "plusieurs semaines : sites, réglages, essais"
 vague: 3
@@ -25,7 +24,9 @@ impact:
   fin_de_vie: "voir fiche energie-fin-de-vie"
   passerelle: "un réseau de proximité qui appartient à ses utilisateurs"
 prerequis: [telecom-lora-messages, telecom-plan-communication, telecom-carte-hors-ligne]
-sources:
+attestations: []
+medias: []
+provenance:
   - id: s1
     titre: "Meshtastic — Configuration LoRa"
     url: https://meshtastic.org/docs/configuration/radio/lora
