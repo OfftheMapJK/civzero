@@ -1,8 +1,8 @@
 # Réglages du projet, lus par le générateur du site.
-# Remplissez les deux lignes, puis regénérez le site : python3 outils/site.py corpus site
+# Remplissez les deux lignes, puis regénérez le site : npm run build
 
-# Le dépôt GitHub, sous la forme "compte/nom-du-depot", par exemple "civzero/civzero".
-depot: "OfftheMapJK/civzero"
+# Le dépôt GitHub, sous la forme "compte/nom-du-depot", par exemple "civicnode-eu/civicnode".
+depot: "civicnode-eu/civicnode"
 
 # Une adresse e-mail dédiée aux rapports (évitez une adresse personnelle).
 email: ""

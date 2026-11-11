@@ -105,7 +105,7 @@ function parsePiste(file, txt) {
 export function loadCorpus(root = path.resolve(process.cwd(), 'corpus'), lang = 'fr') {
   const read = (f) => fs.readFileSync(path.join(root, f), 'utf8');
   const lit = (f, defaut) => (fs.existsSync(path.join(root, f)) ? yaml.load(read(f)) || defaut : defaut);
-  const conf = lit('civzero.yaml', {});
+  const conf = lit('civicnode.yaml', {});
   const structure = lit('structure.yaml', { familles: [], socles: {}, domaines: {}, savoirs: {} });
   const prevues = lit('prevues.yaml', []);
   const titresEn = lang === 'en' ? lit('fiches/en/titres.yaml', {}) : {};

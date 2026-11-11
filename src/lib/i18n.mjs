@@ -40,9 +40,9 @@ export const T = {
     rapportCopier: 'Copy this text and fill it in', rapportOu: 'Where to send it',
     rapportGithub: '[ SEND THE REPORT ON GITHUB ]',
     rapportGithubNote: 'The form opens with the skill and version already filled in. You need a GitHub account and a connection.',
-    rapportSansDepot: '[TO DEFINE: the project\'s GitHub repository, in corpus/civzero.yaml]',
+    rapportSansDepot: '[TO DEFINE: the project\'s GitHub repository, in corpus/civicnode.yaml]',
     rapportEmail: 'Without a GitHub account: copy the text above and send it to',
-    rapportSansEmail: '[TO DEFINE: the email address for reports, in corpus/civzero.yaml]',
+    rapportSansEmail: '[TO DEFINE: the email address for reports, in corpus/civicnode.yaml]',
     rapportHorsLigne: 'Offline, keep the text and send it as soon as you are back online. On the station, reports will be saved and sent back on a USB stick.',
     retourFiche: '[ < BACK TO THE SKILL ]', accueilBtn: '[ HOME ]',
     modeleRapport: (f, d) => `REPRODUCTION REPORT — CivicNode\nSkill: ${f.id} (${f.meta.titre})\nCorpus version: ${d}\n`
@@ -111,9 +111,9 @@ export const T = {
     rapportCopier: 'Copiez ce texte et complétez-le', rapportOu: "Où l'envoyer",
     rapportGithub: '[ ENVOYER LE RAPPORT SUR GITHUB ]',
     rapportGithubNote: "Le formulaire s'ouvre avec la fiche et la version déjà remplies. Il faut un compte GitHub et une connexion.",
-    rapportSansDepot: '[À DÉFINIR : dépôt GitHub du projet, dans corpus/civzero.yaml]',
+    rapportSansDepot: '[À DÉFINIR : dépôt GitHub du projet, dans corpus/civicnode.yaml]',
     rapportEmail: 'Sans compte GitHub : copiez le texte ci-dessus et envoyez-le à',
-    rapportSansEmail: '[À DÉFINIR : adresse e-mail des rapports, dans corpus/civzero.yaml]',
+    rapportSansEmail: '[À DÉFINIR : adresse e-mail des rapports, dans corpus/civicnode.yaml]',
     rapportHorsLigne: 'Hors-ligne, gardez le texte et envoyez-le dès que vous retrouvez du réseau. Sur la station, les rapports seront enregistrés et repartiront par clé USB.',
     retourFiche: '[ < RETOUR À LA FICHE ]', accueilBtn: '[ ACCUEIL ]',
     modeleRapport: (f, d) => `RAPPORT DE REPRODUCTION — CivicNode\nFiche : ${f.id} (${f.meta.titre})\nVersion du corpus : ${d}\n`

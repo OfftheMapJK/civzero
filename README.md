@@ -1,5 +1,9 @@
 # CivicNode
 
+*A knowledge station for the interstices · Une station de savoirs pour les interstices.* Anciennement CivZero.
+
+Site : https://civicnode-eu.github.io/civicnode/ (bientôt https://civicnode.eu)
+
 Une station de savoirs pratiques hors-ligne pour tenir une coupure et gagner en autonomie avec ce qui existe déjà : réparer, détourner, mailler. L'écologie y est une contrainte de départ, pas un module.
 
 > **Bêta du 09/11/2026.** Les fiches sont au statut **brouillon**, rédigées avec l'assistance d'une IA et non relues. Ne les appliquez pas comme sûres. La démo ouvre les fiches autour de la préparation à une coupure de 72 heures ; les autres sont visibles, grisées, comme « à venir ».
@@ -8,9 +12,10 @@ Une station de savoirs pratiques hors-ligne pour tenir une coupure et gagner en 
 
 | Dossier | Contenu |
 | --- | --- |
-| `corpus/fiches/` | Les 21 fiches, une par fichier Markdown, avec leur en-tête |
-| `corpus/besoins.yaml` | Les besoins et blocs qui forment l'entonnoir de navigation |
-| `corpus/civzero.yaml` | Réglages : dépôt, adresse des rapports, fiches ouvertes dans la démo |
+| `corpus/fiches/` | Les 28 fiches, une par fichier Markdown, avec leur en-tête ; traductions anglaises dans `fiches/en/` |
+| `corpus/structure.yaml` | Familles, socles, domaines et savoirs (avec leur principe) |
+| `corpus/pistes/` | Les pistes du socle Spore : idées, prototypes, recherches en cours |
+| `corpus/civicnode.yaml` | Réglages : dépôt, adresse des rapports, fiches ouvertes dans la démo |
 | `corpus/RELECTURE.md` | Le cahier de relecture : chaque point à valider, fiche par fiche |
 | `src/` | Le site Astro : `lib/` lit les fiches et calcule l'entonnoir, `components/` les affiche |
 | `outils/build.py` | Contrôle des fiches, index et cahier de relecture |

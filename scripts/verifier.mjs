@@ -134,7 +134,7 @@ for (const f of c.fiches) for (const p of f.meta.prerequis || []) {
 
 // ---------------------------------------------------------------- démo
 const demo = conf.demo || [];
-for (const id of demo) if (!ids.has(id)) err('civzero.yaml, demo', `la fiche « ${id} » n'existe pas`);
+for (const id of demo) if (!ids.has(id)) err('civicnode.yaml, demo', `la fiche « ${id} » n'existe pas`);
 
 // ---------------------------------------------------------------- traductions
 const DOSSIER_EN = path.join(RACINE, 'fiches', 'en');
