@@ -1,0 +1,55 @@
+---
+// Bouton « Écouter » : lit la fiche ou l'étape à voix haute avec la synthèse vocale du navigateur, sans rien installer
+// ni rien charger. Les phrases à lire sont préparées par src/lib/lecture.mjs. Le bouton reste caché tant que le
+// navigateur n'annonce aucune voix dans la langue de la page.
+interface Props { phrases: string[]; lang: string; t: any }
+const { phrases, lang, t } = Astro.props;
+---
+{phrases?.length > 0 && (
+  <div data-ecouter data-lang={lang} data-phrases={JSON.stringify(phrases)} hidden>
+    <button class="btn" type="button" aria-pressed="false" data-ecouter-libelle={t.ecouter} data-arreter-libelle={t.arreter}>{t.ecouter}</button>
+  </div>
+  <script is:inline>
+    (function () {
+      var bloc = document.querySelector('[data-ecouter]');
+      var synth = window.speechSynthesis;
+      if (!bloc || !synth || !window.SpeechSynthesisUtterance) return;
+      var lang = bloc.getAttribute('data-lang');
+      var phrases = JSON.parse(bloc.getAttribute('data-phrases'));
+      var btn = bloc.querySelector('button');
+      var voix = null, enCours = false, tour = 0, courante = null;
+
+      // La voix : de la langue de la page, de préférence installée sur l'appareil (elle marche hors-ligne).
+      function choisirVoix() {
+        var v = synth.getVoices().filter(function (x) { return (x.lang || '').toLowerCase().replace('_', '-').indexOf(lang) === 0; });
+        voix = v.filter(function (x) { return x.localService && x.default; })[0] || v.filter(function (x) { return x.localService; })[0] || v[0] || null;
+        if (voix) bloc.hidden = false; else if (!enCours) bloc.hidden = true;
+      }
+      function etat(lecture) {
+        enCours = lecture;
+        btn.textContent = btn.getAttribute(lecture ? 'data-arreter-libelle' : 'data-ecouter-libelle');
+        btn.setAttribute('aria-pressed', lecture ? 'true' : 'false');
+      }
+      // Une phrase après l'autre : une lecture trop longue est coupée par certains navigateurs.
+      function lire(i, ceTour) {
+        if (!enCours || ceTour !== tour) return;
+        if (i >= phrases.length || !voix) { etat(false); return; }
+        courante = new SpeechSynthesisUtterance(phrases[i]);
+        courante.voice = voix; courante.lang = voix.lang;
+        courante.onend = function () { lire(i + 1, ceTour); };
+        courante.onerror = function () { if (ceTour === tour) etat(false); };
+        synth.speak(courante);
+      }
+      btn.addEventListener('click', function () {
+        tour++;
+        synth.cancel();
+        if (enCours) { etat(false); return; }
+        etat(true);
+        lire(0, tour);
+      });
+      choisirVoix();
+      if (synth.addEventListener) synth.addEventListener('voiceschanged', choisirVoix); else synth.onvoiceschanged = choisirVoix;
+      window.addEventListener('pagehide', function () { tour++; synth.cancel(); });
+    })();
+  </script>
+)}

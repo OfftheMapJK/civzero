@@ -38,7 +38,7 @@ Julien porte le projet seul et n'est pas développeur.
 - `corpus/structure.yaml` : familles, socles, domaines, savoirs (chaque savoir a un principe FR et EN, sans chiffre non sourcé).
 - `corpus/prevues.yaml` et `corpus/catalogue.csv` : fiches prévues ; `corpus/veille.yaml` : outils en veille (lu ni par le site ni par le vérificateur) ; `corpus/civicnode.yaml` : réglages et fiches ouvertes dans la démo.
 - `corpus/pistes/` : pistes du socle Spore (famille « Explorer ») ; `corpus/pages/` : pages de texte (dont « Nos sources et notre méthode »).
-- `src/` : site Astro 5 (`build.format: 'file'`) ; pages françaises sous `fr/` via `src/pages/fr/[slug].astro` ; `src/lib/` (corpus, modèle, licences, i18n).
+- `src/` : site Astro 5 (`build.format: 'file'`) ; pages françaises sous `fr/` via `src/pages/fr/[slug].astro` ; `src/lib/` (corpus, modèle, licences, i18n, `lecture.mjs` : texte lu par le bouton « Écouter » des fiches, avec la synthèse vocale du navigateur).
 - `scripts/verifier.mjs` : le vérificateur ; `tests/` : tests node:test.
 - `agent/` : `METHODE.md` (adapter une source), `RELECTURE.md` (relire), scripts, `sources/<id>/sN.txt` (copies des sources), `relectures/`.
 - `assistant/` : assistant local (recherche + modèle ; tourne avec llama-server de llama.cpp et Ministral, voir `assistant/LISEZMOI.md`).

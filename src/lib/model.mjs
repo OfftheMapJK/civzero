@@ -3,6 +3,7 @@
 // Les composants Astro ne font qu'afficher ce modèle ; tous les liens et tous les textes sont décidés ici.
 import { md, mdi } from './corpus.mjs';
 import { T } from './i18n.mjs';
+import { lectureFiche, lectureEtape } from './lecture.mjs';
 
 export const DATE = '10/11/2026';
 export const HOME = 'index.html';
@@ -115,7 +116,7 @@ export function buildModel(c) {
     const base = { crumb: crumbFiche(f), titre: f.meta.titre, modeTxt: t.beta, nonTraduite: f.traduite ? '' : t.nonTraduite };
     add({
       ...commun(pre), kind: 'fiche', title: `${f.meta.titre} · CivicNode`, ...base,
-      badges: badges(f), danger: danger(f),
+      badges: badges(f), danger: danger(f), lecture: lectureFiche(f, t, danger(f)),
       securiteHtml: !NIVEAUX_DANGER.includes(f.meta.danger) ? md(f.secs[2]) : (f.s2Reste ? md(f.s2Reste) : ''),
       suspension: f.meta.suspendu ? f.meta.raison_suspension : '',
       exige: f.meta.exige_avance,
@@ -131,7 +132,7 @@ export function buildModel(c) {
     f.steps.forEach((s, i) => {
       add({
         ...commun(`${pre}-e${s.n}`), kind: 'etape', title: `${t.etape(i + 1, n)} · ${f.meta.titre} · CivicNode`, ...base,
-        badges: badges(f).slice(0, 1), danger: danger(f),
+        badges: badges(f).slice(0, 1), danger: danger(f), lecture: lectureEtape(s, i + 1, n, t),
         rang: i + 1, total: n, barre: '■'.repeat(i + 1) + '□'.repeat(n - i - 1),
         ficheId: f.id, etapeN: s.n, etapeTitre: s.titre, action: mdi(cap(s.action)), verif: s.verif ? mdi(cap(s.verif)) : '',
         source: s.source ? mdi(s.source) : '', medias: medias(f, s.n),

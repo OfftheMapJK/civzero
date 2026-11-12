@@ -3,6 +3,7 @@
 import Base from '../../layouts/Base.astro';
 import Crumb from '../Crumb.astro';
 import Badges from '../Badges.astro';
+import Ecouter from '../Ecouter.astro';
 import Danger from '../Danger.astro';
 import Provenance from '../Provenance.astro';
 import { STATION } from '../../lib/model.mjs';
@@ -13,6 +14,7 @@ const t = p.t;
   <Crumb c={p.crumb} t={t} />
   <h1>{p.titre}</h1>
   <Badges badges={p.badges} />
+  <Ecouter phrases={p.lecture} lang={p.lang} t={t} />
   <Danger danger={p.danger} compact t={t} />
   <div class="prog">
     <span>{t.etape(p.rang, p.total)} <span aria-hidden="true">[{p.barre}]</span></span>
