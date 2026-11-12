@@ -746,6 +746,21 @@ savoirs:
     ordre:
       fr: 'Dans cet ordre : télécharger les données publiques et les contenus, installer la station, la tester sur secteur, puis passer sur batterie 12 V.'
       en: 'In this order: download the public data and content, install the station, test it on mains power, then move it to a 12 V battery.'
+  logitheque-hors-ligne:
+    domaine: station
+    titre:
+      fr: Une logithèque hors-ligne
+      en: An offline software library
+    principe:
+      fr: 'La station ne garde pas seulement des fiches : elle propose aussi les logiciels libres dont ces fiches ont besoin, à installer sans Internet. On n''y met que des logiciels libres, en respectant leur
+        licence : quand elle le demande, le code source est fourni, ou le lien vers lui. Avant d''installer, on vérifie que le fichier est bien celui de ses auteurs, grâce à l''empreinte ou à la signature
+        qu''ils publient. Chaque logiciel affiche sa version et sa date, car un logiciel ancien peut avoir des failles connues. Android et Linux d''abord : sur un iPhone, on ne peut pas installer un logiciel depuis la station.'
+      en: 'The station does not only keep skills: it also offers the free software those skills need, to install without the Internet. Only free software goes in, and its licence is respected: when it
+        asks for it, the source code is provided, or a link to it. Before installing, check that the file really comes from its authors, using the checksum or signature they publish. Each program shows
+        its version and date, because old software can have known flaws. Android and Linux first: on an iPhone, software cannot be installed from the station.'
+    ordre:
+      fr: 'Dans cet ordre : apprendre à vérifier qu''un logiciel est authentique, puis installer depuis la station. Recopier F-Droid concerne la personne qui tient la station.'
+      en: 'In this order: learn to check that software is authentic, then install from the station. Mirroring F-Droid is for the person who runs the station.'
   garder-savoir:
     domaine: savoirs-hors-ligne
     titre:

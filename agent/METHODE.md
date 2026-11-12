@@ -31,6 +31,26 @@ Règles qui en découlent :
 4. **Une source NC, ND ou tous droits réservés ne sert jamais de modèle.** On peut en tirer un fait que d'autres sources confirment, mais on n'en suit ni le plan, ni les formulations, ni l'ordre des étapes. On y renvoie dans « Pour aller plus loin ».
 5. **Traduire, c'est adapter** : seules les sources des trois premières lignes du tableau se traduisent dans une fiche.
 
+### Sources déjà vérifiées
+
+La licence a été lue sur la page à la date indiquée ; le détail est dans `agent/sortie/licences-sources-ouvertes.rapport.md` et dans les rapports des fiches. « Sauf mention contraire » veut dire : relire le pied de page et les encadrés de chaque page avant de l'adapter. Ce tableau évite de refaire la recherche, il ne dispense pas de noter `verifie_le` dans chaque fiche.
+
+| Source | Licence lue | Verdict | Vérifiée le |
+| --- | --- | --- | --- |
+| Appropedia | CC BY-SA 4.0, sauf mention contraire | adaptable, page par page | 2026-11-12 |
+| Open Source Ecology (wiki) | CC BY-SA 4.0 et GFDL (double licence), sauf mention contraire | adaptable (on retient CC BY-SA 4.0) | 2026-11-12 |
+| Precious Plastic (page « Open source », Academy) | CC BY-SA 4.0 ; le pied de page du site est moins précis | adaptable, en citant ces deux pages | 2026-11-12 |
+| Documentation Raspberry Pi | CC BY-SA 4.0 | adaptable | 2026-11-12 |
+| Wiki OpenWrt | CC BY-SA 4.0, sauf mention contraire | adaptable | 2026-11-12 |
+| Documentation Arduino (docs.arduino.cc) | CC BY-SA 4.0 | adaptable | 2026-11-12 |
+| Wikipédia | CC BY-SA 4.0 | adaptable | 2026-11-12 |
+| Service-Public.fr, Légifrance | Licence Ouverte 2.0 (etalab-2.0), sauf mention contraire | adaptable | 2026-11-11 |
+| Billets de satdump.org | CC BY 4.0, mention en fin de billet | adaptable | 2026-11-12 |
+| CDC, EPA, FEMA, Ready.gov | aucune mention : œuvres fédérales américaines | adaptable par la règle 2 ci-dessus | 2026-11-11 |
+| Akvopedia | CC BY-SA 3.0 pour tout le texte (page « Trademarks and copyright », lue à la main par Julien ; détails sur akvopedia.org/wiki/Akvopedia:Copyrights) ; images : « most », pas toutes | adaptable pour le texte, publié sous CC BY-SA 4.0 (la 3.0 autorise une version ultérieure) ; images à lire fichier par fichier ; « Akvopedia » et « Akvo » sont des marques : citer la source, sans logo ni laisser croire à un partenariat | 2026-11-12 |
+| ESPHome, Low-tech Lab, iFixit | NC | référence seulement | voir `CLAUDE.md` |
+| Kiwix (documentation), SatDump (dépôt, GPL-3.0), Espressif (Apache 2.0), info.gouv.fr, ARS, OMM | aucune licence, ou licence hors de la liste acceptée | référence seulement | 2026-11-12 |
+
 ## 3. Comment l'agent écrit une fiche
 
 1. **Choisir une méthode, une seule** (une fiche, une méthode). Les variantes d'un même geste restent dans la même fiche.
@@ -138,5 +158,5 @@ La relecture IA est fiable sans être infaillible : elle peut manquer un glissem
 
 - Le statut des œuvres fédérales américaines hors des États-Unis (voir 2.2).
 - Embarquer des documents ND dans la station : en attendant, on y renvoie.
-- Les licences des sources candidates du catalogue (Low-tech Lab, ADEME, CAWST, Eawag…), à vérifier une par une.
+- Les licences des sources candidates du catalogue encore non vérifiées (ADEME, CAWST, Eawag…), à vérifier une par une ; celles qui le sont figurent en section 2, « Sources déjà vérifiées ».
 - Le garde-fou des chiffres compare des nombres, pas leur sens : un chiffre présent dans la source mais pour autre chose passe. La relecture humaine reste indispensable.

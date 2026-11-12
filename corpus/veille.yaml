@@ -1,0 +1,17 @@
+# En veille : outils et ressources prometteurs, pas encore mûrs pour CivicNode.
+# Aucune fiche n'est prévue tant que les conditions de sortie ne sont pas toutes réunies.
+# Ce fichier n'est lu ni par le site ni par le vérificateur. Origine : docs/outils-libres.md, section C.
+- id: artcraft
+  nom: ArtCraft
+  site: https://getartcraft.com
+  socle: pollen
+  note_le: 2026-11-12
+  constat: >-
+    Suite créative annoncée open source ; plusieurs applications en alpha ; partie IA (Studio) floue sur le
+    fonctionnement local et les tarifs ; portée par une entreprise d'IA (storyteller.ai) ; licence exacte à lire
+    dans les dépôts.
+  verifie: false   # constat repris du document de travail, rien n'a été vérifié sur le site ni dans les dépôts
+  sortie_de_veille:
+    - version stable
+    - licence vérifiée
+    - fonctionnement entièrement hors-ligne

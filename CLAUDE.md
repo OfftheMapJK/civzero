@@ -27,7 +27,8 @@ Julien porte le projet seul et n'est pas développeur.
    - « Atelier de rédaction » : seulement `agent/sortie/` ;
    - « Relecture » : seulement `agent/relectures/<id>.yaml` et `<id>.md` ;
    - « Design » : seulement `agent/sortie/design/` ;
-   - « Chantier » (intégration, site, scripts) : tout le reste. C'est lui qui fait entrer une fiche dans `corpus/`.
+   - Claude Code (le Chantier depuis le 12/11/2026) : intégration, site, scripts, tout le reste. C'est lui qui fait entrer une fiche dans `corpus/`.
+   - La conversation « Chantier » sur claude.ai garde les décisions de fond et les écrit dans `docs/decisions.md`.
 4. **Ne supprime rien sans le dire** ; préfère déplacer (par exemple `corpus/pistes-archivees/`).
 5. Le projet pam-project, sur le même ordinateur, est un autre projet : n'y touche pas.
 
@@ -35,12 +36,12 @@ Julien porte le projet seul et n'est pas développeur.
 
 - `corpus/fiches/NN-id.md` : fiches en français ; `corpus/fiches/en/` : leur traduction (même nom, même nombre d'étapes).
 - `corpus/structure.yaml` : familles, socles, domaines, savoirs (chaque savoir a un principe FR et EN, sans chiffre non sourcé).
-- `corpus/prevues.yaml` et `corpus/catalogue.csv` : fiches prévues ; `corpus/civicnode.yaml` : réglages et fiches ouvertes dans la démo.
+- `corpus/prevues.yaml` et `corpus/catalogue.csv` : fiches prévues ; `corpus/veille.yaml` : outils en veille (lu ni par le site ni par le vérificateur) ; `corpus/civicnode.yaml` : réglages et fiches ouvertes dans la démo.
 - `corpus/pistes/` : pistes du socle Spore (famille « Explorer ») ; `corpus/pages/` : pages de texte (dont « Nos sources et notre méthode »).
 - `src/` : site Astro 5 (`build.format: 'file'`) ; pages françaises sous `fr/` via `src/pages/fr/[slug].astro` ; `src/lib/` (corpus, modèle, licences, i18n).
 - `scripts/verifier.mjs` : le vérificateur ; `tests/` : tests node:test.
 - `agent/` : `METHODE.md` (adapter une source), `RELECTURE.md` (relire), scripts, `sources/<id>/sN.txt` (copies des sources), `relectures/`.
-- `assistant/` : assistant local (recherche + modèle).
+- `assistant/` : assistant local (recherche + modèle ; tourne avec llama-server de llama.cpp et Ministral, voir `assistant/LISEZMOI.md`).
 - `docs/` : documents de travail (`decisions.md` : journal des décisions, à lire à chaque session ; `outils-libres.md` : outils pour le travail, ressources par socle, liste « en veille », logithèque).
 
 ## Commandes
@@ -57,7 +58,7 @@ Julien porte le projet seul et n'est pas développeur.
 
 - Husky lance `npm test` avant chaque commit (`.husky/pre-commit`, qui indique aussi à GitHub Desktop où trouver node) et bloque le commit s'il y a une erreur. Contournement d'urgence, par le Terminal : `git add -A` puis `git commit --no-verify -m "…"`.
 - Sur un nouvel ordinateur, après `npm install` : `npx playwright install chromium` (navigateur de Playwright, hors du dépôt).
-- Les sites protégés par un contrôle anti-robot (documentation Raspberry Pi, Akvopedia) ne se lisent pas, même avec Playwright : passer par leur dépôt source ou par une copie à la main, sans contourner la protection.
+- Les sites protégés par un contrôle anti-robot (documentation Raspberry Pi, Akvopedia) ne se lisent pas par les scripts, même avec Playwright : passer par leur dépôt source ou par une copie à la main, sans contourner la protection.
 
 ## Fiches : origine, statuts, vérification
 
@@ -79,7 +80,7 @@ Principe : nous ne créons pas le savoir, nous le mettons en forme. Fidèle veut
 
 ## Où en est le projet
 
-- 41 fiches écrites, toutes traduites ; 101 prévues ; 46 savoirs ; 2 pistes Spore.
+- 41 fiches écrites, toutes traduites ; 118 prévues ; 47 savoirs ; 2 pistes Spore.
 - Fiches eau 28 à 35 : `verifiee-ia`, confirmation humaine à faire.
 - Fiches techno 36 à 40 (Raspberry Pi, solaire, Wi-Fi maillé OpenWrt, cuve ESP32, satellites Meteor-M) : créées, relecture IA conforme sur leurs parties sourcées, en brouillon jusqu'à un essai sur matériel réel. La 37 (orange) attend aussi un électricien.
 - Plus tard : 3e piste Spore ; contact avec Kiwix (collaborer, pas dupliquer) ; logo de la conversation Design ; domaine civicnode.eu ; paquet station sur clé USB.

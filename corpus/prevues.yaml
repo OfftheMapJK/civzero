@@ -1323,3 +1323,224 @@
   danger: vert
   vague: 2
   hors_corpus: false
+- id: verifier-logiciel-telecharge-authentique
+  socle: strate
+  savoirs:
+  - logitheque-hors-ligne
+  titre:
+    fr: 'Vérifier qu''un logiciel téléchargé est authentique'
+    en: Check that downloaded software is authentic
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: installer-logiciel-depuis-station
+  socle: strate
+  savoirs:
+  - logitheque-hors-ligne
+  titre:
+    fr: Installer un logiciel depuis la station
+    en: Install software from the station
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: recopier-f-droid-station
+  socle: strate
+  savoirs:
+  - logitheque-hors-ligne
+  titre:
+    fr: Recopier F-Droid sur la station
+    en: Mirror F-Droid on the station
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: synchroniser-dossiers-sans-internet-syncthing
+  socle: strate
+  savoirs:
+  - garder-savoir
+  titre:
+    fr: Synchroniser ses dossiers entre appareils avec Syncthing
+    en: Sync your folders between devices with Syncthing
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: tenir-bibliotheque-livres-numeriques-calibre
+  socle: strate
+  savoirs:
+  - garder-savoir
+  titre:
+    fr: Tenir une bibliothèque de livres numériques avec Calibre
+    en: Keep a library of e-books with Calibre
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: heberger-services-yunohost
+  socle: strate
+  savoirs:
+  - monter-station
+  titre:
+    fr: Héberger ses propres services avec YunoHost
+    en: Host your own services with YunoHost
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: echanger-messages-reseau-reticulum
+  socle: mycelium
+  savoirs:
+  - communiquer-loin
+  titre:
+    fr: Échanger des messages sur un réseau Reticulum
+    en: Exchange messages over a Reticulum network
+  horizon: hours
+  tier:
+  - 2
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: parler-vive-voix-reseau-local-mumble
+  socle: mycelium
+  savoirs:
+  - se-retrouver-parler
+  titre:
+    fr: Se parler de vive voix sur le réseau local avec Mumble
+    en: Talk by voice over the local network with Mumble
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: tenir-inventaire-reserves-grocy
+  socle: graine
+  savoirs:
+  - tenir-reserves
+  titre:
+    fr: 'Tenir l''inventaire de ses réserves avec Grocy'
+    en: Keep an inventory of your stores with Grocy
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: partager-observations-vivant-inaturalist
+  socle: lichen
+  savoirs:
+  - observer-vivant
+  titre:
+    fr: Noter et partager ses observations du vivant avec iNaturalist
+    en: Record and share your wildlife observations with iNaturalist
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: decider-plusieurs-decidim
+  socle: humus
+  savoirs:
+  - faire-ensemble
+  titre:
+    fr: Décider à plusieurs avec Decidim
+    en: Decide together with Decidim
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: dessiner-piece-fabriquer-freecad
+  socle: pollen
+  savoirs:
+  - reparer-fabriquer
+  titre:
+    fr: Dessiner une pièce à fabriquer avec FreeCAD
+    en: Design a part to make with FreeCAD
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: dessiner-circuit-imprime-kicad
+  socle: pollen
+  savoirs:
+  - reparer-fabriquer
+  titre:
+    fr: Dessiner un circuit imprimé avec KiCad
+    en: Design a printed circuit board with KiCad
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: programmer-microcontroleur-arduino-ide
+  socle: pollen
+  savoirs:
+  - reparer-fabriquer
+  titre:
+    fr: 'Programmer un microcontrôleur avec l''Arduino IDE'
+    en: Program a microcontroller with the Arduino IDE
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: mettre-page-affiche-journal-logiciels-libres
+  socle: pollen
+  savoirs:
+  - garder-memoire
+  titre:
+    fr: Mettre en page une affiche ou un journal avec des logiciels libres
+    en: Lay out a poster or a newsletter with free software
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: enregistrer-monter-temoignages
+  socle: pollen
+  savoirs:
+  - garder-memoire
+  titre:
+    fr: Enregistrer et monter des témoignages
+    en: Record and edit testimonies
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: monter-archive-quartier-omeka
+  socle: pollen
+  savoirs:
+  - garder-memoire
+  titre:
+    fr: Monter une archive de quartier avec Omeka
+    en: Build a neighbourhood archive with Omeka
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
