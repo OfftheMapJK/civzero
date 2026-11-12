@@ -418,9 +418,9 @@ savoirs:
       en: Find and collect water
     principe:
       fr: 'Toute eau trouvée doit être considérée comme non potable tant qu''on ne l''a pas traitée. La pluie récupérée sur un toit, l''eau d''une source, d''un puits ou d''un cours d''eau n''ont pas les
-        mêmes risques : on juge d''abord d''où elle vient et ce qui se trouve en amont (élevage, cultures, route, industrie). L''eau de pluie, bien recueillie, sert largement à tout sauf à boire sans traitement.'
+        mêmes risques : on juge d''abord d''où elle vient et ce qui se trouve en amont (élevage, cultures, route, industrie). L''eau de pluie recueillie sur un toit sert au jardin et au nettoyage ; en France, elle ne se boit pas.'
       en: 'Any water you find must be treated as unsafe to drink until it has been treated. Rainwater from a roof, water from a spring, a well or a stream do not carry the same risks: first judge where
-        it comes from and what lies upstream (livestock, crops, a road, industry). Well-collected rainwater is useful for almost everything except drinking untreated.'
+        it comes from and what lies upstream (livestock, crops, a road, industry). Rainwater collected from a roof is for the garden and cleaning; in France, it is not for drinking.'
   rendre-eau-potable:
     domaine: boire
     titre:
@@ -725,6 +725,14 @@ savoirs:
         et réparent autant qu''ils fabriquent. On commence par un petit objet, avec des outils simples.'
       en: 'Handcrafts turn local materials into useful, beautiful objects: fibres, willow, clay, dye plants. They are learned through the hands, by watching and trying again, and they mend as much as they
         make. Start with a small object and simple tools.'
+  reparer-fabriquer:
+    domaine: de-ses-mains
+    titre:
+      fr: Réparer et fabriquer des objets techniques
+      en: Repair and make technical objects
+    principe:
+      fr: 'Un appareil en panne a souvent une seule pièce fautive : un fil, un connecteur, un composant. On ouvre seulement ce qui se ferme sans danger, on cherche la panne avant de remplacer, et on récupère ce qui peut servir. Souder, démonter et fabriquer s''apprennent sur des objets sans valeur, pas sur un appareil branché.'
+      en: 'A broken device often has a single faulty part: a wire, a connector, a component. Open only what is safe to open, look for the fault before replacing anything, and keep what can be reused. Soldering, taking apart and making are learned on objects of no value, never on a device that is plugged in.'
   monter-station:
     domaine: station
     titre:

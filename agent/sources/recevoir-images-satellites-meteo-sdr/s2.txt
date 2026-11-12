@@ -1,0 +1,32 @@
+# Copie de la source s2 : « Meteor-M No.2-3 »
+# Auteur : Contributeurs de Wikipédia
+# Lien : https://en.wikipedia.org/wiki/Meteor-M_No.2-3
+# Licence : CC BY-SA 4.0
+# Copiée le : 2026-11-12
+
+Meteor-M No.2-3 - Wikipedia Jump to content From Wikipedia, the free encyclopedia Russian weather
+satellite Meteor-M No.2-3 Mission type Meteorological Satellite Operator Roscosmos COSPAR ID
+2023-091A SATCAT number</span>"}]]}'>no. 57166 Spacecraft properties Spacecraft type Meteor-M No.2
+Manufacturer Roscosmos Launch mass 2900kg Dry mass 2750kg Power 2000 watts Start of mission Launch
+date 27 Jun 2023, 11:34:39 ( 2023-06-27UTC11:34:39Z ) UTC Rocket Soyuz 2.1b / Fregat-M Launch site
+Site 1S, Vostochny Cosmodrome Orbital parameters Regime Sun-Synchronous Orbit Altitude 832 km
+Inclination 98.57° toward the Equator Meteor ← Meteor-M No.2-2 Meteor-M No.2-4 → The Meteor-M No.2-3
+is a weather satellite , designed, built and operated by the Roscosmos , Russia's state-owned space
+corporation. The satellite was launched in 2023, on board a Soyuz-2-1b launch vehicle , equipped
+with a Fregat-M upper stage. [ 1 ] It is the 5th flight of the Meteor-M series, and the 6th of the
+Meteor-3M program; the satellite has an expected service life of five years or more. [ 2 ] Like its
+predecessors, Meteor-M No.2-3 was built to watch global weather, record characteristics of the Ozone
+Layer , measure temperatures of the earth's oceans and track icing conditions in the polar regions
+to facilitate shipping . [ 3 ] MSU-MR image received from Meteor-M No.2-3 by a hobbyist showing the
+east coast of the United States. Relevance for hobbyists [ edit ] As with the other Meteor
+satellites, Meteor-M No.2-3 transmits a continuous feed of both LRPT and HRPT imagery as well as
+some sensor data, and most transmissions are unencrypted and free, and can be received by anyone
+with basic, inexpensive equipment, such as an SDR and a basic dipole (also widely known as
+Rabbit-Ears) TV antenna. [ 4 ] References [ edit ] ↑ "Meteor-M no. 2-3 / WAI Hub" .
+www.whataboutit.space . Retrieved 2026-10-20 . ↑ "WMO OSCAR, Satellite: Meteor-M N2-3" .
+space.oscar.wmo.int . Retrieved 2026-10-20 . ↑ Zak, Anatoly (20 October 2026). "Soyuz launches a
+Meteor weather satellite and hitchhikers" . Russian Space Web . Retrieved 20 October 2026 . {{ cite
+web }} : CS1 maint: url-status ( link ) ↑ "Meteor M Series" . USRadioguy.com . Retrieved 2026-10-20
+. Retrieved from " https://en.wikipedia.org/w/index.php?title=Meteor-M_No.2-3&oldid=1382264531 "
+Category : Weather satellites of Russia Hidden categories: Articles with short description CS1
+maint: url-status Search Search Meteor-M No.2-3 Add languages Add topic

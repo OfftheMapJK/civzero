@@ -1,0 +1,117 @@
+fiche: reseau-wifi-maille-quartier
+date: '2026-11-12'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s1
+    passage: >-
+      A mesh network is a multi point to multi point layer 2 mac-routing backhaul used to interconnect mesh peers. Mesh peers are generally non-user devices, such as routers, access points ... Are you
+      sure you want a mesh? If you are looking for a solution to enable your user devices to seamlessly roam from one access point to another in your home, you are looking for roaming ..., not
+      802.11s.
+    remarque: >-
+      Le fond (un maillage relie des routeurs ; l'itinérance entre bornes est autre chose) est dans s1. Mais la Source est donnée sans réserve et plusieurs éléments de l'étape ne sont pas dans s1 :
+      dessiner les maisons et les routeurs sur papier, le critère « au moins deux routeurs qui ne peuvent pas être reliés par un câble » (Vérification), et « un simple point d'accès suffit » pour
+      couvrir une maison déjà câblée (s1 dit seulement que ce besoin relève de l'itinérance, pas du 802.11s). Ce sont des conseils de la fiche, sans chiffre; je ne bloque pas, mais la Source gagnerait
+      à être limitée à « s1 (maillage ≠ itinérance) ».
+  - 'n': 2
+    verdict: conforme
+    source: s3
+    passage: 'Open the router GUI : From a browser, navigate to LuCI by going to http://192.168.1.1 ... Use an Ethernet cable to connect your computer to one of the LAN ports (not the Internet / WAN port).'
+    remarque: >-
+      Adresse par défaut et câble sur un port LAN sont dans s3 (page consacrée à un point d'accès ponté, usage différent, mais le geste est le même). L'installation d'OpenWrt est déclarée « aucune
+      source ouverte lue (étape créée, à tester) » : notée, verdict inchangé. La table du matériel n'est pas dans la provenance.
+  - 'n': 3
+    verdict: conforme
+    source: s2 et s1
+    passage: >-
+      Use the following to determine if your hardware supports 802.11s mesh. iw list | grep "Supported interface modes" -A 9 ... Supported interface modes: ... * mesh point ... Apart from a few
+      exceptions, most wireless drivers used by OpenWrt support 802.11s mesh. Exceptions are Broadcom wireless chipsets and most usb wireless dongles. (s2) ; Most up to date open source drivers work.
+      (s1)
+    remarque: >-
+      Corrigé : la fiche écrit « dans un terminal du routeur » et déclare l'accès par SSH « aucune source ouverte lue », ce qui ne l'attribue plus à s2 ni à s1. La commande, la ligne `mesh point`,
+      l'exception des puces Broadcom et des clés USB (s2), et « la plupart des pilotes savent mailler » (s2, s1) y sont. Omission, sans bloquer : s1 ajoute que certains pilotes annoncent le maillage
+      mais le gèrent mal (exemple ath10k-ct), donc que la ligne `mesh point` ne garantit pas un maillage fiable.
+  - 'n': 4
+    verdict: conforme
+    source: s1
+    passage: >-
+      If you want to run an encrypted mesh, you must install a version of wpad that supports mesh encryption. ... You can find out which one you have in the Luci Web Interface with the System→Software
+      Menu, Update Lists..., then type in the Filter: 'wpad'. ... Remove it and then Install.. the -mesh variant. Or with the following commands: opkg list-installed wpad * ... Examples:
+      wpad-mesh-mbedtls ... WARNING: You must reboot or restart the wpad service before the new wpad version will become active.
+    remarque: 'Tout y est : paquet, retrait de la version non-mesh, chemin LuCI, commande opkg, nécessité de redémarrer. La fiche dit « redémarrer le routeur » ; s1 dit « reboot or restart the wpad service ».'
+  - 'n': 5
+    verdict: conforme
+    source: s1
+    passage: >-
+      Go to Network→Wireless Click 'Add' on either the 2.4 or 5gz Wifi bands ... Mode Select: '802.11s', and put in a 'Mesh ID' ... Select LAN for the Network. ... Wireless Security, choose 'WPA3-SAE'
+      and put in a password to be shared among your mesh nodes. Save Now Save & Apply ... iw dev mesh0 info ... type mesh point
+    remarque: >-
+      Chaque geste et la Vérification `type mesh point` sont dans s1. La réserve sur le nom d'interface est marquée À VALIDER par la fiche. s1 avertit de ne pas configurer par LuCI si mesh11sd tourne
+      en mode auto_config : la fiche ne couvre pas mesh11sd, donc sans objet ici.
+  - 'n': 6
+    verdict: conforme
+    source: s1 et s3
+    passage: >-
+      s1 : Every device you want to participate in the mesh must be configured in the same way ie same mesh_id, same channel, same key. s3 : use 192.168.1.2/24 ... outside the DHCP range ... When
+      adding multiple wireless APs, you could use 192.168.1.3/24, 192.168.1.4/24 ... Disable DHCPv4: ... The wireless AP will not provide DHCP addresses, but will defer to the main router.
+    remarque: >-
+      Même identifiant, même canal, même clé : s1. Adresse fixe sur le même réseau, hors de la plage DHCP, exemples .2 et .3, DHCP désactivé : s3. La fiche a marqué elle-même À VALIDER que s3 décrit
+      un point d'accès relié par câble, pas par le maillage. Omission : s3 précise le masque `/24` (« sinon l'adresse est seule ») ; la fiche ne le dit pas. s3 désactive aussi le DHCPv6 et le routage
+      IPv6; la fiche non.
+  - 'n': 7
+    verdict: conforme
+    source: s1
+    passage: A normal user device, such as a phone, tablet, laptop etc., cannot connect to a mesh network. Instead, connection is achieved via a mesh gateway, a special type of mesh peer.
+    remarque: >-
+      Le point attribué à s1 (les appareils des utilisateurs n'entrent pas dans le maillage) y est. Nuance : s1 parle d'une « passerelle de maillage » ; la fiche choisit un Wi-Fi ordinaire en mode
+      Access Point sur chaque routeur, réglage déclaré « aucune source ouverte lue (étape créée, à tester) » : noté, sans effet sur le verdict.
+  - 'n': 8
+    verdict: conforme
+    source: s1
+    passage: 'Use the iw command to display peer links ... iw dev $MESH_IFACE station dump ... signal: -61 dBm ... mesh plink: ESTAB'
+    remarque: 'Commande et mention `mesh plink: ESTAB` sont dans s1, ainsi que la ligne `signal` utilisée à l''étape 9.'
+  - 'n': 9
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (étape créée, à tester) » : notée, sans effet sur le verdict. Elle réutilise la commande de l''étape 8 (s1), ce qui est exact.'
+  - 'n': 10
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (étape créée, à tester) » : notée, sans effet sur le verdict.'
+chiffres:
+  - valeur: 192.168.1.1 (adresse par défaut)
+    trouve: true
+    source: s3
+  - valeur: 192.168.1.2 puis 192.168.1.3
+    trouve: true
+    source: s3
+  - valeur: deux ou trois routeurs
+    trouve: true
+    source: s1
+  - valeur: 2,4 GHz et 5 GHz (deux maillages en parallèle)
+    trouve: true
+    source: s1
+  - valeur: IEEE 802.11s
+    trouve: true
+    source: s1
+  - valeur: WPA3-SAE
+    trouve: true
+    source: s1
+  - valeur: iw list | grep "Supported interface modes" -A 9
+    trouve: true
+    source: s2
+precautions_absentes: []
+niveaux: >-
+  Niveau vert, sans variante. Seul le risque « maillage sans chiffrement » rejoint une source (s1 : `encryption 'sae'` ou `none` si l'on ne veut pas chiffrer; chiffrement par wpad-mesh). Les autres
+  risques (bloc secteur, toit et foudre, accès au réseau d'autrui, règles du pays pour la puissance et les canaux) viennent de la fiche, sans source; la dernière est marquée À VALIDER.
+remarques: >-
+  Fiche créée : les étapes 9 et 10 sont déclarées « aucune source ouverte (étape créée, à tester) », comme l'installation d'OpenWrt (étape 2), le Wi-Fi ordinaire (étape 7) et l'accès SSH (étape 3) :
+  notés, verdict inchangé. L'ajout de la première relecture (SSH attribué à s2 et s1) est corrigé. Reste, sans bloquer, l'étape 1 : la Source « s1 » n'est pas limitée, alors que dessiner les maisons
+  sur papier, le critère « deux routeurs qui ne peuvent pas être reliés par un câble » et « un simple point d'accès suffit » ne sont pas dans s1 (s1 dit seulement que l'itinérance entre bornes relève
+  d'une autre norme). Une Source limitée à « s1 (maillage ≠ itinérance) » lèverait le doute; je n'en fais pas un ajout, car ce sont des conseils de planification, sans chiffre ni commande. Aucun
+  chiffre n'est attribué à une source qui ne le dit pas. Si ça coince et Ressource : attributions exactes (s1 boucles, mesh11sd, « deux ou peut-être trois » routeurs ; s2 commande ; s3 routeur
+  secondaire sans DHCP).
+verdict: conforme

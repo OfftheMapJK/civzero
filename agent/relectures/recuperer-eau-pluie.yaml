@@ -1,0 +1,102 @@
+fiche: recuperer-eau-pluie
+date: '2026-11-11'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s1
+    passage: >-
+      certaines communes ou département imposent par arrêté de couvrir les récupérateurs d'eau de pluie et d'installer des systèmes anti-intrusion ... certaines communes proposent des subventions ...
+      certaines communes délivrent gratuitement des récupérateurs
+    remarque: >-
+      « la réponse de la mairie est notée, avec la date » (Vérification) est absent. s1 parle de « systèmes anti-intrusion », la fiche de « protection contre les moustiques » (s1 cite le risque de
+      moustique tigre à propos de la couverture).
+  - 'n': 2
+    verdict: conforme
+    source: s2
+    passage: >-
+      chemicals like asbestos, lead, or copper can get into the water. These chemicals can come from: Roofing materials, Gutters, Piping ... (s1) collectée à l'aval de surfaces inaccessibles aux
+      personnes ... fibres d'amiante provenant des toitures
+    remarque: >-
+      « depuis le sol » est absent des sources. « choisir un pan de toit où personne ne circule » reprend « surfaces inaccessibles aux personnes » de s1. Le À VALIDER de la ligne Source porte sur ce
+      que l'arrêté de 2024 exclut (voir remarques), pas sur l'absence de passage.
+  - 'n': 3
+    verdict: conforme
+    source: s1
+    passage: Il doit être installé de préférence à proximité d'une toiture ou de gouttières pour faciliter la collecte de l'eau de pluie. (cuve hors-sol ou cuve enterrée)
+    remarque: >-
+      Les ajouts sans source (sol plat et stable, trop-plein) ont été retirés de l'Action. « le robinet reste accessible » (Vérification) est absent. « sous une descente » est une précision de la
+      fiche.
+  - 'n': 4
+    verdict: conforme
+    source: s2
+    passage: 'To help stop mosquitoes from laying eggs in your rain barrel: Add a screen where the water comes into the system ... Use a screen to keep out bugs and debris.'
+    remarque: '« les feuilles » n''est pas cité (s2 : « bugs and debris »). « aucune ouverture sans grille ni couvercle » (Vérification) est absent.'
+  - 'n': 5
+    verdict: conforme
+    source: s2
+    passage: >-
+      Consider using a simple device called a "first flush diverter" ... The device directs the first rainwater that falls during a storm away from your rainwater collection system. This first flow of
+      rainwater picks up the most dirt, germs, and chemicals. The amount of water the first flush diverter should remove depends on the size of the roof
+    remarque: >-
+      « surtout après plusieurs jours secs » : s2 le dit de la saleté du toit (« especially likely when it rains after several days of dry weather »). Le volume à écarter n'est pas chiffré dans s2, ce
+      que la fiche déclare. « l'eau ne coule pas tout de suite dans la cuve » (Vérification) est absent.
+  - 'n': 6
+    verdict: conforme
+    source: s1
+    passage: >-
+      Il est interdit de raccorder un récupérateur d'eau de pluie au réseau public d'eau potable. Celui-ci doit être complètement séparé et distinct du réseau public d'eau potable. (s2) make sure
+      rainwater cannot enter the pipes carrying safe drinking water ... Mixing rainwater with water that has already been treated ... can make the treated water less safe.
+    remarque: '« fermer le couvercle » : s1 parle de couvrir les récupérateurs quand la commune l''impose. « suivre des yeux chaque tuyau » (Vérification) est absent.'
+  - 'n': 7
+    verdict: conforme
+    source: s1
+    passage: >-
+      Les robinets d'accès à l'eau de pluie doivent être clairement identifiés et conçus pour être verrouillables. Leur ouverture doit nécessiter un outil spécifique, qui ne doit pas rester fixé en
+      permanence au robinet. Chaque point de soutirage de l'eau de pluie ... doivent être signalés par une plaque Eau non potable avec un pictogramme explicite. (section « avec branchement »)
+    remarque: >-
+      La portée est rétablie : la fiche dit que ces exigences sont une obligation pour le récupérateur avec branchement et que la source ne les impose pas sans branchement, ce qui correspond à s1 (qui
+      ne les répète pas dans la section « sans branchement »). Fixer la plaque sur la cuve de cette fiche reste une prudence de la fiche, dite comme telle.
+  - 'n': 8
+    verdict: conforme
+    source: s1
+    passage: >-
+      Récupérateur d'eau de pluie sans branchement : ... Alimentation des fontaines décoratives ... Nettoyage des surfaces extérieures, Lavage des véhicules lorsqu'il est réalisé à votre domicile,
+      Arrosage des jardins potagers et espaces verts de votre propriété. (s2) If possible, use tap water from a public system or bottled water, rather than rainwater, for: ... Rinsing fruits or
+      vegetables, Watering plants you plan to eat
+    remarque: « arroser le sol » a été retiré. Le conseil de s2 est dans l'Action et la divergence s1 / s2 est dite dans la ligne Source.
+  - 'n': 9
+    verdict: conforme
+    source: s1
+    passage: >-
+      Un examen visuel doit être réalisé chaque année ... entretien régulier ... le remplacement des filtres, la manœuvre des vannes et points de soutirage, la vidange et le nettoyage des équipements
+      de stockage ... Vous ne devez pas appliquer d'anti-gel dans la cuve (s2) Add a screen ... or Empty the rain barrel at least every 10 days ... Fixing or replacing broken parts
+    remarque: « remplacer les filtres » est maintenant conforme à s1. « le contrôle de conformité des réseaux d'eau » n'est pas repris. « carnet » et « larves ou dépôt » (Vérification) sont absents.
+chiffres:
+  - valeur: 3 ans d'emprisonnement
+    trouve: true
+    source: s1
+  - valeur: 45 000 € d'amende
+    trouve: true
+    source: s1
+  - valeur: vider la cuve au moins tous les 10 jours si une ouverture n'a pas de grille
+    trouve: true
+    source: s2
+  - valeur: examen visuel une fois par an
+    trouve: true
+    source: s1
+precautions_absentes: []
+niveaux: ''
+remarques: >-
+  Conventions : un ajout relevé seulement dans une ligne « Vérification » est noté ici sans changer le verdict de l'étape ; un ajout dans l'« Action » donne le verdict ajout ; une étape qui se déclare
+  « sans objet » compte sans source ; un chiffre absent des copies mais marqué À VALIDER dans la même phrase est noté trouve: false, a_valider: true. Copies lisibles et complètes. ARRÊTÉ DU 12 JUILLET
+  2024 (pas dans la provenance) : s1 le cite seulement par son titre, sous « Textes de loi et références » ; la copie ne dit ni ce qu'il contient, ni qu'il remplace l'arrêté de 2008. Ce que la fiche
+  en tire maintenant : son titre et sa date, repris de s1, avec un renvoi à Légifrance « pour connaître les règles exactes, dont les toits exclus » ; la mention « le texte en vigueur » a été retirée.
+  Rien d'autre : la note À VALIDER de l'étape 2 reconnaît qu'il n'a pas pu être ouvert. Les règles de la fiche (usages autorisés, interdiction de boire, signalisation, entretien, sanction pénale)
+  viennent du résumé de s1, pas du texte de l'arrêté. L'ARRÊTÉ DU 21 AOÛT 2008 (s3, en référence, sans copie) : sa date, son abrogation « le 1er septembre 2024 » (titre de la provenance et Ressource «
+  l'ancien texte, abrogé ») et l'exclusion de l'amiante-ciment et du plomb pour les usages intérieurs (note de l'étape 2) ne sont vérifiables dans aucune copie. À faire avant diffusion : ouvrir
+  l'arrêté de 2024 sur Légifrance et en lire les règles de toiture. Principe : « feuilles » comme source de pollution est absent de s1 et s2 ; s1 cite les pesticides, que la fiche ne reprend pas.
+  Sécurité : le risque de chute, le poids de la cuve, la pose sur un sol plat et stable et les enfants n'ont pas de source dans les copies et ne contredisent rien. Si ça coince : les conseils (avis de
+  l'agence régionale de santé, descente débranchée à la première pluie, vider la cuve loin des regards d'égout, mettre la cuve à l'ombre) n'ont pas de source ; le renvoi au récupérateur avec
+  branchement (déclaration en mairie) est conforme à s1.
+verdict: conforme

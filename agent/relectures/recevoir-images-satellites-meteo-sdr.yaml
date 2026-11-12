@@ -1,0 +1,108 @@
+fiche: recevoir-images-satellites-meteo-sdr
+date: '2026-11-12'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s2
+    passage: ... most transmissions are unencrypted and free, and can be received by anyone with basic, inexpensive equipment, such as an SDR and a basic dipole (also widely known as Rabbit-Ears) TV antenna.
+    remarque: >-
+      Le point attribué à s2 (un récepteur SDR et un simple dipôle suffisent) y est. Le choix de la clé RTL-SDR, la vérification de la bande 137 MHz sur la notice et « à deux brins » sont déclarés «
+      aucune source ouverte (étape créée, à tester) » : notés, verdict inchangé.
+  - 'n': 2
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: >-
+      Étape déclarée « aucune source ouverte (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict. La procédure d'installation vient de s6, en référence, sans
+      copie.
+  - 'n': 3
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: >-
+      Étape déclarée « aucune source ouverte (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict. Les valeurs répandues (environ 53 cm par brin, 120°, axe
+      nord-sud) sont dans un À VALIDER, annoncées « sans source ouverte » : déclarées, pas des chiffres attribués à une source.
+  - 'n': 4
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict.'
+  - 'n': 5
+    verdict: conforme
+    source: s4 et s3
+    passage: >-
+      s4 : Recorder (Live Processing) ... Source Controls: This menu lets you select what source to use (SDR or a file) and has all the options regarding the selected source. Here you set the
+      frequency, samplerate, gain, etc. You can refresh the source list by pressing the 'arrow' button on the right of the combobox. s3 : ... receive pictures of the Earth transmitted using Low-rate
+      picture transmission at 137.9 MHz ...
+    remarque: >-
+      Corrigé : « démarrer la source » est désormais déclaré « aucune source ouverte lue » dans la Source. L'onglet Recorder, le choix de la source, la fréquence, la fréquence d'échantillonnage et le
+      gain sont dans s4; la flèche de rafraîchissement (Si ça coince) aussi; 137,9 MHz pour N2-4 est dans s3. 137,1 MHz vient de s5 (référence, sans copie) et est déclaré comme tel : non vérifiable
+      ici. La fréquence de N2-3 et « la fréquence en service peut changer » ne sont dans aucune copie. s4 date de 2022 : la fiche signale elle-même (À VALIDER) que l'interface diffère.
+  - 'n': 6
+    verdict: conforme
+    source: s4
+    passage: >-
+      Processing: In this menu you can initiate live decoding. ... You can find a pipeline selector and pipeline options ... You may start the processing with the 'Start' button. ... The output will
+      be saved in a directory specified in the Settings!
+    remarque: >-
+      Corrigé : la fiche dit maintenant que le dossier de sortie se règle dans Settings, comme s4, et que la partie Processing est dans l'onglet Recorder. Le choix de la chaîne, ses options et le
+      bouton Start sont dans s4. Le nom de la chaîne pour Meteor-M n'est pas dans s4 (qui ne donne que des chaînes NOAA en exemple) : marqué À VALIDER. Le débit de 72 000 symboles par seconde est
+      attribué à s5 (référence) dans un À VALIDER, avec la mention que s1 donne 80 kBaud pour le LRPT en général : c'est bien ce que dit s1.
+  - 'n': 7
+    verdict: conforme
+    source: s4
+    passage: 'FFT and Waterfall: ... it is worth nothing that the waterfall is somewhat intensive! If your PC/Device appears to be struggling/dropping, this may help quite a bit!'
+    remarque: >-
+      Le point attribué à s4 (l'affichage du spectre, surtout la cascade, est gourmand) est dans s4 (« the waterfall is somewhat intensive »). « alléger l'affichage du spectre et de la cascade » est
+      un conseil que s4 suggère sans le décrire; le réglage du défilement est déclaré sans source. L'aspect du signal (bosse large) est déclaré « aucune source ouverte (étape créée, à tester) » :
+      noté, verdict inchangé.
+  - 'n': 8
+    verdict: conforme
+    source: s4 et s1
+    passage: >-
+      s4 : The output will be saved in a directory specified in the Settings! ; products are automatically loaded after decoding ; RGB Composites. s1 : LRPT provides three image channels at full
+      sensor resolution (10-bit, 1 km/pixel ...).
+    remarque: >-
+      Le dossier de sortie dans Settings (s4) et les trois canaux à 1 km par pixel (s1) sont dans les sources; les compositions en couleur existent dans s4 (RGB Composites, dans le Viewer). L'ordre
+      d'arrêt (décodage puis source) est désormais déclaré « aucune source ouverte (étape créée, à tester) » : noté, verdict inchangé.
+  - 'n': 9
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict.'
+chiffres:
+  - valeur: bande des 137 MHz (LRPT)
+    trouve: true
+    source: s1
+  - valeur: 137,9 MHz (Meteor-M N2-4)
+    trouve: true
+    source: s3
+  - valeur: trois canaux
+    trouve: true
+    source: s1
+  - valeur: 1 km par pixel
+    trouve: true
+    source: s1
+  - valeur: NOAA-19 mis hors service le 13 août 2025
+    trouve: true
+    source: s1
+  - valeur: 80 kBaud (LRPT en général)
+    trouve: true
+    source: s1
+  - valeur: 72 000 symboles par seconde (d'après s5)
+    trouve: false
+    source: s5 (référence, sans copie) ; la copie de s1 donne 80 kBaud
+    a_valider: true
+precautions_absentes: []
+niveaux: >-
+  Niveau vert, sans variante. Les risques de la section Sécurité (réception seule, antenne au sol, orage, image qui ne remplace pas une alerte) ne sont tirés d'aucune des quatre copies; la fiche ne
+  les leur attribue pas. Le cadre légal est marqué À VALIDER.
+remarques: >-
+  Fiche créée : seules les étapes 1, 5, 6, 7 et 8 citent une source adaptée et sont jugées; toutes conformes après correction. Étapes 2, 3, 4 et 9 : déclarées « aucune source ouverte (étape créée, à
+  tester) », notées sans_source sans effet sur le verdict. L'écart de la première relecture (dossier de sortie dans Processing) est corrigé, de même que « démarrer la source », le réglage du
+  défilement et l'ordre d'arrêt, maintenant déclarés sans source. Principe : « la plupart de ces émissions sont libres et non chiffrées » correspond à s2 (« most ») et s3 (« some »); « NOAA-19 ... mis
+  hors service en 2025 » est dans s1. Ressource : la phrase sur NOAA 15 et 18 renvoie à s5 et précise que seul NOAA-19 figure dans une source adaptée : exact. Détail sans bloquer : Si ça coince écrit
+  « NOAA-19, le dernier satellite à diffuser l'APT » et la Ressource « dernier satellite à porter l'APT »; s1 dit « the last NOAA satellite to carry » l'APT (le Principe garde la réserve « NOAA »).
+  Aucun autre chiffre n'est attribué à une source qui ne le dit pas. Le 72 000 symboles/s reste non trouvé dans les copies, marqué À VALIDER dans la phrase.
+verdict: conforme

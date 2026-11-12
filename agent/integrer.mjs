@@ -187,8 +187,15 @@ export function integrer(fichiers, { racine = path.resolve(ICI, '..'), essai = f
         r.notes.push(`pas encore traduite (corpus/fiches/en/${nom}) : reste fermée dans la démo`);
       }
 
+      // Une fiche qui entre par l'agent adapte des sources : son origine est « adaptee ».
+      let texte = txt;
+      if (!m.origine) {
+        texte = txt.replace(/^(statut:.*)$/m, 'origine: adaptee\n$1');
+        r.notes.push('origine : adaptee (ajoutée)');
+      }
+
       if (!essai) {
-        fs.writeFileSync(path.join(dossierFiches, nom), txt);
+        fs.writeFileSync(path.join(dossierFiches, nom), texte);
         const n = copierMedias(path.join(path.dirname(source), 'medias', m.id), path.join(racine, 'public', 'medias', m.id));
         if (n) r.notes.push(`${n} média(s) copié(s) dans public/medias/${m.id}/`);
         const rangement = path.join(path.dirname(source), 'integrees');

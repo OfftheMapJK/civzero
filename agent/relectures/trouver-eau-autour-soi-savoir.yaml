@@ -1,0 +1,90 @@
+fiche: trouver-eau-autour-soi-savoir
+date: '2026-11-11'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s3
+    passage: >-
+      Listen to reports from local officials for advice on water precautions in your home. (s1) ; Les résultats sont affichés en mairie. Ils sont aussi consultables sur son site internet. Une note de
+      synthèse sur la qualité de l'eau du robinet est jointe chaque année à la facture d'eau. ... sur le site internet du ministère chargé de la santé (s3)
+    remarque: >-
+      Les corrections sont faites : « où de l'eau potable est distribuée » est retiré, « note de synthèse » remplace « les résultats » pour la facture. « on connaît les consignes du moment »
+      (Vérification) est absent.
+  - 'n': 2
+    verdict: conforme
+    source: s1
+    passage: 'Possible sources of water that could be made safe by treatment include: Rainwater; Streams, rivers, and other moving bodies of water; Ponds and lakes; Natural springs'
+    remarque: >-
+      Les puits ne sont pas dans la liste de s1 (s1 ne les mentionne que pour les crues) ; ils viennent des autres sources. La carte, la distance à pied et « à qui il appartient » sont le cadre de
+      travail de la fiche. La Vérification (deux points d'eau, temps de marche, date, rangée avec la réserve, partagée avec les voisins) est absente des sources.
+  - 'n': 3
+    verdict: conforme
+    source: s5
+    passage: >-
+      Well water can become unsafe ... if it gets polluted by: Leaks from landfills; Septic systems that are not working correctly; Leaks from underground fuel tanks; Fertilizers or pesticides; Water
+      runoff from cities or industrial buildings; High levels of naturally occurring chemicals, such as arsenic or radon ... Poop from animal feedlots (s6) Arsenic ... Fluoride * ... Radon, Uranium
+      ... pathogens from farm animals can infiltrate poorly designed or lined wells (s4) 35 m des bâtiments d'élevage ... 200 m des décharges
+    remarque: >-
+      « ruissellement d'une ville ou d'un bâtiment industriel » est maintenant conforme à s5. Arsenic, radon, uranium, fluorure : conformes à s5 et s6 ; s6 précise que de faibles niveaux de fluorure
+      sont bénéfiques et que les niveaux élevés causent une fluorose, nuance non reprise. « que l'examen des alentours ne montre pas » et « une raison de plus de demander l'analyse » sont des
+      déductions de la fiche. « en amont pour une eau courante » est le raisonnement de la fiche. Les distances de s4 (35 m, 200 m) sont exactes et déclarées comme règles d'implantation.
+  - 'n': 4
+    verdict: conforme
+    source: s2
+    passage: It is generally better to use flowing water than still, stagnant water.
+    remarque: « sans remuer le fond » et « là où l'eau est la plus claire » ont été retirés.
+  - 'n': 5
+    verdict: conforme
+    source: s2
+    passage: >-
+      do not use water with floating material in it or water that has a dark color or questionable odor. (s2) If you have a well on your property that has been flooded, make sure to disinfect and test
+      the well water after the flood. Contact your state or local health department for advice (s1) If you suspect or know the water is contaminated with toxic chemicals or fuels, it cannot be made
+      safe (s5) If your well is or may be contaminated ... do not drink the water. Contact your health department for specific advice. Drink bottled water or water from another safe source until you
+      have treated and tested your well water.
+    remarque: >-
+      Les deux écarts sont corrigés : le puits inondé est à désinfecter, analyser, avec conseil du service de santé et eau en bouteille en attendant ; « l'eau d'une crue » est retirée. La note À
+      VALIDER « en France, l'agence régionale de santé » est une adaptation déclarée. « sans irisation » est retiré de la Vérification.
+  - 'n': 6
+    verdict: conforme
+    source: s4
+    passage: >-
+      Vous devez obligatoirement faire analyser l'eau par un laboratoire agréé. ... Au plus tard 1 mois après la fin des travaux, vous devez déclarer leur achèvement et joindre le résultat des
+      analyses de l'eau. ... Dans la déclaration d'ouvrage, vous devez signaler que l'eau ... est prélevée pour la consommation humaine ... Boisson, Préparation et cuisson des aliments, Lavage de la
+      vaisselle, Arrosage des jardins potagers, Hygiène corporelle (s6) might not be tested regularly
+    remarque: >-
+      L'obligation est maintenant ramenée à la création d'un puits, comme dans s4. « les eaux privées ne sont pas contrôlées régulièrement » : s6 dit « might not be tested regularly » (aux États-Unis)
+      ; la fiche perd la nuance. s4 ajoute que le service de l'eau de la mairie peut contrôler le puits d'un abonné qui l'utilise.
+  - 'n': 7
+    verdict: conforme
+    source: s2
+    passage: If water is cloudy, let it settle and filter it through a clean cloth, paper towel, or coffee filter. ... Store the settled and filtered water in clean containers with covers.
+    remarque: La mention « à traiter » est retirée.
+  - 'n': 8
+    verdict: conforme
+    source: s2
+    passage: >-
+      Boil water ... Disinfect water using household bleach ... boiling or disinfection will not destroy other contaminants, such as heavy metals, salts, and most other chemicals. ONLY USE WATER THAT
+      HAS BEEN PROPERLY DISINFECTED FOR DRINKING, COOKING, MAKING ANY PREPARED DRINK, WASHING DISHES AND FOR BRUSHING TEETH. (s1) Water from sources outside the home must be treated
+    remarque: La vaisselle et les boissons préparées sont maintenant dans l'Action. « ils ne remplacent pas les étapes 3 et 5 » est la conclusion de la fiche.
+chiffres:
+  - valeur: 35 mètres (puits à plus de 35 m d'un élevage, d'un assainissement, d'un stockage de carburant ou de produits chimiques)
+    trouve: true
+    source: s4
+  - valeur: 200 mètres (puits à plus de 200 m d'une décharge)
+    trouve: true
+    source: s4
+  - valeur: note de synthèse jointe une fois par an à la facture d'eau
+    trouve: true
+    source: s3
+precautions_absentes: []
+niveaux: ''
+remarques: >-
+  Conventions : un ajout relevé seulement dans une ligne « Vérification » est noté ici sans changer le verdict de l'étape ; un ajout dans l'« Action » donne le verdict ajout ; une étape qui se déclare
+  « sans objet » compte sans source ; un chiffre absent des copies mais marqué À VALIDER dans la même phrase est noté trouve: false, a_valider: true. La fiche a maintenant 8 étapes (l'ancienne étape 9
+  est supprimée). Copies s1 à s6 lisibles et complètes ; s7 est en référence, sans copie, et ne fonde aucune étape (« un exemple de ce que publie une agence régionale » n'est pas vérifiable). Principe
+  : « une eau limpide peut porter des microbes ou des produits chimiques » n'est dit ni par s1 ni par s2 ; la phrase sur le réseau et les eaux privées est maintenant conforme à s3 et s6, aux
+  États-Unis près pour s6. Sécurité : noyade, chute, accompagnement, enfants et propriété privée n'ont pas de source dans les copies et ne contredisent rien. Si ça coince : « écoutez la radio », «
+  recueillez la pluie » et « appelez un médecin ou les secours » n'ont pas de source. s5 et s6 sont américains (distances de 50 à 250 pieds, tests annuels) : la fiche n'en reprend pas les chiffres.
+  Pour l'orange : cohérent avec les sources.
+verdict: conforme

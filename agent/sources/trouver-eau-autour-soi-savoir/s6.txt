@@ -1,0 +1,73 @@
+# Copie de la source s6 : « Private Drinking Water and Public Health »
+# Auteur : Centers for Disease Control and Prevention (CDC)
+# Lien : https://www.cdc.gov/environmental-health-services/php/water/private-water-public-health.html
+# Licence : domaine public
+# Copiée le : 2026-11-11
+
+Private Drinking Water and Public Health | Environmental Health Services | CDC Skip directly to site
+content Skip directly to search An official website of the United States government Here's how you
+know Official websites use .gov A .gov website belongs to an official government organization in the
+United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected
+to the .gov website. Share sensitive information only on official, secure websites. Private Drinking
+Water and Public Health For Public Health Sept. 1, 2026 At a glance Learn how private water sources
+like wells and cisterns can affect public health. Residents in rural communities are more likely to
+use private wells. Private wells can be more likely to have germs or chemicals. In addition, wells
+and other private water sources are not covered by the federal Safe Drinking Water Act and might not
+be tested regularly for contaminants. Key stats About 1 in 8 American residents get their drinking
+water from a private well. 1 2 3 About 1 in 5 sampled private wells were contaminated with at least
+1 chemical at levels that could affect health. 4 From 1971 through 2008, the proportion of outbreaks
+associated with private water sources increased. 5 6 Fifty-six percent of local health departments
+regulate, inspect or license private drinking water. 7 How private water is handled differently
+Private drinking water sources include the following: Private (or household) wells Springs Cisterns
+Water storage tanks Trucked water The federal Safe Drinking Water Act (SDWA) focuses on public water
+systems. It does not cover private drinking water sources. Private drinking water is not always
+treated to remove contaminants. In addition, because these systems are not covered by SDWA, they
+might not be tested regularly for contaminants. Without regular testing, people could be exposed to
+contaminants that can affect their health without knowing it. Contaminants Germs, chemicals, or
+radionuclides can contaminate wells and other private drinking water sources. These contaminants can
+affect our health. Common contaminants and possible health effects Microbiological Chemical
+Radiological Campylobacter Cryptosporidium E. coli Giardia Hepatitis A Salmonella Shigella Total
+coliforms Arsenic Benzene, Toluene, Ethylbenzene, and Xylenes (BTEX) Copper Fluoride * Lead
+Manganese Nitrates Radium Radon Uranium Corrosive groundwater can cause lead to get into the public
+drinking water supply. It can leach from pipes, plumbing fixtures, and solder that contain lead.
+Lead also poses a threat to private well users. Learn more about corrosive groundwater and what to
+do when private well owners find lead in their drinking water. *Note: Fluorides are naturally
+occurring compounds. Low levels of fluorides can help prevent dental cavities. High levels can cause
+fluorosis . Ways private drinking water can become contaminated Some regions are prone to high
+levels of certain contaminants in rock or soil that dissolve into water sources. For example, the
+northeastern part of the United States has high levels of naturally occurring arsenic in rock
+formations. This can leach into the water during the process of drilling and constructing the well.
+Other times, pathogens from farm animals can infiltrate poorly designed or lined wells and enter
+groundwater used for drinking. In addition, flooding and other emergencies can introduce
+contaminants to wells, springs, and other individual water sources. Our unique role We fund drinking
+water programs at health departments to improve access to safe drinking water in private systems in
+their communities. CDC's Safe Water program strengthens safe water for community health. We help
+drinking water programs improve access to safe drinking water in wells and private systems in their
+communities. Drinking water programs in these health departments are working to Identify well issues
+that might present a risk to human health Identify interventions that address the risk Choose and
+try the best intervention Find out whether the intervention worked On This Page Key stats How
+private water is handled differently Contaminants Ways private drinking water can become
+contaminated Our unique role Sept. 1, 2026 Sources and Page Info Print Share Facebook LinkedIn
+Twitter Syndicate Content Source National Center for Environmental Health About This Page Published:
+May 15, 2024 Updated: September 1, 2026 This page was last updated on this date. Updates may include
+minor edits, image changes, or other modifications to page content. Reviewed: September 1, 2026 The
+information on this page was last reviewed by subject matter experts to ensure accuracy. References
+Dieter CA, Maupin MA, Caldwell RR, Harris MA, Ivahnenko TI, Lovelace JK, et al. Estimated use of
+water in the United States in 2015.external icon Circular 1441 [Supersedes USGS Open-File Report
+2017&ndash;1131]. Reston, VA: U.S. Geological Survey; 2018. p. 23. U.S. Census Bureau. Population
+estimates, July 1, 2018 (V2018). QuickFacts, United States. Numerator calculated by multiplying the
+percentage of self-supplied domestic withdrawals from ground water (98.47%) by the 42.5 million
+total self-supplied population (Dieter et al. 2018), resulting in an estimated 41.8 million people
+using private wells. Denominator is the 2018 U.S. population (U.S. Census Bureau). DeSimone LA,
+Hamilton PA, Gilliom RJ. Quality of ground water from private domestic wells in principal aquifers
+of the United States, 1991&ndash;2004: overview of major findings. Circular 1332. Reston, VA: U.S.
+Geologic Survey; 2009. Craun GF, Brunkard JM, Yoder JS, Roberts VA, Carpenter J, Wade T, et al.
+Causes of outbreaks associated with drinking water in the United States from 1971 to 2006. Clin
+Microbiol Rev. 2010;507-28. Brunkard JM, Ailes A, Roberts VA, Hill V, Hilborn ED, Craun GF, et al.
+Surveillance for waterborne disease outbreak associated with drinking water&ndash;United States,
+2007-2008 . MMWR Morb Mortal Wkly Rep. 2011;60:38-75. National Association of County and City Health
+Officials (NACCHO). 2016 national profile of local health departments. Washington, DC: NACCHO; 2017.
+Environmental Health Services Environmental health programs deliver important environmental health
+services in their communities to protect health where we live, work, and play. View All About EH
+Services Informatics & EH Practice Publications Communication Resources EH and 10 Essential Services
+EHC Vector Control Water Resources for Programs View All Sign up for Email Updates

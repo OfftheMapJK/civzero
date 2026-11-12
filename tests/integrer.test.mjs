@@ -17,6 +17,7 @@ function ficheRedigee(racine, id, titre) {
   const t = fs.readFileSync('corpus/fiches/28-rendre-eau-potable-faisant-bouillir.md', 'utf8')
     .replace('id: rendre-eau-potable-faisant-bouillir', `id: ${id}`)
     .replace(/^statut: .*$/m, 'statut: brouillon')
+    .replace(/^origine: .*\n/m, '')
     .replace(/^titre: .*$/m, `titre: ${titre}`)
     .replace('savoirs: [rendre-eau-potable]', 'savoirs: [trouver-recuperer-eau]');
   const f = path.join(racine, 'agent', 'sortie', `40-${id}.md`);
@@ -27,22 +28,23 @@ function ficheRedigee(racine, id, titre) {
 
 test('une fiche prévue entre dans le corpus avec le premier numéro libre, et sort des fiches prévues', () => {
   const racine = copieDuCorpus();
-  const f = ficheRedigee(racine, 'recuperer-eau-pluie', "Récupérer l'eau de pluie");
+  const f = ficheRedigee(racine, 'construire-filtre-sable-lent', 'Construire un filtre à sable lent');
   const libre = String(Math.max(...fs.readdirSync('corpus/fiches').filter((x) => x.endsWith('.md')).map((x) => Number(x.slice(0, 2)))) + 1).padStart(2, '0');
   const [r] = integrer([f], { racine });
   assert.equal(r.erreur, undefined);
-  assert.equal(r.cible, path.join('corpus', 'fiches', `${libre}-recuperer-eau-pluie.md`));
+  assert.equal(r.cible, path.join('corpus', 'fiches', `${libre}-construire-filtre-sable-lent.md`));
   assert.ok(fs.existsSync(path.join(racine, r.cible)));
-  assert.ok(fs.existsSync(path.join(racine, 'agent', 'sortie', 'integrees', '40-recuperer-eau-pluie.md')));
-  assert.doesNotMatch(fs.readFileSync(path.join(racine, 'corpus', 'prevues.yaml'), 'utf8'), /id: recuperer-eau-pluie/);
-  assert.match(fs.readFileSync(path.join(racine, 'corpus', 'catalogue.csv'), 'utf8'), new RegExp(`,${libre},Récupérer l'eau de pluie`));
+  assert.ok(fs.existsSync(path.join(racine, 'agent', 'sortie', 'integrees', '40-construire-filtre-sable-lent.md')));
+  assert.doesNotMatch(fs.readFileSync(path.join(racine, 'corpus', 'prevues.yaml'), 'utf8'), /id: construire-filtre-sable-lent/);
+  assert.match(fs.readFileSync(path.join(racine, 'corpus', 'catalogue.csv'), 'utf8'), new RegExp(`,${libre},Construire un filtre à sable lent`));
+  assert.match(fs.readFileSync(path.join(racine, r.cible), 'utf8'), /^origine: adaptee$/m);
   // non traduite : reste hors de la démo
-  assert.doesNotMatch(fs.readFileSync(path.join(racine, 'corpus', 'civicnode.yaml'), 'utf8'), /- recuperer-eau-pluie/);
+  assert.doesNotMatch(fs.readFileSync(path.join(racine, 'corpus', 'civicnode.yaml'), 'utf8'), /- construire-filtre-sable-lent/);
 });
 
 test("une fiche sans source adaptée, ou déjà présente, n'entre pas", () => {
   const racine = copieDuCorpus();
-  const f = ficheRedigee(racine, 'recuperer-eau-pluie', 'x');
+  const f = ficheRedigee(racine, 'construire-filtre-sable-lent', 'x');
   fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace('usage: adapte', 'usage: reference'));
   assert.match(integrer([f], { racine })[0].erreur, /aucune source adaptée/);
   const g = ficheRedigee(racine, 'desinfecter-eau-chlore', 'x');

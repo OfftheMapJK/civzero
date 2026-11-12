@@ -19,6 +19,8 @@ Pour **chaque étape** : retrouve dans la source citée le passage qui la fonde.
 - `ajout` : la fiche ajoute un geste, une condition ou une promesse absents de la source ;
 - `sans_source` : l'étape dit « sans objet » ou « À VALIDER », ou le passage est introuvable.
 
+**Fiche créée** (`origine: creee`) : certaines étapes déclarent « aucune source ouverte (étape créée, à tester) ». Note-les `sans_source` avec la remarque « déclarée » : elles ne pèsent pas sur le verdict, car leur juge sera l'essai sur matériel réel (statuts `testee`, puis `reproduite`). Une étape qui ne cite que des fiches CivicNode se note de la même façon. Juge en revanche, avec la même exigence, tout ce que la fiche attribue à une source adaptée : un geste attribué à une source qui ne le dit pas est un `ajout`. Une fiche créée ne passe jamais au statut « vérifiée par IA » ; une relecture `conforme` atteste seulement que ses parties sourcées sont fidèles.
+
 Pour **chaque chiffre** de la fiche (durée, dose, quantité, température, distance, pourcentage) : trouvé dans quelle source, oui ou non. Un chiffre non trouvé mais marqué « À VALIDER » dans la même phrase de la fiche est un manque déclaré, pas une infidélité : note-le avec `a_valider: true`. Une conversion d'unités sans cette marque compte comme non trouvée.
 
 Liste aussi les **précautions de la source absentes de la fiche** (un avertissement, un public à risque, une limite de la méthode), et les **niveaux** qui te semblent sous-estimés au regard de la source.

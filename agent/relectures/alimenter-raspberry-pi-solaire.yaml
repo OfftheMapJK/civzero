@@ -1,0 +1,130 @@
+fiche: alimenter-raspberry-pi-solaire
+date: '2026-11-12'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s1
+    passage: 'Typical bare-board active current consumption : Zero 2 W 350mA ; Raspberry Pi 3 Model B+ 500mA ; Raspberry Pi 4 Model B 600mA ; Raspberry Pi 5 800mA. All models require a 5.1V supply.'
+    remarque: >-
+      Les quatre courants et les 5,1 V sont dans s1 (copie « Power supply »). « tout ce qu'on y branche s'ajoute » : s1 donne le courant maximal des périphériques USB à part. La méthode de mesure est
+      marquée À VALIDER par la fiche. La Vérification (watts mesurés, non lus sur une étiquette) vient de la fiche.
+  - 'n': 2
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (étape créée, à tester) » : notée, sans effet sur le verdict.'
+  - 'n': 3
+    verdict: conforme
+    source: s3
+    passage: >-
+      Because of the nominal 3.2 V output, four cells can be connected in series for a nominal 12.8 V. ... provided the charging systems are adapted not to damage the LFP cells through excessive
+      charging voltages (beyond 3.6 volts DC per cell while under charge) ... a protection system also needs to be implemented to ensure no cell can be discharged below a voltage of 2.5 V.
+    remarque: >-
+      Les deux points attribués à s3 (12,8 V pour quatre éléments ; chargeurs adaptés au LFP) y sont. Le conseil de vérifier que la batterie contient sa propre protection est cohérent avec s3
+      (protection contre la décharge) sans être attribué par la fiche. Le dimensionnement (jours d'autonomie, part utilisable, charge par temps de gel) est déclaré sans source et À VALIDER : noté,
+      verdict inchangé.
+  - 'n': 4
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (étape créée, à tester) » : notée, sans effet sur le verdict. PVGIS n''est pas dans la provenance.'
+  - 'n': 5
+    verdict: conforme
+    source: s3
+    passage: ... provided the charging systems are adapted not to damage the LFP cells through excessive charging voltages ...
+    remarque: >-
+      Seul le point attribué à s3 (chargeur adapté au LFP) est jugé : il y est. Le reste renvoie à la fiche *Recharger une batterie 12 V…*, non à une source adaptée. La Vérification (le régulateur
+      affiche LFP) n'est pas dans s3.
+  - 'n': 6
+    verdict: conforme
+    source: s2 et s1
+    passage: >-
+      s2 : Raspberry Pi 4 Model B and Raspberry Pi 400 | 5 V at 3 A ; Raspberry Pi 5 and Raspberry Pi 500 | 5 V at 5 A; 5 V at 3 A limits peripherals to 600 mA ; Raspberry Pi 3 (all models) | 5 V at
+      2.5 A ; Raspberry Pi Zero (all models) | 5 V at 2.5 A. s1 : All models up to the Raspberry Pi 3 require a micro USB power connector, while Raspberry Pi 4, Raspberry Pi 400, and Raspberry Pi 5
+      use a USB-C connector.
+    remarque: >-
+      Tous les courants, la limite de 600 mA avec 3 A sur le Pi 5 et les connecteurs sont dans s2 et s1. Pour le Zero, s1 (copie « Power supply ») ne dit rien du connecteur ; s2 dit « micro USB » à
+      propos des Zero : la fiche en dit « micro-USB pour les modèles plus anciens », ce qui est compatible. La plage de tension d'entrée est marquée À VALIDER (hors sources).
+  - 'n': 7
+    verdict: conforme
+    source: s1
+    passage: All models require a 5.1V supply, but the current required generally increases according to model.
+    remarque: « environ 5,1 V » est dans s1. La tolérance est marquée À VALIDER par la fiche ; le reste (mesure à vide, fusible) renvoie à une autre fiche.
+  - 'n': 8
+    verdict: sans_source
+    source: fiches internes
+    passage: ''
+    remarque: >-
+      Cette étape ne cite que des fiches de CivicNode, aucune source adaptée : pas jugée. Elle n'est pas non plus marquée « aucune source ouverte »; elle renvoie aux fiches *Mesure et protection d'un
+      circuit 12 V* et *Recharger une batterie 12 V…*.
+  - 'n': 9
+    verdict: conforme
+    source: s1
+    passage: >-
+      On all models of Raspberry Pi since the Raspberry Pi B+ (2014) except the Zero range, there is low-voltage detection circuitry that will detect if the supply voltage drops below 4.63 V (±5%).
+      This will result in an entry being added to the kernel log.
+    remarque: >-
+      Le seuil de 4,63 V, le « à 5 % près », l'entrée dans le journal du noyau et l'absence sur les Zero sont dans s1. Attention : « après une heure de fonctionnement » n'est pas dans s1 et n'est pas
+      marqué À VALIDER (le À VALIDER ne porte que sur la commande du journal). La Source de la fiche ne l'attribue pas à s1 (elle limite s1 au seuil) ; je le signale sans changer le verdict. À toi de
+      décider s'il doit être marqué À VALIDER.
+  - 'n': 10
+    verdict: conforme
+    source: s4 et s1
+    passage: >-
+      s4 : Set the root file system to read-only. This uses a temporary overlay stored in RAM. Overlay File System (4 Performance Options > P2 Overlay File System). s1 : As with any computing device,
+      power dropouts can cause storage corruption.
+    remarque: >-
+      Le chemin raspi-config > options de performance > Overlay File System est dans s4 ; le système de fichiers racine en lecture seule avec une superposition en mémoire aussi ; la corruption par
+      coupure est dans s1. « une coupure abîme moins facilement la carte » est une déduction de la fiche. La Vérification (fichier créé qui disparaît au redémarrage) est cohérente avec la
+      superposition en RAM de s4, sans y être écrite.
+  - 'n': 11
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (étape créée, à tester) » : notée, sans effet sur le verdict.'
+chiffres:
+  - valeur: 350 mA (Zero 2 W)
+    trouve: true
+    source: s1
+  - valeur: 500 mA (3B+)
+    trouve: true
+    source: s1
+  - valeur: 600 mA (4B)
+    trouve: true
+    source: s1
+  - valeur: 800 mA (5)
+    trouve: true
+    source: s1
+  - valeur: 5,1 V
+    trouve: true
+    source: s1
+  - valeur: 2,5 A (Raspberry Pi 3 ou Zero)
+    trouve: true
+    source: s2
+  - valeur: 3 A (Raspberry Pi 4)
+    trouve: true
+    source: s2
+  - valeur: 5 A (Raspberry Pi 5)
+    trouve: true
+    source: s2
+  - valeur: 600 mA des ports USB du Pi 5 avec 3 A
+    trouve: true
+    source: s2
+  - valeur: 12,8 V (quatre éléments LFP)
+    trouve: true
+    source: s3
+  - valeur: 4,63 V à 5 % près
+    trouve: true
+    source: s1
+precautions_absentes: []
+niveaux: >-
+  Niveau orange, sans variante. Dans les sources : régulateur adapté au LFP, car une tension de charge trop élevée abîme les éléments (s3, « excessive charging voltages ») ; protection de la batterie
+  (s3) ; seuil de sous-tension (s1). Sans source, et dites comme telles par la fiche : court-circuit, arc, incendie, panneau sous tension, chute en hauteur, mesure à vide du convertisseur.
+remarques: >-
+  Fiche créée : seules les étapes 1, 3, 5, 6, 7, 9 et 10 citent une source adaptée et sont jugées. Étapes 2, 4 et 11 : déclarées « aucune source ouverte (étape créée, à tester) », notées sans effet
+  sur le verdict. Étape 8 : ne cite que des fiches internes (notée sans_source, pas jugée). Numéros de source : s1 = documentation « Power supply », s2 = « Getting started », s3 = Wikipédia LFP, s4 =
+  « Configuration » — les citations de la fiche correspondent aux bonnes copies. Point à signaler : « après une heure de fonctionnement » (étape 9) est un chiffre non attribué à s1 et non marqué À
+  VALIDER. Aucun autre chiffre ni geste n'est attribué à une source qui ne le dit pas. Ressource : « la tension d'alimentation (5,1 V), le courant recommandé et la consommation typique de chaque
+  modèle, et le seuil de l'alerte (s1 et s2) » est exact ; « Wikipédia indique la tension nominale d'une batterie LFP de quatre éléments et rappelle que la charge doit être adaptée » est exact (s3).
+verdict: conforme

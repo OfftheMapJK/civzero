@@ -66,7 +66,31 @@ provenance:
     modifie: false
     verifie_le: 2026-11-11
 attestations: []
-medias: []
+medias:
+  - fichier: reservoir-chasse-eau.png
+    type: image
+    etape: 2
+    legende:
+      fr: L'intérieur d'un réservoir de chasse d'eau, avec son flotteur. Seule l'eau de ce réservoir peut servir en dernier recours, jamais celle de la cuvette.
+      en: The inside of a toilet cistern, with its float. Only the water in this tank can be a last resort, never the water in the bowl.
+    titre: Toilet-cistern-03
+    auteur: Mcgill Mcgill
+    source: https://commons.wikimedia.org/wiki/File:Toilet-cistern-03.png
+    licence: CC BY-SA 2.5
+    verifie_le: "2026-11-11"
+    telecharger: https://commons.wikimedia.org/wiki/Special:FilePath/Toilet-cistern-03.png
+  - fichier: vanne-arret-eau.jpg
+    type: image
+    etape: 3
+    legende:
+      fr: "Une vanne d'arrêt à levier sur un tuyau d'eau. Repérez celle de votre logement avant d'en avoir besoin : son aspect varie."
+      en: "A lever shut-off valve on a water pipe. Find the one in your home before you need it: its appearance varies."
+    titre: Water Pipe Shutoff Valve (54273678839)
+    auteur: Tony Webster
+    source: https://commons.wikimedia.org/wiki/File:Water_Pipe_Shutoff_Valve_(54273678839).jpg
+    licence: CC BY 2.0
+    verifie_le: "2026-11-11"
+    telecharger: https://commons.wikimedia.org/wiki/Special:FilePath/Water_Pipe_Shutoff_Valve_(54273678839).jpg?width=1200
 maj: 2026-11-11
 ---
 

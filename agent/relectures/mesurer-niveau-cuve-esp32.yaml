@@ -1,0 +1,89 @@
+fiche: mesurer-niveau-cuve-esp32
+date: '2026-11-12'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s1
+    passage: >-
+      The SEN136B5B is an ultrasonic range finder from Seeedstudio. It detects the distance of the closest object in front of the sensor (from 3 cm up to 400 cm). It works by sending out a burst of
+      ultrasound and listening for the echo when it bounces off of an object.
+    remarque: >-
+      Le principe et la plage de 3 à 400 cm sont dans s1 ; la fiche la présente comme « par exemple » pour un capteur de ce type. Précision : cette plage est celle du SEN136B5B de s1 ; le module
+      HC-SR04 cité à l'étape n'est pas dans s1, et ses propres limites n'y sont pas. Le choix d'un modèle étanche est déclaré « aucune source ouverte (étape créée, à tester) » : noté, verdict
+      inchangé.
+  - 'n': 2
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (lue) (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict.'
+  - 'n': 3
+    verdict: conforme
+    source: s1
+    passage: The 5V pin of the SEN136B5B is connected to the 5V pin on the board, the GND pin is connected to the GND pin, and the SIG (signal) pin is connected to digital pin 7 on the board.
+    remarque: >-
+      Corrigé : la Source se limite à l'alimentation en 5 V et à la masse (s1 : broche 5 V → 5 V de la carte, GND → GND) et dit que s1 décrit un capteur à une seule broche de signal; le câblage à deux
+      broches Trig/Echo et l'adaptation à l'ESP32 (pont diviseur) sont déclarés « aucune source ouverte (étape créée, à tester) » : notés, verdict inchangé. « carte débranchée » et « suivi du doigt »
+      ne sont pas dans s1 et ne lui sont pas attribués.
+  - 'n': 4
+    verdict: conforme
+    source: s1 et s2
+    passage: >-
+      s1 : The Arduino board sends a short pulse to trigger the detection, then listens for a pulse on the same pin using the pulseIn() function. The duration of this second pulse is equal to the time
+      taken by the ultrasound to travel to the object and back to the sensor. Using the speed of sound, this time can be converted to distance. s2 : Returns the length of the pulse in microseconds or
+      gives up and returns 0 if no complete pulse was received within the timeout.
+    remarque: >-
+      Le principe (impulsion de déclenchement, `pulseIn()`, durée = aller-retour, conversion par la vitesse du son), les microsecondes et le 0 sans écho sont dans s1 et s2. Écarts de détail, sans
+      bloquer : (1) s1 lit l'écho sur la même broche que le déclenchement ; la fiche utilise deux broches (voir étape 3). (2) « la distance est la moitié de cette durée multipliée par la vitesse du
+      son » : s1 dit que la durée est celle de l'aller-retour, la division par deux est le calcul de la fiche, non écrit dans s1. (3) La valeur de la vitesse du son et la durée de l'impulsion sont
+      marquées À VALIDER par la fiche. L'exemple de programme en fin de fiche (broches 5 et 18, délais 2 et 10 µs, délai d'attente de 30 000 µs, 0,0343 cm/µs) n'est attribué à aucune source et n'est
+      pas dans s1 ni s2. Après correction de l'étape 3, la fiche déclare le câblage à deux broches sans source; l'étape 4 parle toujours d'une broche de déclenchement et d'une broche d'écho (s1 : une
+      seule broche pour les deux), sans le redire dans sa Source : écart de détail couvert par la déclaration de l'étape 3, sans bloquer.
+  - 'n': 5
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (lue) (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict.'
+  - 'n': 6
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (lue) (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict.'
+  - 'n': 7
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (lue) (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict.'
+  - 'n': 8
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (lue) (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict.'
+  - 'n': 9
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: 'Étape déclarée « aucune source ouverte (lue) (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict.'
+chiffres:
+  - valeur: de 3 cm à 400 cm
+    trouve: true
+    source: s1
+  - valeur: alimentation 5 V du capteur
+    trouve: true
+    source: s1
+  - valeur: '`pulseIn()` renvoie 0 sans écho'
+    trouve: true
+    source: s2
+  - valeur: durée en microsecondes
+    trouve: true
+    source: s2
+precautions_absentes: []
+niveaux: >-
+  Niveau vert, sans variante. Aucun risque de la section Sécurité n'est tiré des deux sources (5 V seulement, tension de l'ESP32, percer le couvercle, moustiques, cuve) : tous viennent de la fiche,
+  sans attribution à une source.
+remarques: >-
+  Fiche créée : seules les étapes 1, 3 et 4 citent une source adaptée et sont jugées; toutes trois conformes après correction. Étapes 2, 5, 6, 7, 8, 9 : déclarées « aucune source ouverte (étape créée,
+  à tester) », notées sans_source sans effet sur le verdict. L'écart de la première relecture (étape 3, Trig/Echo attribué à s1) est corrigé. Aucun chiffre n'est attribué à une source qui ne le dit
+  pas. Le 3,3 V de l'ESP32, la vitesse du son, les broches 5 et 18 et les délais de l'exemple de programme ne sont dans aucune des deux copies, et la fiche ne les leur attribue pas. La documentation
+  d'ESPHome (licence non commerciale) n'est pas utilisée, comme la fiche le dit.
+verdict: conforme

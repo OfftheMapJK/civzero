@@ -60,7 +60,19 @@ provenance:
     modifie: false
     verifie_le: 2026-11-11
 attestations: []
-medias: []
+medias:
+  - fichier: symbole-contact-alimentaire.svg
+    type: image
+    etape: 2
+    legende:
+      fr: "Le symbole du verre et de la fourchette : dans l'Union européenne, il marque les matériaux prévus pour le contact avec les aliments."
+      en: "The glass-and-fork symbol: in the European Union, it marks materials intended to come into contact with food."
+    titre: EU food contact material symbol
+    auteur: Union européenne (règlement (CE) n° 1935/2004)
+    source: https://commons.wikimedia.org/wiki/File:EU_food_contact_material_symbol.svg
+    licence: domaine public
+    verifie_le: "2026-11-11"
+    telecharger: https://commons.wikimedia.org/wiki/Special:FilePath/EU_food_contact_material_symbol.svg
 maj: 2026-11-11
 ---
 

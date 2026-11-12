@@ -1,0 +1,880 @@
+# Copie de la source s2 : « Getting started (Raspberry Pi Documentation) »
+# Auteur : Raspberry Pi Ltd
+# Lien : https://www.raspberrypi.com/documentation/computers/getting-started.html
+# Licence : CC BY-SA 4.0
+# Copiée le : 2026-11-12
+# Texte tiré du dépôt source de cette page (github.com/raspberrypi/documentation, état du 05/11/2026), fichiers : getting-started/setting-up.adoc, getting-started/install.adoc, getting-started/configuring.adoc, getting-started/wrapping-up.adoc
+
+video::CQtliTJ41ZE[youtube,width=80%,height=400px]
+
+A Raspberry Pi device is a compact computer that is commonly used in two main ways: either as a *desktop computer* or as a *headless (remote) computer*. For more information about these options, see <<setup>>.
+
+Raspberry Pi devices are available in several series:
+
+* *Classic single-board computers (SBC).* Classic Raspberry Pi devices (sometimes referred to as 'flagship' models) that you can connect to a monitor, keyboard, and mouse like a desktop computer. For detailed information about classic SBCs, see xref:../computers/sbcs.adoc[Classic single-board computers].
+* *Raspberry Pi Zero.* A smaller version of classic Raspberry Pi devices with fewer USB ports and lower power consumption. For detailed information about Raspberry Pi Zero models, see xref:../computers/sbcs.adoc[Zero models].
+* *Raspberry Pi keyboard computers.* Devices that have the computer built into a keyboard case, designed to be plugged into a monitor and mouse. For detailed information about Raspberry Pi keyboard computers, see xref:../computers/keyboard-computers.adoc[Keyboard computers].
+* *Raspberry Pi Compute Modules.* Small system-on-module versions of Raspberry Pi computers designed for industrial and embedded applications. For detailed information about Raspberry Pi Compute Modules, see xref:../computers/compute-module.adoc[Compute Module hardware].
+* *Raspberry Pi Pico.* A microcontroller board that uses Raspberry Pi microcontrollers (RP2040 or RP2350). For detailed information about Raspberry Pi Pico, see xref:../microcontrollers/pico-series.adoc[Pico microcontroller boards].
+
+This page focuses on *classic SBCs*, but much of the information also applies to Raspberry Pi *Zero* and *keyboard computers*.
+
+== Hardware prerequisites
+
+To set up a Raspberry Pi device, you need the following hardware. These components are prepared and assembled in the order listed:
+
+* <<boot-media>> with an OS installed on it.
+* For a desktop setup, input and output peripherals, listed in <<equipment>>.
+* For a headless setup, another computer and a network connection.
+* A power supply. For guidance, see <<power>>.
+
+Additionally, you can use:
+
+* A Raspberry Pi case. This helps to protect your Raspberry Pi device from damage or from short-circuiting if it's placed on a metal surface.
+* An Ethernet (RJ45) cable to connect your Raspberry Pi to a wired network. You don't need this to connect to a wireless network. You can connect to Wi-Fi with its SSID and password instead.
+
+[[boot-media]]
+=== Boot media
+
+To function as a computer, your Raspberry Pi requires non-volatile storage containing an *operating system (OS) image*. This storage is called *boot media*, and the most common type is a *microSD card*. Some newer Raspberry Pi models can boot from other media, such as *USB Mass Storage*, *network boot (PXE)*, and *NVMe storage through PCIe*.
+
+You must configure your boot media before you assemble your Raspberry Pi, unless you are using a network install on Raspberry Pi 4B, 5, 500, or 500+, in which case you use the Raspberry Pi itself to configure the boot media.
+
+Whichever storage device you choose for your boot media, it must have enough storage and speed to act as a hard-drive that holds your OS image. An OS image is pre-packaged software that, when installed onto your boot media, transforms your Raspberry Pi from a blank board into a working computer.
+
+For step-by-step guidance on configuring the boot media for your Raspberry Pi, see xref:../computers/getting-started.adoc#install[Install an OS onto boot media].
+
+Faster storage devices with higher read and write speeds improve the overall performance of your Raspberry Pi, making it run more smoothly. If you're unsure which SD card to buy, consider an https://www.raspberrypi.com/products/sd-cards/[official Raspberry Pi microSD card]. You might also need an SD card reader so that you can connect your microSD card to your computer to install an OS.
+
+.An official 128 GB Raspberry Pi microSD card
+image::images/peripherals/microSD.png[alt="A Raspberry Pi microSD card.",width="50%"]
+
+All models since Raspberry Pi Model B+ have a microSD card slot; these Raspberry Pi devices automatically boot from an inserted microSD card with a valid OS image.
+
+If you have a Raspberry Pi keyboard computer (Raspberry Pi 400, 500, or 500+), or if you have a Raspberry Pi computer as part of a kit, your OS is already configured. You can change your configuration from the *Control Centre* or using `raspi-config` from the Terminal. For instructions, see xref:../computers/configuration.adoc[Configuration].
+
+[[recommended-capacity]]
+==== Recommended minimum storage requirements
+
+The boot media storage that you need depends on how much software is included in the OS version you install.
+
+The following recommendations are enough to get started based on your chosen OS, but we recommend choosing more storage space to allow room to grow:
+
+* For *Raspberry Pi OS* (desktop with basic software), we recommend using an SD card with at least 32 GB of storage.
+* For *Raspberry Pi OS Full* (desktop with basic software and recommended applications), we recommend using an SD card with at least 32 GB of storage.
+* For *Raspberry Pi OS Lite* (a command-line-only version for headless setups), we recommend using an SD card with at least 8 GB of storage.
+
+Other operating systems might have different storage requirements, so always check the documentation for the OS you plan to install.
+
+==== Maximum supported capacity
+
+You can use any SD card with a capacity of less than 2 TB. Cards with capacities above 2 TB aren't supported because they exceed the limitations of the Master Boot Record (MBR). MBR is a partitioning system used on the SD card that tells your Raspberry Pi where to find the OS so that it can start up.
+
+Some older Raspberry Pi devices can only boot from a boot partition of 256 GB or less. These include:
+
+* Raspberry Pi Zero.
+* The first classic Raspberry Pi device.
+* Early Raspberry Pi 2 models with the BCM2836 SoC.
+
+==== Inserting a microSD card
+You must configure your microSD card before inserting it into your Raspberry Pi. For step-by-step guidance on configuring the boot media for your Raspberry Pi, see xref:../computers/getting-started.adoc#install[Install an OS onto boot media].
+
+When you've configured your microSD card with an OS, insert it into the microSD slot with the label facing away from the Raspberry Pi.
+
+.Inserting a microSD card into a Raspberry Pi
+image::images/peripherals/sd-card.png[alt="Inserting a microSD card into a Raspberry Pi.",width="80%"]
+
+For Raspberry Pi 3 and later, and for all Raspberry Pi Zero models, the microSD card slides in and stops without a click, and is removed by gently pulling on it. Older models require you to first push the microSD card to unlock it.
+
+[[equipment]]
+=== Equipment
+
+A *headless setup* only requires another computer with a network connection. For more information, see <<headless-setup>>.
+
+Depending on your device and use case, most *desktop setups* require input and output peripherals (like a keyboard, mouse, and monitor). You must also have the appropriate cables for connecting these peripherals to your Raspberry Pi.
+
+To connect to a monitor, Raspberry Pi 4B, 400, 5, 500, and 500+ need a micro-HDMI-to-HDMI cable; Raspberry Pi Zero and Zero 2 need a mini-HDMI-to-HDMI cable. You can also use an adapter.
+
+[[input-peripherals]]
+==== Input peripherals (keyboard and mouse)
+
+You can use any of the USB ports on your Raspberry Pi to connect a https://www.raspberrypi.com/products/raspberry-pi-keyboard-and-hub/[wired keyboard] and a https://www.raspberrypi.com/products/raspberry-pi-mouse/[wired mouse]. If you want to save the high-speed USB 3.0 (blue) ports for other, high-speed accessories, use the USB 2.0 (black) ports on your Raspberry Pi for your peripherals.
+
+[.clearfix]
+--
+.Plugging a keyboard into a Raspberry Pi
+[.left]
+image::images/peripherals/cable-key.png[alt="Plugging a keyboard into a Raspberry Pi.",width="100%"]
+.Plugging a mouse into a Raspberry Pi
+[.left]
+image::images/peripherals/cable-mouse.png[alt="Plugging a mouse into a Raspberry Pi.",width="100%"]
+--
+
+If you're using an official Raspberry Pi keyboard or a Raspberry Pi keyboard computer, you can connect a wired mouse to one of the USB ports at the back. This keeps more USB ports available on your Raspberry Pi device.
+
+===== Raspberry Pi Zero USB devices
+
+Raspberry Pi Zero models use micro USB instead of full-size USB, and so require a micro USB OTG adapter. One of the micro-USB ports is labelled PWR IN and is reserved for power input only, but you can use any of those labelled USB.
+
+Raspberry Pi Zero devices don't supply enough power for both a keyboard and a mouse (unless the keyboard has a built-in touchpad). For this reason, you need to plug a powered USB hub into the micro USB OTG adapter connected to your Raspberry Pi Zero. You can then plug a mouse into the USB hub.
+
+NOTE: Plugging in a USB device to a Raspberry Pi Zero after it has booted can cause the voltage to drop enough that it causes the CPU to reboot. We therefore recommend that you use a powered USB hub, or that you connect USB devices before booting up.
+
+===== Wireless input devices
+
+If you want to use a wireless keyboard or mouse, we recommend setting this up after you've configured and assembled your Raspberry Pi for the first time with a wired keyboard and mouse. You can then either use:
+
+* A keyboard or mouse with a USB Bluetooth receiver. Plug the USB dongle for the keyboard or mouse into a USB port on your Raspberry Pi to connect it.
+* A keyboard or mouse with built-in Bluetooth to connect to your Raspberry Pi. If your Raspberry Pi model supports Bluetooth, pair the keyboard with your Raspberry Pi.
+
+
+For instructions, see xref:../computers/configuration.adoc#bt[Connect Bluetooth peripherals] in the *Configuration* page. For a list of Raspberry Pi models that come with Bluetooth, see <<networking>>.
+
+[[output-peripherals]]
+==== Output peripherals (display and audio)
+If you're setting your Raspberry Pi up as a desktop computer, it needs a display so that you can see what you're doing. Additionally, you can connect speakers or headphones for audio output. If you're using an official https://www.raspberrypi.com/products/raspberry-pi-monitor/[Raspberry Pi Monitor], you can connect speakers or headphones through the 3.5 mm audio jack at the back of the display.
+
+===== Displays
+You can use the display outputs available on your Raspberry Pi to connect monitors. If your Raspberry Pi has more than one HDMI port, plug your primary monitor into the port marked *HDMI0*.
+
+NOTE: Displays typically require their own source of power. If you're using an official Raspberry Pi Monitor, you can connect your monitor to power through a USB power cable connected to your Raspberry Pi. When you power on your Raspberry Pi, it then provides power to the Raspberry Pi monitor.
+
+On Raspberry Pi 4 and later, both HDMI outputs support up to 4K resolution, though at different refresh rates depending on model.
+
+.Plugging a micro HDMI cable into a Raspberry Pi
+image::images/peripherals/cable-hdmi.png[alt="Plugging a micro HDMI cable into a Raspberry Pi.",width="80%"]
+
+While newer Raspberry Pi models use micro HDMI, and Raspberry Pi Zero models use mini HDMI, most displays use full-size HDMI. You can use a https://www.raspberrypi.com/products/micro-hdmi-to-standard-hdmi-a-cable/[micro-HDMI-to-HDMI cable] or https://www.raspberrypi.com/products/standard-hdmi-a-male-to-mini-hdmi-c-male-cable/[mini-HDMI-to-HDMI cable] (or an https://www.raspberrypi.com/products/mini-hdmi-c-male-to-standard-hdmi-a-female-adapter/[mini-HDMI-to-HDMI adaptor]) to connect these models to an HDMI display. If your display doesn't have an HDMI connector, use an adapter cable to convert the HDMI end into a DVI-D, DisplayPort or VGA connector.
+
+The following table lists the available display outputs and recommended cable adapters for different Raspberry Pi models.
+
+.Available display outputs and cable adapters
+[cols="1,2,2", options="header"]
+|===
+| Model | Display outputs | Cables and adapters for displays using full-size HDMI
+
+| Raspberry Pi 5, 400, 500, and 500+
+| Two micro-HDMI ports for dual display support.
+| Use a micro-HDMI-to-HDMI cable; connect the larger (full HDMI) end of the cable to your display.
+
+| Raspberry Pi 4 Model B
+| Two micro-HDMI ports, plus a 3.5 mm https://en.wikipedia.org/wiki/Phone_connector_(audio)#TRRS_standards[TRRS] jack for audio and composite video.
+| Use a micro-HDMI-to-HDMI cable; connect the larger (full HDMI) end of the cable to your display.
+
+| Raspberry Pi 3 (all models)
+| HDMI port plus a 3.5 mm https://en.wikipedia.org/wiki/Phone_connector_(audio)#TRRS_standards[TRRS] jack for audio and composite video.
+| Use a standard HDMI cable.
+
+| Raspberry Pi 2 Model B
+| HDMI port plus a 3.5 mm https://en.wikipedia.org/wiki/Phone_connector_(audio)#TRRS_standards[TRRS] jack for audio and composite video.
+| Use a standard HDMI cable.
+
+| Raspberry Pi 1 Model A+ and B+
+| HDMI port plus a 3.5 mm https://en.wikipedia.org/wiki/Phone_connector_(audio)#TRRS_standards[TRRS] jack for audio and composite video.
+| Use a standard HDMI cable.
+
+| Raspberry Pi 1 Model A and B
+| HDMI port plus a 3.5 mm https://en.wikipedia.org/wiki/Phone_connector_(audio)#TRRS_standards[TRRS] jack for audio, and https://en.wikipedia.org/wiki/RCA_connector[phono] jack for composite video.
+| Use a standard HDMI cable.
+
+| Raspberry Pi Zero (all models)
+| Mini HDMI port.
+| Use a mini-HDMI-to-HDMI cable; connect the larger (full HDMI) end of the cable to your display.
+
+|===
+
+NOTE: No Raspberry Pi models support video over USB-C (DisplayPort Alt Mode). No USB-C port on a Raspberry Pi can be used to connect a monitor.
+
+If your display has more than one HDMI connector, check the number of the port that you connect to. This number represents the input that you need to switch to in order to see what your Raspberry Pi is displaying.
+
+===== Audio
+
+Depending on your Raspberry Pi model, you can output audio over HDMI, USB, Bluetooth, or 3.5 mm jack. You can also connect to audio through the 3.5 mm jack at the back of an official Raspberry Pi Monitor.
+
+* All Raspberry Pi models with HDMI, micro HDMI, or mini HDMI support audio output over HDMI.
+* All Raspberry Pi models support audio over USB.
+* All Raspberry Pi models that are equipped with Bluetooth support Bluetooth audio.
+* All variants of Raspberry Pi 1, 2, 3, and 4 include a 3.5 mm auxiliary https://en.wikipedia.org/wiki/Phone_connector_(audio)#TRRS_standards[TRRS] jack, which might require amplification for sufficient output volume. The TRRS jack provides line-level output, not amplified speaker-level output.
+
+[[power]]
+=== Power supply
+Connecting your Raspberry Pi to power is the last step in setting up your hardware. We recommend using an official Raspberry Pi power supply suitable for the Raspberry Pi model you're powering.
+
+Your Raspberry Pi turns on as soon as you connect it to power. This is true unless you've xref:../computers/raspberry-pi.adoc#raspberry-pi-bootloader-configuration[edited your EEPROM settings] to keep your Raspberry Pi 5 device powered off until you press the power button.
+
+==== Recommended power supply
+We recommend using an official Raspberry Pi power supply.
+
+Different Raspberry Pi models require different amounts of power to run properly. The following table lists which USB Power Delivery mode is required for each model.
+
+NOTE: The recommended voltage requirements shown here are measured at the plug, not the supply. Allow for voltage loss in the cable, especially if your power supply cable is removable.
+
+.Recommended power supply depending on Raspberry Pi model
+[cols="1,1,1", options="header"]
+|===
+| Model | Recommended voltage at current | Recommended Raspberry Pi power supply
+
+| Raspberry Pi 500+
+| 5 V at 5 A
+| https://www.raspberrypi.com/products/27w-power-supply/[27 W USB-C power supply]
+
+| Raspberry Pi 5 and Raspberry Pi 500
+| 5 V at 5 A; 5 V at 3 A limits peripherals to 600 mA
+| https://www.raspberrypi.com/products/27w-power-supply/[27 W USB-C power supply]
+
+| Raspberry Pi 4 Model B and Raspberry Pi 400
+| 5 V at 3 A
+| https://www.raspberrypi.com/products/type-c-power-supply/[15 W USB-C power supply]
+
+| Raspberry Pi 3 (all models)
+| 5 V at 2.5 A
+| https://www.raspberrypi.com/products/micro-usb-power-supply/[12.5 W Micro USB power supply]
+
+| Raspberry Pi 2 Model B
+| 5 V at 2.5 A
+| https://www.raspberrypi.com/products/micro-usb-power-supply/[12.5 W Micro USB power supply]
+
+| Raspberry Pi 1 (all models)
+| 5 V at 2.5 A
+| https://www.raspberrypi.com/products/micro-usb-power-supply/[12.5 W Micro USB power supply]
+
+| Raspberry Pi Zero (all models)
+| 5 V at 2.5 A
+| https://www.raspberrypi.com/products/micro-usb-power-supply/[12.5 W Micro USB power supply]
+
+|===
+
+==== Connecting to power
+Before powering on your Raspberry Pi you must flash (write) the operating system (OS) image onto the storage for your device, otherwise your Raspberry Pi won't start. For more information, see <<boot-media>>.
+
+After configuring your boot media, inserting it into your Raspberry Pi, and assembling all the necessary peripherals, plug your power supply into the port on your Raspberry Pi labelled either *POWER IN*, *PWR IN*, or *PWR*. Some Raspberry Pi models, such as the Zero series, have output USB ports with the same form factor as the power port. Use the correct port on your Raspberry Pi. Then, plug the other end of the power supply into an electrical socket and turn it on.
+
+The Raspberry Pi then powers on, indicated by the power or status LED lighting up. It then shows you an information screen with the Raspberry Pi logo on it. Next, your Raspberry Pi loads its operating system from your boot media.
+
+.Plugging a power supply into a Raspberry Pi
+image::images/peripherals/cable-power.png[alt="Plugging a power supply into a Raspberry Pi.",width="80%"]
+
+[[networking]]
+== Networking
+The following table lists the connectivity specifications for Raspberry Pi devices.
+
+If your Raspberry Pi device doesn't have an Ethernet port, you can still connect to a wired internet connection using a USB-to-Ethernet adapter.
+
+Similarly, if your Raspberry Pi device doesn't have built-in Wi-Fi, you can still connect to a wireless internet connection using a USB-to-Wi-Fi adapter.
+
+.Raspberry Pi models with built-in connectivity
+[cols="2,1,1",options="header"]
+|===
+|Model Name |Wireless |Ethernet
+
+|Raspberry Pi 3B+ and newer
+|Yes. Dual-band Wi-Fi (2.4/5 GHz)
+|Yes. 300 Mb/s for Rasberry Pi 3B+, and Gigabit Ethernet for Raspberry Pi 4B and newer
+
+|Raspberry Pi 3B
+|Yes, 2.4 GHz only
+|Yes
+
+|Raspberry Pi 3A+
+|Yes. Dual-band Wi-Fi (2.4/5 GHz)
+|No
+
+|Raspberry Pi 1B, 1B+, and 2B
+|No
+|Yes
+
+|All keyboard computers (Raspberry Pi 400, 500, and 500+)
+|Yes. Dual-band Wi-Fi (2.4/5 GHz)
+|Yes. Gigabit Ethernet
+
+|Raspberry Pi Zero W and Zero 2 W
+|Yes, 2.4 GHz only
+|No
+
+|Compute Module 5 (CM5) and Compute Module 4 (CM4)
+|Optional dual-band Wi-Fi (2.4/5 GHz)
+|Yes. Gigabit Ethernet.
+
+|Compute Modules 3+ (CM3+) and older
+|No
+|Optional
+|===
+
+[[setup]]
+== Set up your Raspberry Pi
+A Raspberry Pi is commonly used in two ways:
+
+* *As a desktop computer.* An interactive system with a desktop environment. This setup requires a display, a cable to connect your Raspberry Pi to the display, a keyboard, and a mouse. For information about these accessories, see <<equipment>>.
+* *As a headless computer.* A system that operates without traditional peripherals (display, keyboard, and mouse). You access it through Raspberry Pi Connect or from another computer on the same network using SSH over Wi-Fi or Ethernet. You can preconfigure the hostname, user account, network connection, and SSH access when you install an operating system.
+
+[[desktop-setup]]
+=== Standard (desktop) setup
+
+Broadly, a desktop setup for your Raspberry Pi involves boot media, peripherals, and power, implemented in order. Network connection is optional.
+
+==== Step 1. Prepare your boot media
+
+Use *Raspberry Pi Imager* to install the OS onto your boot media.
+
+This is a prerequisite for using your Raspberry Pi and is where you configure most of its key settings for the first time, including hostname, localisation, user credentials, Wi-Fi connection, and remote access.
+
+Other settings can be configured later. For instructions, see xref:../computers/getting-started.adoc#install[Install an OS onto boot media].
+
+After installing an OS onto your boot media, connect it into your Raspberry Pi. On newer models, this is typically a microSD card inserted into the slot on the underside of the device. If you installed the OS on any other storage device, you can connect it to your Raspberry Pi using other compatible connectors.
+
+==== Step 2. Connect peripherals
+
+To use your Raspberry Pi as a desktop computer, you can connect the following peripherals:
+
+* <<input-peripherals, Input peripherals>>:
+** *Keyboard.* Required for a desktop computer using a classic Raspberry Pi or Raspberry Pi Zero; not required if your Raspberry Pi is a keyboard computer (Raspberry Pi 400, 500, or 500+).
+** *Mouse.* Required for a desktop computer.
+* <<output-peripherals, Output peripherals>>:
+** *Display.* Required for a desktop computer.
+** *Audio.* Optional.
+
+.Connecting peripherals to a Raspberry Pi
+image::images/peripherals/cable-all.png[alt="Attaching the power supply to a Raspberry Pi.",width="80%"]
+
+==== Step 3. Connect to power
+After connecting your peripherals, plug the power supply onto the USB-C (or micro USB on older models) power port on your Raspberry Pi.
+
+Ensure that your power supply meets the voltage and current requirements of your Raspberry Pi model. For more information, see <<power>>.
+
+When your Raspberry Pi powers on, a status LED lights up, and if your Raspberry Pi is connected to a monitor, a boot screen appears. This can take a few minutes.
+
+==== Step 4. Connect to a network (optional)
+After you've installed an OS onto your boot media and inserted it into your Raspberry Pi, you can set up network connectivity. This can be a wired (Ethernet) connection or a wireless (Wi-Fi) connection.
+
+===== Connect to a wireless network
+Connecting to a wireless network typically happens during boot media configuration. For instructions on configuring your boot media, see xref:../computers/getting-started.adoc#install[Install an OS onto boot media]. You can also configure a wireless network later from the desktop or from the command line. For instructions, see xref:../computers/configuration.adoc#connect-to-wireless[Connect to a wireless network] in the *Configuration* page.
+
+Some wireless adapters and some Raspberry Pi models don't support 5 GHz networks; check the link:https://www.raspberrypi.com/products/[Raspberry Pi Product page] for your wireless module to ensure compatibility with your preferred network. For information about which Raspberry Pi models support wireless networks, see <<networking>>.
+
+===== Connect to a wired network
+To connect your Raspberry Pi to a wired network, insert an Ethernet cable into your Raspberry Pi device's Ethernet port until you hear a click. You can use a USB Ethernet adapter if your Raspberry Pi model doesn't include an Ethernet port.
+
+Connect the other end of the cable to a port in your network hub, switch, or router. Raspberry Pi OS automatically connects to the network.
+
+To remove the Ethernet cable, press on the clip at the bottom of the connector and gently slide the cable out from the port.
+
+.Plugging an Ethernet cable into a Raspberry Pi
+image::images/peripherals/cable-net.png[alt="Plugging an Ethernet cable into a Raspberry Pi.",width="80%"]
+
+[[headless-setup]]
+=== Headless (remote) setup
+A headless Raspberry Pi operates without a monitor, keyboard, or mouse. You control it remotely over a network. For this, you must have:
+
+* A network connection (Wi-Fi or Ethernet). Some wireless adapters and some Raspberry Pi models don't support 5 GHz networks; check the documentation for your wireless module to ensure compatibility with your preferred network. For information about which Raspberry Pi models support wireless networks, see <<networking>>.
+* Remote access using either SSH or xref:../services/connect.adoc[Raspberry Pi Connect] for the first boot of the device. After first boot, you can also use xref:remote-access.adoc#vnc[VNC] for remote desktop access.
+
+NOTE: VNC is incompatible with the Lite versions of Raspberry Pi OS.
+
+We recommend that you set up a headless device using *Raspberry Pi Imager*. This allows you to:
+
+* Choose between *Raspberry Pi OS* and *Raspberry Pi OS Lite*.
+* Configure networking.
+* Configure remote access.
+* Set user credentials (username and password).
+
+You can additionally enable VNC and *Raspberry Pi Connect* either from the desktop or by using the interactive `raspi-config` tool. For instructions, see xref:configuration.adoc#remote[Remote access].
+
+==== Step 1. Prepare your boot media
+
+Use *Raspberry Pi Imager* to transform your storage device into bootable media with the Raspberry Pi operating system installed. During this process, you also also configure the networking, remote access, and user credentials (username and password) required for a headless setup.
+
+. Follow the instructions to xref:../computers/getting-started.adoc#install[install an OS onto boot media] using *Raspberry Pi Imager*.
+    ** Because a headless setup doesn't require a desktop environment, we recommend choosing *Raspberry Pi OS Lite* as your operating system in Raspberry Pi Imager.
+    ** On first boot, only SSH and Raspberry Pi Connect are available for remote access. Ensure that you configure one of these options when customising your operating system with Imager. If you choose not to customise the image using Raspberry Pi Imager, you can instead <<manual-ssh-setup, set up SSH manually>>.
+
+. After installing an OS, connect your boot media to your Raspberry Pi.
+    ** For most models, this is typically a microSD card inserted into the slot on the underside of the device.
+    ** If you installed the OS on any other storage device, you can connect it to your Raspberry Pi using the appropriate adapter or a compatible connector.
+
+==== Step 2. Connect to power
+
+After preparing your boot media and connecting it to your Raspberry Pi, plug the power supply into the USB-C (or micro USB on older models) power port on your Raspberry Pi. Ensure that your power supply meets the voltage and current requirements of your Raspberry Pi model. For more information, see <<power>>.
+
+When your Raspberry Pi powers on, a status LED lights up.
+
+==== Step 3. Connect to a network
+
+After you've installed an OS onto your boot media, inserted it into your Raspberry Pi, and connected your Raspberry Pi to power, you can set up network connectivity so that it can communicate with your computer. This can be a wireless (Wi-Fi) connection (typically set up during step 1 using Imager) or a wired (Ethernet) connection.
+
+===== Connect to a wireless network
+
+NOTE: Some wireless adapters and Raspberry Pi models don't support 5 GHz networks, so check the documentation for your wireless model to ensure compatibility with your preferred network. For more information, see <<networking>>.
+
+If you used Imager to set up your SSID and wireless network details in Step 1, your Raspberry Pi attempts to connect to the wireless network on first boot.
+
+If you didn't set up a wireless network connection in Step 1, connect the headless Raspberry Pi device to a wired network instead. For instructions, see <<headless-ethernet>>.
+
+NOTE: Previous versions of Raspberry Pi OS made use of a `wpa_supplicant.conf` file, which can be placed into the boot folder to configure wireless network settings. This functionality isn't available from Raspberry Pi OS *Bookworm* and onwards.
+
+[[headless-ethernet]]
+===== Connect to a wired network
+
+If you used Imager to set up your SSID and wireless network details in Step 1, you can skip this step and go to Step 4.
+
+. Attach an Ethernet cable into your Raspberry Pi device's Ethernet port until you hear a click. If your Raspberry Pi model doesn't include an Ethernet port, use a USB Ethernet adapter.
+. Connect the other end of the cable to a port in your router. Raspberry Pi OS automatically connects to the network.
+
+.Plugging an Ethernet cable into a Raspberry Pi
+image::images/peripherals/cable-net.png[alt="Plugging an Ethernet cable into a Raspberry Pi.",width="80%"]
+
+==== Step 4. Access your Raspberry Pi
+
+On first boot, the only remote access options to your headless Raspberry Pi are SSH or Raspberry Pi Connect.
+
+* For information about using SSH from another computer, see xref:../computers/remote-access.adoc#connect-to-an-ssh-server[Connect to an SSH server].
+* For information about using Raspberry Pi Connect, see the xref:../services/connect.adoc[Raspberry Pi Connect] documentation.
+
+If you installed a version of Raspberry Pi OS that includes the desktop (*Raspberry Pi OS* or *Raspberry Pi OS Full*), you can now enable VNC for subsequent connections. For instructions, see xref:configuration.adoc#remote[Remote access].
+
+[[manual-ssh-setup]]
+==== Manual setup for SSH
+
+If you didn't customise the image for remote access using Raspberry Pi Imager in Step 1, you can instead set up SSH manually. On your boot media's `bootfs` partition:
+
+. Create an empty file named `ssh`.
+. Create a file named `userconf.txt` with a single line of text: `<username>:<encrypted-password>`.
+
+Replace `<username>` with your username and `<encrypted-password>` with an *encrypted* representation of your password.
+
+* *Username.* Your username must start with a letter and can only contain lowercase letters, digits, underscores, and hyphens. Your username can be a maximum of 31 characters.
+* *Encrypted password.* Use https://www.openssl.org[OpenSSL] to generate an encrypted password. From the command line, run `openssl passwd -6` and then, when prompted, enter your password and verify it. This command outputs an encrypted version of the supplied password.
++
+NOTE: On macOS, ensure that you use OpenSSL to run the command. The default SSL application on macOS is LibreSSL, which doesn't support the `-6` parameter. To verify whether you're running OpenSSL or LibreSSL, run `openssl version`. You can install OpenSSL with `brew install openssl`. For more information, see the documentation for https://openssl.org/[OpenSSL], https://brew.sh/[brew], and macOS.
+[[install]]
+== Install an OS onto boot media
+
+To use your Raspberry Pi, you must first install (flash) an *operating system (OS)* onto your storage device, making it a boot device. By default, Raspberry Pi devices check for an OS on any SD card inserted into the SD card slot. Some Raspberry Pi models allow you to boot an OS from other storage devices, such as USB drives, storage connected through a HAT, and network storage. The following instructions assume that you're using a microSD card.
+
+We recommend installing an OS to your storage device using *Raspberry Pi Imager* on another computer. For instructions, see <<imager-install>>. If you don't have access to another computer for writing an OS image to the storage device, you might be able to install an operating system directly on your Raspberry Pi from the internet. For instructions, see <<network-install>>.
+
+=== Exceptions
+Raspberry Pi 500 and some Raspberry Pi desktop and personal computer kits come with a microSD card that's pre-installed with Raspberry Pi OS. Raspberry Pi 500+ also includes an SSD with Raspberry Pi OS pre-installed. In these cases, you don't have to follow the installation instructions on this page. However, we recommend that you update the pre-installed OS to the latest version. For instructions, see xref:../computers/os.adoc#update-software[Update your current Raspberry Pi software].
+
+If you want to reconfigure your Raspberry Pi, you can do so from the menu at the top of the display attached to your Raspberry Pi. For example, you can set or change your wireless network from the Wi-Fi icon in the top-right corner. For instructions, see xref:../computers/configuration.adoc#connect-to-wireless[Connect to a wireless network] in the *Configuration* page.
+
+=== Prerequisites
+To install an OS on a storage device, you need:
+
+* A blank storage device to be your boot media, typically a microSD card. For more information, see xref:../computers/getting-started.adoc#boot-media[Boot media].
+* A computer you can use to write the OS image onto your storage device so that your Raspberry Pi can boot from it.
+* A way to plug your storage device into that computer.
+
+[[imager-install]]
+=== Install using Imager
+
+Raspberry Pi Imager is a tool you use to download and write OS images for your Raspberry Pi on Mac, Windows, and Linux.
+
+Imager includes many popular OS images for Raspberry Pi devices, and supports loading images that have been manually downloaded from either https://www.raspberrypi.com/software/operating-systems/[Raspberry Pi] or third-party vendors such as https://ubuntu.com/download/raspberry-pi[Ubuntu].
+
+During configuration with Imager, you can also preconfigure credentials and remote access settings for your Raspberry Pi device.
+
+////
+TODO: Update this video for the new Imager look & flow (video::ntaXWS8Lk34[youtube,width=80%,height=400px])
+////
+
+==== Step 1. Install and launch Imager
+
+Download and install Raspberry Pi Imager on to your computer (Windows, Mac, or Linux).
+
+. Install Imager in one of the following ways:
+* On Windows and Mac, download the latest version from the https://www.raspberrypi.com/software/[Raspberry Pi website] and run the installer.
+* On Raspberry Pi OS, run `sudo apt install rpi-imager`.
+* On other Linux operating systems, download the latest version as an AppImage from the https://www.raspberrypi.com/software/[Raspberry Pi website] and make the AppImage executable.
+
+. Launch the Raspberry Pi Imager application in one of the following ways:
+* Find Imager in your *Applications* menu.
+* Select the Raspberry Pi Imager icon on your computer's desktop.
+* From the command line, run the AppImage file as root. For example, with the command: `sudo ./imager_<version>_amd64.AppImage`, where `<version>` is a number representing the most recent Imager version.
+
+==== Step 2. Configure the fundamentals
+
+Tell Raspberry Pi Imager what combination of hardware and OS you want to use:
+
+. In the *Device* tab, select your Raspberry Pi model from the list and then select *Next*.
++
+image::images/imager/device-tab.png[alt="Raspberry Pi Imager Device tab.",width="80%"]
+
+. In the *OS* tab, choose an operating system and then select *Next*.
++
+You can either choose an existing OS to install (the recommended OS for your Raspberry Pi model is at the top of the list) or select *Use Custom* to install an OS from an image on your computer.
++
+image::images/imager/os-tab.png[alt="Operating system selections in Imager.",width="80%"]
+
+. Connect your storage device to your computer. For example, plug a microSD card into your computer using an external or built-in SD card reader.
+
+. In the *Storage* tab, select your storage device and then select *Next*.
++
+If you have more than one storage device connected to your computer, take care to choose the correct storage device. You can often identify the correct storage device by size. If you're unsure, disconnect the other devices until you've identified the device that you want to image.
++
+If the OS you're writing is customisable, the *Customisation* tab opens.
++
+image::images/imager/storage-tab.png[alt="Storage selection options in Imager.",width="80%"]
++
+WARNING: We strongly recommend that you keep *Exclude system drives* selected. This prevents you from permanently erasing your data and rendering your host computer inoperable.
+
+We recommend that you now follow the instructions in <<customisation>>. If you don't want to do this now, you're asked for the same information again at first boot. For Raspberry Pi OS, this first-boot configuration happens in the xref:getting-started.adoc#first-configuration[configuration wizard].
+
+[[customisation]]
+==== Step 3. Customise your operating system (recommended)
+
+Raspberry Pi OS and some third-party operating systems support customisation.
+
+We strongly recommend that you set up your Raspberry Pi now, but you can skip this by choosing *Skip customisation*.
+
+If you don't configure your Raspberry Pi now, the OS asks you for the same information after first boot.
+
+If you're installing an OS that supports customisation, you can preconfigure:
+
+. The device hostname
+. The time zone
+. A username and password
+. Wi-Fi credentials
+. Remote connectivity
+. Raspberry Pi Connect
++
+If you've already completed the customisation steps with Imager, the values for some of these settings might already be filled in.
+
+To customise your operating system, open the *Customisation* tab of Imager and then follow the instructions for each of the following subtabs:
+
+===== Hostname
+
+In the *Hostname* subtab, enter a name for your Raspberry Pi that includes only letters, numbers, and hyphens, then select *Next*.
+
+Your Raspberry Pi broadcasts this hostname to the network using https://en.wikipedia.org/wiki/Multicast_DNS[mDNS]. When you connect your Raspberry Pi to your network, other devices on that network can communicate with your Raspberry Pi using `<hostname>.local` or `<hostname>.lan`.
+
+image::images/imager/hostname-subtab.png[alt="Imager OS Customisation Hostname tab.",width="80%"]
+
+===== Localisation
+
+In the *Localisation* subtab, choose your capital city. Imager autocompletes the time zone and keyboard layout for that city. You can also change these settings independently of one another.
+
+Your selection also sets the Wi-Fi regulatory domain; the regulatory domain always corresponds to the selected capital city.
+
+When you're done, select *Next*.
+
+image::images/imager/localisation-subtab.png[alt="Imager OS Customisation Localisation tab.",width="80%"]
+
+===== User
+In the *User* subtab, enter a username and password for the admin user of your Raspberry Pi, then select *Next*.
+
+image::images/imager/user-subtab.png[alt="Imager OS Customisation User tab.",width="80%"]
+
+The username must be lowercase and contain only letters, numbers, underscores, and hyphens.
+
+* For a headless setup, these are the credentials used to connect to your Raspberry Pi over the network.
+* Creating a username and password at this stage doesn't require these credentials to be entered whenever you boot your Raspberry Pi. To require a password on boot, turn off Auto Login. For instructions, see xref:../computers/configuration.adoc#auto-login[Require a password from startup].
+* The password you set here is required when running commands as a superuser (`sudo` commands). If you prefer not to enter a password for these commands, you can turn off this requirement later. For instructions, see xref:../computers/configuration.adoc#disable-sudo-password[Turn off password for superuser commands] in the *Configuration* page.
+
+===== Wi-Fi
+In the *Wi-Fi* subtab, select whether to connect to a *secure network* or an *open network*. Before this, if you're on a Mac computer, you might be asked whether you'd like to pre-fill the Wi-Fi password from the system keychain. Confirm whether you want to do this and enter your Mac computer credentials.
+
+On first use, Imager typically pre-fills the SSID (name) and password of the Wi-Fi network you're currently connected to. If there's no pre-filled information, or if you want to change it, enter the SSID of the appropriate wireless network. For secure networks, enter and confirm the password for the network. If your network doesn't broadcast an SSID publicly, enable the *Hidden SSID* setting so that your OS can find it. Select *Next* when you're done.
+
+If you're setting up a headless Raspberry Pi, it's important that you set up your Wi-Fi connection now because your Raspberry Pi needs to know how to get online the moment it boots.
+
+image::images/imager/wifi-subtab.png[alt="Imager OS Customisation Wi-Fi tab.",width="80%"]
+
+===== Remote Access
+In the *Remote Access* subtab, configure your SSH settings and then select *Next*.
+
+image::images/imager/ssh-subtab.png[alt="Imager OS Customisation Remote Access tab.",width="80%"]
+
+To use your Raspberry Pi remotely over your network, turn on *Enable SSH* using the corresponding toggle.
+
+If you plan to run a headless Raspberry Pi (rather than using it like a desktop computer), you can either turn on SSH, or configure *Raspberry Pi Connect* for your device.
+
+If you enable SSH, choose one of the following authentication methods:
+
+* *Use password authentication*: To sign in to your Raspberry Pi over the network using the username and password you provided in the *Customisation > User* tab.
+* *Use public key authentication*: To configure your Raspberry Pi to use SSH key-based authentication. Imager reveals a field to provide a public key. If you already have a public RSA key in your SSH configuration, Imager uses that public key. If you don't you can copy a public key into Imager or select *Browse* to locate a public key file on your computer.
+
+===== Raspberry Pi Connect
+Some operating systems also show the *Raspberry Pi Connect* subtab. To link your device to your Raspberry Pi Connect account, complete the following steps:
+
+. Use the toggle to turn on *Enable Raspberry Pi Connect*.
++
+image::images/imager/connect-subtab.png[alt="Imager OS Customisation Raspberry Pi Connect tab.",width="60%"]
+. Select *Open Raspberry Pi Connect*. This opens Raspberry Pi Connect in your default web browser.
++
+image::images/imager/os-customisation-site.png[alt="Raspberry Pi Connect page.",width="60%"]
+. Sign in to your Raspberry Pi ID account or, if you don't have an account yet, sign up.
+. In the *New auth key* page, create your auth key. This is a single-use, temporary token. Personal auth keys expire six hours after creation, and organisation auth keys expire between 1 and 90 days after creation (1 day by default). To use the token, boot your Raspberry Pi and connect it to the internet before the expiry time.
++
+image::images/imager/connect-auth-key.png[alt="Raspberry Pi Connect new auth key page.",width="60%"]
+If you're a member of one or more organisations, select the organisation or account to associate the key with. Then select *Create auth key and launch Raspberry Pi Imager*.
+. Your browser might ask you whether you want to allow the site to open Raspberry Pi Imager. Confirm that you want to open Raspberry Pi Imager.
+** Imager opens at the *Raspberry Pi Connect* tab, which shows a message to confirm that Imager received the authentication token from the browser and a field containing the token.
+** If the token isn't copied across, you can copy it into Imager manually. Open the *Having trouble?* section of the Raspberry Pi Connect web page, copy the token, and paste it into the token field in Imager.
+. Select *Next* to continue.
+
+////
+. Some device and operating system combinations now show the *Customisation > Interfaces & Features* tab. On this tab, you can enable the following features:
+* Hardware interfaces needed to use your Raspberry Pi with certain peripherals, such as sensors, displays, network controllers, or embedded systems.
+* USB Gadget Mode feature. For more information, see https://github.com/raspberrypi/rpi-usb-gadget?tab=readme-ov-file[Raspberry Pi USB Gadget].
++
+image::images/imager/os-customisation-interfaces.png[alt="Imager OS Customisation Interfaces & Features tab.",width="80%"]
++
+After choosing your options, select *Next*.
+////
+
+==== Step 4. Set Imager options
+You can choose to configure the behaviour of Imager during a write. Select *App Options* in the bottom-left corner of Imager and then use the toggles next to each of the following options in the App Options window to turn them on or off:
+
+* *Play sound when finished* configures Imager to play an alert sound when the write finishes.
+* *Eject media when finished* configures Imager to automatically unmount the storage device when the write finishes.
+* *Enable anonymous statistics telemetry* configures Imager to send anonymous usage statistics about your device and operating system. For more information, see https://github.com/raspberrypi/rpi-imager?tab=readme-ov-file#anonymous-metrics-telemetry[Anonymous metrics (telemetry)].
+* *Disable warnings* configures Imager to suppress warning messages during the write process.
+
+Advanced users can also set a custom *Content Repository* to retrieve the operating system and devices list from. For more information, see xref:../computers/raspberry-pi.adoc#IMAGER_REPO_URL[Imager repo URL].
+
+Select *Save* in the bottom-right corner of the *App Options* window when you're done.
+
+image::images/imager/app-options.png[alt="App Options dialog.",width="60%"]
+
+==== Step 5. Write the image to the storage device
+
+After you've gone through the tabs in Imager, you can review a *Summary* of your choices in the *Writing* tab.
+
+image::images/imager/write.png[alt="Reviewing your choices in Imager before writing.",width="80%"]
+
+If you're happy with your choices and want to proceed:
+
+. Select *Write* in the bottom-right corner of Imager.
+. Imager shows a prompt warning you that you're about to overwrite all data on your storage media. To continue, select *I understand, erase and write*. If you see an admin prompt asking for permissions to read and write to your storage medium, grant Imager the permissions to proceed.
++
+image::images/imager/are-you-sure.png[alt="Confirming a reimage of a storage device in Imager.",width="80%"]
+. Imager begins writing your image to the storage device. This can take a few minutes.
+. After writing the image, Imager verifies that the image is correctly written. This can also take a few minutes. We recommend that you complete the verification step. However, if you want to cancel verification, select *Skip verification*.
+. After the image is written and verified, Imager shows the *Done* tab. Select *Finish* to exit Imager.
+
+You can now follow the instructions for either the xref:getting-started.adoc#desktop-setup[Standard (desktop) setup] or the xref:getting-started.adoc#headless-setup[Headless (remote) setup] to get your Raspberry Pi started according to your needs.
+
+[[network-install]]
+=== Install over the network
+You can install an OS onto a storage device using a version of Raspberry Pi Imager downloaded over the network. With *Network Install*, you don't need a separate SD card reader or computer other than your Raspberry Pi. You can run Network Install on any compatible storage device including SD cards and USB storage.
+
+If your Raspberry Pi runs an older bootloader, you might need to update the bootloader to use Network Install. For instructions, see xref:../computers/configuration.adoc#update-bootloader-version[Update the bootloader] in the *Configuration* page.
+
+////
+TODO: Update this video for the new Imager look & flow video::b1SYVpM9lto[youtube,width=80%,height=400px]
+////
+
+==== Prerequisites
+Network Install requires the following:
+
+* A compatible Raspberry Pi model running firmware that supports *Network Install*. Network Install only runs on flagship models since Raspberry Pi 4B and Raspberry Pi keyboard computers (400, 500, and 500+).
+* A monitor and keyboard physically connected to your Raspberry Pi device.
+* A wired internet connection.
+* A blank, compatible storage device, such as an SD card or USB drive, attached to your Raspberry Pi device. This is the destination that Network Install writes the OS image to. If the storage device already has an OS (or any bootable system) installed, and if you don't hold down the *Shift* key, your Raspberry Pi boots normally instead of entering into Network Install.
+
+==== Launch Network Install
+
+. Connect a monitor and keyboard to your Raspberry Pi device, then either:
+.. Connect a blank (non-bootable) storage device, such as an SD card or USB drive, to your Raspberry Pi device,
++
+or
++
+.. Hold down the *Shift* key on the keyboard connected to your Raspberry Pi whilst powering on your Raspberry Pi.
++
+image::images/network-install-1.png[alt="The Network Install screen.",width="80%"]
+. If not already connected, connect your Raspberry Pi to the internet using an Ethernet cable. When you're connected to the internet, Raspberry Pi downloads the Raspberry Pi installer. If the download fails, repeat the process from the previous step to try again.
++
+image::images/network-install-2.png[alt="Starting Network Install.",width="80%"]
+. Wait for the installer to download.
++
+image::images/network-install-3.png[alt="Downloading Imager using Network Install.",width="80%"]
+. When Raspberry Pi installer finishes downloading, your Raspberry Pi automatically loads Raspberry Pi Imager. Follow the instructions in <<imager-install>>.
++
+image::images/network-install-4.png[alt="Choose a storage device.",width="80%"]
+
+For more information about Network Install configuration, see xref:raspberry-pi.adoc#http-boot[HTTP boot].
+
+== Configuration
+Most essential configuration for your Raspberry Pi is typically completed during the OS installation process in Imager.
+
+[[first-configuration]]
+=== Configuration on first boot
+
+This section covers post-installation configuration, whether you:
+
+* Skipped the customisation steps in Imager.
+* Didn't use Imager to install your OS.
+* Are using a Raspberry Pi with a pre-installed OS, or
+* Want to change settings after installation to tailor your Raspberry Pi to your needs.
+
+If you followed the steps to preconfigure your Raspberry Pi during OS customisation in Imager, as described in *Step 3* of xref:../computers/getting-started.adoc#install[Install an OS onto boot media], you don't need to configure your Raspberry Pi again unless you want to change any settings.
+
+If you have a *desktop setup* and skipped OS customisation in Imager, or if you're using a Raspberry Pi with a pre-installed OS, you're presented with a configuration wizard on first boot.
+
+A *headless setup* bypasses the configuration wizard; because you preconfigured the settings in Imager, your headless Raspberry Pi boots straight to the network. If you chose SSH for remote access, you can connect remotely to your headless Raspberry Pi by typing `ssh username@hostname.local` into the command line on your computer. For more information, see xref:../computers/getting-started.adoc#headless-setup[Headless (remote) setup].
+
+You need a monitor and a keyboard to navigate through the configuration wizard. A mouse is optional; you can use the *Tab* key to advance through the wizard.
+
+If you plan on pairing a USB Bluetooth mouse or keyboard as part of this configuration process, plug the USB adapter in before booting your Raspberry Pi.
+
+The configuration wizard walks you through the following setup options. Select *Next* in the bottom-right corner to proceed through each of the options.
+
+==== Welcome and Bluetooth
+The following image shows the configuration wizard's welcome window, which is also when your Raspberry Pi tries to connect to any Bluetooth peripherals it finds.
+
+NOTE: The IP address on this welcome window is only visible if your Raspberry Pi is connected to a network over Ethernet.
+
+.Configuration wizard welcome window
+image::images/initial-setup/welcome_bt.png[alt="Welcome window of the configuration window.",width="100%"]
+
+If you're using a Bluetooth keyboard or mouse, your Raspberry Pi searches for pairable devices and connects to the first device it finds for each peripheral. This process works with built-in or external USB Bluetooth adapters. If you're using a USB adapter, plug it in before booting your Raspberry Pi.
+
+.Attempting to pair with a Bluetooth device
+image::images/initial-setup/pairing.png[alt="Configuration window attempting to pair with a Bluetooth device.",width="100%"]
+
+.Success message for Bluetooth pairing
+image::images/initial-setup/pairing_success.png[alt="Success message for Bluetooth pairing.",width="100%"]
+
+==== Country
+Use the dropdown menus to set your country, language, and time zone. Optionally, you can also:
+
+* Select *Use English language* to ensure that the desktop interface is displayed in English, overriding local language default.
+* Select *Use US keyboard* to ensure that the OS interprets input from a US-layout keyboard correctly.
+
+.Setting your country window in the configuration wizard
+image::images/initial-setup/locale.png[alt="Adjust country, language, time zone, and keyboard layout.",width="100%"]
+
+==== User
+
+Configure your username and password for the default user account. Your username must start with a letter and can only contain lowercase letters, numbers, underscores, and hyphens.
+
+.Create User window in the configuration wizard
+image::images/initial-setup/user.png[alt="Create your username and password.",width="100%"]
+
+==== Wireless network
+
+Choose your preferred Wi-Fi network from the list. If your network requires a password, you're then prompted to enter it before continuing. You can skip this step if you prefer.
+
+.Selecting a wireless network in the configuration wizard
+image::images/initial-setup/network.png[alt="Selecting a wireless network.",width="100%"]
+
+==== Default browser
+
+Select your default internet browser: *Chromium* or *Firefox*. Optionally, to save space on your boot media, uninstall the browser that you don't set as default.
+
+image::images/initial-setup/browser.png[alt="The Choose Browser page.",width="100%"]
+
+==== Software update
+
+If you configured internet access for your Raspberry Pi, or if your Raspberry Pi is connected to the internet using an Ethernet cable, you can update your OS and software to the latest versions.
+
+During the software update process, the configuration wizard removes the non-default browser if you opted to uninstall it in the *Browser* step.
+
+A software update can take up to half an hour, depending on how many updates are available and the speed of your internet connection.
+
+.Updating your software in the configuration wizard
+image::images/initial-setup/update.png[alt="You can download the latest software updates during the wizard before you boot for the first time.",width="100%"]
+
+==== Finish
+
+When you've gone through each step of the configuration wizard, a confirmation window stating that your system is set up appears. Select *OK* and then *Launch* (or, if you see *Restart* instead, select this to reboot your Raspberry Pi). Your configuration is applied to your Raspberry Pi, which then boots and loads the graphical desktop environment where you can use windows, icons, and menus, similar to other desktop computers.
+
+.System update success message
+image::images/initial-setup/ok.png[alt="System is up to date.",width="100%"]
+
+.Setup complete success message
+image::images/initial-setup/launch.png[alt="Setup complete.",width="100%"]
+
+=== Configuration changes
+You can reconfigure your Raspberry Pi from the command line or the desktop.
+
+To reconfigure from the desktop, open the Raspberry Pi icon in the top-left corner, then navigate to *Preferences > Control Centre*.
+
+To reconfigure from the Terminal, enter `sudo raspi-config` to open the *Control Centre*.
+
+For detailed instructions, see xref:configuration.adoc[Configuration].
+
+[[shutdown]]
+== Shutdown options
+Raspberry Pi OS provides options for safely shutting down, restarting, locking, and signing out of your Raspberry Pi device from the desktop and from the command line.
+
+[[desktop-shutdown]]
+=== Desktop shutdown options
+The *Shutdown Options* window in the desktop gives you the following options:
+
+* *Shutdown.* Closes all running programs and powers off your Raspberry Pi. Use this option before disconnecting your Raspberry Pi from power.
+* *Reboot.* Restarts your system. This is useful after applying updates, changing configurations, and connecting to new hardware.
+* *Logout.* Signs out of your current user account and closes all running programs without shutting down the system.
+
+To lock your screen, use the keyboard shortcut: *Ctrl+Alt+L*.
+
+=== Open shutdown options from the desktop
+To open the *Shutdown Options* window from the desktop, select the Raspberry Pi icon in the top-left corner of the system tray, then select *Shutdown*.
+
+The following devices also offer shutdown shortcuts:
+
+* Raspberry Pi 5: Double-press the power button to shut the device down (the *Shutdown Options* window might display briefly).
+* Raspberry Pi 5, 500, or 500+: Single press the *power button* to open the *Shutdown Options* window.
+* Raspberry Pi 400: Press *Fn* + *F10* to open the *Shutdown Options* window.
+
+.Desktop shutdown option
+image::images/shutdown.png[alt="Shutdown from the desktop menu.",width="30%"]
+
+.Desktop shutdown menu
+image::images/shutdown-menu.png[alt="Shutdown menu.",width="25%"]
+
+You can use the mouse, or your keyboard cursor keys and *Enter* key, to select from one of the following options: *Shutdown*, *Reboot*, and *Logout*, described in <<desktop-shutdown>>.
+
+To exit the menu without choosing any of these options, select the cross (*×*) icon at the top-right corner or press *Esc*.
+
+[[cmd-shutdown]]
+=== Shutdown options from the command line
+You can perform most shutdown options from the command line.
+
+Open a Terminal and then use one of the following commands:
+
+[cols="2,2", options="header"]
+|===
+| Action | Command
+
+| Shut down your Raspberry Pi
+| `sudo poweroff`
+
+| Reboot your Raspberry Pi
+| `sudo reboot`
+
+| When in Console mode, sign out of your Raspberry Pi without shutting down the system
+| `logout`
+
+|===
+
+[[troubleshooting]]
+== Troubleshooting
+
+If your Raspberry Pi doesn't boot within 5 minutes, check the status LED. If the status LED is flashing, check the xref:configuration.adoc#led-warning-flash-codes[LED warning flash codes] to diagnose the problem.
+
+If your Raspberry Pi still doesn't boot and the LED information doesn't help you to resolve the issue, try the following:
+
+* If you used a boot device other than an SD card, try booting from an SD card.
+* Re-image your SD card by following the instructions in xref:getting-started.adoc#imager-install[Install using Imager], completing the entire *Verify* step.
+* Using Imager on a host computer, xref:raspberry-pi.adoc#bootloader_reflash[reflash the bootloader] on your storage device and then xref:getting-started.adoc#imager-install[re-image your SD card].
+[[next]]
+== Next steps
+After installing and configuring your Raspberry Pi, you can download software, start using your new Raspberry Pi computer, and connect to the wider community for ideas and support.
+
+=== Recommended applications
+Raspberry Pi OS includes pre-installed applications that allow you to start using your Raspberry Pi as soon as possible.
+
+You can download other recommended applications for free: select the Raspberry Pi icon in the top-left corner of the screen, and then select *Preferences > Recommended Software*. From here, you can install a variety of recommended applications.
+
+For example, if you plan to use your Raspberry Pi as a home computer, you might find LibreOffice useful for writing and editing documents and spreadsheets. You can also make your Raspberry Pi more accessible with the Orca screen reader, found under *Universal Access*.
+
+=== Resources
+Explore our https://www.raspberrypi.com/tutorials/[tutorials] to discover various ways you can use your new Raspberry Pi computer.
+
+You can learn to code, control external devices, and build new projects by following tutorials that interest you.
+
+For support with official Raspberry Pi products, or to connect with other Raspberry Pi users, visit the https://forums.raspberrypi.com/[Raspberry Pi forums].
+
+For more inspiration, subscribe to https://magazine.raspberrypi.com/[Raspberry Pi Magazine], which features in-depth tutorials, step-by-step projects, coding guides, and community stories.
+

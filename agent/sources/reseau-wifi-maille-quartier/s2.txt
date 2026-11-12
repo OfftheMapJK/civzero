@@ -1,0 +1,56 @@
+# Copie de la source s2 : « 802.11s - Introduction to Wireless Mesh Networking (OpenWrt Wiki) »
+# Auteur : Contributeurs du wiki OpenWrt
+# Lien : https://openwrt.org/docs/guide-user/network/wifi/mesh/80211s
+# Licence : CC BY-SA 4.0
+# Copiée le : 2026-11-12
+
+[OpenWrt Wiki] 802.11s - Introduction to Wireless Mesh Networking Learn about OpenWrt Learn about
+OpenWrt Supported devices Packages Downloads Documentation Quick start guide User guide Developer
+guide Security FAQ Forum Contributing Submitting patches Reporting bugs Contributing to wiki Project
+About OpenWrt Rules Infrastructure Mirrors Donate Merchandise Website Trademark policy License
+Contacts Privacy policy &times; 802.11s - Introduction to Wireless Mesh Networking 802.11s mesh Data
+frame 802.11s does not add a new Frame Control Type. Mesh data is a QoS Data frame ( Type=10 ,
+Subtype=1000 ) with Mesh Control Present set in the QoS Control field. The Mesh Control field is
+prepended to the MSDU (and is encrypted with it if the frame is protected). 2 2 6 6 6 2 6 2 0/4 6 /
+12 / 18 variable 4
++----------+----------+--------+--------+----------+----------+--------+----------+--------+---------------+------------+-----+
+| Frame | Duration | Addr1 | Addr2 | Addr3 | Seq | Addr4 | QoS | HT | Mesh Control | MSDU | FCS | |
+Control | /ID | RA | TA | Mesh-DA | Ctrl |Mesh-SA | Control | Ctrl | (in body) | payload | |
++----------+----------+--------+--------+----------+----------+--------+----------+--------+---------------+------------+-----+
+| | | | Type=10 Data | bit 8 = 1 | | Subtype=1000 QoS Data | Mesh Control | | To DS / From DS select
+address layout | Present | Mesh Control field 1 1 4 0 / 6 / 12
++---------------+---------------+------------------+---------------------------+ | Mesh Flags | Mesh
+TTL | Mesh Sequence No | Mesh Address Extension | | AE = bits 1-0 | hop limit | duplicate/flood |
+Addr5 DA and/or Addr6 SA |
++---------------+---------------+------------------+---------------------------+ Address Extension
+Mode (AE) in Mesh Flags bits 1–0: AE Extra addresses Total MAC addresses 00 none 4 — RA, TA,
+Mesh-DA, Mesh-SA 01 one 5 10 Addr5 + Addr6 6 — plus original Ethernet DA / SA 11 reserved —
+Addressing in an MBSS Case To DS From DS AE Addr1 Addr2 Addr3 Addr4 Addr5 Addr6 Internal unicast 1 1
+00 RA (next hop) TA Mesh-DA Mesh-SA — — Proxied unicast (outside mesh) 1 1 10 RA TA Mesh-DA Mesh-SA
+final DA original SA Group-addressed mesh Data 0 1 00 group TA Mesh-DA (not in MAC hdr) — —
+Management frames Peering, HWMP and mesh config use Management Action frames: Category 13 — Mesh
+Category 14 — Multihop (these also carry Mesh Control so MMPDUs can be forwarded) Type 11 Extension
+is not mesh; it is used for DMG / S1G beacons. Early 802.11s drafts briefly defined Type 11 Mesh
+Data / Mesh Management; that was removed when 802.11s was merged into IEEE 802.11. Frame Control
+Type / Subtype reminder B0 B1 | B2 B3 | B4 B5 B6 B7 | B8 | B9 | B10 | B11 | B12 | B13 | B14 | B15
+-------+-------+-------------+----+----+-----+-----+-----+-----+-----+------ Proto | Type | Subtype
+|ToDS|FrDS|More |Retry| Pwr |More |Prot |+HTC Ver | | | | |Frag | |Mgmt |Data |ected|Order
+-------+-------+-------------+----+----+-----+-----+-----+-----+-----+------ 00 | 10 | 1000 |
+typical mesh Data (QoS Data) Type (B3 B2) Meaning 00 Management 01 Control 10 Data (mesh Data uses
+this + QoS subtype) 11 Extension (not used for 802.11s) Tagged Ethernet across a mesh hop Ethernet
+(tagged) 802.11s mesh hop Ethernet again DA SA 8100 TCI Type data RA TA MeshDA MeshSA [AE=10] DA SA
+[8100 TCI] Type data | Addr5=DA Addr6=SA | +---- portal TX ---------------- portal RX
+----------------+ Mesh Control + MSDU may still contain 0x8100 HWMP does not see VID; remote bridge
+decides whether the egress port emits the tag IEEE 802.11s Mesh on OpenWrt The Linux kernel began
+incorporating support for the IEEE 802.11s standard around 2008. OpenWrt began integrating the Linux
+kernel code for IEEE 802.11s shortly after the standard was officially released in 2011. For full
+information about OpenWrt support, follow this link: 802-11s Verifying IEEE 802.11s Support on a
+Router Apart from a few exceptions, most wireless drivers used by OpenWrt support 802.11s mesh.
+Exceptions are Broadcom wireless chipsets and most usb wireless dongles. Use the following to
+determine if your hardware supports 802.11s mesh. iw list | grep "Supported interface modes" -A 9
+... Supported interface modes: * IBSS * managed * AP * AP/VLAN * WDS * monitor * mesh point *
+P2P-client * P2P-GO ... Example: ath9k in router iw list ... valid interface combinations: * #{
+managed, WDS } <= 2048, #{ AP, mesh point } <= 8, #{ P2P-client, P2P-GO } <= 1, #{ IBSS } <= 1,
+total <= 2048, #channels <= 1, STA/AP BI must match * #{ IBSS, AP, mesh point } <= 1, total <= 1,
+#channels <= 1, STA/AP BI must match, radar detect widths: { 20 MHz (no HT), 20 MHz } ... Last
+modified: 2026/09/09 14:42 by howl

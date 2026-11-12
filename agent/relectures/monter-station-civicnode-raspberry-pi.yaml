@@ -1,0 +1,122 @@
+fiche: monter-station-civicnode-raspberry-pi
+date: '2026-11-12'
+modele: claude-sonnet-5-5
+etapes:
+  - 'n': 1
+    verdict: conforme
+    source: s1
+    passage: >-
+      Raspberry Pi 4 Model B and Raspberry Pi 400 | 5 V at 3 A ; Raspberry Pi 5 and Raspberry Pi 500 | 5 V at 5 A ; Raspberry Pi 3 (all models) | 5 V at 2.5 A ; Raspberry Pi Zero (all models) | 5 V at
+      2.5 A. For Raspberry Pi OS Lite ... at least 8 GB of storage.
+    remarque: >-
+      Les quatre valeurs d'alimentation et les 8 Go sont dans s1 (8 Go pour Raspberry Pi OS Lite, ce que l'étape 3 choisit). « il en faut bien davantage pour Wikipédia » : aucune source, mais la fiche
+      le déclare (À VALIDER). La Vérification (lire l'étiquette de l'alimentation) renvoie à une autre fiche, pas à s1.
+  - 'n': 2
+    verdict: conforme
+    source: s1
+    passage: >-
+      Download and install Raspberry Pi Imager on to your computer (Windows, Mac, or Linux). On Windows and Mac, download the latest version from the Raspberry Pi website and run the installer. Launch
+      the Raspberry Pi Imager application.
+    remarque: 'Sur Linux, s1 donne d''autres moyens (apt ou AppImage) que la fiche ne reprend pas : omission, pas écart. La Vérification (la fenêtre s''ouvre) n''est pas dans s1.'
+  - 'n': 3
+    verdict: conforme
+    source: s1
+    passage: >-
+      Tell Raspberry Pi Imager what combination of hardware and OS you want to use (Device tab, OS tab). ... we recommend choosing Raspberry Pi OS Lite as your operating system in Raspberry Pi Imager.
+      In the Storage tab, select your storage device ... We strongly recommend that you keep Exclude system drives selected. ... You can often identify the correct storage device by size.
+    remarque: >-
+      Tout y est : modèle, système Lite (« sans bureau, recommandé pour une machine sans écran » = headless), carte, option « Exclude system drives », identification du support par la taille
+      (Vérification).
+  - 'n': 4
+    verdict: conforme
+    source: s1
+    passage: >-
+      Hostname: enter a name ... that includes only letters, numbers, and hyphens. Localisation: choose your capital city. Imager autocompletes the time zone and keyboard layout ... also sets the
+      Wi-Fi regulatory domain. User: The username must be lowercase and contain only letters, numbers, underscores, and hyphens. Wi-Fi: enter the SSID ... enter and confirm the password for the
+      network. Remote Access: turn on Enable SSH ... Use password authentication.
+    remarque: >-
+      Les six réglages de l'Action sont dans s1. L'exemple `civicnode` est de la fiche. Vérification (noter nom, compte et mot de passe sur papier) : conseil de la fiche, absent de s1 ; ajout en
+      Vérification seulement, verdict inchangé.
+  - 'n': 5
+    verdict: conforme
+    source: s1
+    passage: >-
+      Select Write ... I understand, erase and write ... When you've configured your microSD card ... insert it into the microSD slot with the label facing away from the Raspberry Pi. ... Connecting
+      your Raspberry Pi to power is the last step ... plug your power supply into the port ... labelled either POWER IN, PWR IN, or PWR. Your Raspberry Pi turns on as soon as you connect it to power.
+      ... indicated by the power or status LED lighting up.
+    remarque: >-
+      Conforme. Deux nuances : (1) s1 réserve le cas du Raspberry Pi 5 dont l'EEPROM est réglée pour attendre le bouton ; la fiche dit « dès qu'il est alimenté » sans cette exception (omission). (2)
+      Le libellé du bouton d'écriture n'est pas donné dans l'Action ; la fiche le marque À VALIDER alors que s1 le donne (« Write », puis « I understand, erase and write »). Écart déclaré, pas un
+      défaut de fidélité.
+  - 'n': 6
+    verdict: conforme
+    source: s2 et s1
+    passage: >-
+      s2 : ssh <username>@<ip address> ... When the connection works, you will see a security warning. Type yes to continue. You will only see this warning the first time you connect. Enter your
+      account password when prompted. You now see the Raspberry Pi command prompt: <username>@<hostname> ~ $. s1 : other devices on that network can communicate with your Raspberry Pi using
+      <hostname>.local.
+    remarque: >-
+      La commande, le `yes` à la première connexion, le mot de passe et l'invite sont dans s2 ; le nom `<hostname>.local` dans s1 (et s2, section mDNS). s2 donne `ssh` avec l'adresse IP ; la fiche met
+      `civicnode.local`, et la source citée (s1) justifie ce nom. L'invite `<utilisateur>@civicnode` est l'invite de s2 avec le nom de la machine.
+  - 'n': 7
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: >-
+      Étape déclarée « aucune source ouverte (étape créée, à tester) » : notée, ne compte pas comme un ajout et ne change pas le verdict. Rien dans s1 à s4 n'est cité pour elle ; je n'ai pas cherché
+      Kiwix dans les copies.
+  - 'n': 8
+    verdict: sans_source
+    source: aucune
+    passage: ''
+    remarque: >-
+      Étape déclarée « aucune source ouverte (étape créée, à tester ; les options viennent de s5, en référence) » : notée comme déclarée. s5 est en référence, sans copie : elle ne fonde aucune étape
+      ici.
+  - 'n': 9
+    verdict: conforme
+    source: s2
+    passage: 'To copy a folder and all of its contents, pass the folder name with the -r (recursive) flag: $ scp -r project/ <username>@<pi_ip_address>:'
+    remarque: >-
+      Le geste cité (`scp -r` sur un dossier, destination `utilisateur@adresse:`) est dans s2. La fiche met `civicnode.local` à la place de l'adresse IP. Le serveur web (`darkhttpd`, port 8000) est
+      déclaré « aucune source ouverte (étape créée, à tester) » : noté comme déclaré, sans changer le verdict.
+  - 'n': 10
+    verdict: conforme
+    source: s1
+    passage: Reboot your Raspberry Pi | sudo reboot (Shutdown options from the command line)
+    remarque: '`sudo reboot` est dans s1 (et s2). Les services systemd sont déclarés « aucune source ouverte (étape créée, à tester) » et À VALIDER : notés comme déclarés, verdict inchangé.'
+  - 'n': 11
+    verdict: conforme
+    source: s1
+    passage: Your Raspberry Pi broadcasts this hostname to the network using mDNS. ... other devices on that network can communicate with your Raspberry Pi using <hostname>.local or <hostname>.lan.
+    remarque: >-
+      La source dit que le nom est annoncé sur le réseau ; elle ne parle pas des téléphones. La fiche marque À VALIDER que certains téléphones ne résolvent pas `.local` : lacune déclarée, pas un
+      ajout.
+  - 'n': 12
+    verdict: conforme
+    source: s1
+    passage: Shut down your Raspberry Pi | sudo poweroff. Raspberry Pi OS provides options for safely shutting down ...
+    remarque: '`sudo poweroff` est dans s1. « attendre l''extinction », le voyant d''activité (Vérification) et la date à noter : pas dans s1 ; la fiche marque le comportement des voyants À VALIDER.'
+chiffres:
+  - valeur: 5 V et 3 A (Raspberry Pi 4)
+    trouve: true
+    source: s1
+  - valeur: 5 V et 5 A (Raspberry Pi 5)
+    trouve: true
+    source: s1
+  - valeur: 5 V et 2,5 A (Raspberry Pi 3 ou Zero)
+    trouve: true
+    source: s1
+  - valeur: au moins 8 Go (carte, système seul)
+    trouve: true
+    source: s1
+precautions_absentes: []
+niveaux: >-
+  Niveau vert, sans variante. Les quatre risques de la section Sécurité sont dans les sources : surface métallique et court-circuit (s1, à propos du boîtier), mauvais support effacé (s1, « Exclude
+  system drives » et avertissement d'effacement), coupure de courant et corruption (s3 : « power dropouts can cause storage corruption » ; s1 : arrêt sûr). Le moratoire rouge sur l'ouverture du bloc
+  secteur vient de la fiche, pas des sources.
+remarques: >-
+  Fiche créée : seules les étapes 1 à 6 et les gestes cités des étapes 9, 10, 11, 12 sont jugés. Étapes 7 et 8 entièrement, serveur web de 9 et services de 10 : déclarés « aucune source ouverte (étape
+  créée, à tester) », notés sans effet sur le verdict. Aucun chiffre ni geste attribué à une source qui ne le dit pas. Remarques : « 2,5 A » s'écrit « 2.5 A » dans s1 (même valeur). Section Ressource
+  : « la copie de dossiers (source s2) » est exacte (`scp -r`) ; « signale qu'une alimentation de mauvaise qualité peut corrompre le stockage (source s3) » est dans s3 (« Low quality power supplies
+  can corrupt storage »). Si ça coince : le Zero n'a qu'un port d'alimentation marqué PWR IN (s1) ; l'Overlay File System est dans les options de performance de raspi-config (s4).
+verdict: conforme

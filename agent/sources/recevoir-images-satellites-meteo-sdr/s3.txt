@@ -1,0 +1,114 @@
+# Copie de la source s3 : « Meteor-M No.2-4 »
+# Auteur : Contributeurs de Wikipédia
+# Lien : https://en.wikipedia.org/wiki/Meteor-M_No.2-4
+# Licence : CC BY-SA 4.0
+# Copiée le : 2026-11-12
+
+Meteor-M No.2-4 - Wikipedia Jump to content From Wikipedia, the free encyclopedia Weather satellite
+Meteor-M №2-4 Mission type Meteorological Satellite Operator Roscosmos COSPAR ID 2024-039A
+Spacecraft properties Spacecraft type Meteor-M No.2 Manufacturer Roscosmos Launch mass 2,900kg Dry
+mass 2,700kg Power 2000 watts Start of mission Launch date Feb 29, 2024, 05:43:26 (
+2024-02-29UTC05:43:26 ) UTC Rocket Soyuz 2.1b / Fregat-M Launch site Site 1S, Vostochny Cosmodrome
+Orbital parameters Regime Sun-Synchronous Orbit Altitude 820.7km Meteor ← Meteor-M No.2-3 Meteor-M
+No.2-5 → Meteor-M №2-4 (alternatively, Meteor-M number 2-4) is a Russian meteorological satellite
+which is part of the Meteor-M No.2 series of satellites that are designed to replace the old
+Meteor-3M series of satellites. The missions' primary tasks include environmental monitoring,
+surveillance of solar activity near the Earth, studying the interactions of the ocean and
+atmosphere, and exploring Earth's geology. [ 1 ] [ 2 ] [ 3 ] The satellite also features a
+COSPAS-SARSAT search and rescue system. [ 4 ] [ 5 ] It was successfully launched on 29 February 2024
+on a Soyuz-2.1b launch vehicle from the Vostochny Cosmodrome . [ 6 ] Instruments [ edit ] Name [ 4 ]
+Details [ 7 ] IFKS-2 Advanced IR sounder KMSS Multi-channel scanning unit MSU-MR Low-resolution
+multispectral scanner MTVZA-GR Imager/sounder for atmospheric study SSPD Data collection and
+transmission system. IKOR-M Broadband radiometer sensing outgoing shortwave signals. GGAK-M/RIMS-M
+Mass spectrometer to study the ionosphere and upper atmosphere. GGAK-E/SKIF-6 Spectrometer to detect
+corpuscular radiation and solar radiation. GGAK-E/GALS-E Cosmic rays detector to study corpuscular
+radiation arriving at Earth. MeteoSAR Synthetic aperture X-band radar to study the weather.
+Relevance for amateur radio hobbyists [ edit ] An amateur radio station with a right-hand circularly
+polarized Helical antenna receiving LRPT data from Meteor-M No.2-4 on VHF The satellite continuously
+transmits sensor data and images of the Earth. Some of these transmissions are unencrypted and can
+be received using inexpensive equipment. Amateur radio operators and other radio hobbyists regularly
+receive pictures of the Earth transmitted using Low-rate picture transmission at 137.9 MHz or
+High-resolution picture transmission at 1705 MHz. [ 8 ] Received data packets can be decoded using
+Free software , such as SatDump. [ 9 ] References [ edit ] ↑ Volosín, Juan I. Morales; Kiseleva,
+Mariia (2024-02-24). "Meteor-M 2-4 And Others | Soyuz 2.1b/Fregat" . Everyday Astronaut . Retrieved
+2024-02-29 . ↑ "Meteor-M no.2-4 / WAI Hub" . www.whataboutit.space . Retrieved 2024-02-29 . ↑
+Трансляция запуска космического аппарата "Метеор-М" № 2-4 , retrieved 2024-02-29 1 2 Carl
+(2024-02-27). "Meteor M 2-4 Launch Status" . USRadioguy.com . Retrieved 2024-02-29 . ↑ "WMO OSCAR |
+Satellite: Meteor-M N2-4" . tools.wmo.int . Retrieved 2024-02-29 . ↑ "Спутник "Метеор-М" запустят на
+орбиту 29 февраля, сообщил источник" [ The Meteor-M satellite will be launched into orbit on
+February 29, source says ] . RIA Novosti (in Russian). 20 January 2024. Archived from the original
+on 21 January 2024 . Retrieved 21 January 2024 . ↑ Volosín, Juan I. Morales (2024-02-24). "Meteor-M
+2-4 And Others | Soyuz 2.1b/Fregat" . Everyday Astronaut . Retrieved 2024-02-29 . ↑ "WMO OSCAR |
+Satellite: Meteor-M N2-4" . space.oscar.wmo.int . Retrieved 2026-08-02 . ↑ "SatDump" . SatDump .
+Retrieved 2026-08-02 . v t e ← 2023 Orbital launches in 2024 2025 → January XPoSat Starlink G7-9 (21
+satellites) Ovzon-3 Starlink G6-35 (23 satellites) Peregrine Mission One ( Iris , Colmena × 5)
+Einstein Probe Gravity-1 (Yunyao-1 18-20) IGS-Optical 8 Starlink G7-10 (22 satellites) Starlink
+G6-37 (23 satellites) Tianzhou 7 Axiom Mission 3 Soraya Taijing-1-03 , Taijing-2-02 , Taijing-2-04 ,
+Taijing-3-02 , Taijing-4-03 Starlink G7-11 (22 satellites) Starlink G6-38 (23 satellites) Starlink
+G7-12 (22 satellites) Cygnus NG-20 Lemur-2 / Skylark × 4 February Geely Constellation Group 02 (11
+satellites) Xingshidai 18-20 PACE Kosmos 2575 / Razbeg №2 Starlink G7-13 (22 satellites) SDA
+Tracking Layer Tranche 0 (4 satellites) Progress MS-26 IM-1 / Nova-C Odysseus ( EagleCam ) Starlink
+G7-14 (22 satellites)] INSAT-3DS ADRAS-J Merah Putih 2 Starlink G7-15 (22 satellites) TJS-11
+Starlink G6-39 (24 satellites) Meteor-M No.2-4 Starlink G6-40 (23 satellites) March SpaceX Crew-8
+MethaneSAT , AEROS MH-1 , BRO-12 , BRO-13 , Lemur-2 × 4 Starlink G6-41 (23 satellites) Starlink
+G6-43 (23 satellites) Starlink G7-17 (23 satellites) StriX-3 CSICE Quick Response Satellite †
+Starlink G6-44 (23 satellites) Starlink G7-16 (20 satellites), USA-350 / Starshield , USA-351 /
+Starshield Queqiao-2 , Tiandu-1 , Tiandu-2 Yunhai-2 02 (6 satellites) USA-352 / RASR-5 SpaceX CRS-30
+Soyuz MS-25 Starlink G6-42 (23 satellites) Starlink G6-46 (23 satellites) Yunhai-3 02 Eutelsat 36D
+Starlink G6-45 (23 satellites) Resurs-P №4 April Starlink G7-18 (22 satellites) Yaogan 42-01
+Starlink G6-47 (23 satellites) Starlink G8-1 (21 satellites) KORSAT-1 , Acadia-4 , Hawk × 6, TSAT-1A
+USA-353 / Orion 12 Starlink G6-48 (23 satellites) Angara A5 ( Orion ) WSF-M 1 Starlink G6-49 (23
+satellites) Siwei Gaojing 3-01 Starlink G6-51 (23 satellites) Starlink G6-52 (23 satellites) Yaogan
+42-02 Starlink G6-53 (23 satellites) Shenzhou 18 Galileo FOC FM25 , Galileo FOC FM26 Starlink G6-54
+(23 satellites) May WorldView Legion 1 , WorldView Legion 2 Starlink G6-55 (23 satellites) Chang'e 6
+, ICUBE-Q Starlink G6-57 (23 satellites) Starlink G6-56 (23 satellites) Starlink G8-2 (20
+satellites) Shiyan 23 Starlink G6-58 (23 satellites) Starlink G8-7 (20 satellites) Kosmos 2576 /
+Nivelir -L N°4 Starlink G6-59 (23 satellites) Beijing-3C (4 satellites)] USA-354,...,USA-374 /
+Starshield × 21 Starlink G6-62 (23 satellites) Starlink G6-63 (23 satellites) Starlink G6-60 (23
+satellites) EarthCARE Progress MS-27 Paksat-MM1R June Starlink G6-64 (23 satellites) Starlink G8-5
+(20 satellites) Boe-CFT ] Starlink G10-1 (22 satellites) Starlink G8-8 (20 satellites) Starlink G9-1
+(20 satellites) ASTRA 1P / SES-24 SVOM Starlink G10-2 (22 satellites) Starlink G9-2 (20 satellites)
+GOES-U Starlink G10-3 (23 satellites) USA-375,...,USA-395 / Starshield × 21 ChinaSat 3A July ALOS-4
+Starlink G8-9 (20 satellites) TechEdSat-11 Tianhui 5 Group 02 (2 satellites) Türksat 6A Nyx Bikini ,
+ISTSat-1 , YPSat-1 Starlink G9-3 (23 satellites)† Gaofen 11-05 Starlink G10-9 (23 satellites)
+Starlink G10-4 (23 satellites) Starlink G9-4 (21 satellites) USA-396 , USA-397 , USA-398 August
+Weixing Hulianwang Gaogui-02 Starlink G10-6 (23 satellites) StriX-4 Starlink G11-1 (23 satellites)
+Cygnus NG-21 ( Wisseed Sat ) Qianfan Polar Group 01 (18 satellites) Starlink G8-3 (21 satellites)
+Acadia-3 ASBM-1 , ASBM-2 Starlink G10-7 (23 satellites) Progress MS-28 WorldView Legion 3 ,
+WorldView Legion 4 EOS-08 Yaogan 43-01 (9 satellites) ION SCV-012 , Acadia-5 , EagleEye , Hawk × 3,
+ICEYE × 4, ÑuSat × 3, BRO-14 , BRO-15 , Flock-4be × 36, HYPSO-2 , Lemur-2 × 7, Lemu Nge , Nightjar ,
+Phi-Sat-2 , PTD-4 , PTD-R , TORO , Sateliot_1 to 4 , Arctic Weather Satellite Starlink G10-5 (22
+satellites) ChinaSat 4A Starlink G8-6 (21 satellites) Starlink G8-10 (21 satellites) Starlink G9-5
+(21 satellites) September Yaogan 43-02 (6 satellites) Sentinel-2C Starlink G8-11 (21 satellites)
+Geely Constellation Group 03 (10 satellites) USA-400,...,USA-420 / Starshield × 21 Polaris Dawn
+Soyuz MS-26 BlueBird Block 1 (5 satellites) Starlink G9-6 (21 satellites) Qaem 100 (Chamran-1)
+Kosmos 2577 / OO MKA №1, Kosmos 2578 / OO MKA №2 Galileo FOC FM26 , Galileo FOC FM32 BeiDou-3 M27 ,
+BeiDou-3 M28 Jilin-1 Kuanfu-02B (6 satellites) Starlink G9-17 (20 satellites) Tianyan-15 Jilin-1
+SAR-01A Starlink G9-8 (20 satellites) IGS-Radar 8 Shijian 19 SpaceX Crew-9 October Vulcan Cert-2
+Hera , Juventas , Milani Weixing Hulianwang Gaogui-03 WHG-03 Europa Clipper Starlink G10-10 (23
+satellites) Starlink G9-7 (20 satellites) Qianfan Polar Group 02 (18 satellites) Gaofen 12-05
+Starlink G8-19 (20 satellites) OneWeb L20 (20 satellites)] Yaogan 43-03 (3 satellites) Starlink
+G6-61 (23 satellites) USA-421,...,USA-437 / Starshield × 17 Starlink G10-8 (22 satellites) Shenzhou
+19 Starlink G9-9 (20 satellites) Starlink G10-13 (23 satellites) Kosmos 2579 / Bars-M 6L November
+DSN-3 Ionosfera-M №1 , Ionosfera-M №2 SpaceX CRS-31 ( LignoSat ) Starlink G6-77 (23 satellites)
+PIESAT-2A 01 , PIESAT-2B 01–03 Starlink G9-10 (20 satellites) Shiyan 26A , Shiyan 26B , Shiyan 26C ,
+Jilin-1 Gaofen-05B-01 , Jilin-1 Pingtai-02A-03 , Tianyan-24 Koreasat 6A Starlink G6-69 (24
+satellites) Haiyang-4A Starlink G9-11 (20 satellites) Starlink G6-68 (24 satellites) Tianzhou 8
+Optus-X Starlink G9-12 (20 satellites) GSAT-20 Progress MS-29 Starlink G6-66 (24 satellites)
+Starlink G9-13 (20 satellites) Siwei Gaojing 2-03 , Siwei Gaojing 2-04 Starlink G12-1 (23
+satellites) Starlink G6-76 (24 satellites) Kondor-FKA №2 Starlink G6-65 (24 satellites) Starlink
+GN-01 (20 satellites), USA-438 / Starshield , USA-439 / Starshield Hulianwang Jishu Shiyan 5A
+December TJS-13 Starlink G6-70 (24 satellites) Kosmos 2580 / Lotos-S1 N°8 Starlink G9-14 (20
+satellites) Qianfan Polar Group 03 (18 satellites) PROBA-3 Coronograph , PROBA-3 Occulter SXM-9
+Sentinel-1C Saman-1 Starlink G12-5 (23 satellites) Starlink G11-2 (22 satellites) SatNet LEO Group
+01 (10 satellites) PIESAT-2 09-12 USA-440 / GPS III-07 USA-441,...,USA-462 / Starshield × 22 O3b
+mPOWER 7 & 8 PARUS-T1A † Ceres-1S (Tianqi 33-36) TJS-12 KORSAT-2 , Hawk 11A , Hawk 11B , Hawk 11C ,
+ICEYE X47 , ICEYE X49 , CTC 0 , LASARsat Starlink G12-2 (21 satellites) Resurs-P №5 Starlink G11-3
+(22 satellites) Agila SpaDeX A , SpaDeX B Starlink G12-6 (21 satellites) Launches are separated by
+dots ( • ), payloads by commas ( , ), multiple names for the same satellite by slashes ( / ). Crewed
+flights are underlined. Launch failures are marked with the † sign. Payloads deployed from other
+spacecraft are (enclosed in parentheses). Retrieved from "
+https://en.wikipedia.org/w/index.php?title=Meteor-M_No.2-4&oldid=1375616717 " Categories : 2024 in
+spaceflight Roscosmos Weather satellites of Russia Spacecraft launched in 2024 Hidden categories:
+Articles with short description Short description matches Wikidata CS1 Russian-language sources (ru)
+Search Search Meteor-M No.2-4 Add languages Add topic

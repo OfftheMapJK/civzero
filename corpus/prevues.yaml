@@ -210,32 +210,6 @@
   danger: orange
   vague: 3
   hors_corpus: false
-- id: recuperer-eau-pluie
-  socle: source
-  savoirs:
-  - trouver-recuperer-eau
-  titre:
-    fr: Récupérer l'eau de pluie
-    en: Harvest rainwater
-  horizon: hours
-  tier:
-  - 1
-  danger: vert
-  vague: 3
-  hors_corpus: false
-- id: trouver-eau-autour-soi-savoir
-  socle: source
-  savoirs:
-  - trouver-recuperer-eau
-  titre:
-    fr: Trouver l'eau autour de soi et savoir si elle est sûre
-    en: Find water nearby and know if it is safe
-  horizon: hours
-  tier:
-  - 0
-  danger: orange
-  vague: 2
-  hors_corpus: false
 - id: se-laver-mains-tres-peu
   socle: source
   savoirs:
@@ -1200,6 +1174,149 @@
   titre:
     fr: Écrire et documenter une fiche CivicNode
     en: Write and document a skill
+  horizon: hours
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: mettre-station-dans-boitier-exterieur
+  socle: strate
+  savoirs:
+  - monter-station
+  titre:
+    fr: Mettre la station dans un boîtier extérieur étanche
+    en: Put the station in a weatherproof outdoor box
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: fabriquer-antenne-wifi-directionnelle
+  socle: mycelium
+  savoirs:
+  - partager-sans-internet
+  titre:
+    fr: Fabriquer une antenne Wi-Fi directionnelle
+    en: Make a directional Wi-Fi antenna
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: envoyer-messages-sans-internet-briar
+  socle: mycelium
+  savoirs:
+  - se-retrouver-parler
+  titre:
+    fr: Envoyer des messages sans Internet avec Briar
+    en: Send messages without Internet with Briar
+  horizon: instant
+  tier:
+  - 0
+  danger: vert
+  vague: 2
+  hors_corpus: false
+- id: serveur-fichiers-quartier
+  socle: mycelium
+  savoirs:
+  - partager-sans-internet
+  titre:
+    fr: Un serveur de fichiers de quartier
+    en: A neighbourhood file server
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: suivre-charge-batterie-consommation
+  socle: ambre
+  savoirs:
+  - lire-mesurer
+  titre:
+    fr: 'Suivre la charge d''une batterie et la consommation'
+    en: 'Monitor a battery''s charge and consumption'
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: monter-petite-station-meteo
+  socle: ecorce
+  savoirs:
+  - intemperies
+  titre:
+    fr: Monter une petite station météo
+    en: Build a small weather station
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: surveiller-temperature-garde-manger
+  socle: graine
+  savoirs:
+  - conserver-sans-frigo
+  titre:
+    fr: 'Surveiller la température d''un garde-manger'
+    en: Monitor the temperature of a larder
+  horizon: hours
+  tier:
+  - 1
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: apprendre-souder
+  socle: pollen
+  savoirs:
+  - reparer-fabriquer
+  titre:
+    fr: Apprendre à souder
+    en: Learn to solder
+  horizon: hours
+  tier:
+  - 1
+  danger: orange
+  vague: 2
+  hors_corpus: false
+- id: recuperer-composants-materiel-jete
+  socle: pollen
+  savoirs:
+  - reparer-fabriquer
+  titre:
+    fr: Récupérer des composants sur du matériel jeté
+    en: Salvage components from discarded equipment
+  horizon: hours
+  tier:
+  - 0
+  danger: orange
+  vague: 3
+  hors_corpus: false
+- id: imprimer-piece-detachee-3d
+  socle: pollen
+  savoirs:
+  - reparer-fabriquer
+  titre:
+    fr: Imprimer une pièce détachée en 3D
+    en: 3D print a spare part
+  horizon: hours
+  tier:
+  - 2
+  danger: vert
+  vague: 3
+  hors_corpus: false
+- id: sauvegarder-chiffrer-donnees-cle
+  socle: strate
+  savoirs:
+  - garder-savoir
+  titre:
+    fr: Sauvegarder et chiffrer ses données sur une clé
+    en: Back up and encrypt your data on a USB stick
   horizon: hours
   tier:
   - 0

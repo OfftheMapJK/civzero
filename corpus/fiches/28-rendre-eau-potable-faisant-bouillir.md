@@ -36,7 +36,19 @@ provenance:
     modifie: true
     verifie_le: 2026-11-11
 attestations: []
-medias: []
+medias:
+  - fichier: eau-a-gros-bouillons.jpg
+    type: image
+    etape: 2
+    legende:
+      fr: "Une ébullition franche : de grosses bulles montent sans arrêt et agitent toute la surface."
+      en: "A rolling boil: large bubbles rise continuously and stir the whole surface."
+    titre: Water boiling in a pot on a stove
+    auteur: Tomwsulcer
+    source: https://commons.wikimedia.org/wiki/File:Water_boiling_in_a_pot_on_a_stove.jpg
+    licence: CC0
+    verifie_le: "2026-11-11"
+    telecharger: https://commons.wikimedia.org/wiki/Special:FilePath/Water_boiling_in_a_pot_on_a_stove.jpg
 maj: 2026-11-11
 ---
 

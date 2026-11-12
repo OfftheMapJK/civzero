@@ -36,7 +36,19 @@ provenance:
     modifie: true
     verifie_le: 2026-11-11
 attestations: []
-medias: []
+medias:
+  - fichier: flacon-compte-gouttes.jpg
+    type: image
+    etape: 3
+    legende:
+      fr: "Un flacon et son compte-gouttes : il permet de compter les gouttes une à une."
+      en: "A bottle and its dropper: it lets you count the drops one by one."
+    titre: Eye Dropper Bottle 2
+    auteur: Bondigoldwiki
+    source: https://commons.wikimedia.org/wiki/File:Eye_Dropper_Bottle_2.jpg
+    licence: CC0
+    verifie_le: "2026-11-11"
+    telecharger: https://commons.wikimedia.org/wiki/Special:FilePath/Eye_Dropper_Bottle_2.jpg
 maj: 2026-11-11
 ---
 
