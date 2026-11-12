@@ -2,6 +2,8 @@
 
 Lu au début de chaque session. Ce fichier résume les décisions prises ; en cas de doute, les documents cités font foi.
 
+**À chaque session, lis aussi `docs/decisions.md`** : c'est là que les conversations de claude.ai (Chantier, Atelier, Relecture, Design) écrivent ce qu'elles ont décidé. Applique ce qui te concerne après accord de Julien, et note « fait » avec la date. Quand une décision se prend avec toi, écris-la aussi dans ce journal.
+
 ## Le projet
 
 CivicNode est une station de savoirs hors-ligne : « une station de savoirs pour les interstices ». Des fiches pratiques (eau, énergie, réseau, soin…), sourcées et vérifiées, servies par un site statique qui marche sans Internet, avec un petit assistant local.
@@ -39,6 +41,7 @@ Julien porte le projet seul et n'est pas développeur.
 - `scripts/verifier.mjs` : le vérificateur ; `tests/` : tests node:test.
 - `agent/` : `METHODE.md` (adapter une source), `RELECTURE.md` (relire), scripts, `sources/<id>/sN.txt` (copies des sources), `relectures/`.
 - `assistant/` : assistant local (recherche + modèle).
+- `docs/` : documents de travail (`decisions.md` : journal des décisions, à lire à chaque session ; `outils-libres.md` : outils pour le travail, ressources par socle, liste « en veille », logithèque).
 
 ## Commandes
 
@@ -47,10 +50,14 @@ Julien porte le projet seul et n'est pas développeur.
 | `npm test` | vérificateur + tests |
 | `npm run dev` / `npm run build` | site en local / construction |
 | `npm run integrer` (`-- --essai`) | fait entrer les fiches de `agent/sortie/` dans le corpus (numéro, prévues, catalogue, démo, `origine: adaptee`, médias) |
-| `npm run sources` | copie le texte des sources adaptées dans `agent/sources/<id>/` |
-| `npm run medias` | télécharge les médias marqués `telecharger` |
+| `npm run sources` | copie le texte des sources adaptées dans `agent/sources/<id>/` ; une page qui refuse la lecture simple est rouverte avec Playwright ; `-- --essai <adresse>` lit une page sans rien écrire |
+| `npm run medias` | télécharge les médias marqués `telecharger` ; compare la licence et l'auteur des médias Commons à ceux de la fiche, signale les désaccords sans rien corriger |
 | `npm run relire` | relecture IA par l'API (clé non configurée pour l'instant) |
 | `npm run station` | construit la station hors-ligne avec l'assistant |
+
+- Husky lance `npm test` avant chaque commit (`.husky/pre-commit`, qui indique aussi à GitHub Desktop où trouver node) et bloque le commit s'il y a une erreur. Contournement d'urgence, par le Terminal : `git add -A` puis `git commit --no-verify -m "…"`.
+- Sur un nouvel ordinateur, après `npm install` : `npx playwright install chromium` (navigateur de Playwright, hors du dépôt).
+- Les sites protégés par un contrôle anti-robot (documentation Raspberry Pi, Akvopedia) ne se lisent pas, même avec Playwright : passer par leur dépôt source ou par une copie à la main, sans contourner la protection.
 
 ## Fiches : origine, statuts, vérification
 
@@ -66,7 +73,7 @@ Principe : nous ne créons pas le savoir, nous le mettons en forme. Fidèle veut
 
 ## Licences et médias
 
-- Adaptables : domaine public, CC0, CC BY, CC BY-SA, Licence Ouverte / Etalab, ODbL (`src/lib/licences.mjs`). Jamais NC ni ND (Low-tech Lab, iFixit, ESPHome sont NC : en référence seulement).
+- Adaptables : domaine public, CC0, CC BY, CC BY-SA, Licence Ouverte / Etalab, ODbL (`src/lib/licences.mjs`). Jamais NC ni ND : ni adaptées en fiche, ni reprises en média ; seulement citées en référence (`usage: reference`), ou utilisées pour un fait confirmé par une source ouverte (Low-tech Lab, iFixit, ESPHome sont NC). Raison : nos fiches sont en CC BY-SA 4.0.
 - Chaque étape cite sa source (`sN`) ; un manque se marque `[À VALIDER : …]` dans la phrase même.
 - Médias : réutiliser d'abord un média existant sous licence ouverte (Wikimedia Commons) ; dessiner un SVG seulement s'il n'en existe pas (`relu: false` tant que personne ne l'a relu). Légende FR et EN, auteur, licence, fichier dans `public/medias/<id>/`, 600 Ko au plus.
 

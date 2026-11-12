@@ -17,7 +17,8 @@
     "integrer": "node agent/integrer.mjs",
     "medias": "node agent/medias.mjs",
     "sources": "node agent/sources.mjs",
-    "relire": "node agent/relire.mjs"
+    "relire": "node agent/relire.mjs",
+    "prepare": "husky"
   },
   "dependencies": {
     "astro": "^5.0.0",
@@ -25,6 +26,8 @@
     "marked": "^15.0.0"
   },
   "devDependencies": {
-    "pagefind": "^1.1.0"
+    "husky": "^9.1.7",
+    "pagefind": "^1.1.0",
+    "playwright": "^1.65.0"
   }
 }

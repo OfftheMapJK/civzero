@@ -1,0 +1,15 @@
+# Avant chaque commit : le vérificateur du corpus et les tests. Une erreur bloque le commit.
+# GitHub Desktop, comme les autres applications Mac, ne connaît pas toujours le dossier où node est installé :
+# on ajoute ici les emplacements habituels (installateur de nodejs.org, puis Homebrew).
+export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
+
+if ! command -v npm >/dev/null 2>&1; then
+  echo "Commit bloqué : npm est introuvable. Ouvrez le Terminal, tapez « which npm », et ajoutez le dossier affiché à la ligne PATH de .husky/pre-commit."
+  exit 1
+fi
+
+npm test || {
+  echo ""
+  echo "Commit bloqué : npm test signale une erreur (voir plus haut). Corrigez-la, puis recommencez."
+  exit 1
+}
