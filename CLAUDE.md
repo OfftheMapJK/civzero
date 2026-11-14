@@ -37,12 +37,12 @@ Julien porte le projet seul et n'est pas développeur.
 - `corpus/fiches/NN-id.md` : fiches en français ; `corpus/fiches/en/` : leur traduction (même nom, même nombre d'étapes).
 - `corpus/structure.yaml` : familles, socles, domaines, savoirs (chaque savoir a un principe FR et EN, sans chiffre non sourcé).
 - `corpus/prevues.yaml` et `corpus/catalogue.csv` : fiches prévues ; `corpus/veille.yaml` : outils en veille (lu ni par le site ni par le vérificateur) ; `corpus/civicnode.yaml` : réglages et fiches ouvertes dans la démo.
-- `corpus/pistes/` : pistes du socle Spore (famille « Explorer ») ; `corpus/pages/` : pages de texte (dont « Nos sources et notre méthode »).
+- `corpus/pistes/` : pistes du socle Spore (famille « Explorer ») ; `corpus/pages/` : pages de texte (« Nos sources et notre méthode » ; « Le nom et le logo CivicNode », la politique d'usage de la marque, à laquelle renvoie le pied de page).
 - `src/` : site Astro 5 (`build.format: 'file'`) ; pages françaises sous `fr/` via `src/pages/fr/[slug].astro` ; `src/lib/` (corpus, modèle, licences, i18n, `lecture.mjs` : texte lu par le bouton « Écouter » des fiches, avec la synthèse vocale du navigateur).
 - `scripts/verifier.mjs` : le vérificateur ; `tests/` : tests node:test.
 - `agent/` : `METHODE.md` (adapter une source), `RELECTURE.md` (relire), scripts, `sources/<id>/sN.txt` (copies des sources), `relectures/`.
 - `assistant/` : assistant local (recherche + modèle ; tourne avec llama-server de llama.cpp et Ministral, voir `assistant/LISEZMOI.md`).
-- `docs/` : documents de travail (`decisions.md` : journal des décisions, à lire à chaque session ; `outils-libres.md` : outils pour le travail, ressources par socle, liste « en veille », logithèque).
+- `docs/` : documents de travail (`decisions.md` : journal des décisions, à lire à chaque session ; `outils-libres.md` : outils pour le travail, ressources par socle, liste « en veille », logithèque ; `commande-atelier.md` : fiches prévues à écrire en premier, avec leurs pages sources probables).
 
 ## Commandes
 
@@ -75,6 +75,7 @@ Principe : nous ne créons pas le savoir, nous le mettons en forme. Fidèle veut
 ## Licences et médias
 
 - Adaptables : domaine public, CC0, CC BY, CC BY-SA, Licence Ouverte / Etalab, ODbL (`src/lib/licences.mjs`). Jamais NC ni ND : ni adaptées en fiche, ni reprises en média ; seulement citées en référence (`usage: reference`), ou utilisées pour un fait confirmé par une source ouverte (Low-tech Lab, iFixit, ESPHome sont NC). Raison : nos fiches sont en CC BY-SA 4.0.
+- Le nom CivicNode et le logo ne sont pas sous CC BY-SA : ce sont les marques du projet, pas encore déposées (ne jamais écrire « marque déposée » ni ®). Politique d'usage : `corpus/pages/marque.md`.
 - Chaque étape cite sa source (`sN`) ; un manque se marque `[À VALIDER : …]` dans la phrase même.
 - Médias : réutiliser d'abord un média existant sous licence ouverte (Wikimedia Commons) ; dessiner un SVG seulement s'il n'en existe pas (`relu: false` tant que personne ne l'a relu). Légende FR et EN, auteur, licence, fichier dans `public/medias/<id>/`, 600 Ko au plus.
 

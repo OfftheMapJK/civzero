@@ -55,3 +55,4 @@ Demande Python 3 et le module `yaml`. Le script signale les champs ou sections m
 
 - **Les fiches et tout le contenu de `corpus/`** : Creative Commons Attribution - Partage dans les mêmes conditions 4.0 (CC BY-SA 4.0). Texte complet dans [LICENSE-CONTENU](LICENSE-CONTENU).
 - **Le code** : GNU Affero General Public License v3.0 (AGPL-3.0). Texte complet dans `LICENSE`.
+- **Le nom « CivicNode » et le logo** : ils ne sont pas sous ces licences, ce sont les marques du projet (pas encore déposées). Ce qui est permis : [corpus/pages/marque.md](corpus/pages/marque.md), en anglais dans [corpus/pages/en/marque.md](corpus/pages/en/marque.md).

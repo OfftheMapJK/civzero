@@ -136,6 +136,16 @@ test('la page « Sources et méthode » existe dans les deux langues, et chaque 
   assert.match(modeles.en.pages.find((x) => x.slug === 'a-sources-et-methode').titre, /sources/i);
 });
 
+test('la page sur le nom et le logo existe dans les deux langues, sans parler de marque déposée', () => {
+  for (const lang of ['en', 'fr']) {
+    const p = modeles[lang].pages.find((x) => x.slug === 'a-marque');
+    assert.ok(p && p.corpsHtml.includes('<h2'), `${lang} : page absente ou vide`);
+    assert.ok(p.corpsHtml.includes('hello@civicnode.eu'), `${lang} : contact absent`);
+    assert.doesNotMatch(p.corpsHtml, /®|marque déposée|registered trademark/i, `${lang} : la marque n'est pas déposée`);
+  }
+  assert.match(modeles.en.pages.find((x) => x.slug === 'a-marque').titre, /name and logo/i);
+});
+
 test('les pages anglaises sont bien en anglais', () => {
   const p = modeles.en.pages.find((x) => x.slug === 'f-energie-telephone-coupure');
   assert.match(p.titre, /phone/i);
